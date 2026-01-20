@@ -1,0 +1,254 @@
+[gd_scene load_steps=25 format=4 uid="uid://c5ftd8ep06rit"]
+
+[ext_resource type="Script" uid="uid://dfwilel70ssu6" path="res://res/script/level/demo_lvl_4.gd" id="1_q0826"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_i25ds"]
+[ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="2_qbe5v"]
+[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_vabpm"]
+[ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="3_e2ahj"]
+[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_yipus"]
+[ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_sewd3"]
+[ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_w5ued"]
+[ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="8_24e82"]
+[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="8_dvda1"]
+[ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_w5ued"]
+[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="9_lddg2"]
+[ext_resource type="PackedScene" uid="uid://dajhen4582udr" path="res://res/scene/doorx2.tscn" id="10_2hp6y"]
+[ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="11_1ngfo"]
+[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="11_per27"]
+[ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="12_v8yy7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8koe"]
+atlas = ExtResource("6_yipus")
+region = Rect2(5120, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwosk"]
+atlas = ExtResource("6_yipus")
+region = Rect2(5440, 0, 320, 320)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2wvf"]
+radius = 160.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12uhu"]
+atlas = ExtResource("8_24e82")
+region = Rect2(1664, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f8xx"]
+atlas = ExtResource("8_24e82")
+region = Rect2(1600, 448, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ewr7"]
+size = Vector2(122, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6jur"]
+atlas = ExtResource("8_24e82")
+region = Rect2(1600, 512, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yuwo"]
+size = Vector2(128, 64)
+
+[node name="DemoLevel" type="Node2D" groups=["level"]]
+script = ExtResource("1_q0826")
+maxTime = 251.0
+
+[node name="ui_layer" type="CanvasLayer" parent="."]
+
+[node name="loading" parent="ui_layer" instance=ExtResource("2_i25ds")]
+visible = false
+
+[node name="papan" parent="ui_layer" instance=ExtResource("2_qbe5v")]
+visible = false
+position = Vector2(928, 479)
+scale = Vector2(0.9, 0.9)
+b1_task = "140"
+b2_task = "160"
+b3_task = "180"
+
+[node name="movement_btn" parent="ui_layer" instance=ExtResource("2_vabpm")]
+
+[node name="btn_con" type="HBoxContainer" parent="ui_layer"]
+custom_minimum_size = Vector2(360, 180)
+offset_right = 360.0
+offset_bottom = 180.0
+size_flags_horizontal = 3
+
+[node name="reset_btn" parent="ui_layer/btn_con" instance=ExtResource("3_e2ahj")]
+position = Vector2(261, 95)
+
+[node name="pauseBtn" type="TouchScreenButton" parent="ui_layer/btn_con"]
+position = Vector2(14, 14)
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_c8koe")
+texture_pressed = SubResource("AtlasTexture_vwosk")
+shape = SubResource("CircleShape2D_g2wvf")
+shape_visible = false
+
+[node name="timeDisplay" parent="ui_layer" instance=ExtResource("7_w5ued")]
+
+[node name="bg_layer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" parent="bg_layer" instance=ExtResource("8_w5ued")]
+
+[node name="layer1" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAAIAAQACAAPAAgAAAAIAAUACAAPAAkAAAAIAAYACAAPAAkAAAAIAAcACAAPAAkAAAAIAAgACAAPAAkAAAAIAAkACAAPAAkAAAAIAAoACAAKAAgAAAAJAAMACAAPAAgAAAAJAAQACAAHAAkAAAAJAAUACAAMAAEAAAAJAAYACAAMAAIAAAAJAAcACAAMAAIAAAAJAAgACAAMAAIAAAAJAAkACAAMAAQAAAAJAAoACAAPAAcAAAAJAAsACAAPAAkAAAAJAAwACAAKAAgAAAAKAAIACAAPAAgAAAAKAAMACAAHAAkAAAAKAAQACAAMAAEAAAAKAAUACAAJAAIAAAAKAAYACAAIAA0AAAAKAAcACAAIAA0AAAAKAAgACAAIAA0AAAAKAAkACAAJAAMAAAAKAAoACAAMAAIAAAAKAAsACAAMAAQAAAAKAAwACAAJAAcAAAALAAEACAAPAAgAAAALAAIACAAHAAkAAAALAAMACAAMAAEAAAALAAQACAAJAAIAAAALAAUACAAKAA0AAAALAAYACAAIAA0AAAALAAcACAAIAA0AAAALAAgACAAIAA0AAAALAAkACAAIAA0AAAALAAoACAAIAA0AAAALAAsACAANAAQAAAALAAwACAAOAAcAAAAMAP3/CAAPAAgAAAAMAP7/CAAPAAkAAAAMAP//CAAPAAkAAAAMAAEACAAHAAkAAAAMAAIACAAMAAEAAAAMAAMACAAJAAIAAAAMAAQACAAIAA0AAAAMAAUACAAIAA0AAAAMAAYACAAIAA0AAAAMAAcACAAIAA0AAAAMAAgACAAIAA0AAAAMAAkACAAIAA0AAAAMAAoACAAIAA0AAAAMAAsACAANAAQAAAAMAAwACAAOAAcAAAANAP3/CAAOAAsAAAANAP7/CAAMAAIAAAANAP//CAAMAAIAAAANAAAACAAMAAIAAAANAAEACAAMAAIAAAANAAIACAAJAAIAAAANAAMACAAIAA0AAAANAAQACAAJAA0AAAANAAUACAAJAA0AAAANAAYACAAJAA0AAAANAAcACAAJAAwAAAANAAgACAAJAAwAAAANAAkACAAIAA0AAAANAAoACAAIAA0AAAANAAsACAANAAQAAAANAAwACAAOAAcAAAAOAP3/CAAPAAsAAAAOAP7/CAAPAAMAAAAOAP//CAAPAAMAAAAOAAAACAAPAAMAAAAOAAEACAAPAAMAAAAOAAIACAAKAAIAAAAOAAMACAAIAA0AAAAOAAQACAAIAA0AAAAOAAUACAAIAA0AAAAOAAYACAAIAA0AAAAOAAcACAAIAA0AAAAOAAgACAAIAA0AAAAOAAkACAAIAA0AAAAOAAoACAAJAA0AAAAOAAsACAANAAQAAAAOAAwACAAOAAcAAAAPAP3/CAAMAAkAAAAPAP7/CAAMAAgAAAAPAP//CAAMAAgAAAAPAAAACAAMAAgAAAAPAAEACAAFAAkAAAAPAAIACAAPAAEAAAAPAAMACAAKAAIAAAAPAAQACAAIAA0AAAAPAAUACAAIAA0AAAAPAAYACAAJAAwAAAAPAAcACAAIAA0AAAAPAAgACAAJAAwAAAAPAAkACAAIAA0AAAAPAAoACAAIAA0AAAAPAAsACAANAAQAAAAPAAwACAAOAAcAAAAQAAEACAAMAAkAAAAQAAIACAAFAAkAAAAQAAMACAAPAAEAAAAQAAQACAAKAAIAAAAQAAUACAAIAA0AAAAQAAYACAAIAA0AAAAQAAcACAAIAA0AAAAQAAgACAAIAAwAAAAQAAkACAAIAA0AAAAQAAoACAAIAA0AAAAQAAsACAANAAQAAAAQAAwACAAOAAcAAAARAAIACAAMAAkAAAARAAMACAAFAAkAAAARAAQACAAPAAEAAAARAAUACAAKAAIAAAARAAYACAAIAA0AAAARAAcACAAIAA0AAAARAAgACAAIAA0AAAARAAkACAAKAAMAAAARAAoACAAPAAMAAAARAAsACAAPAAQAAAARAAwACAAKAAcAAAASAAMACAAMAAkAAAASAAUACAAPAAEAAAASAAYACAAPAAMAAAASAAcACAAPAAMAAAASAAgACAAPAAMAAAASAAkACAAPAAQAAAASAAoACAAMAAcAAAASAAsACAAMAAgAAAASAAwACAAJAAgAAAATAAQACAAMAAkAAAATAAUACAAMAAgAAAATAAYACAAMAAgAAAATAAcACAAMAAgAAAATAAgACAAMAAgAAAATAAkACAAMAAgAAAATAAoACAAJAAgAAAASAAQACAAFAAkAAAAMAAAACAAPAAkAAAA=")
+tile_set = ExtResource("7_sewd3")
+rendering_quadrant_size = 64
+
+[node name="layer2" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAAOAAYACAAMAAwAAAAMAAUACAAMAA0AAAAKAAQACAAMAA0AAAAQAAYACAALAA0AAAAOAAkACAALAAwAAAAMAAoACAALAA0AAAAMAAkACAAMAA0AAAALAAcACAALAAwAAAAOAAIACAAMAA0AAAA=")
+tile_set = ExtResource("7_sewd3")
+rendering_quadrant_size = 64
+
+[node name="special" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AABOAAoAAAAOABEAAABOAAkAAAAOABEAAABOAA0AAAAOABIAAAAPAAMACAAZAAgAAAAMAAMACAAaAAgAAAAOAAMACAATAA0AAAANAAMACAAVAA0AAAANAAIACAAaAAgAAAAOAAIACAAZAAgAAAAQAAQACAAZAAgAAAARAAUACAAZAAgAAAALAAQACAAaAAgAAAAKAAUACAAaAAgAAAALAAUACAAVAA0AAAAMAAQACAAVAA0AAAAPAAQACAATAA0AAAAQAAUACAATAA0AAAAKAAYACAAVAAwAAAAKAAcACAAVAAwAAAAKAAgACAAVAAwAAAARAAYACAATAAwAAAARAAcACAATAAwAAAARAAgACAATAAwAAAARAAkACAAZAAcAAAAKAAkACAAaAAcAAAALAAoACAAVAAwAAAALAAkACAAVAAsAAAAQAAkACAATAAsAAAAQAAoACAATAAwAAAALAAsACAAbAAcAAAAQAAsACAAbAAkAAAAMAAsACAAUAA0AAAANAAsACAAUAA0AAAAOAAsACAAUAA0AAAAPAAsACAAUAA0AAAA=")
+tile_set = ExtResource("7_sewd3")
+
+[node name="t1" type="RigidBody2D" parent="special"]
+position = Vector2(832, 195)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="special/t1"]
+position = Vector2(0, -37)
+texture = SubResource("AtlasTexture_12uhu")
+offset = Vector2(32, 32)
+
+[node name="Sprite2D3" type="Sprite2D" parent="special/t1"]
+position = Vector2(64, -37)
+texture = SubResource("AtlasTexture_4f8xx")
+offset = Vector2(32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="special/t1"]
+position = Vector2(64, 18)
+shape = SubResource("RectangleShape2D_7ewr7")
+
+[node name="t2" type="RigidBody2D" parent="special"]
+position = Vector2(737, 257)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="layer2" type="TileMapLayer" parent="special/t2"]
+position = Vector2(0, 4)
+tile_map_data = PackedByteArray("AAAAAAEABAAXAAcAAAABAAEABAAUAAsAAAACAAEABAAUAAsAAAADAAEABAAUAAsAAAAEAAEABAAUAAsAAAAAAAAABAATAAwAAAA=")
+tile_set = ExtResource("7_sewd3")
+rendering_quadrant_size = 64
+
+[node name="Sprite2D" type="Sprite2D" parent="special/t2"]
+position = Vector2(-33, 68)
+texture = SubResource("AtlasTexture_12uhu")
+offset = Vector2(32, 32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="special/t2"]
+position = Vector2(0, -1)
+texture = SubResource("AtlasTexture_g6jur")
+offset = Vector2(32, 32)
+
+[node name="Sprite2D3" type="Sprite2D" parent="special/t2"]
+position = Vector2(287, 68)
+texture = SubResource("AtlasTexture_4f8xx")
+offset = Vector2(32, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="special/t2"]
+build_mode = 1
+polygon = PackedVector2Array(46, 3, 61, 3, 61, 113, 336, 113, 336, 75, 348, 75, 348, 125, -30, 125, -30, 79, -18, 79, -18, 113, 49, 113, 49, 15, 46, 15)
+
+[node name="exit" type="Area2D" parent="."]
+position = Vector2(832, -191)
+collision_layer = 273
+collision_mask = 273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(64, 31)
+shape = SubResource("RectangleShape2D_1yuwo")
+
+[node name="plate" parent="." instance=ExtResource("8_dvda1")]
+position = Vector2(832, 513)
+scale = Vector2(2, 2)
+check_all_entities = true
+
+[node name="cek_grup" type="Node2D" parent="."]
+position = Vector2(0, -128)
+
+[node name="cek s" parent="cek_grup" instance=ExtResource("8_dvda1")]
+position = Vector2(768, 769)
+scale = Vector2(2, 2)
+nama_cek = "s"
+
+[node name="cek a" parent="cek_grup" instance=ExtResource("8_dvda1")]
+position = Vector2(832, 769)
+scale = Vector2(2, 2)
+nama_cek = "a"
+
+[node name="cek u" parent="cek_grup" instance=ExtResource("8_dvda1")]
+position = Vector2(896, 769)
+scale = Vector2(2, 2)
+nama_cek = "u"
+
+[node name="cek s 2" parent="cek_grup" instance=ExtResource("8_dvda1")]
+position = Vector2(960, 769)
+scale = Vector2(2, 2)
+nama_cek = "s"
+
+[node name="kotak_grup" type="Node2D" parent="."]
+position = Vector2(6, -134)
+
+[node name="s" parent="kotak_grup" instance=ExtResource("9_lddg2")]
+position = Vector2(718, 403)
+nama_kotak = "s"
+
+[node name="a" parent="kotak_grup" instance=ExtResource("9_lddg2")]
+position = Vector2(656, 692)
+nama_kotak = "a"
+
+[node name="u" parent="kotak_grup" instance=ExtResource("9_lddg2")]
+position = Vector2(894, 644)
+nama_kotak = "u"
+
+[node name="s 2" parent="kotak_grup" instance=ExtResource("9_lddg2")]
+position = Vector2(1008, 401)
+nama_kotak = "s"
+
+[node name="o" parent="kotak_grup" instance=ExtResource("9_lddg2")]
+position = Vector2(859, 276)
+nama_kotak = "o"
+
+[node name="door" parent="." instance=ExtResource("10_2hp6y")]
+position = Vector2(832, 67)
+
+[node name="Lever2" parent="." instance=ExtResource("11_1ngfo")]
+position = Vector2(1023, 444)
+
+[node name="Player" parent="." instance=ExtResource("11_per27")]
+position = Vector2(1057, 529)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(8, -7)
+zoom = Vector2(1.3, 1.3)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 120.0
+one_shot = true
+
+[node name="buku" parent="." instance=ExtResource("12_v8yy7")]
+position = Vector2(579, 385)
+hint_text = "Bumbu Cair
+Penambah Rasa"
+
+[connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
+[connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
+[connection signal="body_entered" from="exit" to="." method="_finish"]
+[connection signal="pressed" from="plate" to="." method="_lever_1"]
+[connection signal="activated" from="cek_grup/cek s" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek s" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek a" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek a" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek u" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek u" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek s 2" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek s 2" to="." method="_exit_cek"]
+[connection signal="aksiLever" from="Lever2" to="." method="_lever_2"]

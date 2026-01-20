@@ -1,0 +1,391 @@
+[gd_scene load_steps=28 format=3 uid="uid://blvx60qxej35n"]
+
+[ext_resource type="Script" path="res://res/script/misc/cutscene.gd" id="1_ib843"]
+[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="2_4ba5n"]
+[ext_resource type="Texture2D" uid="uid://jb711b2oj3ey" path="res://res/asset/menu/s0_frame2.png" id="2_i8s0n"]
+[ext_resource type="Texture2D" uid="uid://bucxvvpr6rbxg" path="res://res/asset/menu/s0_frame1.png" id="2_oen8h"]
+[ext_resource type="Texture2D" uid="uid://cpddcvs36dtia" path="res://res/asset/portal.png" id="3_3ieme"]
+[ext_resource type="Texture2D" uid="uid://brpacvrey5vwm" path="res://res/asset/menu/baku.png" id="3_5svrs"]
+[ext_resource type="Texture2D" uid="uid://dtainei4p750w" path="res://res/asset/menu/noBook.png" id="3_6q6qt"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="3_kj201"]
+[ext_resource type="Texture2D" uid="uid://cpspw0swcox1w" path="res://res/asset/menu/s0_frame3.png" id="5_yxkrj"]
+[ext_resource type="Texture2D" uid="uid://bycus5mbgit2j" path="res://res/asset/Player-rpg.png" id="8_404fw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoibr"]
+atlas = ExtResource("2_4ba5n")
+region = Rect2(7042, 0, 315, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyagc"]
+atlas = ExtResource("2_4ba5n")
+region = Rect2(7363, 0, 317, 320)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mvdfn"]
+radius = 160.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlevr"]
+bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3iv7"]
+atlas = ExtResource("2_oen8h")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy0n6"]
+atlas = ExtResource("2_i8s0n")
+region = Rect2(0, 0, 3840, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2xtk"]
+atlas = ExtResource("3_3ieme")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hurrp"]
+atlas = ExtResource("5_yxkrj")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vwid"]
+atlas = ExtResource("8_404fw")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="Animation" id="Animation_h4d75"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/VBoxContainer/Panel3/frame2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/VBoxContainer/Panel3/frame2/portal:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/VBoxContainer/Panel3/frame2/portal:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer/VBoxContainer/Panel/frame1:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wfm32"]
+resource_name = "frame1"
+length = 0.4
+loop_mode = 1
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/VBoxContainer/Panel/frame1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_aopvv"]
+resource_name = "frame2"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/VBoxContainer/Panel3/frame2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/VBoxContainer/Panel3/frame2/portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_uiwp2"]
+resource_name = "portal"
+length = 0.6
+loop_mode = 1
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/VBoxContainer/Panel3/frame2/portal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/VBoxContainer/Panel3/frame2/portal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4b08e"]
+_data = {
+"RESET": SubResource("Animation_h4d75"),
+"frame1": SubResource("Animation_wfm32"),
+"frame2": SubResource("Animation_aopvv"),
+"portal": SubResource("Animation_uiwp2")
+}
+
+[sub_resource type="Animation" id="Animation_2xk3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/BoxContainer/Panel2/frame3:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qykys"]
+resource_name = "frame3"
+length = 0.7
+loop_mode = 1
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/BoxContainer/Panel2/frame3:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v5pg7"]
+_data = {
+"RESET": SubResource("Animation_2xk3m"),
+"frame3": SubResource("Animation_qykys")
+}
+
+[node name="Story1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ib843")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="play" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1631, 809)
+scale = Vector2(0.8, 0.8)
+texture_normal = SubResource("AtlasTexture_qoibr")
+texture_pressed = SubResource("AtlasTexture_fyagc")
+shape = SubResource("CircleShape2D_mvdfn")
+
+[node name="loading" parent="." instance=ExtResource("3_kj201")]
+visible = false
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="CenterContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="frame1" type="Sprite2D" parent="CenterContainer/VBoxContainer/Panel"]
+position = Vector2(486, 275)
+scale = Vector2(1.3, 1.3)
+texture = SubResource("AtlasTexture_i3iv7")
+hframes = 3
+vframes = 2
+
+[node name="noBook" type="Sprite2D" parent="CenterContainer/VBoxContainer/Panel/frame1"]
+position = Vector2(-192, -2.5)
+texture = ExtResource("3_6q6qt")
+
+[node name="buku" type="Sprite2D" parent="CenterContainer/VBoxContainer/Panel"]
+position = Vector2(452, 324)
+scale = Vector2(8, 8)
+texture = ExtResource("3_5svrs")
+
+[node name="Panel2" type="Panel" parent="CenterContainer/VBoxContainer/Panel"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.996
+anchor_right = 1.0
+anchor_bottom = 1.021
+offset_top = 0.0719604
+offset_bottom = 0.122009
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="Panel2" type="Panel" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="Panel2" type="Panel" parent="CenterContainer/VBoxContainer/Panel2"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="Panel3" type="Panel" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="frame2" type="Sprite2D" parent="CenterContainer/VBoxContainer/Panel3"]
+position = Vector2(486, 249)
+scale = Vector2(1.3, 1.3)
+texture = SubResource("AtlasTexture_dy0n6")
+hframes = 6
+vframes = 5
+
+[node name="portal" type="Sprite2D" parent="CenterContainer/VBoxContainer/Panel3/frame2"]
+visible = false
+position = Vector2(-25, -27)
+scale = Vector2(2, 1)
+texture = SubResource("AtlasTexture_q2xtk")
+hframes = 6
+
+[node name="Panel2" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="BoxContainer" type="BoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(962, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel2" type="Panel" parent="CenterContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="frame3" type="Sprite2D" parent="CenterContainer/BoxContainer/Panel2"]
+position = Vector2(499, 540)
+scale = Vector2(1.3, 1.35)
+texture = SubResource("AtlasTexture_hurrp")
+hframes = 3
+vframes = 2
+
+[node name="chara" type="Sprite2D" parent="CenterContainer/BoxContainer/Panel2/frame3"]
+position = Vector2(-37.6921, 345.185)
+scale = Vector2(7.5, 7.5)
+texture = SubResource("AtlasTexture_7vwid")
+
+[node name="Panel2" type="Panel" parent="CenterContainer/BoxContainer/Panel2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.978
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.23999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4b08e")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4b08e")
+}
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v5pg7")
+}
+
+[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]

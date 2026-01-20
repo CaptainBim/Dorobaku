@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://blx5obatbc20l"]
+
+[ext_resource type="Texture2D" uid="uid://dcgtfbeigfgih" path="res://res/asset/border.png" id="1_7fwlv"]
+[ext_resource type="Script" path="res://res/script/menu/transisi.gd" id="1_n1pk5"]
+[ext_resource type="FontFile" uid="uid://w0rbroaetxpt" path="res://res/BULKYPIX.TTF" id="2_3yo72"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewu0g"]
+bg_color = Color(0.174028, 0.174028, 0.174028, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gn2c"]
+texture = ExtResource("1_7fwlv")
+
+[sub_resource type="Animation" id="Animation_5t8nt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oyp8t"]
+resource_name = "fade_in"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fwcdf"]
+resource_name = "fade_out"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aod55"]
+_data = {
+"RESET": SubResource("Animation_5t8nt"),
+"fade_in": SubResource("Animation_oyp8t"),
+"fade_out": SubResource("Animation_fwcdf")
+}
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_n1pk5")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ewu0g")
+
+[node name="Panel" type="Panel" parent="BoxContainer/Panel"]
+custom_minimum_size = Vector2(0, 92)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8gn2c")
+
+[node name="Label" type="Label" parent="BoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -156.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3yo72")
+theme_override_font_sizes/font_size = 92
+text = "Loading..."
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_aod55")
+}

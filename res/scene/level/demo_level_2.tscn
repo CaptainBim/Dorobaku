@@ -1,0 +1,414 @@
+[gd_scene load_steps=34 format=4 uid="uid://c08r0pxo7cjjl"]
+
+[ext_resource type="Script" uid="uid://buh87otmtrnjb" path="res://res/script/level/demo_lvl_2.gd" id="1_4srgb"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_f4hgs"]
+[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_ihmy6"]
+[ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="2_ucfhb"]
+[ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="5_a87em"]
+[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_yrs38"]
+[ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_slisi"]
+[ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_upcoj"]
+[ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="8_ku707"]
+[ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_slisi"]
+[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="9_u8p72"]
+[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="10_3shur"]
+[ext_resource type="PackedScene" uid="uid://dajhen4582udr" path="res://res/scene/doorx2.tscn" id="11_yvwl3"]
+[ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="12_clu24"]
+[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_bcevo"]
+[ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_w6inx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vk7u"]
+atlas = ExtResource("6_yrs38")
+region = Rect2(5120, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl52r"]
+atlas = ExtResource("6_yrs38")
+region = Rect2(5440, 0, 320, 320)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0x637"]
+radius = 160.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6laj7"]
+load_path = "res://.godot/imported/assetMap.png-623feabb0ba0cdcd84b1630b5f47227e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f13w8"]
+atlas = SubResource("CompressedTexture2D_6laj7")
+region = Rect2(960, 1088, 64, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptl1a"]
+atlas = ExtResource("8_ku707")
+region = Rect2(1152, 1152, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flx8a"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyly1"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upaib"]
+size = Vector2(64, 64)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8p0cm"]
+radius = 30.19
+height = 120.34
+
+[sub_resource type="Animation" id="Animation_7r6er"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("special/jembatan1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("special/jembatan2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6hnrw"]
+resource_name = "jembatan1_off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("special/jembatan1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ivsx6"]
+resource_name = "jembatan1_on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("special/jembatan1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_n4vjy"]
+resource_name = "jembatan2_off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("special/jembatan2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8tsqr"]
+resource_name = "jembatan2_on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("special/jembatan2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dqh4o"]
+resource_name = "jembatans_set"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("special/jembatan2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("special/jembatan1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10hve"]
+_data = {
+&"RESET": SubResource("Animation_7r6er"),
+&"jembatan1_off": SubResource("Animation_6hnrw"),
+&"jembatan1_on": SubResource("Animation_ivsx6"),
+&"jembatan2_off": SubResource("Animation_n4vjy"),
+&"jembatan2_on": SubResource("Animation_8tsqr"),
+&"jembatans_set": SubResource("Animation_dqh4o")
+}
+
+[node name="DemoLevel" type="Node2D" groups=["level"]]
+position = Vector2(0, -1)
+script = ExtResource("1_4srgb")
+maxTime = 201.0
+
+[node name="ui_layer" type="CanvasLayer" parent="."]
+
+[node name="loading" parent="ui_layer" instance=ExtResource("2_f4hgs")]
+visible = false
+
+[node name="papan" parent="ui_layer" instance=ExtResource("5_a87em")]
+visible = false
+position = Vector2(928, 479)
+scale = Vector2(0.9, 0.9)
+b1_task = "90"
+b2_task = "100"
+b3_task = "125"
+
+[node name="movement_btn" parent="ui_layer" instance=ExtResource("2_ihmy6")]
+
+[node name="btn_con" type="HBoxContainer" parent="ui_layer"]
+custom_minimum_size = Vector2(360, 180)
+offset_right = 360.0
+offset_bottom = 180.0
+size_flags_horizontal = 3
+
+[node name="reset_btn" parent="ui_layer/btn_con" instance=ExtResource("2_ucfhb")]
+position = Vector2(261, 95)
+
+[node name="pauseBtn" type="TouchScreenButton" parent="ui_layer/btn_con"]
+position = Vector2(14, 14)
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_8vk7u")
+texture_pressed = SubResource("AtlasTexture_cl52r")
+shape = SubResource("CircleShape2D_0x637")
+shape_visible = false
+
+[node name="timeDisplay" parent="ui_layer" instance=ExtResource("7_slisi")]
+
+[node name="bg_layer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" parent="bg_layer" instance=ExtResource("8_slisi")]
+
+[node name="layer1" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAALAAkACAAPAAMAAAAMAAkACQACAAEAAAANAAkACAAMAAIAAAAPAAkACAANAAMAAAALAAgACAAPAAEAAAANAAgACAAMAAIAAAAOAAgACAANAAMAAAAMAAgACQACAAEAAAAOAAkACAANAAMAAAAPAAgACAANAAMAAAAQAAkACAANAAMAAAAQAAgACAAJAAwAAAAQAAcACAANAAMAAAAPAAcACAANAAMAAAAOAAcACAANAAMAAAANAAcACAAMAAIAAAAMAAcACQACAAAAAAARAAcACAAKAA0AAAARAAgACAAKAA0AAAARAAkACAANAAMAAAASAAkACAANAAMAAAASAAcACAANAAMAAAASAAgACAANAAMAAAASAAYACAANAAMAAAARAAYACAANAAMAAAAQAAYACAANAAMAAAAPAAYACAANAAMAAAAOAAYACAANAAMAAAANAAYACAANAAMAAAAMAAYACAANAAQAAAALAAYACAANAAQAAAALAAUACAAKAA0AAAAMAAUACAAIAA0AAAANAAUACAAIAA0AAAAOAAUACAAIAA0AAAAPAAUACAAIAA0AAAAQAAUACAAIAA0AAAARAAUACAAIAA0AAAASAAUACAAJAA0AAAASAAQACAAIAA0AAAAQAAQACAAIAA0AAAAPAAQACAAIAA0AAAAOAAQACAAIAA0AAAARAAQACAAIAA0AAAAPAAMACAAKAA0AAAAOAAMACAAIAA0AAAANAAMACAAIAA0AAAAMAAMACAAIAA0AAAALAAMACAAJAA0AAAALAAQACAAIAA0AAAAMAAQACAAIAA0AAAANAAQACAAJAA0AAAAJAAEACAAGAAkAAAALAAEACAAGAAkAAAAMAAEACAAGAAkAAAANAAEACAAGAAkAAAAOAAEACAAGAAkAAAAPAAEACAAGAAkAAAATAAEACAAGAAkAAAAUAAEACAAGAAkAAAAUAAkACAAMAAoAAAAUAAoACAAGAAQAAAAUAAsACAAOAAcAAAATAAsACAAGAAcAAAASAAsACAAGAAcAAAARAAsACAAGAAcAAAAQAAsACAAGAAcAAAAPAAsACAAGAAcAAAAOAAsACAAGAAcAAAANAAsACAAGAAcAAAAMAAsACAAGAAcAAAALAAsACAAGAAcAAAAKAAsACAAGAAcAAAAJAAsACAAGAAcAAAAVAAYACAAGAAkAAAAVAAcACAAMAAEAAAAWAAcACAAOAAEAAAAWAAYACAAGAAkAAAAXAAYACAAJAAoAAAAXAAcACAAOAAEAAAAYAAcACAALAAIAAAAZAAcACAAMAAgAAAAJAAIACAAMAAEAAAAKAAIACAAOAAEAAAALAAIACAAOAAEAAAAMAAIACAAOAAEAAAANAAIACAAOAAEAAAAOAAIACAAOAAEAAAAPAAIACAAOAAEAAAAQAAIACAAOAAEAAAARAAIACAAOAAEAAAATAAMACAAPAAIAAAATAAQACAAPAAMAAAATAAUACAAPAAMAAAATAAYACAAPAAMAAAATAAcACAAPAAMAAAATAAgACAAPAAMAAAATAAkACAAPAAMAAAASAAoACAANAAQAAAATAAoACAANAAQAAAARAAoACAANAAQAAAAQAAoACAANAAQAAAAPAAoACAANAAQAAAAOAAoACAANAAQAAAAKAAkABAANAAMAAAAJAAkACAAMAAIAAAANAAoACAAMAAQAAAAMAAoACQAKAAEAAAALAAoACAAPAAQAAAAKAAoACAANAAQAAAAJAAoACAAMAAQAAAAJAAgACAAMAAEAAAAKAAgACAANAAEAAAAJAAcACgAAAAAAAAAJAAYACAAMAAQAAAAKAAYACAAOAAQAAAAKAAUACAANAAMAAAAJAAUACAAMAAIAAAAJAAQACAAMAAIAAAAKAAQACAANAAMAAAAKAAMACAAGAA0AAAAJAAMACAAMAAIAAAAIAAEACAAPAAgAAAAIAAIACAAPAAkAAAAIAAMACAAPAAkAAAAIAAQACAAPAAkAAAAIAAUACAAPAAkAAAAIAAYACAAPAAkAAAAIAAcACAAPAAkAAAAIAAgACAAPAAkAAAAIAAkACAAPAAkAAAAIAAoACAAPAAkAAAAIAAsACAAKAAgAAAASAAEACAAGAAkAAAAQAAEACAAGAAkAAAARAAEACAAGAAkAAAAVAAIACAAMAAEAAAAVAAMACAAMAAMAAAAVAAQACAAMAAIAAAAWAAQACAAPAAMAAAAWAAMACAAPAAMAAAAWAAIACAAPAAEAAAAVAAEACAAGAAkAAAAWAAEACAAGAAkAAAAXAAEACAAMAAkAAAAXAAIACAAMAAgAAAAXAAMACAAMAAgAAAAXAAQACAAMAAgAAAAKAAcACgABAAAAAAALAAcACgABAAAAAAAXAAUACAAMAAgAAAAWAAUACAAPAAQAAAAVAAUACAAMAAQAAAAUAAUACQAKAAUAAAAUAAcACAANAAMAAAAUAAgACAANAAMAAAAVAAgACAAMAAIAAAAWAAgACAAKAAMAAAAXAAgACAANAAQAAAAYAAgACAAPAAQAAAAZAAgACAAMAAgAAAAXAAkACAAMAAcAAAAYAAkACAAGAAcAAAAZAAkACAAJAAgAAAAZAAYACAAMAAkAAAAVAAsACAAOAAcAAAAVAAoACAAJAAQAAAAWAAoACAAPAAQAAAAWAAsACAAOAAcAAAAXAAsACAAJAAgAAAAXAAoACAAMAAgAAAAUAAYACAAFAAcAAAAVAAkACAAMAAIAAAAWAAkACAAPAAMAAAAUAAMACgAKAAUAAAAUAAQACgAKAAUAAAAQAAMACAAIAA0AAAARAAMACAAJAAwAAAASAAMACAANAAMAAAASAAIACAAOAAEAAAATAAIACAAPAAEAAAAUAAIACgAKAAQAAAA=")
+tile_set = ExtResource("7_upcoj")
+rendering_quadrant_size = 64
+
+[node name="Camera2D" type="Camera2D" parent="layer1"]
+position = Vector2(929, 442)
+scale = Vector2(2, 2)
+zoom = Vector2(1.25, 1.25)
+
+[node name="layer2" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAANAAgACAATAAwAAAAKAAIACAAUAAsAAAALAAIACAAUAAsAAAAMAAIACAAUAAsAAAANAAIACAAUAAsAAAAOAAIACAAUAAsAAAAPAAIACAAUAAsAAAATAAUACAAVAAwAAAATAAYACAAVAAwAAAATAAcACAAVAAwAAAATAAgACAAVAAwAAAASAAoACAAUAA0AAAATAAoACAAVAA0AAAARAAoACAAUAA0AAAAQAAoACAAUAA0AAAAPAAoACAAUAA0AAAAOAAoACAAUAA0AAAAJAAYACAATAAwAAAAJAAUACAATAAwAAAAJAAQACAATAAwAAAAJAAMACAATAAwAAAAJAAIACAATAAsAAAATAAkACAAVAAwAAAANAAkACAATAAwAAAAJAAoACAATAA0AAAAJAAkACAATAAwAAAAJAAgACAATAAwAAAAKAAoACAAUAA0AAAALAAoACAAVAA0AAAAQAAIACAAUAAsAAAARAAIACAAUAAsAAAASAAIACAAUAAsAAAAWAAIACAAVAAsAAAAWAAMACAAVAAwAAAAVAAIACAAUAAsAAAAWAAQACAAVAAwAAAAVAAUACAAUAA0AAAAKAAEACAALAAsAAAAYAAYACAALAAsAAAAMAAQACAAMAAwAAAASAAkACAAMAA0AAAARAAQACAANAAwAAAASAAQACAAOAAwAAAASAAUACAAOAA0AAAARAAUACAANAA0AAAAPAAgACAAPAAwAAAAQAAgACAAQAAwAAAAWAAgACAAPAA0AAAAXAAgACAAQAA0AAAAVAAcACAALAA0AAAAWAAUACAAVAA0AAAALAAkACAAVAAwAAAALAAgACAAVAAwAAAANAAoACAATAA0AAAANAAcACAAZAAgAAAAUAAcACAAFAAgAAAAUAAgACAAFAAgAAAATAAQACAAaAAgAAAATAAIACAAUAAsAAAA=")
+tile_set = ExtResource("7_upcoj")
+rendering_quadrant_size = 64
+
+[node name="special" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AABOAAoAAAAOABEAAABOAAkAAAAOABEAAABOAA0AAAAOABIAAAATAAMABAAOABIAAAATAAIABAAOABEAAAATAAQABAAOABMAAAAVAAMABAAQABIAAAAVAAQABAAQABMAAAAVAAIABAAQABEAAAAJAAYABAARABEAAAAKAAYABAASABEAAAALAAYABAATABEAAAAJAAgABAARABMAAAAKAAgABAASABMAAAALAAgABAATABMAAAA=")
+tile_set = ExtResource("7_upcoj")
+
+[node name="jembatan1" type="Sprite2D" parent="special"]
+visible = false
+position = Vector2(1280, 256)
+texture = SubResource("AtlasTexture_f13w8")
+offset = Vector2(32, -32)
+
+[node name="jembatan2" type="Sprite2D" parent="special"]
+visible = false
+position = Vector2(640, 513)
+texture = SubResource("AtlasTexture_ptl1a")
+offset = Vector2(32, -32)
+
+[node name="exit" type="Area2D" parent="."]
+position = Vector2(1536, 384)
+collision_layer = 273
+collision_mask = 273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_flx8a")
+
+[node name="cek_grup" type="Node2D" parent="."]
+position = Vector2(0, -128)
+
+[node name="cek i" parent="cek_grup" instance=ExtResource("9_u8p72")]
+position = Vector2(832, 512)
+scale = Vector2(2, 2)
+nama_cek = "i"
+
+[node name="cek z" parent="cek_grup" instance=ExtResource("9_u8p72")]
+position = Vector2(896, 512)
+scale = Vector2(2, 2)
+nama_cek = "z"
+
+[node name="cek i 2" parent="cek_grup" instance=ExtResource("9_u8p72")]
+position = Vector2(960, 512)
+scale = Vector2(2, 2)
+nama_cek = "i"
+
+[node name="cek n" parent="cek_grup" instance=ExtResource("9_u8p72")]
+position = Vector2(1024, 512)
+scale = Vector2(2, 2)
+nama_cek = "n"
+
+[node name="kotak_grup" type="Node2D" parent="."]
+position = Vector2(6, -134)
+
+[node name="i" parent="kotak_grup" instance=ExtResource("10_3shur")]
+position = Vector2(634, 710)
+nama_kotak = "i"
+
+[node name="z" parent="kotak_grup" instance=ExtResource("10_3shur")]
+position = Vector2(937, 596)
+nama_kotak = "z"
+
+[node name="i 2" parent="kotak_grup" instance=ExtResource("10_3shur")]
+position = Vector2(1003, 428)
+nama_kotak = "i"
+
+[node name="n" parent="kotak_grup" instance=ExtResource("10_3shur")]
+position = Vector2(1344, 385)
+nama_kotak = "n"
+
+[node name="j" parent="kotak_grup" instance=ExtResource("10_3shur")]
+position = Vector2(856, 443)
+nama_kotak = "j"
+
+[node name="door" parent="." instance=ExtResource("11_yvwl3")]
+position = Vector2(1344, 641)
+
+[node name="Lever" parent="." instance=ExtResource("12_clu24")]
+position = Vector2(960, 257)
+
+[node name="Lever2" parent="." instance=ExtResource("12_clu24")]
+position = Vector2(704, 384)
+
+[node name="Player" parent="." instance=ExtResource("13_bcevo")]
+position = Vector2(672, 205)
+scale = Vector2(2, 2)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 120.0
+one_shot = true
+
+[node name="lobang" type="RigidBody2D" parent="."]
+position = Vector2(640, 448)
+collision_layer = 17
+collision_mask = 0
+sleeping = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="ana" type="CollisionShape2D" parent="lobang"]
+position = Vector2(32, 33)
+shape = SubResource("RectangleShape2D_iyly1")
+
+[node name="lobang2" type="RigidBody2D" parent="."]
+position = Vector2(1280, 192)
+collision_layer = 17
+collision_mask = 0
+sleeping = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="anal" type="CollisionShape2D" parent="lobang2"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_upaib")
+
+[node name="dinding" type="RigidBody2D" parent="."]
+position = Vector2(1291, 65)
+collision_layer = 17
+collision_mask = 0
+sleeping = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="anal" type="CollisionShape2D" parent="dinding"]
+position = Vector2(19, 57)
+shape = SubResource("CapsuleShape2D_8p0cm")
+
+[node name="anal2" type="CollisionShape2D" parent="dinding"]
+position = Vector2(19, 255)
+shape = SubResource("CapsuleShape2D_8p0cm")
+
+[node name="dinding2" type="RigidBody2D" parent="."]
+position = Vector2(827, 462)
+rotation = 1.5708
+collision_layer = 17
+collision_mask = 0
+sleeping = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="anal" type="CollisionShape2D" parent="dinding2"]
+position = Vector2(19, 57)
+shape = SubResource("CapsuleShape2D_8p0cm")
+
+[node name="anal2" type="CollisionShape2D" parent="dinding2"]
+position = Vector2(19, 255)
+shape = SubResource("CapsuleShape2D_8p0cm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_10hve")
+}
+
+[node name="buku" parent="." instance=ExtResource("14_w6inx")]
+position = Vector2(768, 175)
+hint_text = "Sesuatu Yang 
+Diminta,Sebelum 
+Melakukan Sesuatu"
+
+[connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
+[connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
+[connection signal="body_entered" from="exit" to="." method="_finish"]
+[connection signal="activated" from="cek_grup/cek i" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek i" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek z" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek z" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek i 2" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek i 2" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek n" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek n" to="." method="_exit_cek"]
+[connection signal="aksiLever" from="Lever" to="." method="_on_lever1"]
+[connection signal="aksiLever" from="Lever2" to="." method="_on_lever2"]

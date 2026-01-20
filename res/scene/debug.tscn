@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh6gtkfnb4f53"]
+
+[ext_resource type="Script" path="res://res/script/debug_lvl.gd" id="1_xh0wq"]
+[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="1_xombt"]
+[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_86y5s"]
+[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="3_7b1fy"]
+[ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="4_0n0mn"]
+[ext_resource type="PackedScene" uid="uid://tbpb3yepeu2s" path="res://res/scene/statue.tscn" id="6_31yya"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xh0wq")
+
+[node name="ui_layer" type="CanvasLayer" parent="."]
+
+[node name="movement_btn" parent="ui_layer" instance=ExtResource("2_86y5s")]
+
+[node name="door" parent="." instance=ExtResource("4_0n0mn")]
+position = Vector2(177.333, 80.6667)
+
+[node name="statue" parent="." instance=ExtResource("6_31yya")]
+position = Vector2(154.667, 104.667)
+
+[node name="Player" parent="." instance=ExtResource("1_xombt")]
+position = Vector2(198.333, 95.3333)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+
+[node name="pressure_plate" parent="." instance=ExtResource("3_7b1fy")]
+position = Vector2(116.667, 104)
+
+[connection signal="activated" from="pressure_plate" to="door" method="open_door"]
+[connection signal="deactivated" from="pressure_plate" to="door" method="close_door"]

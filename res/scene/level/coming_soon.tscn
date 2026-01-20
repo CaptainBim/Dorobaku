@@ -1,0 +1,222 @@
+[gd_scene load_steps=22 format=3 uid="uid://c4nvhr7gqwn66"]
+
+[ext_resource type="Texture2D" uid="uid://dcgtfbeigfgih" path="res://res/asset/border.png" id="1_cmrpg"]
+[ext_resource type="Texture2D" uid="uid://dkpv5qepomobu" path="res://res/asset/papan.png" id="1_t1ukw"]
+[ext_resource type="Script" path="res://res/script/menu/debug.gd" id="1_vlk1x"]
+[ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="2_24rr6"]
+[ext_resource type="FontFile" uid="uid://w0rbroaetxpt" path="res://res/BULKYPIX.TTF" id="2_laah2"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="6_okfed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eupro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_litds"]
+atlas = ExtResource("1_t1ukw")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pnd8p"]
+texture = SubResource("AtlasTexture_litds")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl7he"]
+atlas = ExtResource("1_t1ukw")
+region = Rect2(128, 0, 384, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e3l6q"]
+load_path = "res://.godot/imported/papan.png-3fb9a0d2754c02bc22a062adecd366c2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw4qp"]
+atlas = SubResource("CompressedTexture2D_e3l6q")
+region = Rect2(128, 64, 384, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk7io"]
+atlas = SubResource("CompressedTexture2D_e3l6q")
+region = Rect2(128, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry6gp"]
+atlas = SubResource("CompressedTexture2D_e3l6q")
+region = Rect2(192, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0a76"]
+atlas = ExtResource("1_t1ukw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a4nt"]
+atlas = ExtResource("1_t1ukw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5kw5"]
+atlas = ExtResource("1_t1ukw")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1ife"]
+atlas = ExtResource("1_t1ukw")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpi82"]
+size = Vector2(1010, 187)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh7ms"]
+bg_color = Color(0.174028, 0.174028, 0.174028, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p2app"]
+texture = ExtResource("1_cmrpg")
+
+[node name="ComingSoon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vlk1x")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="nama chapter" type="Panel" parent="BoxContainer"]
+custom_minimum_size = Vector2(0, 536)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eupro")
+
+[node name="Panel2" type="Panel" parent="BoxContainer/nama chapter"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 7.0
+offset_right = 500.0
+offset_bottom = 187.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pnd8p")
+
+[node name="sisi" type="BoxContainer" parent="BoxContainer/nama chapter/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="atas" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/sisi"]
+position = Vector2(250, 26)
+texture = SubResource("AtlasTexture_jl7he")
+
+[node name="atas2" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/sisi"]
+position = Vector2(629, 26)
+texture = SubResource("AtlasTexture_jl7he")
+
+[node name="atas3" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/sisi"]
+position = Vector2(783, 26)
+texture = SubResource("AtlasTexture_jl7he")
+
+[node name="bawah" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/sisi"]
+position = Vector2(250, 164)
+texture = SubResource("AtlasTexture_hw4qp")
+
+[node name="bawah2" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/sisi"]
+position = Vector2(629, 164)
+texture = SubResource("AtlasTexture_hw4qp")
+
+[node name="bawah3" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/sisi"]
+position = Vector2(783, 164)
+texture = SubResource("AtlasTexture_hw4qp")
+
+[node name="kiri" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/sisi"]
+position = Vector2(26, 83)
+texture = SubResource("AtlasTexture_kk7io")
+
+[node name="kanan" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/sisi"]
+position = Vector2(976, 87)
+texture = SubResource("AtlasTexture_ry6gp")
+
+[node name="tepi" type="BoxContainer" parent="BoxContainer/nama chapter/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/tepi"]
+position = Vector2(26, 26)
+texture = SubResource("AtlasTexture_c0a76")
+
+[node name="2" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/tepi"]
+position = Vector2(976, 26)
+texture = SubResource("AtlasTexture_6a4nt")
+
+[node name="3" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/tepi"]
+position = Vector2(26, 164)
+texture = SubResource("AtlasTexture_y5kw5")
+
+[node name="4" type="Sprite2D" parent="BoxContainer/nama chapter/Panel2/tepi"]
+position = Vector2(976, 164)
+texture = SubResource("AtlasTexture_y1ife")
+
+[node name="Label2" type="Label" parent="BoxContainer/nama chapter/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.269
+anchor_right = 1.0
+anchor_bottom = 0.697
+offset_top = 3.58
+offset_bottom = 3.53999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_24rr6")
+theme_override_font_sizes/font_size = 64
+text = "Kembali"
+horizontal_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="BoxContainer/nama chapter"]
+position = Vector2(960, 98)
+shape = SubResource("RectangleShape2D_bpi82")
+
+[node name="Panel" type="Panel" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dh7ms")
+
+[node name="Panel" type="Panel" parent="BoxContainer/Panel"]
+custom_minimum_size = Vector2(0, 92)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2app")
+
+[node name="Label" type="Label" parent="BoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -142.5
+offset_bottom = 177.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 114
+theme_override_fonts/font = ExtResource("2_laah2")
+theme_override_font_sizes/font_size = 92
+text = "Kuli Masih
+Membangun"
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="loading" parent="." instance=ExtResource("6_okfed")]
+visible = false
+
+[connection signal="pressed" from="BoxContainer/nama chapter/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

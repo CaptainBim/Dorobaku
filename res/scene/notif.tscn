@@ -1,0 +1,194 @@
+[gd_scene load_steps=11 format=3 uid="uid://dn5n421wfvgol"]
+
+[ext_resource type="Texture2D" uid="uid://dkpv5qepomobu" path="res://res/asset/papan.png" id="1_qba05"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k6w6"]
+atlas = ExtResource("1_qba05")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrpuy"]
+texture = SubResource("AtlasTexture_0k6w6")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4hf08"]
+load_path = "res://.godot/imported/papan.png-3fb9a0d2754c02bc22a062adecd366c2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0vurq"]
+load_path = "res://.godot/imported/papan.png-3fb9a0d2754c02bc22a062adecd366c2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_07dmc"]
+load_path = "res://.godot/imported/papan.png-3fb9a0d2754c02bc22a062adecd366c2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewhu0"]
+atlas = ExtResource("1_qba05")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tx2p"]
+atlas = ExtResource("1_qba05")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_favsc"]
+atlas = ExtResource("1_qba05")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpaqc"]
+atlas = ExtResource("1_qba05")
+region = Rect2(0, 64, 64, 64)
+
+[node name="notif" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.059
+anchor_right = 0.9
+anchor_bottom = 0.844
+offset_left = -128.64
+offset_top = -63.72
+offset_right = -128.0
+offset_bottom = -63.52
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_yrpuy")
+
+[node name="tepi" type="Node2D" parent="BoxContainer/Panel"]
+
+[node name="atas" type="Node2D" parent="BoxContainer/Panel/tepi"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/Panel/tepi/atas"]
+position = Vector2(256, 0)
+texture = ExtResource("1_qba05")
+offset = Vector2(-16, 16)
+region_enabled = true
+region_rect = Rect2(128, 0, 384, 64)
+
+[node name="Sprite2D2" type="Sprite2D" parent="BoxContainer/Panel/tepi/atas"]
+position = Vector2(640, 0)
+texture = ExtResource("1_qba05")
+offset = Vector2(-16, 16)
+region_enabled = true
+region_rect = Rect2(128, 0, 384, 64)
+
+[node name="Sprite2D3" type="Sprite2D" parent="BoxContainer/Panel/tepi/atas"]
+position = Vector2(1216, -16)
+texture = ExtResource("1_qba05")
+offset = Vector2(-208, 32)
+region_enabled = true
+region_rect = Rect2(128, 0, 384, 64)
+
+[node name="Sprite2D4" type="Sprite2D" parent="BoxContainer/Panel/tepi/atas"]
+position = Vector2(1600, -16)
+texture = ExtResource("1_qba05")
+offset = Vector2(-208, 32)
+region_enabled = true
+region_rect = Rect2(128, 0, 384, 64)
+
+[node name="bawah" type="Node2D" parent="BoxContainer/Panel/tepi"]
+position = Vector2(0, -64)
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/Panel/tepi/bawah"]
+position = Vector2(256, 896)
+texture = SubResource("CompressedTexture2D_4hf08")
+offset = Vector2(-16, -16)
+region_enabled = true
+region_rect = Rect2(128, 64, 384, 64)
+
+[node name="Sprite2D2" type="Sprite2D" parent="BoxContainer/Panel/tepi/bawah"]
+position = Vector2(640, 896)
+texture = SubResource("CompressedTexture2D_4hf08")
+offset = Vector2(-16, -16)
+region_enabled = true
+region_rect = Rect2(128, 64, 384, 64)
+
+[node name="Sprite2D3" type="Sprite2D" parent="BoxContainer/Panel/tepi/bawah"]
+position = Vector2(1024, 896)
+texture = SubResource("CompressedTexture2D_4hf08")
+offset = Vector2(-16, -16)
+region_enabled = true
+region_rect = Rect2(128, 64, 384, 64)
+
+[node name="Sprite2D4" type="Sprite2D" parent="BoxContainer/Panel/tepi/bawah"]
+position = Vector2(1408, 896)
+texture = SubResource("CompressedTexture2D_4hf08")
+offset = Vector2(-16, -16)
+region_enabled = true
+region_rect = Rect2(128, 64, 384, 64)
+
+[node name="kiri" type="Node2D" parent="BoxContainer/Panel/tepi"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/Panel/tepi/kiri"]
+position = Vector2(0, 192)
+texture = SubResource("CompressedTexture2D_0vurq")
+offset = Vector2(16, -16)
+region_enabled = true
+region_rect = Rect2(128, 128, 64, 256)
+
+[node name="Sprite2D2" type="Sprite2D" parent="BoxContainer/Panel/tepi/kiri"]
+position = Vector2(0, 448)
+texture = SubResource("CompressedTexture2D_0vurq")
+offset = Vector2(16, -16)
+region_enabled = true
+region_rect = Rect2(128, 128, 64, 256)
+
+[node name="Sprite2D3" type="Sprite2D" parent="BoxContainer/Panel/tepi/kiri"]
+position = Vector2(0, 704)
+texture = SubResource("CompressedTexture2D_0vurq")
+offset = Vector2(16, -16)
+region_enabled = true
+region_rect = Rect2(128, 128, 64, 256)
+
+[node name="kanan" type="Node2D" parent="BoxContainer/Panel/tepi"]
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/Panel/tepi/kanan"]
+position = Vector2(1584, 192)
+texture = SubResource("CompressedTexture2D_07dmc")
+offset = Vector2(16, -16)
+region_enabled = true
+region_rect = Rect2(192, 128, 64, 256)
+
+[node name="Sprite2D2" type="Sprite2D" parent="BoxContainer/Panel/tepi/kanan"]
+position = Vector2(1584, 448)
+texture = SubResource("CompressedTexture2D_07dmc")
+offset = Vector2(16, -16)
+region_enabled = true
+region_rect = Rect2(192, 128, 64, 256)
+
+[node name="Sprite2D3" type="Sprite2D" parent="BoxContainer/Panel/tepi/kanan"]
+position = Vector2(1584, 704)
+texture = SubResource("CompressedTexture2D_07dmc")
+offset = Vector2(16, -16)
+region_enabled = true
+region_rect = Rect2(192, 128, 64, 256)
+
+[node name="border" type="Node2D" parent="BoxContainer/Panel"]
+
+[node name="ar" type="Sprite2D" parent="BoxContainer/Panel/border"]
+position = Vector2(1616, 0)
+texture = SubResource("AtlasTexture_ewhu0")
+offset = Vector2(-16, 16)
+
+[node name="al" type="Sprite2D" parent="BoxContainer/Panel/border"]
+texture = SubResource("AtlasTexture_8tx2p")
+offset = Vector2(16, 16)
+
+[node name="ar2" type="Sprite2D" parent="BoxContainer/Panel/border"]
+position = Vector2(1584, 832)
+texture = SubResource("AtlasTexture_favsc")
+offset = Vector2(16, -16)
+
+[node name="al2" type="Sprite2D" parent="BoxContainer/Panel/border"]
+position = Vector2(0, 832)
+texture = SubResource("AtlasTexture_fpaqc")
+offset = Vector2(16, -16)

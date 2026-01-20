@@ -1,0 +1,402 @@
+[gd_scene load_steps=21 format=3 uid="uid://cfaa3heogba5t"]
+
+[ext_resource type="Script" path="res://res/script/misc/AnimatedBg.gd" id="1_n3w1w"]
+[ext_resource type="Texture2D" uid="uid://5ukfyvrpno5k" path="res://res/asset/menu/bgTex.png" id="1_waoxb"]
+[ext_resource type="Shader" path="res://res/asset/shaders/stars.gdshader" id="3_uj0ue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4ugs"]
+bg_color = Color(0.0941176, 0.0784314, 0.145098, 1)
+
+[sub_resource type="Gradient" id="Gradient_uj0ue"]
+offsets = PackedFloat32Array(0.184466, 0.650485, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.975728, 0.975728, 0.975728, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xr3pb"]
+gradient = SubResource("Gradient_uj0ue")
+fill = 1
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_xr3pb"]
+offsets = PackedFloat32Array(0.184466, 0.650485, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.975728, 0.975728, 0.975728, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jsm2r"]
+gradient = SubResource("Gradient_xr3pb")
+fill = 1
+fill_from = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n3w1w"]
+texture = ExtResource("1_waoxb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xr3pb"]
+shader = ExtResource("3_uj0ue")
+shader_parameter/horizontalMovement = -0.7
+shader_parameter/verticalMovement = -0.2
+shader_parameter/frequencyStar = 0.05
+shader_parameter/sizeStar = 170.0
+shader_parameter/brightnessStar = 2.0
+shader_parameter/shineFrequencyStar = 2.0
+shader_parameter/transparencyStar = 0.85
+shader_parameter/starIterations = 5
+shader_parameter/frequencyBgStar = 0.999
+shader_parameter/shineFrequencyBgStar = 3.0
+shader_parameter/transparencyBgStar = 0.63
+shader_parameter/colorBackground = Color(0.0941176, 0.0784314, 0.145098, 1)
+shader_parameter/transparencyBackground = 0.6
+shader_parameter/seed = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsm2r"]
+
+[sub_resource type="Animation" id="Animation_n3w1w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-896, 320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_waoxb"]
+resource_name = "glint1"
+length = 3.0
+loop_mode = 2
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-896, 320), Vector2(1280, -768)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_uj0ue"]
+resource_name = "glint2"
+length = 3.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1280, -768), Vector2(-896, 320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3w1w"]
+_data = {
+"RESET": SubResource("Animation_n3w1w"),
+"glint1": SubResource("Animation_waoxb"),
+"glint2": SubResource("Animation_uj0ue")
+}
+
+[sub_resource type="Animation" id="Animation_jsm2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(100, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 940)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Polygon2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Polygon2D2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Polygon2D4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1900, 98)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Polygon2D4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xr3pb"]
+resource_name = "s1"
+length = 2.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(100, 0), Vector2(6700, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_r4b74"]
+resource_name = "s2"
+length = 2.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 940), Vector2(6600, 940)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_26lbo"]
+resource_name = "s3"
+length = 2.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1900, 98), Vector2(1900, 5798)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D4:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jsm2r"]
+_data = {
+"RESET": SubResource("Animation_jsm2r"),
+"s1": SubResource("Animation_xr3pb"),
+"s2": SubResource("Animation_r4b74"),
+"s3": SubResource("Animation_26lbo")
+}
+
+[node name="background" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_n3w1w")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4ugs")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+z_index = -2
+position = Vector2(-896, 320)
+antialiased = true
+polygon = PackedVector2Array(0, 0, 0, 64, 1536, 1600, 1600, 1600, 1536, 1536, 64, 64)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+visible = false
+z_index = -2
+position = Vector2(100, 0)
+scale = Vector2(2.55556, 1)
+texture = SubResource("GradientTexture2D_xr3pb")
+texture_rotation = -1.5708
+polygon = PackedVector2Array(-64, 0, -64, 128, -1792, 102, -1792, 29)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+visible = false
+z_index = -2
+position = Vector2(1900, 98)
+rotation = 1.5708
+scale = Vector2(2.55556, 1)
+texture = SubResource("GradientTexture2D_xr3pb")
+texture_rotation = -1.5708
+polygon = PackedVector2Array(-64, 0, -64, 128, -1792, 102, -1792, 29)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+visible = false
+z_index = -2
+position = Vector2(64, 940)
+scale = Vector2(2.55556, 1)
+texture = SubResource("GradientTexture2D_jsm2r")
+texture_rotation = 0.0506145
+polygon = PackedVector2Array(-64, 0, -64, 128, -1792, 102, -1792, 29)
+
+[node name="Panel2" type="Panel" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n3w1w")
+
+[node name="Panel3" type="Panel" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_xr3pb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jsm2r")
+
+[node name="glint" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n3w1w")
+}
+
+[node name="stripe" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jsm2r")
+}
+
+[node name="Timer" type="Timer" parent="."]

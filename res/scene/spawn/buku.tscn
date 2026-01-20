@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://cs0jt0cfysv1u"]
+
+[ext_resource type="Script" uid="uid://pmvewyojtsa" path="res://res/script/spawn/buku.gd" id="1_4sd5b"]
+[ext_resource type="Texture2D" uid="uid://ddq65x1v1s0jg" path="res://res/asset/buku.png" id="2_nr7fg"]
+[ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="3_3wxs8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3oql"]
+size = Vector2(80, 70)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o4qg8"]
+radius = 0.005
+height = 0.01
+
+[sub_resource type="Animation" id="Animation_hpyw7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mysc5"]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fqmfs"]
+resource_name = "on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xpore"]
+_data = {
+&"RESET": SubResource("Animation_hpyw7"),
+&"off": SubResource("Animation_mysc5"),
+&"on": SubResource("Animation_fqmfs")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0alyv"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="buku" type="StaticBody2D"]
+collision_layer = 273
+collision_mask = 273
+script = ExtResource("1_4sd5b")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -1)
+collision_layer = 273
+collision_mask = 273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(32, -28)
+shape = SubResource("RectangleShape2D_w3oql")
+debug_color = Color(0.997644, 0, 0.161315, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(30, -33)
+rotation = -0.174533
+shape = SubResource("CapsuleShape2D_o4qg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, -62)
+rotation = -0.101229
+texture = ExtResource("2_nr7fg")
+offset = Vector2(32, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xpore")
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -117.0
+offset_top = -154.0
+offset_right = 170.0
+offset_bottom = -58.0
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_3wxs8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0alyv")
+text = "Sesuatu Yang 
+Diminta,Sebelum 
+Melakukan Sesuatu"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,923 @@
+[gd_scene load_steps=18 format=4 uid="uid://bhjs01m43jx06"]
+
+[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_es2t2"]
+[ext_resource type="Texture2D" uid="uid://be3s02khqomtw" path="res://res/asset/menu/new_btn.png" id="3_euxfi"]
+[ext_resource type="FontFile" uid="uid://w0rbroaetxpt" path="res://res/BULKYPIX.TTF" id="4_5qqqi"]
+[ext_resource type="Texture2D" uid="uid://btxv4g5qs8j5p" path="res://res/asset/notip.png" id="5_wb6h4"]
+[ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="6_q7lo3"]
+[ext_resource type="Texture2D" uid="uid://dhyac7m038xqi" path="res://res/asset/assetMap2.png" id="6_y0wo5"]
+[ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="13_ld4ir"]
+[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="14_5llcq"]
+[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="15_wj11f"]
+[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="16_2jd5p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73pis"]
+atlas = ExtResource("3_euxfi")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef4kc"]
+atlas = ExtResource("3_euxfi")
+region = Rect2(960, 320, 320, 320)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qwik"]
+radius = 160.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgndo"]
+texture = ExtResource("6_y0wo5")
+texture_region_size = Vector2i(64, 64)
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+26:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+22:11/0 = 0
+23:11/0 = 0
+24:11/0 = 0
+2:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+17:12/0 = 0
+18:12/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+21:12/0 = 0
+22:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+18:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+21:13/0 = 0
+22:13/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+18:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+23:14/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+17:15/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+25:15/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+12:17/0 = 0
+17:17/0 = 0
+19:17/0 = 0
+20:17/0 = 0
+21:17/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+16:18/0 = 0
+17:18/0 = 0
+19:18/0 = 0
+20:18/0 = 0
+21:18/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+17:19/0 = 0
+19:19/0 = 0
+20:19/0 = 0
+21:19/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nc2e4"]
+texture = ExtResource("13_ld4ir")
+texture_region_size = Vector2i(64, 64)
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+26:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+26:7/0 = 0
+27:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+26:8/0 = 0
+27:8/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+22:9/0 = 0
+23:9/0 = 0
+24:9/0 = 0
+25:9/0 = 0
+26:9/0 = 0
+27:9/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+26:10/0 = 0
+27:10/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+23:11/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+17:12/0 = 0
+18:12/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+21:12/0 = 0
+25:12/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+18:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+21:13/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+18:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+17:15/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+16:17/0 = 0
+17:17/0 = 0
+18:17/0 = 0
+19:17/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+16:18/0 = 0
+18:18/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+9:19/0 = 0
+14:19/0 = 0
+15:19/0 = 0
+16:19/0 = 0
+17:19/0 = 0
+18:19/0 = 0
+19:19/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_a0ley"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 1
+sources/7 = SubResource("TileSetAtlasSource_cgndo")
+sources/8 = SubResource("TileSetAtlasSource_nc2e4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flx8a"]
+size = Vector2(64, 64)
+
+[node name="DemoLevel" type="Node2D" groups=["level"]]
+
+[node name="ui_layer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="movement_btn" parent="ui_layer" instance=ExtResource("2_es2t2")]
+
+[node name="reset" type="TouchScreenButton" parent="ui_layer"]
+position = Vector2(25, 25)
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_73pis")
+texture_pressed = SubResource("AtlasTexture_ef4kc")
+shape = SubResource("CircleShape2D_1qwik")
+shape_visible = false
+
+[node name="Panel" type="Panel" parent="ui_layer"]
+anchors_preset = -1
+anchor_left = 0.833
+anchor_top = 0.059
+anchor_right = 0.967
+anchor_bottom = 0.119
+offset_left = 0.639893
+offset_top = 0.279995
+offset_right = -0.640137
+offset_bottom = 0.479996
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="ui_layer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.721273, 0.728712, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_5qqqi")
+theme_override_font_sizes/font_size = 60
+text = "120"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="papan" type="Sprite2D" parent="ui_layer"]
+visible = false
+position = Vector2(928, 429)
+scale = Vector2(2, 2)
+texture = ExtResource("5_wb6h4")
+
+[node name="BoxContainer" type="BoxContainer" parent="ui_layer/papan"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -259.5
+offset_top = -198.0
+offset_right = -259.5
+offset_bottom = -198.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui_layer/papan/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ui_layer/papan/BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_q7lo3")
+theme_override_font_sizes/font_size = 32
+text = "
+
+Demo Selesai!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ui_layer/papan/BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_q7lo3")
+theme_override_font_sizes/font_size = 26
+text = "
+terima kasih telah
+memainkan demo ini
+........"
+horizontal_alignment = 1
+
+[node name="layer1" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAAJAAIACAAIAA0AAAAIAAMACAAIAA0AAAAHAAQACAAIAA0AAAAHAAUACAAIAA0AAAAKAAEACAAGAAkAAAALAAEACAAGAAkAAAANAAEACAAGAAkAAAAMAAEACAAGAAkAAAAOAAEACAAGAAkAAAAPAAEACAAGAAkAAAAQAAEACAAGAAkAAAARAAEACAAGAAkAAAASAAEACAAGAAkAAAATAAEACAAMAAkAAAAUAAIACAAMAAkAAAAVAAMACAAMAAkAAAAWAAQACAAMAAkAAAAWAAUACAAMAAgAAAAWAAYACAAHAAcAADAWAAkACAAFAAcAAAAWAAoACAAJAAgAAAAVAAsACAAJAAgAAAAUAAwACAAJAAgAAAATAA0ACAAJAAgAAAASAA0ACAAJAAcAAAARAA0ACAAJAAcAAAAQAA0ACAAJAAcAAAAPAA0ACAAJAAcAAAAOAA0ACAAJAAcAAAANAA0ACAAJAAcAAAAMAA0ACAAJAAcAAAALAA0ACAAJAAcAAAAKAA0ACAAJAAcAAAAHAAoACAAHAAcAAAAHAAkACAAIAA0AAAAHAAYACAAIAA0AAAAHAAgACAAKAAwAAAAKAAIACAAIAA0AAAAJAAMACAAIAA0AAAAIAAQACAAIAA0AAAAIAAUACAAIAA0AAAAIAAYACAAIAA0AAAAIAAgACAAIAA0AAAAIAAkACAAIAA0AAAAIAAoACAAIAA0AAAAJAAoACAAKAA0AAAAJAAkACAAIAA0AAAAJAAgACAAIAA0AAAAPAAQACAAIAA0AAAAKAAQACAAIAA0AAAAKAAMACAAIAA0AAAALAAMACAAIAA0AAAAMAAMACAAIAA0AAAANAAMACAAIAA0AAAANAAIACAAIAA0AAAAOAAIACAAJAAwAAAAOAAMACAAIAA0AAAAPAAMACAAIAA0AAAALAAIACAAJAAwAAAAMAAIACAAJAAwAAAAPAAIACAAIAA0AAAAQAAIACAAIAA0AAAARAAIACAAIAA0AAAARAAMACAAIAA0AAAASAAMACAAIAA0AAAASAAQACAAIAA0AAAATAAQACAAIAA0AAAATAAUACAAIAA0AAAATAAYACAAJAAwAAAAUAAYACAAIAA0AAAAUAAUACAAIAA0AAAAUAAQACAAIAA0AAAAUAAMACAAGAAkAAAATAAMACAAIAA0AAAASAAIACAAIAA0AAAATAAIACAAKAAoAAAAQAAMACAAIAA0AAAAJAAQACAAIAA0AAAAJAAUACAAIAA0AAAAKAAkACAAIAA0AAAAKAAoACAAIAA0AAAAKAAsACAAIAA0AAAAKAAwACAAIAA0AAAALAAwACAAIAA0AAAAMAAwACAAIAA0AAAANAAwACAAIAA0AAAAOAAwACAAIAA0AAAAPAAwACAAIAA0AAAAQAAwACAAIAA0AAAARAAwACAAKAAwAAAASAAwACAAIAA0AAAATAAwACAAFAAcAAAAUAAsACAAFAAcAAAAUAAoACAAIAA0AAAAUAAkACAAIAA0AAAATAAkACAAIAA0AAAATAAgACAAJAAwAAAALAAoACAAIAA0AAAALAAsACAAIAA0AAAAMAAsACAAIAA0AAAANAAsACAAIAA0AAAAOAAsACAAIAA0AAAAPAAsACAAIAA0AAAAQAAsACAAIAA0AAAARAAsACAAKAA0AAAASAAsACAAIAA0AAAATAAsACAAIAA0AAAATAAoACAAIAA0AAAARAAoACAAIAA0AAAAUAAgACAAIAA0AAAAVAAUACAAIAA0AAAAVAAQACAAKAAoAAAAVAAYACAAIAA0AAAAVAAgACAAIAA0AAAAVAAkACAAIAA0AAAAVAAoACAAFAAcAAAAGAAkACAAHAAgAAAAGAAgACAAHAAgAAAAGAAcACAAHAAgAAAAGAAYACAAHAAgAAAAGAAUACAAHAAgAAAAGAAQACAAHAAgAAAAGAAMACAAPAAgAAAAHAAMACAAGAAkAAAAHAAIACAAPAAgAAAAIAAIACAAGAAkAAAAIAAEACAAPAAgAAAAJAAEACAAGAAkAAAATAAcACAAIAA0AAAAUAAcACAAKAAwAAAAVAAcACAAIAA0AAAAJAAcACAAIAA0AAAAIAAcACAAIAA0AAAAHAAcACAAIAA0AAAANAAQACAAIAA0AAAAOAAQACAAIAA0AAAAKAAUACAAIAA0AAAAJAAYACAAIAA0AAAALAAQACAAIAA0AAAASAAkACAAIAA0AAAASAAoACAAIAA0AAAASAAUACAAIAA0AAAARAAQACAAIAA0AAAAJAA0ACAAKAAgAAAAJAAwACAAHAAcAAAAIAAwACAAKAAgAAAAIAAsACAAHAAcAAAAHAAsACAAKAAgAAAAGAAoACAAKAAgAAAAJAAsACAAIAA0AAAAXAAYACAAGAAcAADAYAAYACAAGAAcAADAXAAkACAALAAsAADAYAAkACAAGAAcAAAAZAAkACAAJAAgAAAAZAAYACAAKAAgAADAZAAcACAAFAAgAAAAZAAgACAAFAAgAAAAWAAcACAAIAA0AAAAXAAcACAAIAA0AAAAYAAcACAAIAA0AAAAYAAgACAAIAA0AAAAXAAgACAAIAA0AAAAWAAgACAAIAA0AAAAMAAcACAAIAA0AAAANAAcACAAKAA0AAAAOAAcACAAIAA0AAAAPAAcACAAIAA0AAAAQAAcACAAIAA0AAAAQAAgACAAIAA0AAAAPAAgACAAJAAwAAAAOAAgACAAIAA0AAAANAAgACAAIAA0AAAAMAAgACAAIAA0AAAAMAAYACAAIAA0AAAAMAAUACAAIAA0AAAAMAAQACAAIAA0AAAAQAAYACAAIAA0AAAAQAAUACAAIAA0AAAAQAAQACAAIAA0AAAAQAAkACAAIAA0AAAAMAAkACAAKAA0AAAALAAcACAAJAAwAAAALAAgACAAIAA0AAAARAAcACAAIAA0AAAARAAgACAAIAA0AAAALAAkACAAIAA0AAAARAAkACAAIAA0AAAA=")
+tile_set = SubResource("TileSet_a0ley")
+rendering_quadrant_size = 64
+
+[node name="Camera2D" type="Camera2D" parent="layer1"]
+position = Vector2(929, 442)
+scale = Vector2(2, 2)
+zoom = Vector2(1.25, 1.25)
+
+[node name="exit" type="Area2D" parent="."]
+position = Vector2(1472, 576)
+collision_layer = 273
+collision_mask = 273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_flx8a")
+
+[node name="cek_grup" type="Node2D" parent="."]
+position = Vector2(0, -128)
+
+[node name="cek i" parent="cek_grup" instance=ExtResource("14_5llcq")]
+position = Vector2(799, 608)
+scale = Vector2(2, 2)
+nama_cek = "i"
+
+[node name="cek i2" parent="cek_grup" instance=ExtResource("14_5llcq")]
+position = Vector2(735, 608)
+scale = Vector2(2, 2)
+nama_cek = "i"
+
+[node name="cek z" parent="cek_grup" instance=ExtResource("14_5llcq")]
+position = Vector2(863, 608)
+scale = Vector2(2, 2)
+nama_cek = "z"
+
+[node name="cek i 2" parent="cek_grup" instance=ExtResource("14_5llcq")]
+position = Vector2(927, 608)
+scale = Vector2(2, 2)
+nama_cek = "i"
+
+[node name="cek n" parent="cek_grup" instance=ExtResource("14_5llcq")]
+position = Vector2(991, 608)
+scale = Vector2(2, 2)
+nama_cek = "n"
+
+[node name="cek n2" parent="cek_grup" instance=ExtResource("14_5llcq")]
+position = Vector2(1055, 608)
+scale = Vector2(2, 2)
+nama_cek = "n"
+
+[node name="kotak_grup" type="Node2D" parent="."]
+position = Vector2(6, -134)
+
+[node name="kosong" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+position = Vector2(1274, 504)
+nama_kotak = "kosong"
+
+[node name="kosong 2" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+position = Vector2(570, 441)
+nama_kotak = "kosong"
+
+[node name="i" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+position = Vector2(657, 326)
+nama_kotak = "i"
+
+[node name="z" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+position = Vector2(934, 326)
+nama_kotak = "z"
+
+[node name="i 2" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+position = Vector2(1107, 843)
+nama_kotak = "i"
+
+[node name="n" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+position = Vector2(857, 872)
+nama_kotak = "n"
+
+[node name="j" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+position = Vector2(628, 838)
+nama_kotak = "j"
+
+[node name="Player" parent="." instance=ExtResource("16_2jd5p")]
+position = Vector2(1536, 341)
+scale = Vector2(2, 2)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 120.0
+one_shot = true
+
+[connection signal="pressed" from="ui_layer/reset" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="body_entered" from="exit" to="." method="_finish"]
+[connection signal="activated" from="cek_grup/cek i" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek i" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek i2" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek i2" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek z" to="." method="_send_cek"]
+[connection signal="activated" from="cek_grup/cek i 2" to="." method="_send_cek"]
+[connection signal="activated" from="cek_grup/cek n" to="." method="_send_cek"]
+[connection signal="activated" from="cek_grup/cek n2" to="." method="_send_cek"]

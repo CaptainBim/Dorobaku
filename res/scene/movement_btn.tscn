@@ -1,0 +1,129 @@
+[gd_scene load_steps=16 format=3 uid="uid://c1iebbd35ktk6"]
+
+[ext_resource type="Texture2D" uid="uid://dvqqpaoltoixf" path="res://res/asset/d-pad.png" id="1_j3fq3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flgv1"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvjtu"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iai0q"]
+radius = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smbqy"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m53jp"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r00b4"]
+radius = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vq2b"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uasd"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vsfk1"]
+radius = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyceq"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_677vm"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fjoyo"]
+radius = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mab3v"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dwbd"]
+atlas = ExtResource("1_j3fq3")
+region = Rect2(256, 64, 64, 64)
+
+[node name="movement_btn" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="up" type="TouchScreenButton" parent="HBoxContainer/BoxContainer"]
+position = Vector2(160, 480)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_flgv1")
+texture_pressed = SubResource("AtlasTexture_fvjtu")
+shape = SubResource("CircleShape2D_iai0q")
+shape_visible = false
+passby_press = true
+action = "up"
+
+[node name="down" type="TouchScreenButton" parent="HBoxContainer/BoxContainer"]
+position = Vector2(160, 800)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_smbqy")
+texture_pressed = SubResource("AtlasTexture_m53jp")
+shape = SubResource("CircleShape2D_r00b4")
+shape_visible = false
+passby_press = true
+action = "down"
+
+[node name="left" type="TouchScreenButton" parent="HBoxContainer/BoxContainer"]
+position = Vector2(0, 640)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_4vq2b")
+texture_pressed = SubResource("AtlasTexture_7uasd")
+shape = SubResource("CircleShape2D_vsfk1")
+shape_visible = false
+passby_press = true
+action = "left"
+
+[node name="right" type="TouchScreenButton" parent="HBoxContainer/BoxContainer"]
+position = Vector2(320, 640)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_iyceq")
+texture_pressed = SubResource("AtlasTexture_677vm")
+shape = SubResource("CircleShape2D_fjoyo")
+shape_visible = false
+passby_press = true
+action = "right"
+
+[node name="interact" type="TouchScreenButton" parent="HBoxContainer"]
+position = Vector2(1622, 800)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_mab3v")
+texture_pressed = SubResource("AtlasTexture_1dwbd")
+shape = SubResource("CircleShape2D_fjoyo")
+shape_visible = false
+passby_press = true
+action = "aksi"

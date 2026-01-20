@@ -1,0 +1,198 @@
+[gd_scene load_steps=20 format=4 uid="uid://c1j7d3tcnpgxh"]
+
+[ext_resource type="Script" path="res://res/script/level/demo_lvl_1.gd" id="1_fp4d6"]
+[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_5o4ba"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_yhvbd"]
+[ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="3_0gd48"]
+[ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="3_i5qa1"]
+[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="4_a3ub5"]
+[ext_resource type="FontFile" uid="uid://w0rbroaetxpt" path="res://res/BULKYPIX.TTF" id="4_lps2r"]
+[ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_plgua"]
+[ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="8_w2svq"]
+[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="9_5g310"]
+[ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="9_s6gm3"]
+[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="10_fjv2o"]
+[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_byouy"]
+[ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_7qm0j"]
+[ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="15_qw5hl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7tpt"]
+atlas = ExtResource("4_a3ub5")
+region = Rect2(5120, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jig74"]
+atlas = ExtResource("4_a3ub5")
+region = Rect2(5440, 0, 320, 320)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qkbc7"]
+radius = 160.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flx8a"]
+size = Vector2(64, 64)
+
+[node name="DemoLevel" type="Node2D" groups=["level"]]
+position = Vector2(0, -1)
+script = ExtResource("1_fp4d6")
+
+[node name="ui_layer" type="CanvasLayer" parent="."]
+
+[node name="loading" parent="ui_layer" instance=ExtResource("2_yhvbd")]
+visible = false
+
+[node name="movement_btn" parent="ui_layer" instance=ExtResource("2_5o4ba")]
+
+[node name="papan" parent="ui_layer" instance=ExtResource("3_0gd48")]
+position = Vector2(928, 479)
+scale = Vector2(0.9, 0.9)
+
+[node name="btn_con" type="HBoxContainer" parent="ui_layer"]
+custom_minimum_size = Vector2(360, 180)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="reset_btn" parent="ui_layer/btn_con" instance=ExtResource("3_i5qa1")]
+position = Vector2(261, 95)
+
+[node name="pauseBtn" type="TouchScreenButton" parent="ui_layer/btn_con"]
+position = Vector2(14, 14)
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_c7tpt")
+texture_pressed = SubResource("AtlasTexture_jig74")
+shape = SubResource("CircleShape2D_qkbc7")
+shape_visible = false
+
+[node name="Panel" type="Panel" parent="ui_layer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.833
+anchor_top = 0.059
+anchor_right = 0.967
+anchor_bottom = 0.119
+offset_left = 0.639893
+offset_top = 0.279995
+offset_right = -0.640137
+offset_bottom = 0.479996
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="ui_layer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.721273, 0.728712, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_lps2r")
+theme_override_font_sizes/font_size = 60
+text = "120"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="timeDisplay" parent="ui_layer" instance=ExtResource("8_w2svq")]
+
+[node name="bg_layer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" parent="bg_layer" instance=ExtResource("15_qw5hl")]
+
+[node name="layer1" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAALAAkACAAIAA0AAAAMAAkACAAIAA0AAAANAAkACQABAAEAAAAPAAkACAAJAAwAAAALAAgACAAIAA0AAAANAAgACQABAAAAAAAOAAgACAAIAA0AAAAMAAgACAAIAA0AAAAOAAkACAAIAA0AAAAPAAgACAAIAA0AAAAQAAkACAAIAA0AAAAQAAgACAAIAA0AAAAQAAcACAAIAA0AAAAPAAcACAAIAA0AAAAOAAcACAAIAA0AAAANAAcACAAJAAwAAAAMAAcACAAIAA0AAAARAAcACAAIAA0AAAARAAgACAAIAA0AAAARAAkACAAJAA0AAAASAAkACAAJAA0AAAASAAcACAAIAA0AAAASAAgACAAIAA0AAAASAAYACQABAAIAAAARAAYACQABAAIAAAAQAAYACQAAAAIAAAAPAAYACAAIAA0AAAAOAAYACAAIAA0AAAANAAYACAAIAA0AAAAMAAYACAAIAA0AAAALAAYACAAIAA0AAAALAAUACAAKAA0AAAAMAAUACAAIAA0AAAANAAUACAAJAAwAAAAOAAUACAAIAA0AAAAPAAUACAAIAA0AAAAQAAUACAAIAA0AAAARAAUACAAIAA0AAAASAAUACAAJAAwAAAASAAQACAAIAA0AAAAQAAQACAAIAA0AAAAPAAQACAAKAA0AAAAOAAQACAAIAA0AAAARAAQACAAIAA0AAAAPAAMACAAIAA0AAAAOAAMACAAIAA0AAAANAAMACQABAAIAAAAMAAMACAAIAA0AAAALAAMACAAIAA0AAAALAAQACAAIAA0AAAAMAAQACAAKAA0AAAANAAQACQABAAEAAAAJAAEACAAGAAkAAAALAAEACAAGAAkAAAAMAAEACAAHAAoAAAANAAEACAAEAAIAAAAOAAEACAAFAAoAAAAPAAEACAAGAAkAAAATAAEACAAGAAkAAAAUAAEACAAGAAkAAAAUAAkACAAPAAMAAAAUAAoACAAPAAQAAAAUAAsACAAOAAcAAAATAAsACAAOAAcAAAASAAsACAAOAAcAAAARAAsACAAOAAcAAAAQAAsACAAOAAcAAAAPAAsACAAOAAcAAAAOAAsACAAOAAcAAAANAAsACAAOAAcAAAAMAAsACAAOAAcAAAALAAsACAAOAAcAAAAKAAsACAAOAAcAAAAJAAsACAAOAAcAAAAVAAYACAAMAAgAAAAVAAcACAAMAAgAAAAJAAIACAAOAAEAAAAKAAIACAAOAAEAAAALAAIACAAOAAEAAAAMAAIACAAOAAEAAAANAAIACAAIAAwAAAAOAAIACAAOAAEAAAAPAAIACAAOAAEAAAAQAAIACAAOAAEAAAARAAIACAAOAAEAAAATAAMACAAIAA0AAAATAAQACAAJAAwAAAATAAUACAAIAA0AAAATAAYACQABAAIAAAATAAcACAAIAA0AAAATAAgACAAIAA0AAAATAAkACAAIAA0AAAASAAoACAANAAQAAAATAAoACAANAAQAAAARAAoACAANAAQAAAAQAAoACAANAAQAAAAPAAoACAANAAQAAAAOAAoACAANAAQAAAAKAAkACAAIAA0AAAAJAAkACAAIAA0AAAANAAoACAAEAAQAAAAMAAoACAANAAQAAAALAAoACAANAAQAAAAKAAoACAANAAQAAAAJAAoACAANAAQAAAAJAAgACAAIAA0AAAAKAAgACAAIAA0AAAAJAAcACAAIAA0AAAAJAAYACQABAAIAAAAKAAYACQACAAIAAAAKAAUACAAKAA0AAAAJAAUACAAIAA0AAAAJAAQACAAIAA0AAAAKAAQACAAIAA0AAAAKAAMACAAIAA0AAAAJAAMACAAIAA0AAAAIAAEACAAGAAkAAAAIAAIACAAOAAEAAAAIAAMACAAIAA0AAAAIAAQACAAIAA0AAAAIAAUACAAIAA0AAAAIAAYACQABAAIAAAAIAAcACAAJAAwAAAAIAAgACAAIAA0AAAAIAAkACAAIAA0AAAAIAAoACAANAAQAAAAIAAsACAAOAAcAAAASAAEACAAGAAkAAAAQAAEACAAGAAkAAAARAAEACAAGAAkAAAAKAAcACAAKAA0AAAALAAcACAAIAA0AAAAUAAUACAAPAAMAAAAUAAcACAAPAAMAAAAUAAgACAAPAAMAAAAVAAgACAAMAAgAAAALAAAACAAPAAkAAAAMAAAACAAFAAQAAAANAAAACAAGAAIAAAAOAAAACAAHAAQAAAAPAAAACAAMAAgAAAAVAAsACAAJAAgAAAAVAAoACAAMAAgAAAAFAAEACAAPAAgAAAAFAAIACAAPAAkAAAAFAAMACAAPAAkAAAAFAAQACAAPAAkAAAAFAAUACAAPAAkAAAAFAAYACAAPAAkAAAAFAAcACAAPAAkAAAAFAAgACAAPAAkAAAAFAAkACAAPAAkAAAAFAAoACAAPAAkAAAAFAAsACAAKAAgAAAAGAAEACAAGAAkAAAAGAAIACAAMAAEAAAAGAAMACAAMAAIAAAAGAAQACAAMAAIAAAAGAAUACAAMAAIAAAAGAAYACQAAAAIAAAAGAAcACAAMAAIAAAAGAAgACAAMAAIAAAAGAAkACAAMAAIAAAAGAAoACAAMAAQAAAAGAAsACAAOAAcAAAAHAAEACAAGAAkAAAAHAAIACAAOAAEAAAAHAAMACAAIAA0AAAAHAAQACAAIAA0AAAAHAAUACAAIAA0AAAAHAAYACQABAAIAAAAHAAcACAAIAA0AAAAHAAgACAAIAA0AAAAHAAkACAAIAA0AAAAHAAoACAANAAQAAAAHAAsACAAOAAcAAAALAP//CAAPAAgAAAAMAP//CAAGAAkAAAANAP//CAALAAsAAAAOAP//CAAGAAkAAAAPAP//CAAMAAkAAAAUAAYACQACAAIAAAAVAAkACAAMAAgAAAAUAAMACAAPAAMAAAAUAAQACAAPAAMAAAAQAAMACAAIAA0AAAARAAMACAAKAA0AAAASAAMACAAIAA0AAAASAAIACAAOAAEAAAATAAIACAAOAAEAAAAUAAIACAAPAAEAAAAKAAEACAAGAAkAAAAVAAEACAAMAAkAAAAVAAIACAAMAAgAAAAVAAMACAAMAAgAAAAVAAQACAAMAAgAAAAVAAUACAAMAAgAAAA=")
+tile_set = ExtResource("7_plgua")
+rendering_quadrant_size = 64
+
+[node name="Camera2D" type="Camera2D" parent="layer1"]
+position = Vector2(864, 357)
+scale = Vector2(2, 2)
+zoom = Vector2(1.25, 1.25)
+
+[node name="layer2" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAAHAAQACAAPAA0AAAAHAAoACAAMAAwAAAAIAAkACAALAAwAAAAMAAQACAALAAwAAAAMAAYACAALAAwAAAAMAAgACAAMAA0AAAAOAAUACAALAA0AAAAOAAkACAAMAA0AAAAQAAIACAALAAwAAAAQAAMACAAMAA0AAAASAAoACAAMAA0AAAAQAAgACAANAAwAAAAQAAkACAANAA0AAAARAAgACAAOAAwAAAARAAkACAAOAA0AAAAHAAMACAAPAAwAAAAIAAMACAAQAAwAAAAIAAQACAAQAA0AAAATAAQACAALAAwAAAA=")
+tile_set = ExtResource("7_plgua")
+rendering_quadrant_size = 64
+
+[node name="special" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AABOAAoAAAAOABEAAABOAAkAAAAOABEAAABOAA0AAAAOABIAAAALAAcACAAbAAkAAAAKAAcACAAUAA0AAAAJAAcACAAUAA0AAAAIAAcACAAUAA0AAAAHAAcACAAUAA0AAAAPAAcACAAbAAcAAAAQAAcACAAUAA0AAAARAAcACAAUAA0AAAASAAcACAAUAA0AAAATAAcACAAUAA0AAAAHAAoACAAUAA0AAAAIAAoACAAUAA0AAAAJAAoACAAUAA0AAAAKAAoACAAUAA0AAAALAAoACAAUAA0AAAAGAAoACAATAA0AAAAGAAkACAATAAwAAAAGAAgACAATAAwAAAAGAAcACAAaAAkAAAAUAAcACAAZAAkAAAAUAAgACAAVAAwAAAAUAAkACAAVAAwAAAATAAoACAAUAA0AAAASAAoACAAUAA0AAAARAAoACAAUAA0AAAAQAAoACAAUAA0AAAAPAAoACAAUAA0AAAAOAAoACAATAA0AAAAMAAoACAAVAA0AAAAUAAoACAAVAA0AAAALAAUACAAbAAoAAAAKAAUACAAUAAsAAAAJAAUACAAUAAsAAAAIAAUACAAUAAsAAAAHAAUACAAUAAsAAAAPAAUACAAbAAgAAAAQAAUACAAUAAsAAAARAAUACAAUAAsAAAASAAUACAAUAAsAAAATAAUACAAUAAsAAAAUAAUACAAZAAoAAAAGAAUACAAaAAoAAAAGAAQACAATAAwAAAAGAAMACAATAAwAAAAUAAQACAAVAAwAAAAUAAMACAAVAAwAAAAHAAIACAAUAAsAAAAIAAIACAAUAAsAAAAJAAIACAAUAAsAAAAKAAIACAAUAAsAAAALAAIACAAUAAsAAAAMAAIACAAVAAsAAAAOAAIACAATAAsAAAAPAAIACAAUAAsAAAAQAAIACAAUAAsAAAARAAIACAAUAAsAAAASAAIACAAUAAsAAAATAAIACAAUAAsAAAAMAAMACAAaAAcAAAAOAAMACAAZAAcAAAAOAAkACAAZAAgAAAAMAAkACAAaAAgAAAAGAAIACAATAAsAAAAUAAIACAAVAAsAAAALAAYACAATAAwAAAAPAAYACAAVAAwAAAA=")
+tile_set = ExtResource("7_plgua")
+
+[node name="exit" type="Area2D" parent="."]
+position = Vector2(832, -63)
+collision_layer = 273
+collision_mask = 273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_flx8a")
+
+[node name="cek_grup" type="Node2D" parent="."]
+position = Vector2(0, -128)
+
+[node name="cek b" parent="cek_grup" instance=ExtResource("9_5g310")]
+position = Vector2(768, 512)
+scale = Vector2(2, 2)
+nama_cek = "b"
+check_all_entities = null
+
+[node name="cek u" parent="cek_grup" instance=ExtResource("9_5g310")]
+position = Vector2(832, 512)
+scale = Vector2(2, 2)
+nama_cek = "u"
+check_all_entities = null
+
+[node name="cek s" parent="cek_grup" instance=ExtResource("9_5g310")]
+position = Vector2(896, 512)
+scale = Vector2(2, 2)
+nama_cek = "s"
+check_all_entities = null
+
+[node name="kotak_grup" type="Node2D" parent="."]
+position = Vector2(6, -134)
+
+[node name="b" parent="kotak_grup" instance=ExtResource("10_fjv2o")]
+position = Vector2(573, 643)
+nama_kotak = "b"
+
+[node name="u" parent="kotak_grup" instance=ExtResource("10_fjv2o")]
+position = Vector2(1086, 643)
+nama_kotak = "u"
+
+[node name="s" parent="kotak_grup" instance=ExtResource("10_fjv2o")]
+position = Vector2(573, 388)
+nama_kotak = "s"
+
+[node name="i" parent="kotak_grup" instance=ExtResource("10_fjv2o")]
+position = Vector2(1087, 389)
+nama_kotak = "i"
+
+[node name="door" parent="." instance=ExtResource("9_s6gm3")]
+position = Vector2(832, 125)
+
+[node name="buku" parent="." instance=ExtResource("14_7qm0j")]
+position = Vector2(832, 683)
+hint_text = "Suatu Kendaraan 
+ yang bisa dinaiki
+oleh banyak orang"
+
+[node name="Player" parent="." instance=ExtResource("13_byouy")]
+position = Vector2(864, 150)
+scale = Vector2(1.75, 1.75)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 120.0
+one_shot = true
+
+[connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
+[connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
+[connection signal="body_entered" from="exit" to="." method="_finish"]
+[connection signal="activated" from="cek_grup/cek b" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek b" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek u" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek u" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek s" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek s" to="." method="_exit_cek"]
