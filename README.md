@@ -34,7 +34,7 @@ Pengembangan DoroBaku tidak terlepas dari kontribusi berbagai pihak dan sumber t
 
 **Gameplay**
 - Muh. Reza MN  
-- Enggar Eka N  
+- Enggar Eka M  
 - Diaz FR N  
 
 **Graphics**
