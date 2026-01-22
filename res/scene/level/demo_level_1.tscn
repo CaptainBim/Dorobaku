@@ -110,19 +110,16 @@ position = Vector2(0, -128)
 position = Vector2(768, 512)
 scale = Vector2(2, 2)
 nama_cek = "b"
-check_all_entities = null
 
 [node name="cek u" parent="cek_grup" instance=ExtResource("9_5g310")]
 position = Vector2(832, 512)
 scale = Vector2(2, 2)
 nama_cek = "u"
-check_all_entities = null
 
 [node name="cek s" parent="cek_grup" instance=ExtResource("9_5g310")]
 position = Vector2(896, 512)
 scale = Vector2(2, 2)
 nama_cek = "s"
-check_all_entities = null
 
 [node name="kotak_grup" type="Node2D" parent="."]
 position = Vector2(6, -134)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=47 format=3 uid="uid://cfs13kmvwo48q"]
 
 [ext_resource type="Texture2D" uid="uid://cm7vv1e8rlqqg" path="res://res/asset/timer_anim.png" id="1_1ipjh"]
-[ext_resource type="Script" path="res://res/script/misc/timer.gd" id="1_elqde"]
+[ext_resource type="Script" uid="uid://bl56geiym06ka" path="res://res/script/misc/timer.gd" id="1_elqde"]
 [ext_resource type="Texture2D" uid="uid://bb0bqj4sasi3g" path="res://res/asset/font_angka.png" id="2_hr2ms"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ipjh"]
@@ -72,8 +72,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t1nv5"]
 _data = {
-"RESET": SubResource("Animation_elqde"),
-"timer": SubResource("Animation_t1nv5")
+&"RESET": SubResource("Animation_elqde"),
+&"timer": SubResource("Animation_t1nv5")
 }
 
 [sub_resource type="Animation" id="Animation_g2gjl"]
@@ -253,17 +253,17 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_chyjh"]
 _data = {
-"0": SubResource("Animation_g2gjl"),
-"1": SubResource("Animation_o2lsk"),
-"2": SubResource("Animation_chyjh"),
-"3": SubResource("Animation_ov4s5"),
-"4": SubResource("Animation_veln0"),
-"5": SubResource("Animation_0kh3i"),
-"6": SubResource("Animation_yhx8l"),
-"7": SubResource("Animation_ba7xb"),
-"8": SubResource("Animation_dgj2y"),
-"9": SubResource("Animation_8sc3w"),
-"RESET": SubResource("Animation_gx85h")
+&"0": SubResource("Animation_g2gjl"),
+&"1": SubResource("Animation_o2lsk"),
+&"2": SubResource("Animation_chyjh"),
+&"3": SubResource("Animation_ov4s5"),
+&"4": SubResource("Animation_veln0"),
+&"5": SubResource("Animation_0kh3i"),
+&"6": SubResource("Animation_yhx8l"),
+&"7": SubResource("Animation_ba7xb"),
+&"8": SubResource("Animation_dgj2y"),
+&"9": SubResource("Animation_8sc3w"),
+&"RESET": SubResource("Animation_gx85h")
 }
 
 [sub_resource type="Animation" id="Animation_uxli0"]
@@ -443,17 +443,17 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oj7oe"]
 _data = {
-"0": SubResource("Animation_uxli0"),
-"1": SubResource("Animation_j6ee0"),
-"2": SubResource("Animation_hq8mm"),
-"3": SubResource("Animation_8pi7q"),
-"4": SubResource("Animation_oj7oe"),
-"5": SubResource("Animation_uvi46"),
-"6": SubResource("Animation_xexir"),
-"7": SubResource("Animation_uayxv"),
-"8": SubResource("Animation_5k22y"),
-"9": SubResource("Animation_4xtpi"),
-"RESET": SubResource("Animation_2g7ia")
+&"0": SubResource("Animation_uxli0"),
+&"1": SubResource("Animation_j6ee0"),
+&"2": SubResource("Animation_hq8mm"),
+&"3": SubResource("Animation_8pi7q"),
+&"4": SubResource("Animation_oj7oe"),
+&"5": SubResource("Animation_uvi46"),
+&"6": SubResource("Animation_xexir"),
+&"7": SubResource("Animation_uayxv"),
+&"8": SubResource("Animation_5k22y"),
+&"9": SubResource("Animation_4xtpi"),
+&"RESET": SubResource("Animation_2g7ia")
 }
 
 [sub_resource type="Animation" id="Animation_sfb6g"]
@@ -633,17 +633,17 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_my6ei"]
 _data = {
-"0": SubResource("Animation_sfb6g"),
-"1": SubResource("Animation_et3eo"),
-"2": SubResource("Animation_mu8md"),
-"3": SubResource("Animation_iv7f6"),
-"4": SubResource("Animation_soi70"),
-"5": SubResource("Animation_dd73c"),
-"6": SubResource("Animation_gfytv"),
-"7": SubResource("Animation_s7d6m"),
-"8": SubResource("Animation_u78fv"),
-"9": SubResource("Animation_ar2dp"),
-"RESET": SubResource("Animation_my6ei")
+&"0": SubResource("Animation_sfb6g"),
+&"1": SubResource("Animation_et3eo"),
+&"2": SubResource("Animation_mu8md"),
+&"3": SubResource("Animation_iv7f6"),
+&"4": SubResource("Animation_soi70"),
+&"5": SubResource("Animation_dd73c"),
+&"6": SubResource("Animation_gfytv"),
+&"7": SubResource("Animation_s7d6m"),
+&"8": SubResource("Animation_u78fv"),
+&"9": SubResource("Animation_ar2dp"),
+&"RESET": SubResource("Animation_my6ei")
 }
 
 [node name="timeDisplay" type="Control"]
@@ -737,22 +737,22 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1ipjh")
 
 [node name="clockAnim" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_t1nv5")
+&"": SubResource("AnimationLibrary_t1nv5")
 }
 
 [node name="num1" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_chyjh")
+&"": SubResource("AnimationLibrary_chyjh")
 }
 
 [node name="num2" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_oj7oe")
+&"": SubResource("AnimationLibrary_oj7oe")
 }
 
 [node name="num3" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_my6ei")
+&"": SubResource("AnimationLibrary_my6ei")
 }
 
 [node name="Timer" type="Timer" parent="."]

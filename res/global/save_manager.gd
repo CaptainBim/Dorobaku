@@ -1,7 +1,7 @@
 class_name SAVES extends Resource
 
 var GAME_VERSION : float = 0.003
-const SAVE_PATH = "user://game.save"
+const SAVE_PATH = "res://res/saves/game.save"
 enum LvlState {CLEAR, PLAYED, UNLOCKED, LOCKED}
 enum StoryState {VIEWED, UNVIEW}
 enum SaveStatus {NEW, OK, ERROR, OUTDATED}
@@ -10,10 +10,10 @@ func createSave() -> Dictionary :
 	return {
 		"version" : GAME_VERSION,
 		"ch0" : [
-			{"state" : LvlState.PLAYED, "star" : 2, "story" : StoryState.UNVIEW }, #1
-			{"state" : LvlState.UNLOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #2
-			{"state" : LvlState.UNLOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #3
-			{"state" : LvlState.UNLOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #4
+			{"state" : LvlState.UNLOCKED, "star" : 2, "story" : StoryState.UNVIEW }, #1
+			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #2
+			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #3
+			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #4
 			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #5
 			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #6
 			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #7
@@ -26,9 +26,18 @@ func createSave() -> Dictionary :
 		],
 	}
 
-func saveData(data : Dictionary) :
-	var saveFile = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	saveFile.store_line(JSON.stringify(data))
+func saveData(data = null, stage = null, status = true) :
+	var saveFile;
+	if stage == null:
+		saveFile =  FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+		saveFile.store_line(JSON.stringify(data))
+		saveFile.close()
+	else:
+		saveFile  = FileAccess.open(SAVE_PATH, FileAccess.READ_WRITE)
+		var jsonData = JSON.parse_string(saveFile.get_as_text());
+		jsonData["ch0"][stage].state = LvlState.CLEAR;
+		jsonData["ch0"][stage + 1].state = LvlState.UNLOCKED;
+		saveFile.store_line(JSON.stringify(jsonData))
 	saveFile.close()
 
 func loadData() :

@@ -9,6 +9,7 @@ var isFailed: bool = false
 @onready var musicLvl = preload("res://res/asset/sound/bgm3.mp3")
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
+var saveData = SAVES.new()
 
 var h1 = "b"
 var h2 = "u"
@@ -96,6 +97,7 @@ func selesai():
 	if isCleared : get_node("ui_layer/papan").popClear(timeLeft)
 	elif isFailed : get_node("ui_layer/papan").popFailed()
 	$Player.visible = false
+	saveData.saveData(null, 0, true)
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()

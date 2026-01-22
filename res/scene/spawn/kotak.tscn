@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://cq4qq33pvhn6w"]
 
-[ext_resource type="Script" path="res://res/script/spawn/kotak.gd" id="1_8di7h"]
+[ext_resource type="Script" uid="uid://5rolo7vm3m85" path="res://res/script/spawn/kotak.gd" id="1_8di7h"]
 [ext_resource type="Texture2D" uid="uid://cpe6w3b55c7wf" path="res://res/asset/w_a-Sheet.png" id="1_h0yya"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2i2c"]
@@ -390,33 +390,33 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c2hbk"]
 _data = {
-"a": SubResource("Animation_p5jvb"),
-"b": SubResource("Animation_knt8f"),
-"c": SubResource("Animation_edtt6"),
-"d": SubResource("Animation_u8hey"),
-"e": SubResource("Animation_4axwn"),
-"f": SubResource("Animation_fj0as"),
-"g": SubResource("Animation_w65vo"),
-"h": SubResource("Animation_ilqn1"),
-"i": SubResource("Animation_47xdx"),
-"j": SubResource("Animation_tfjk0"),
-"k": SubResource("Animation_6p0kf"),
-"kosong": SubResource("Animation_kqmjg"),
-"l": SubResource("Animation_ayx8a"),
-"m": SubResource("Animation_si5tm"),
-"n": SubResource("Animation_pub2u"),
-"o": SubResource("Animation_idyxv"),
-"p": SubResource("Animation_1ab21"),
-"q": SubResource("Animation_rt7xh"),
-"r": SubResource("Animation_csfi2"),
-"s": SubResource("Animation_dfwbe"),
-"t": SubResource("Animation_pyn8a"),
-"u": SubResource("Animation_dlu7s"),
-"v": SubResource("Animation_2rojs"),
-"w": SubResource("Animation_u5lco"),
-"x": SubResource("Animation_kyiii"),
-"y": SubResource("Animation_xwpgr"),
-"z": SubResource("Animation_c6owq")
+&"a": SubResource("Animation_p5jvb"),
+&"b": SubResource("Animation_knt8f"),
+&"c": SubResource("Animation_edtt6"),
+&"d": SubResource("Animation_u8hey"),
+&"e": SubResource("Animation_4axwn"),
+&"f": SubResource("Animation_fj0as"),
+&"g": SubResource("Animation_w65vo"),
+&"h": SubResource("Animation_ilqn1"),
+&"i": SubResource("Animation_47xdx"),
+&"j": SubResource("Animation_tfjk0"),
+&"k": SubResource("Animation_6p0kf"),
+&"kosong": SubResource("Animation_kqmjg"),
+&"l": SubResource("Animation_ayx8a"),
+&"m": SubResource("Animation_si5tm"),
+&"n": SubResource("Animation_pub2u"),
+&"o": SubResource("Animation_idyxv"),
+&"p": SubResource("Animation_1ab21"),
+&"q": SubResource("Animation_rt7xh"),
+&"r": SubResource("Animation_csfi2"),
+&"s": SubResource("Animation_dfwbe"),
+&"t": SubResource("Animation_pyn8a"),
+&"u": SubResource("Animation_dlu7s"),
+&"v": SubResource("Animation_2rojs"),
+&"w": SubResource("Animation_u5lco"),
+&"x": SubResource("Animation_kyiii"),
+&"y": SubResource("Animation_xwpgr"),
+&"z": SubResource("Animation_c6owq")
 }
 
 [node name="kotak" type="CharacterBody2D"]
@@ -442,5 +442,5 @@ shape = SubResource("RectangleShape2D_nh660")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_c2hbk")
+&"": SubResource("AnimationLibrary_c2hbk")
 }

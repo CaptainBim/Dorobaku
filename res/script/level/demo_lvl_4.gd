@@ -4,6 +4,7 @@ var game_end : bool = false
 var info : bool = false
 var isCleared : bool = false
 var isFailed: bool = false
+var saveData = SAVES.new();
 
 @onready var label: Label = $ui_layer/Panel/Label
 @onready var timer: Timer = $Timer
@@ -92,6 +93,7 @@ func selesai():
 	if isCleared : get_node("ui_layer/papan").popClear(timeLeft)
 	else : get_node("ui_layer/papan").popFailed()
 	$Player.visible = false
+	saveData.saveData(null, 1, true)
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()

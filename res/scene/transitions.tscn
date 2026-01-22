@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://blx5obatbc20l"]
 
 [ext_resource type="Texture2D" uid="uid://dcgtfbeigfgih" path="res://res/asset/border.png" id="1_7fwlv"]
-[ext_resource type="Script" path="res://res/script/menu/transisi.gd" id="1_n1pk5"]
+[ext_resource type="Script" uid="uid://brox2nr3rk7hx" path="res://res/script/menu/transisi.gd" id="1_n1pk5"]
 [ext_resource type="FontFile" uid="uid://w0rbroaetxpt" path="res://res/BULKYPIX.TTF" id="2_3yo72"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewu0g"]
@@ -59,9 +59,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aod55"]
 _data = {
-"RESET": SubResource("Animation_5t8nt"),
-"fade_in": SubResource("Animation_oyp8t"),
-"fade_out": SubResource("Animation_fwcdf")
+&"RESET": SubResource("Animation_5t8nt"),
+&"fade_in": SubResource("Animation_oyp8t"),
+&"fade_out": SubResource("Animation_fwcdf")
 }
 
 [node name="Control" type="CanvasLayer"]
@@ -109,5 +109,5 @@ uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_aod55")
+&"": SubResource("AnimationLibrary_aod55")
 }

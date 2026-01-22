@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://blvx60qxej35n"]
 
-[ext_resource type="Script" path="res://res/script/misc/cutscene.gd" id="1_ib843"]
+[ext_resource type="Script" uid="uid://bpsr7hgrak64s" path="res://res/script/misc/cutscene.gd" id="1_ib843"]
 [ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="2_4ba5n"]
 [ext_resource type="Texture2D" uid="uid://jb711b2oj3ey" path="res://res/asset/menu/s0_frame2.png" id="2_i8s0n"]
 [ext_resource type="Texture2D" uid="uid://bucxvvpr6rbxg" path="res://res/asset/menu/s0_frame1.png" id="2_oen8h"]
@@ -172,10 +172,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4b08e"]
 _data = {
-"RESET": SubResource("Animation_h4d75"),
-"frame1": SubResource("Animation_wfm32"),
-"frame2": SubResource("Animation_aopvv"),
-"portal": SubResource("Animation_uiwp2")
+&"RESET": SubResource("Animation_h4d75"),
+&"frame1": SubResource("Animation_wfm32"),
+&"frame2": SubResource("Animation_aopvv"),
+&"portal": SubResource("Animation_uiwp2")
 }
 
 [sub_resource type="Animation" id="Animation_2xk3m"]
@@ -213,8 +213,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v5pg7"]
 _data = {
-"RESET": SubResource("Animation_2xk3m"),
-"frame3": SubResource("Animation_qykys")
+&"RESET": SubResource("Animation_2xk3m"),
+&"frame3": SubResource("Animation_qykys")
 }
 
 [node name="Story1" type="Control"]
@@ -375,17 +375,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nlevr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4b08e")
+&"": SubResource("AnimationLibrary_4b08e")
 }
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4b08e")
+&"": SubResource("AnimationLibrary_4b08e")
 }
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_v5pg7")
+&"": SubResource("AnimationLibrary_v5pg7")
 }
 
 [connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]

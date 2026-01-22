@@ -125,25 +125,21 @@ position = Vector2(0, -128)
 position = Vector2(704, 512)
 scale = Vector2(2, 2)
 nama_cek = "s"
-check_all_entities = null
 
 [node name="cek u" parent="cek_grup" instance=ExtResource("8_n4aum")]
 position = Vector2(768, 512)
 scale = Vector2(2, 2)
 nama_cek = "u"
-check_all_entities = null
 
 [node name="cek p" parent="cek_grup" instance=ExtResource("8_n4aum")]
 position = Vector2(832, 512)
 scale = Vector2(2, 2)
 nama_cek = "p"
-check_all_entities = null
 
 [node name="cek i" parent="cek_grup" instance=ExtResource("8_n4aum")]
 position = Vector2(896, 512)
 scale = Vector2(2, 2)
 nama_cek = "i"
-check_all_entities = null
 
 [node name="cek r" parent="cek_grup" instance=ExtResource("8_n4aum")]
 position = Vector2(960, 512)

@@ -123,7 +123,7 @@ shape = SubResource("CircleShape2D_oljpc")
 shape_visible = false
 
 [node name="btn_quit" type="TouchScreenButton" parent="Panel/VBoxContainer/HBoxContainer"]
-position = Vector2(854, 81.00001)
+position = Vector2(854, 81)
 scale = Vector2(0.8, 0.8)
 texture_normal = SubResource("AtlasTexture_64mea")
 texture_pressed = SubResource("AtlasTexture_2cswc")

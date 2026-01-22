@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=4 uid="uid://b6dksoddxtbn2"]
 
-[ext_resource type="Script" path="res://res/script/level/demo_lvl_3.gd" id="1_dqsdx"]
+[ext_resource type="Script" uid="uid://cw6emo0ik1n6a" path="res://res/script/level/demo_lvl_3.gd" id="1_dqsdx"]
 [ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="2_lq856"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_q0cwg"]
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="2_yyt0g"]
@@ -171,10 +171,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wrei7"]
 _data = {
-"RESET": SubResource("Animation_pafcd"),
-"jembatan1_off": SubResource("Animation_a4ejt"),
-"jembatan1_on": SubResource("Animation_enjhi"),
-"jembatans_sets": SubResource("Animation_6r5j8")
+&"RESET": SubResource("Animation_pafcd"),
+&"jembatan1_off": SubResource("Animation_a4ejt"),
+&"jembatan1_on": SubResource("Animation_enjhi"),
+&"jembatans_sets": SubResource("Animation_6r5j8")
 }
 
 [node name="DemoLevel" type="Node2D" groups=["level"]]
@@ -414,7 +414,7 @@ shape = SubResource("CapsuleShape2D_b6gsv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wrei7")
+&"": SubResource("AnimationLibrary_wrei7")
 }
 
 [node name="buku" parent="." instance=ExtResource("14_d4b6w")]
