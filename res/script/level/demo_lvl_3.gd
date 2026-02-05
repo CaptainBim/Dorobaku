@@ -107,7 +107,15 @@ func selesai():
 	if isCleared : get_node("ui_layer/papan").popClear(timeLeft)
 	elif isFailed : get_node("ui_layer/papan").popFailed()
 	$Player.visible = false
-	saveData.saveData(null, 2, true)
+	var time_left = timerDis.get_timeLeft();
+	var star = 0
+	if(time_left > 100):
+		star = 3;
+	elif(time_left < 100 && time_left > 80):
+		star = 2;
+	elif(time_left < 80 && time_left > 70):
+		star = 1
+	saveData.saveData(null, 2, true, star)
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()
@@ -119,12 +127,14 @@ func pause_game() :
 	$ui_layer/btn_con.visible = false
 	$ui_layer/papan.visible = true
 	GlobalVar.GameIsPaused = true
+	timerDis.pause_timer();
 	
 func unpause_game() :
 	$ui_layer/movement_btn.visible = true
 	$ui_layer/btn_con.visible = true
 	$ui_layer/papan.visible = false
 	GlobalVar.GameIsPaused = false
+	timerDis.start_timer(float(timerDis.get_timeLeft()));
 
 func _exit(exit) -> void:
 	if exit :

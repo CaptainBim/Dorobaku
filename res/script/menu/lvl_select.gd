@@ -44,8 +44,11 @@ func unlockCheck(chapter: String) :
 		return
 	
 	var lvlStates = GAME_DATA.data[chapter]
+	var btn_group = get_tree().get_nodes_in_group("level_button");
+	print(btn_group)
 	
-	for btn in get_tree().get_nodes_in_group("level_button"):
+	for key in range(btn_group.size()):
+		var btn = btn_group[key]
 		if btn is TouchScreenButton:
 			var btnName = String(btn.name)
 			var lvlIndex = int(btnName.substr(3, btnName.length() - 3)) - 1
@@ -75,14 +78,14 @@ func unlockCheck(chapter: String) :
 				btn.pressed.connect(Callable(self, "_on_level_pressed").bind(lvlIndex + 1))
 				closeTex.visible = false
 				starCons.visible = true
-				starCons.showStars("empty")
+				starCons.showStars(str(int(stars)))
 			elif state == 0 or state == 1 : #CLEAR or PLAYED 
 				if btn.pressed.is_connected(_on_level_pressed):
 					btn.pressed.disconnect(_on_level_pressed)
 				btn.pressed.connect(Callable(self, "_on_level_pressed").bind(lvlIndex + 1))
 				closeTex.visible = false
 				starCons.visible = true
-				starCons.showStars("star" + str(stars) )
+				starCons.showStars(str(int(stars)))
 
 func pushNotif(notif_text):
 	notifTxt.text = notif_text

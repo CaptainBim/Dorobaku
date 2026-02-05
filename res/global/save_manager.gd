@@ -26,7 +26,7 @@ func createSave() -> Dictionary :
 		],
 	}
 
-func saveData(data = null, stage = null, status = true) :
+func saveData(data = null, stage = null, status = true, star = 0) :
 	var saveFile;
 	if stage == null:
 		saveFile =  FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -35,7 +35,9 @@ func saveData(data = null, stage = null, status = true) :
 	else:
 		saveFile  = FileAccess.open(SAVE_PATH, FileAccess.READ_WRITE)
 		var jsonData = JSON.parse_string(saveFile.get_as_text());
+		print(saveFile.get_as_text(), jsonData)
 		jsonData["ch0"][stage].state = LvlState.CLEAR;
+		jsonData["ch0"][stage].star = star;
 		jsonData["ch0"][stage + 1].state = LvlState.UNLOCKED;
 		saveFile.store_line(JSON.stringify(jsonData))
 	saveFile.close()

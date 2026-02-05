@@ -43,5 +43,7 @@ func stop_timer():
 func start_timer(max_time: float):
 	timer.wait_time = max_time
 	time_left = max_time
+	timer.paused = false;
 	timer.start()
+	print(max_time, "HEEEEYYY")
 	clock_anim.play("timer")

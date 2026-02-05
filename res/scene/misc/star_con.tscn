@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1men06xdqkix"]
+[gd_scene load_steps=12 format=3 uid="uid://b1men06xdqkix"]
 
 [ext_resource type="Texture2D" uid="uid://pt1xfeuj643c" path="res://res/asset/newStars.png" id="1_k05om"]
 [ext_resource type="Script" uid="uid://dukvbmb8ytghv" path="res://res/script/misc/starCons.gd" id="1_tml0e"]
@@ -8,7 +8,7 @@ atlas = ExtResource("1_k05om")
 region = Rect2(0, 0, 1152, 448)
 
 [sub_resource type="Animation" id="Animation_tml0e"]
-length = 0.001
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -58,7 +58,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [2]
 }
 tracks/1/type = "value"
@@ -98,7 +98,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [1]
 }
 tracks/1/type = "value"
@@ -138,7 +138,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [0]
 }
 tracks/1/type = "value"
@@ -190,7 +190,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [0]
 }
 tracks/2/type = "value"
@@ -230,7 +230,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [0]
 }
 tracks/2/type = "value"
@@ -246,10 +246,27 @@ tracks/2/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_l0bcj"]
+resource_name = "star"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("s1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8q78r"]
 _data = {
 &"RESET": SubResource("Animation_tml0e"),
 &"empty": SubResource("Animation_skq2p"),
+&"star": SubResource("Animation_l0bcj"),
 &"star0": SubResource("Animation_6fu6r"),
 &"star1": SubResource("Animation_8q78r"),
 &"star2": SubResource("Animation_b3hym"),
