@@ -1,0 +1,4 @@
+res://res/scene/level/level_5.tscn
+res://res/asset/levelTilemap.tres
+res://res/asset/shaders/stars.gdshader
+res://res/asset/shaders/filling.gdshader

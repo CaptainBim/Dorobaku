@@ -36,14 +36,14 @@ region = Rect2(320, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64mea"]
 atlas = ExtResource("7_mxnss")
-region = Rect2(0, 0, 320, 320)
+region = Rect2(0, 320, 320, 320)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dcyaq"]
 load_path = "res://.godot/imported/new_btn.png-ea12cd9490756ee45551c8693f4b3858.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cswc"]
 atlas = SubResource("CompressedTexture2D_dcyaq")
-region = Rect2(320, 0, 320, 320)
+region = Rect2(320, 320, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4glsi"]
 radius = 160.0
@@ -123,11 +123,12 @@ shape = SubResource("CircleShape2D_oljpc")
 shape_visible = false
 
 [node name="btn_quit" type="TouchScreenButton" parent="Panel/VBoxContainer/HBoxContainer"]
-position = Vector2(854, 81)
+position = Vector2(828, 71)
 scale = Vector2(0.8, 0.8)
 texture_normal = SubResource("AtlasTexture_64mea")
 texture_pressed = SubResource("AtlasTexture_2cswc")
 shape = SubResource("CircleShape2D_4glsi")
+shape_visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer"]
 texture = SubResource("AtlasTexture_bxw4b")
@@ -157,3 +158,4 @@ visible = false
 
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/btn_credits" to="." method="_press_btnCredits"]
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/btn_play" to="." method="_press_btnPlay"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/btn_quit" to="." method="_on_btn_quit_pressed"]

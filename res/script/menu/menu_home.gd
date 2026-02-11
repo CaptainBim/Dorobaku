@@ -45,4 +45,9 @@ func pushNotif(notif_text):
 	tween.tween_property(notif, "position", notifPos, 0.5)
 	tween.tween_interval(1.75)
 	tween.tween_property(notif, "position", notifPos + Vector2(0, 70), 0.5)
-	
+
+
+func _on_btn_quit_pressed() -> void:
+	AudioPlayer._play_fx_btn7()
+	await get_tree().create_timer(0.2).timeout
+	get_tree().quit()
