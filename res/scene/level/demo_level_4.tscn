@@ -107,6 +107,7 @@ tile_set = ExtResource("7_sewd3")
 
 [node name="t1" type="RigidBody2D" parent="special"]
 position = Vector2(832, 195)
+collision_mask = 0
 mass = 0.001
 gravity_scale = 0.0
 
@@ -126,12 +127,13 @@ shape = SubResource("RectangleShape2D_7ewr7")
 
 [node name="t2" type="RigidBody2D" parent="special"]
 position = Vector2(737, 257)
+collision_mask = 0
 mass = 0.001
 gravity_scale = 0.0
 
 [node name="layer2" type="TileMapLayer" parent="special/t2"]
 position = Vector2(0, 4)
-tile_map_data = PackedByteArray("AAAAAAEABAAXAAcAAAABAAEABAAUAAsAAAACAAEABAAUAAsAAAADAAEABAAUAAsAAAAEAAEABAAUAAsAAAAAAAAABAATAAwAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEABAAXAAcAAAABAAEABAAUAAsAAAADAAEABAAUAAsAAAAEAAEABAAUAAsAAAAAAAAABAATAAwAAAACAAEABAAUAAsAAAA=")
 tile_set = ExtResource("7_sewd3")
 rendering_quadrant_size = 64
 

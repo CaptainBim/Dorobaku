@@ -1,29 +1,34 @@
-[gd_scene load_steps=18 format=4 uid="uid://bhjs01m43jx06"]
+[gd_scene load_steps=23 format=4 uid="uid://bhjs01m43jx06"]
 
-[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_es2t2"]
-[ext_resource type="Texture2D" uid="uid://be3s02khqomtw" path="res://res/asset/menu/new_btn.png" id="3_euxfi"]
-[ext_resource type="FontFile" uid="uid://w0rbroaetxpt" path="res://res/BULKYPIX.TTF" id="4_5qqqi"]
-[ext_resource type="Texture2D" uid="uid://btxv4g5qs8j5p" path="res://res/asset/notip.png" id="5_wb6h4"]
-[ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="6_q7lo3"]
-[ext_resource type="Texture2D" uid="uid://dhyac7m038xqi" path="res://res/asset/assetMap2.png" id="6_y0wo5"]
-[ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="13_ld4ir"]
-[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="14_5llcq"]
-[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="15_wj11f"]
-[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="16_2jd5p"]
+[ext_resource type="Script" uid="uid://cjcnlpuqjwd88" path="res://res/script/chara.gd" id="1_178i2"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_178i2"]
+[ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="3_j5ep5"]
+[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="4_heauj"]
+[ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="5_fy3rt"]
+[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_vp2kj"]
+[ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_k5yaj"]
+[ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_w4wd3"]
+[ext_resource type="Texture2D" uid="uid://dhyac7m038xqi" path="res://res/asset/assetMap2.png" id="9_b7ar5"]
+[ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="10_2ioji"]
+[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="11_ten2j"]
+[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="12_prqi3"]
+[ext_resource type="PackedScene" uid="uid://dajhen4582udr" path="res://res/scene/doorx2.tscn" id="13_xmo1u"]
+[ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_s7tg5"]
+[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="15_j5ep5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_73pis"]
-atlas = ExtResource("3_euxfi")
-region = Rect2(640, 320, 320, 320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmlj4"]
+atlas = ExtResource("6_vp2kj")
+region = Rect2(5120, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ef4kc"]
-atlas = ExtResource("3_euxfi")
-region = Rect2(960, 320, 320, 320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceima"]
+atlas = ExtResource("6_vp2kj")
+region = Rect2(5440, 0, 320, 320)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1qwik"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8u5op"]
 radius = 160.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgndo"]
-texture = ExtResource("6_y0wo5")
+texture = ExtResource("9_b7ar5")
 texture_region_size = Vector2i(64, 64)
 21:0/0 = 0
 22:0/0 = 0
@@ -368,7 +373,7 @@ texture_region_size = Vector2i(64, 64)
 21:19/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nc2e4"]
-texture = ExtResource("13_ld4ir")
+texture = ExtResource("10_2ioji")
 texture_region_size = Vector2i(64, 64)
 21:0/0 = 0
 22:0/0 = 0
@@ -715,6 +720,11 @@ texture_region_size = Vector2i(64, 64)
 17:19/0 = 0
 18:19/0 = 0
 19:19/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+4:13/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_a0ley"]
 tile_size = Vector2i(64, 64)
@@ -728,99 +738,50 @@ sources/8 = SubResource("TileSetAtlasSource_nc2e4")
 size = Vector2(64, 64)
 
 [node name="DemoLevel" type="Node2D" groups=["level"]]
+script = ExtResource("1_178i2")
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
+
+[node name="loading" parent="ui_layer" instance=ExtResource("2_178i2")]
 visible = false
 
-[node name="movement_btn" parent="ui_layer" instance=ExtResource("2_es2t2")]
+[node name="papan" parent="ui_layer" instance=ExtResource("3_j5ep5")]
+visible = false
+position = Vector2(928, 479)
+scale = Vector2(0.9, 0.9)
+b1_task = "140"
+b2_task = "160"
+b3_task = "180"
 
-[node name="reset" type="TouchScreenButton" parent="ui_layer"]
-position = Vector2(25, 25)
+[node name="movement_btn" parent="ui_layer" instance=ExtResource("4_heauj")]
+
+[node name="btn_con" type="HBoxContainer" parent="ui_layer"]
+custom_minimum_size = Vector2(360, 180)
+offset_right = 360.0
+offset_bottom = 180.0
+size_flags_horizontal = 3
+
+[node name="reset_btn" parent="ui_layer/btn_con" instance=ExtResource("5_fy3rt")]
+position = Vector2(261, 95)
+
+[node name="pauseBtn" type="TouchScreenButton" parent="ui_layer/btn_con"]
+position = Vector2(14, 14)
 scale = Vector2(0.5, 0.5)
-texture_normal = SubResource("AtlasTexture_73pis")
-texture_pressed = SubResource("AtlasTexture_ef4kc")
-shape = SubResource("CircleShape2D_1qwik")
+texture_normal = SubResource("AtlasTexture_nmlj4")
+texture_pressed = SubResource("AtlasTexture_ceima")
+shape = SubResource("CircleShape2D_8u5op")
 shape_visible = false
 
-[node name="Panel" type="Panel" parent="ui_layer"]
-anchors_preset = -1
-anchor_left = 0.833
-anchor_top = 0.059
-anchor_right = 0.967
-anchor_bottom = 0.119
-offset_left = 0.639893
-offset_top = 0.279995
-offset_right = -0.640137
-offset_bottom = 0.479996
-grow_horizontal = 0
+[node name="timeDisplay" parent="ui_layer" instance=ExtResource("7_k5yaj")]
 
-[node name="Label" type="Label" parent="ui_layer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.721273, 0.728712, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("4_5qqqi")
-theme_override_font_sizes/font_size = 60
-text = "120"
-horizontal_alignment = 1
-vertical_alignment = 2
+[node name="bg_layer" type="CanvasLayer" parent="."]
+layer = -100
 
-[node name="papan" type="Sprite2D" parent="ui_layer"]
-visible = false
-position = Vector2(928, 429)
-scale = Vector2(2, 2)
-texture = ExtResource("5_wb6h4")
-
-[node name="BoxContainer" type="BoxContainer" parent="ui_layer/papan"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -259.5
-offset_top = -198.0
-offset_right = -259.5
-offset_bottom = -198.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ui_layer/papan/BoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="ui_layer/papan/BoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("6_q7lo3")
-theme_override_font_sizes/font_size = 32
-text = "
-
-Demo Selesai!"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="ui_layer/papan/BoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("6_q7lo3")
-theme_override_font_sizes/font_size = 26
-text = "
-terima kasih telah
-memainkan demo ini
-........"
-horizontal_alignment = 1
+[node name="background" parent="bg_layer" instance=ExtResource("8_w4wd3")]
 
 [node name="layer1" type="TileMapLayer" parent="."]
 z_index = -1
-tile_map_data = PackedByteArray("AAAJAAIACAAIAA0AAAAIAAMACAAIAA0AAAAHAAQACAAIAA0AAAAHAAUACAAIAA0AAAAKAAEACAAGAAkAAAALAAEACAAGAAkAAAANAAEACAAGAAkAAAAMAAEACAAGAAkAAAAOAAEACAAGAAkAAAAPAAEACAAGAAkAAAAQAAEACAAGAAkAAAARAAEACAAGAAkAAAASAAEACAAGAAkAAAATAAEACAAMAAkAAAAUAAIACAAMAAkAAAAVAAMACAAMAAkAAAAWAAQACAAMAAkAAAAWAAUACAAMAAgAAAAWAAYACAAHAAcAADAWAAkACAAFAAcAAAAWAAoACAAJAAgAAAAVAAsACAAJAAgAAAAUAAwACAAJAAgAAAATAA0ACAAJAAgAAAASAA0ACAAJAAcAAAARAA0ACAAJAAcAAAAQAA0ACAAJAAcAAAAPAA0ACAAJAAcAAAAOAA0ACAAJAAcAAAANAA0ACAAJAAcAAAAMAA0ACAAJAAcAAAALAA0ACAAJAAcAAAAKAA0ACAAJAAcAAAAHAAoACAAHAAcAAAAHAAkACAAIAA0AAAAHAAYACAAIAA0AAAAHAAgACAAKAAwAAAAKAAIACAAIAA0AAAAJAAMACAAIAA0AAAAIAAQACAAIAA0AAAAIAAUACAAIAA0AAAAIAAYACAAIAA0AAAAIAAgACAAIAA0AAAAIAAkACAAIAA0AAAAIAAoACAAIAA0AAAAJAAoACAAKAA0AAAAJAAkACAAIAA0AAAAJAAgACAAIAA0AAAAPAAQACAAIAA0AAAAKAAQACAAIAA0AAAAKAAMACAAIAA0AAAALAAMACAAIAA0AAAAMAAMACAAIAA0AAAANAAMACAAIAA0AAAANAAIACAAIAA0AAAAOAAIACAAJAAwAAAAOAAMACAAIAA0AAAAPAAMACAAIAA0AAAALAAIACAAJAAwAAAAMAAIACAAJAAwAAAAPAAIACAAIAA0AAAAQAAIACAAIAA0AAAARAAIACAAIAA0AAAARAAMACAAIAA0AAAASAAMACAAIAA0AAAASAAQACAAIAA0AAAATAAQACAAIAA0AAAATAAUACAAIAA0AAAATAAYACAAJAAwAAAAUAAYACAAIAA0AAAAUAAUACAAIAA0AAAAUAAQACAAIAA0AAAAUAAMACAAGAAkAAAATAAMACAAIAA0AAAASAAIACAAIAA0AAAATAAIACAAKAAoAAAAQAAMACAAIAA0AAAAJAAQACAAIAA0AAAAJAAUACAAIAA0AAAAKAAkACAAIAA0AAAAKAAoACAAIAA0AAAAKAAsACAAIAA0AAAAKAAwACAAIAA0AAAALAAwACAAIAA0AAAAMAAwACAAIAA0AAAANAAwACAAIAA0AAAAOAAwACAAIAA0AAAAPAAwACAAIAA0AAAAQAAwACAAIAA0AAAARAAwACAAKAAwAAAASAAwACAAIAA0AAAATAAwACAAFAAcAAAAUAAsACAAFAAcAAAAUAAoACAAIAA0AAAAUAAkACAAIAA0AAAATAAkACAAIAA0AAAATAAgACAAJAAwAAAALAAoACAAIAA0AAAALAAsACAAIAA0AAAAMAAsACAAIAA0AAAANAAsACAAIAA0AAAAOAAsACAAIAA0AAAAPAAsACAAIAA0AAAAQAAsACAAIAA0AAAARAAsACAAKAA0AAAASAAsACAAIAA0AAAATAAsACAAIAA0AAAATAAoACAAIAA0AAAARAAoACAAIAA0AAAAUAAgACAAIAA0AAAAVAAUACAAIAA0AAAAVAAQACAAKAAoAAAAVAAYACAAIAA0AAAAVAAgACAAIAA0AAAAVAAkACAAIAA0AAAAVAAoACAAFAAcAAAAGAAkACAAHAAgAAAAGAAgACAAHAAgAAAAGAAcACAAHAAgAAAAGAAYACAAHAAgAAAAGAAUACAAHAAgAAAAGAAQACAAHAAgAAAAGAAMACAAPAAgAAAAHAAMACAAGAAkAAAAHAAIACAAPAAgAAAAIAAIACAAGAAkAAAAIAAEACAAPAAgAAAAJAAEACAAGAAkAAAATAAcACAAIAA0AAAAUAAcACAAKAAwAAAAVAAcACAAIAA0AAAAJAAcACAAIAA0AAAAIAAcACAAIAA0AAAAHAAcACAAIAA0AAAANAAQACAAIAA0AAAAOAAQACAAIAA0AAAAKAAUACAAIAA0AAAAJAAYACAAIAA0AAAALAAQACAAIAA0AAAASAAkACAAIAA0AAAASAAoACAAIAA0AAAASAAUACAAIAA0AAAARAAQACAAIAA0AAAAJAA0ACAAKAAgAAAAJAAwACAAHAAcAAAAIAAwACAAKAAgAAAAIAAsACAAHAAcAAAAHAAsACAAKAAgAAAAGAAoACAAKAAgAAAAJAAsACAAIAA0AAAAXAAYACAAGAAcAADAYAAYACAAGAAcAADAXAAkACAALAAsAADAYAAkACAAGAAcAAAAZAAkACAAJAAgAAAAZAAYACAAKAAgAADAZAAcACAAFAAgAAAAZAAgACAAFAAgAAAAWAAcACAAIAA0AAAAXAAcACAAIAA0AAAAYAAcACAAIAA0AAAAYAAgACAAIAA0AAAAXAAgACAAIAA0AAAAWAAgACAAIAA0AAAAMAAcACAAIAA0AAAANAAcACAAKAA0AAAAOAAcACAAIAA0AAAAPAAcACAAIAA0AAAAQAAcACAAIAA0AAAAQAAgACAAIAA0AAAAPAAgACAAJAAwAAAAOAAgACAAIAA0AAAANAAgACAAIAA0AAAAMAAgACAAIAA0AAAAMAAYACAAIAA0AAAAMAAUACAAIAA0AAAAMAAQACAAIAA0AAAAQAAYACAAIAA0AAAAQAAUACAAIAA0AAAAQAAQACAAIAA0AAAAQAAkACAAIAA0AAAAMAAkACAAKAA0AAAALAAcACAAJAAwAAAALAAgACAAIAA0AAAARAAcACAAIAA0AAAARAAgACAAIAA0AAAALAAkACAAIAA0AAAARAAkACAAIAA0AAAA=")
+tile_map_data = PackedByteArray("AAAJAAIACAAIAA0AAAAIAAMACAAIAA0AAAAHAAQACAAIAA0AAAAHAAUACAAIAA0AAAAKAAEACAAGAAkAAAALAAEACAAGAAkAAAANAAEACAAGAAkAAAAMAAEACAAGAAkAAAAOAAEACAAGAAkAAAAPAAEACAAGAAkAAAAQAAEACAAGAAkAAAARAAEACAAGAAkAAAASAAEACAAGAAkAAAATAAEACAAMAAkAAAAUAAIACAAMAAkAAAAVAAMACAAMAAkAAAAWAAQACAAMAAkAAAAWAAUACAAMAAgAAAAWAAYACAAHAAcAADAWAAkACAAFAAcAAAAWAAoACAAJAAgAAAAVAAsACAAJAAgAAAAUAAwACAAJAAgAAAATAA0ACAAJAAgAAAASAA0ACAAJAAcAAAARAA0ACAAJAAcAAAAQAA0ACAAJAAcAAAAPAA0ACAAJAAcAAAAOAA0ACAAJAAcAAAANAA0ACAAJAAcAAAAMAA0ACAAJAAcAAAALAA0ACAAJAAcAAAAKAA0ACAAJAAcAAAAHAAoACAAHAAcAAAAHAAkACAAIAA0AAAAHAAYACAAIAA0AAAAHAAgACAAKAAwAAAAKAAIACAAIAA0AAAAJAAMACAAIAA0AAAAIAAQACAAIAA0AAAAIAAUACAAIAA0AAAAIAAYACAAIAA0AAAAIAAgACAAIAA0AAAAIAAkACAAIAA0AAAAIAAoACAAIAA0AAAAJAAoACAAKAA0AAAAJAAkACAAIAA0AAAAJAAgACAAIAA0AAAAPAAQACAAIAA0AAAAKAAQACAAIAA0AAAAKAAMACAAIAA0AAAALAAMACAAIAA0AAAAMAAMACAAIAA0AAAANAAMACAAIAA0AAAANAAIACAAIAA0AAAAOAAIACAAJAAwAAAAOAAMACAAIAA0AAAAPAAMACAAIAA0AAAALAAIACAAJAAwAAAAMAAIACAAJAAwAAAAPAAIACAAIAA0AAAAQAAIACAAIAA0AAAARAAIACAAIAA0AAAARAAMACAAIAA0AAAASAAMACAAIAA0AAAASAAQACAAIAA0AAAATAAQACAAIAA0AAAATAAUACAAIAA0AAAATAAYACAAJAAwAAAAUAAYACAAIAA0AAAAUAAUACAAIAA0AAAAUAAQACAAIAA0AAAAUAAMACAAGAAkAAAATAAMACAAIAA0AAAASAAIACAAIAA0AAAATAAIACAAKAAoAAAAQAAMACAAIAA0AAAAJAAQACAAIAA0AAAAJAAUACAAIAA0AAAAKAAkACAAIAA0AAAAKAAoACAAIAA0AAAAKAAsACAAIAA0AAAAKAAwACAAIAA0AAAALAAwACAAIAA0AAAAMAAwACAAIAA0AAAANAAwACAAIAA0AAAAOAAwACAAIAA0AAAAPAAwACAAIAA0AAAAQAAwACAAIAA0AAAARAAwACAAKAAwAAAASAAwACAAIAA0AAAATAAwACAAFAAcAAAAUAAsACAAFAAcAAAAUAAoACAAIAA0AAAAUAAkACAAIAA0AAAATAAkACAAIAA0AAAATAAgACAAJAAwAAAALAAoACAAIAA0AAAALAAsACAAIAA0AAAAMAAsACAAIAA0AAAANAAsACAAIAA0AAAAOAAsACAAIAA0AAAAPAAsACAAIAA0AAAAQAAsACAAIAA0AAAARAAsACAAKAA0AAAASAAsACAAIAA0AAAATAAsACAAIAA0AAAATAAoACAAIAA0AAAARAAoACAAIAA0AAAAUAAgACAAIAA0AAAAVAAUACAAIAA0AAAAVAAQACAAKAAoAAAAVAAYACAAIAA0AAAAVAAgACAAIAA0AAAAVAAkACAAIAA0AAAAVAAoACAAFAAcAAAAGAAkACAAHAAgAAAAGAAgACAAHAAgAAAAGAAcACAAHAAgAAAAGAAYACAAHAAgAAAAGAAUACAAHAAgAAAAGAAQACAAHAAgAAAAGAAMACAAPAAgAAAAHAAMACAAGAAkAAAAHAAIACAAPAAgAAAAIAAIACAAGAAkAAAAIAAEACAAPAAgAAAAJAAEACAAGAAkAAAATAAcACAAIAA0AAAAUAAcACAAKAAwAAAAVAAcACAAIAA0AAAAJAAcACAAIAA0AAAAIAAcACAAIAA0AAAAHAAcACAAIAA0AAAANAAQACAAIAA0AAAAOAAQACAAIAA0AAAAKAAUACAAIAA0AAAAJAAYACAAIAA0AAAALAAQACAAIAA0AAAASAAkACAAIAA0AAAASAAoACAAIAA0AAAASAAUACAAIAA0AAAARAAQACAAIAA0AAAAJAA0ACAAKAAgAAAAJAAwACAAHAAcAAAAIAAwACAAKAAgAAAAIAAsACAAHAAcAAAAHAAsACAAKAAgAAAAGAAoACAAKAAgAAAAJAAsACAAIAA0AAAAXAAYACAAGAAcAADAYAAYACAAGAAcAADAXAAkACAALAAsAADAYAAkACAAGAAcAAAAZAAkACAAJAAgAAAAZAAYACAAKAAgAADAZAAcACAAFAAgAAAAZAAgACAAFAAgAAAAWAAcACAAIAA0AAAAXAAcACAAIAA0AAAAYAAcACAAIAA0AAAAYAAgACAAIAA0AAAAXAAgACAAIAA0AAAAWAAgACAAIAA0AAAAMAAcACAAIAA0AAAANAAcACAAKAA0AAAAOAAcACAAIAA0AAAAPAAcACAAIAA0AAAAQAAcACAAIAA0AAAAQAAgACAAIAA0AAAAPAAgACAAJAAwAAAAOAAgACAAIAA0AAAANAAgACAAIAA0AAAAMAAgACAAIAA0AAAAMAAYACAAIAA0AAAAMAAUACAAIAA0AAAAMAAQACAAIAA0AAAAQAAYACAAIAA0AAAAQAAUACAAIAA0AAAAQAAQACAAIAA0AAAAQAAkACAAIAA0AAAAMAAkACAAKAA0AAAALAAcACAAJAAwAAAALAAgACAAIAA0AAAARAAcACAAIAA0AAAARAAgACAAIAA0AAAALAAkACAAIAA0AAAARAAkACAAIAA0AAAAKAAcACAAFABAAAFAKAAgACAAFABAAAFAKAAYACAAGABAAAFALAAYACAAGABAAAFALAAUACAAGABAAAFARAAUACAAHABAAAGARAAYACAAGABAAAGASAAYACAAGABAAAGASAAcACAAFABAAAGASAAgACAAIABAAAFANAAoACAAFABAAAAAOAAoACAAFABAAAAAQAAoACAAFABAAAGAMAAoACAAFABAAAGAPAAkACAAFABAAAGANAAkACAAFABAAAGAPAAoACAAHABAAAAAOAAkACAAHABAAAAANAAUACAAHABAAAAAOAAUACAAHABAAAAAPAAUACAAHABAAAAAPAAYACAAHABAAAAAOAAYACAAHABAAAAANAAYACAAHABAAAAA=")
 tile_set = SubResource("TileSet_a0ley")
 rendering_quadrant_size = 64
 
@@ -841,32 +802,32 @@ shape = SubResource("RectangleShape2D_flx8a")
 [node name="cek_grup" type="Node2D" parent="."]
 position = Vector2(0, -128)
 
-[node name="cek i" parent="cek_grup" instance=ExtResource("14_5llcq")]
+[node name="cek i" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(799, 608)
 scale = Vector2(2, 2)
 nama_cek = "i"
 
-[node name="cek i2" parent="cek_grup" instance=ExtResource("14_5llcq")]
+[node name="cek i2" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(735, 608)
 scale = Vector2(2, 2)
 nama_cek = "i"
 
-[node name="cek z" parent="cek_grup" instance=ExtResource("14_5llcq")]
+[node name="cek z" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(863, 608)
 scale = Vector2(2, 2)
 nama_cek = "z"
 
-[node name="cek i 2" parent="cek_grup" instance=ExtResource("14_5llcq")]
+[node name="cek i 2" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(927, 608)
 scale = Vector2(2, 2)
 nama_cek = "i"
 
-[node name="cek n" parent="cek_grup" instance=ExtResource("14_5llcq")]
+[node name="cek n" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(991, 608)
 scale = Vector2(2, 2)
 nama_cek = "n"
 
-[node name="cek n2" parent="cek_grup" instance=ExtResource("14_5llcq")]
+[node name="cek n2" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(1055, 608)
 scale = Vector2(2, 2)
 nama_cek = "n"
@@ -874,44 +835,57 @@ nama_cek = "n"
 [node name="kotak_grup" type="Node2D" parent="."]
 position = Vector2(6, -134)
 
-[node name="kosong" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+[node name="kosong" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(1274, 504)
 nama_kotak = "kosong"
 
-[node name="kosong 2" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+[node name="kosong 2" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(570, 441)
 nama_kotak = "kosong"
 
-[node name="i" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+[node name="i" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(657, 326)
 nama_kotak = "i"
 
-[node name="z" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+[node name="z" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(934, 326)
 nama_kotak = "z"
 
-[node name="i 2" parent="kotak_grup" instance=ExtResource("15_wj11f")]
-position = Vector2(1107, 843)
+[node name="i2" parent="kotak_grup" instance=ExtResource("12_prqi3")]
+position = Vector2(1142, 758)
 nama_kotak = "i"
 
-[node name="n" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+[node name="n" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(857, 872)
 nama_kotak = "n"
 
-[node name="j" parent="kotak_grup" instance=ExtResource("15_wj11f")]
+[node name="j" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(628, 838)
 nama_kotak = "j"
-
-[node name="Player" parent="." instance=ExtResource("16_2jd5p")]
-position = Vector2(1536, 341)
-scale = Vector2(2, 2)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 120.0
 one_shot = true
 
-[connection signal="pressed" from="ui_layer/reset" to="." method="_on_touch_screen_button_pressed"]
+[node name="door" parent="." instance=ExtResource("13_xmo1u")]
+position = Vector2(1476, 581.00006)
+rotation = -1.5691943
+scale = Vector2(1.0803474, 1.0419638)
+
+[node name="buku" parent="." instance=ExtResource("14_s7tg5")]
+position = Vector2(1091, 821)
+hint_text = "Bumbu Cair
+Penambah Rasa"
+
+[node name="Player" parent="." instance=ExtResource("15_j5ep5")]
+position = Vector2(1116, 233)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(8, -7)
+zoom = Vector2(1.3, 1.3)
+
 [connection signal="body_entered" from="exit" to="." method="_finish"]
 [connection signal="activated" from="cek_grup/cek i" to="." method="_send_cek"]
 [connection signal="deactivated" from="cek_grup/cek i" to="." method="_exit_cek"]
