@@ -250,6 +250,7 @@ offset = Vector2(32, -32)
 
 [node name="t1" type="RigidBody2D" parent="special"]
 position = Vector2(1088, 337)
+collision_mask = 0
 mass = 0.001
 gravity_scale = 0.0
 
@@ -274,6 +275,7 @@ shape = SubResource("RectangleShape2D_tuvn4")
 
 [node name="t2" type="RigidBody2D" parent="special"]
 position = Vector2(978, 401)
+collision_mask = 0
 mass = 0.001
 gravity_scale = 0.0
 
