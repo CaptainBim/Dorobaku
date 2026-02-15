@@ -16,8 +16,9 @@ func _ready() -> void:
 	notif.position = notifPos + Vector2 (0 , 70)
 	unlockCheck(chapterKey)
 
-func _on_level_pressed(lvl: int) -> void:
+func _on_level_pressed(lvl: int, btn) -> void:
 	AudioPlayer._play_fx_btn7()
+	btn.process_mode = Node.PROCESS_MODE_DISABLED;
 	await get_tree().create_timer(0.2).timeout
 	loading.transition()
 	await loading.on_transition_finished
@@ -31,6 +32,7 @@ func _on_level_pressed(lvl: int) -> void:
 	if lvl == 1 :
 		get_tree().change_scene_to_file("res://res/scene/menu/cutscene/story1.tscn")
 		return
+	print(path);
 	get_tree().change_scene_to_file(path)
 
 func _on_back_pressed() -> void:
@@ -75,7 +77,7 @@ func unlockCheck(chapter: String) :
 			elif state == 2 : #UNLOCKED
 				if btn.pressed.is_connected(_on_level_pressed):
 					btn.pressed.disconnect(_on_level_pressed)
-				btn.pressed.connect(Callable(self, "_on_level_pressed").bind(lvlIndex + 1))
+				btn.pressed.connect(Callable(self, "_on_level_pressed").bind(lvlIndex + 1, btn))
 				closeTex.visible = false
 				starCons.visible = true
 				starCons.showStars(str(int(stars)))

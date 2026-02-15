@@ -23,3 +23,5 @@ func move(input_movement):
 
 func set_block(huruf):
 	anim.play(huruf)
+func disappear():
+	queue_free();

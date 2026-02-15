@@ -1,0 +1,611 @@
+[gd_scene load_steps=43 format=3 uid="uid://dmx535jcsa8q6"]
+
+[ext_resource type="Script" uid="uid://cmo4qpc5u316" path="res://res/script/menu/lvl_select.gd" id="1_cvo1e"]
+[ext_resource type="Texture2D" uid="uid://bn26hefyefqwr" path="res://res/asset/bg.png" id="1_qa6kw"]
+[ext_resource type="Texture2D" uid="uid://bb0bqj4sasi3g" path="res://res/asset/font_angka.png" id="2_nwwgl"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_ub6vv"]
+[ext_resource type="Texture2D" uid="uid://dkpv5qepomobu" path="res://res/asset/papan.png" id="3_2fus3"]
+[ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="4_1qbrh"]
+[ext_resource type="PackedScene" uid="uid://b1men06xdqkix" path="res://res/scene/misc/star_con.tscn" id="6_fyg5a"]
+[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="7_4eymy"]
+[ext_resource type="Texture2D" uid="uid://du4qu7fwwm7ty" path="res://res/asset/lvlBg.png" id="7_v6eoi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_351n1"]
+texture = ExtResource("1_qa6kw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12wj1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xobet"]
+atlas = ExtResource("3_2fus3")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_py230"]
+texture = SubResource("AtlasTexture_xobet")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t60x1"]
+atlas = ExtResource("3_2fus3")
+region = Rect2(128, 0, 384, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_05sr3"]
+load_path = "res://.godot/imported/papan.png-3fb9a0d2754c02bc22a062adecd366c2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0878f"]
+atlas = SubResource("CompressedTexture2D_05sr3")
+region = Rect2(128, 64, 384, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4id6"]
+atlas = SubResource("CompressedTexture2D_05sr3")
+region = Rect2(128, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb56w"]
+atlas = SubResource("CompressedTexture2D_05sr3")
+region = Rect2(192, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvmcg"]
+atlas = ExtResource("3_2fus3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhfk5"]
+atlas = ExtResource("3_2fus3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjd76"]
+atlas = ExtResource("3_2fus3")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uf71"]
+atlas = ExtResource("3_2fus3")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tuq6b"]
+load_path = "res://.godot/imported/lvlBg.png-7cd9a9f141e137adce70860eea7ab3b1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdlc4"]
+atlas = SubResource("CompressedTexture2D_tuq6b")
+region = Rect2(96, 116, 366, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hossb"]
+atlas = SubResource("CompressedTexture2D_tuq6b")
+region = Rect2(1200, 115, 367, 449)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oihb3"]
+atlas = ExtResource("2_nwwgl")
+region = Rect2(0, 0, 640, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46gfk"]
+atlas = ExtResource("7_v6eoi")
+region = Rect2(648, 115, 367, 449)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r1gj"]
+atlas = SubResource("CompressedTexture2D_tuq6b")
+region = Rect2(96, 116, 366, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyna8"]
+atlas = SubResource("CompressedTexture2D_tuq6b")
+region = Rect2(1200, 115, 367, 449)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isbj3"]
+atlas = ExtResource("2_nwwgl")
+region = Rect2(0, 0, 640, 128)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dibe3"]
+load_path = "res://.godot/imported/lvlBg.png-7cd9a9f141e137adce70860eea7ab3b1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6eoi"]
+atlas = SubResource("CompressedTexture2D_dibe3")
+region = Rect2(96, 116, 366, 445)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tde1w"]
+load_path = "res://.godot/imported/lvlBg.png-7cd9a9f141e137adce70860eea7ab3b1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq3pv"]
+atlas = SubResource("CompressedTexture2D_tde1w")
+region = Rect2(1200, 115, 367, 449)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyg5a"]
+atlas = SubResource("CompressedTexture2D_dibe3")
+region = Rect2(96, 116, 366, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr3f3"]
+atlas = SubResource("CompressedTexture2D_dibe3")
+region = Rect2(96, 116, 366, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6acs3"]
+atlas = SubResource("CompressedTexture2D_tuq6b")
+region = Rect2(96, 116, 366, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lqaq"]
+atlas = SubResource("CompressedTexture2D_tuq6b")
+region = Rect2(96, 116, 366, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8chde"]
+atlas = SubResource("CompressedTexture2D_dibe3")
+region = Rect2(96, 116, 366, 445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byxwj"]
+atlas = ExtResource("7_4eymy")
+region = Rect2(12802, 0, 315, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhe33"]
+atlas = ExtResource("7_4eymy")
+region = Rect2(13123, 0, 317, 320)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8s3y"]
+radius = 160.0
+
+[node name="MenuLvl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cvo1e")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_351n1")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="nama chapter" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 219)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_12wj1")
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/nama chapter"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 7.0
+offset_right = 500.0
+offset_bottom = 187.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_py230")
+
+[node name="sisi" type="BoxContainer" parent="Panel/VBoxContainer/nama chapter/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="atas" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/sisi"]
+position = Vector2(250, 26)
+texture = SubResource("AtlasTexture_t60x1")
+
+[node name="atas2" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/sisi"]
+position = Vector2(629, 26)
+texture = SubResource("AtlasTexture_t60x1")
+
+[node name="atas3" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/sisi"]
+position = Vector2(783, 26)
+texture = SubResource("AtlasTexture_t60x1")
+
+[node name="bawah" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/sisi"]
+position = Vector2(250, 164)
+texture = SubResource("AtlasTexture_0878f")
+
+[node name="bawah2" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/sisi"]
+position = Vector2(629, 164)
+texture = SubResource("AtlasTexture_0878f")
+
+[node name="bawah3" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/sisi"]
+position = Vector2(783, 164)
+texture = SubResource("AtlasTexture_0878f")
+
+[node name="kiri" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/sisi"]
+position = Vector2(26, 83)
+texture = SubResource("AtlasTexture_k4id6")
+
+[node name="kanan" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/sisi"]
+position = Vector2(976, 87)
+texture = SubResource("AtlasTexture_sb56w")
+
+[node name="tepi" type="BoxContainer" parent="Panel/VBoxContainer/nama chapter/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/tepi"]
+position = Vector2(26, 26)
+texture = SubResource("AtlasTexture_bvmcg")
+
+[node name="2" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/tepi"]
+position = Vector2(976, 26)
+texture = SubResource("AtlasTexture_lhfk5")
+
+[node name="3" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/tepi"]
+position = Vector2(26, 164)
+texture = SubResource("AtlasTexture_gjd76")
+
+[node name="4" type="Sprite2D" parent="Panel/VBoxContainer/nama chapter/Panel/tepi"]
+position = Vector2(976, 164)
+texture = SubResource("AtlasTexture_8uf71")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/nama chapter/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.269
+anchor_right = 1.0
+anchor_bottom = 0.697
+offset_top = 0.0799942
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_1qbrh")
+theme_override_font_sizes/font_size = 64
+text = "DEMO CHAPTER"
+horizontal_alignment = 1
+
+[node name="levelCon1" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/levelCon1"]
+custom_minimum_size = Vector2(95, 125)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_12wj1")
+
+[node name="con1" type="BoxContainer" parent="Panel/VBoxContainer/levelCon1"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl1" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon1/con1" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_vdlc4")
+texture_pressed = SubResource("AtlasTexture_hossb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon1/con1/lvl1"]
+texture_filter = 6
+position = Vector2(172, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_oihb3")
+hframes = 10
+frame = 1
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon1/con1/lvl1" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon1/con1/lvl1"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="con2" type="BoxContainer" parent="Panel/VBoxContainer/levelCon1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl2" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon1/con2" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_5r1gj")
+texture_pressed = SubResource("AtlasTexture_nyna8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon1/con2/lvl2"]
+texture_filter = 6
+position = Vector2(187, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+frame = 2
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon1/con2/lvl2" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon1/con2/lvl2"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="con3" type="BoxContainer" parent="Panel/VBoxContainer/levelCon1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl3" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon1/con3" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_v6eoi")
+texture_pressed = SubResource("AtlasTexture_sq3pv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon1/con3/lvl3"]
+texture_filter = 6
+position = Vector2(187, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+frame = 3
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon1/con3/lvl3" instance=ExtResource("6_fyg5a")]
+offset_top = -150.0
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon1/con3/lvl3"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="con4" type="BoxContainer" parent="Panel/VBoxContainer/levelCon1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl4" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon1/con4" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_fyg5a")
+texture_pressed = SubResource("AtlasTexture_sq3pv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon1/con4/lvl4"]
+texture_filter = 6
+position = Vector2(187, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+frame = 4
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon1/con4/lvl4" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon1/con4/lvl4"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="con5" type="BoxContainer" parent="Panel/VBoxContainer/levelCon1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl5" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon1/con5" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_dr3f3")
+texture_pressed = SubResource("AtlasTexture_sq3pv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon1/con5/lvl5"]
+texture_filter = 6
+position = Vector2(187, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+frame = 5
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon1/con5/lvl5" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon1/con5/lvl5"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="levelCon2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/levelCon2"]
+custom_minimum_size = Vector2(95, 125)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_12wj1")
+
+[node name="con6" type="BoxContainer" parent="Panel/VBoxContainer/levelCon2"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl6" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon2/con6" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_6acs3")
+texture_pressed = SubResource("AtlasTexture_hossb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon2/con6/lvl6"]
+texture_filter = 6
+position = Vector2(187, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_oihb3")
+hframes = 10
+frame = 6
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon2/con6/lvl6" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon2/con6/lvl6"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="con7" type="BoxContainer" parent="Panel/VBoxContainer/levelCon2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl7" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon2/con7" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_7lqaq")
+texture_pressed = SubResource("AtlasTexture_nyna8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon2/con7/lvl7"]
+texture_filter = 6
+position = Vector2(187, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+frame = 7
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon2/con7/lvl7" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon2/con7/lvl7"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="con8" type="BoxContainer" parent="Panel/VBoxContainer/levelCon2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl8" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon2/con8" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_8chde")
+texture_pressed = SubResource("AtlasTexture_sq3pv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon2/con8/lvl8"]
+texture_filter = 6
+position = Vector2(187, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+frame = 8
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon2/con8/lvl8" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon2/con8/lvl8"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="con9" type="BoxContainer" parent="Panel/VBoxContainer/levelCon2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl9" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon2/con9" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_8chde")
+texture_pressed = SubResource("AtlasTexture_sq3pv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon2/con9/lvl9"]
+texture_filter = 6
+position = Vector2(187, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+frame = 9
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon2/con9/lvl9" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon2/con9/lvl9"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="con10" type="BoxContainer" parent="Panel/VBoxContainer/levelCon2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="lvl10" type="TouchScreenButton" parent="Panel/VBoxContainer/levelCon2/con10" groups=["level_button"]]
+position = Vector2(0, -18)
+scale = Vector2(0.7, 0.7)
+texture_normal = SubResource("AtlasTexture_8chde")
+texture_pressed = SubResource("AtlasTexture_sq3pv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/levelCon2/con10/lvl10"]
+texture_filter = 6
+position = Vector2(110, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+frame = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/VBoxContainer/levelCon2/con10/lvl10"]
+texture_filter = 6
+position = Vector2(230, 180)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_isbj3")
+hframes = 10
+
+[node name="starCon" parent="Panel/VBoxContainer/levelCon2/con10/lvl10" instance=ExtResource("6_fyg5a")]
+
+[node name="closeTex" type="TextureRect" parent="Panel/VBoxContainer/levelCon2/con10/lvl10"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_46gfk")
+
+[node name="back" type="TouchScreenButton" parent="Panel"]
+position = Vector2(7, 11)
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_byxwj")
+texture_pressed = SubResource("AtlasTexture_yhe33")
+shape = SubResource("CircleShape2D_m8s3y")
+shape_visible = false
+
+[node name="notif" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(1000, 50)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 1000.0
+grow_vertical = 0
+
+[node name="notifTxt" type="Label" parent="Panel/notif"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "10000000000000000000000000000000000000000"
+
+[node name="loading" parent="." instance=ExtResource("2_ub6vv")]
+visible = false
+
+[connection signal="pressed" from="Panel/back" to="." method="_on_back_pressed"]

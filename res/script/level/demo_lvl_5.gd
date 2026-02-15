@@ -1,4 +1,4 @@
-class_name DemoLevel3 extends Node
+class_name DemoLevel5 extends Node
 
 var game_end : bool = false
 var info : bool = false
@@ -9,7 +9,6 @@ var saveData = SAVES.new();
 
 @onready var label: Label = $ui_layer/Panel/Label
 @onready var timer: Timer = $Timer
-@onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var musicLvl = preload("res://res/asset/sound/bgm3.mp3")
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
@@ -36,8 +35,6 @@ func _ready() -> void:
 	for plate in $cek_grup.get_children():
 		plate.activated.connect(self._send_cek)
 		plate.deactivated.connect(self._exit_cek)
-	anim.play("jembatans_sets")
-	_obs_default()
 	
 	for i in $kotak_grup.get_children() :
 		i.add_to_group(i.nama_kotak)
@@ -47,9 +44,9 @@ func _ready() -> void:
 func box_setup() -> void:
 	get_tree().get_nodes_in_group("i")[0].set_block(h1)
 	get_tree().get_nodes_in_group("z")[0].set_block(h2)
-	get_tree().get_nodes_in_group("i2")[0].set_block(h3)
+	get_tree().get_nodes_in_group("i")[1].set_block(h3)
 	get_tree().get_nodes_in_group("n")[0].set_block(h4)
-	get_tree().get_nodes_in_group("j")[1].set_block(h2)
+	get_tree().get_nodes_in_group("j")[0].set_block(h2)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") : 
@@ -151,28 +148,3 @@ func _nextLvl() :
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
 	get_tree().change_scene_to_file("res://res/scene/level/demo_level_6.tscn")
-
-func _on_lever1(condition) -> void:
-	if condition == "on" :
-		anim.play("jembatan1_on")
-		$lobang.set_collision_layer_value(5,false)
-		$lobang.set_collision_layer_value(1,false)
-	else : 
-		anim.play("jembatan1_off")
-		$lobang.set_collision_layer_value(5,true)
-		$lobang.set_collision_layer_value(1,true)
-
-func _on_lever2(condition) -> void:
-	if condition == "on" :
-		$special/t1.visible = true
-		$special/t2.visible = false
-		$special/t1/CollisionShape2D.disabled = false
-		$special/t2/CollisionShape2D.disabled = true
-	else : 
-		_obs_default()
-		
-func _obs_default() :
-	$special/t1.visible = false
-	$special/t2.visible = true
-	$special/t1/CollisionShape2D.disabled = true
-	$special/t2/CollisionShape2D.disabled = false

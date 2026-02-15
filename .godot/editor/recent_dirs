@@ -1,3 +1,4 @@
+res://res/scene
 res://res/asset
 res://res/scene/misc
 res://res/global
@@ -8,7 +9,6 @@ D:/data aplikasi/Godot_v4_3/build
 D:/AndroidSDK/Sdk
 C:/Program Files/Java/jdk-17
 res://res/script/menu
-res://res/scene
 res://res/scene/menu
 res://res
 C:/Users/Reza/AppData/Roaming/Godot/keystores

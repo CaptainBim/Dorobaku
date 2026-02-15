@@ -1,3 +1,8 @@
+CollisionShape2D
+Area2D
+StaticBody2D
+RigidBody2D
+Node
 Sprite2D
 TouchScreenButton
 ColorRect
@@ -7,8 +12,3 @@ CanvasLayer
 TextureRect
 CenterContainer
 Control
-AnimationPlayer
-Label
-Timer
-Polygon2D
-VBoxContainer
