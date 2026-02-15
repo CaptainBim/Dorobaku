@@ -84,7 +84,7 @@ func unlockCheck(chapter: String) :
 			elif state == 0 or state == 1 : #CLEAR or PLAYED 
 				if btn.pressed.is_connected(_on_level_pressed):
 					btn.pressed.disconnect(_on_level_pressed)
-				btn.pressed.connect(Callable(self, "_on_level_pressed").bind(lvlIndex + 1))
+				btn.pressed.connect(Callable(self, "_on_level_pressed").bind(lvlIndex + 1, btn))
 				closeTex.visible = false
 				starCons.visible = true
 				starCons.showStars(str(int(stars)))
