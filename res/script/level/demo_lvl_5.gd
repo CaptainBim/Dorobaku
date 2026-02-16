@@ -140,6 +140,7 @@ func _exit(exit) -> void:
 		await loading.on_transition_finished
 		AudioPlayer._play_music_menu()
 		get_tree().change_scene_to_file("res://res/scene/menu/menu_lvl.tscn")
+		
 func _nextLvl() :
 	GlobalVar.GameIsPaused = false
 	GlobalVar.MaxReset = 3
