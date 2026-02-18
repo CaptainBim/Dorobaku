@@ -1,0 +1,7 @@
+res://res/scene/misc/pop_up.tscn
+res://res/asset/levelTilemap.tres
+res://res/scene/level/demo_level_1.tscn
+res://res/script/level/demo_lvl_5.gd
+res://res/script/level/demo_lvl_1.gd
+res://res/scene/spawn/kotak.tscn
+res://res/script/misc/cutscene.gd
