@@ -27,20 +27,19 @@ var timeLeft
 var cocok = target
 
 func _ready() -> void:
+	
 	get_node("ui_layer/btn_con/reset_btn").reset_set(resetNum)
 	AudioPlayer._play_lvl_music(musicLvl)
 	$ui_layer/papan.visible = false
 	loading.visible = true
-	
-	for plate in $cek_grup.get_children():
-		plate.activated.connect(self._send_cek)
-		plate.deactivated.connect(self._exit_cek)
+	#timer.wait_time = maxTime
 	
 	for i in $kotak_grup.get_children() :
 		i.add_to_group(i.nama_kotak)
 	box_setup()
+	#timer.start()
 	timerDis.start_timer(maxTime)
-				
+	
 func box_setup() -> void:
 	get_tree().get_nodes_in_group("i")[0].set_block(h1)
 	get_tree().get_nodes_in_group("z")[0].set_block(h2)
@@ -73,9 +72,9 @@ func _on_touch_screen_button_pressed() -> void:
 	get_node("ui_layer/btn_con/reset_btn").btn_press(resetNum)
 	if resetNum == 0 : return
 	GlobalVar.MaxReset -= 1
-	print(GlobalVar.MaxReset)
 	await get_tree().create_timer(0.2).timeout
 	restart()
+	
 func restart():
 	game_end = false
 	Engine.time_scale = 1

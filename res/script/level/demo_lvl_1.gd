@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 	
 	if game_end == false :
 		if target == 0 :
-			var door = get_node("door")  # Adjust path
+			var door = get_node("door") 
 			door.open_door()
 			timerDis.pause_timer()
 			timeLeft = timerDis.get_timeLeft()

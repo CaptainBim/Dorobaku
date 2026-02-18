@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-res://res/scene/menu/menu_lvl.tscn
+res://res/scene/misc/pop_up.tscn
 res://res/asset/levelTilemap.tres
+res://res/scene/level/demo_level_1.tscn
 res://res/script/level/demo_lvl_5.gd
-=======
-res://res/scene/level/demo_level_5.tscn
-res://res/asset/levelTilemap.tres
-res://res/script/level/demo_lvl_5.gd
-res://res/scene/hole.gd
->>>>>>> e123908e7a6d98edc0c614e1dc82032b6083f50c
+res://res/script/level/demo_lvl_1.gd
+res://res/scene/spawn/kotak.tscn
+res://res/script/misc/cutscene.gd
