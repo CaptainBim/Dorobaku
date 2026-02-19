@@ -56,6 +56,7 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	AudioPlayer._play_fx_btn7()
+	play.process_mode = Node.PROCESS_MODE_DISABLED;
 	await get_tree().create_timer(0.2).timeout
 	loading.transition()
 	await loading.on_transition_finished
