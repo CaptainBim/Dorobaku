@@ -216,6 +216,7 @@ tile_map_data = PackedByteArray("AAAKAAEACAAGAAkAAAALAAEACAAGAAkAAAAMAAEACAAGAAk
 tile_set = ExtResource("15_178i2")
 rendering_quadrant_size = 64
 
+[connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
 [connection signal="body_entered" from="exit" to="." method="_finish"]
