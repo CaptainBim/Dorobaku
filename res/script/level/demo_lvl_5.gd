@@ -33,13 +33,13 @@ func _ready() -> void:
 	$ui_layer/papan.visible = false
 	loading.visible = true
 	#timer.wait_time = maxTime
-	
+
 	for i in $kotak_grup.get_children() :
 		i.add_to_group(i.nama_kotak)
 	box_setup()
 	#timer.start()
 	timerDis.start_timer(maxTime)
-	
+
 func box_setup() -> void:
 	get_tree().get_nodes_in_group("i")[0].set_block(h1)
 	get_tree().get_nodes_in_group("z")[0].set_block(h2)
@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 		if isCleared : _nextLvl()
 		else : _btn_pause()
 	elif Input.is_action_just_pressed("reset") : _on_touch_screen_button_pressed()
-	
+
 	if game_end == false :
 		if active_count == target :
 			var door = get_node("door")  # Adjust path
@@ -66,15 +66,14 @@ func _process(delta: float) -> void:
 			isFailed = true
 			timerDis.pause_timer()
 			selesai()
-
-		
+	
 func _on_touch_screen_button_pressed() -> void:
 	get_node("ui_layer/btn_con/reset_btn").btn_press(resetNum)
 	if resetNum == 0 : return
 	GlobalVar.MaxReset -= 1
 	await get_tree().create_timer(0.2).timeout
 	restart()
-	
+
 func restart():
 	game_end = false
 	Engine.time_scale = 1
@@ -123,7 +122,7 @@ func pause_game() :
 	$ui_layer/papan.visible = true
 	GlobalVar.GameIsPaused = true
 	timerDis.pause_timer();
-	
+
 func unpause_game() :
 	$ui_layer/movement_btn.visible = true
 	$ui_layer/btn_con.visible = true
@@ -139,7 +138,7 @@ func _exit(exit) -> void:
 		await loading.on_transition_finished
 		AudioPlayer._play_music_menu()
 		get_tree().change_scene_to_file("res://res/scene/menu/menu_lvl.tscn")
-		
+
 func _nextLvl() :
 	GlobalVar.GameIsPaused = false
 	GlobalVar.MaxReset = 3
