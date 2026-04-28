@@ -134,6 +134,7 @@ shape_visible = false
 texture = SubResource("AtlasTexture_bxw4b")
 
 [node name="notif" type="Panel" parent="Panel"]
+visible = false
 custom_minimum_size = Vector2(1000, 50)
 layout_mode = 1
 anchors_preset = 2

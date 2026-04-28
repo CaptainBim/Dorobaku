@@ -3,7 +3,7 @@ class_name HomeMenu extends Node
 @onready var loading: CanvasLayer = $loading
 @onready var notif: Panel = $Panel/notif
 @onready var notifTxt: Label = $Panel/notif/notifTxt
-@onready var notifPos = notif.position
+#@onready var notifPos = notif.position
 
 var saveData = SAVES.new()
 var GAME_DATA
@@ -11,7 +11,7 @@ var GAME_DATA
 func _ready() -> void:
 	AudioPlayer._play_music_menu()
 	$loading.visible = true
-	notif.position = notifPos + Vector2 (0 , 70)
+	#notif.position = notifPos + Vector2 (0 , 70)
 	GAME_DATA = saveData.loadSave()
 	
 	match GAME_DATA.status:
@@ -42,9 +42,9 @@ func pushNotif(notif_text):
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
 	tween.tween_interval(0.25)
-	tween.tween_property(notif, "position", notifPos, 0.5)
+	#tween.tween_property(notif, "position", notifPos, 0.5)
 	tween.tween_interval(1.75)
-	tween.tween_property(notif, "position", notifPos + Vector2(0, 70), 0.5)
+	#tween.tween_property(notif, "position", notifPos + Vector2(0, 70), 0.5)
 
 
 func _on_btn_quit_pressed() -> void:

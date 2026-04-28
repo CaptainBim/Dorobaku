@@ -1,5 +1,7 @@
-res://res/script/level/demo_lvl_5.gd
 res://res/scene/level/demo_level_5.tscn
 res://res/asset/levelTilemap.tres
-res://res/scene/menu/cutscene/story1.tscn
-res://res/script/misc/cutscene.gd
+res://res/scene/level/level_6.tscn
+res://res/scene/player.tscn
+res://res/scene/menu/menu_home.tscn
+res://res/scene/menu/menu_lvl.tscn
+res://res/script/menu/menu_home.gd
