@@ -335,7 +335,7 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="ana" type="CollisionShape2D" parent="lobang"]
+[node name="aa" type="CollisionShape2D" parent="lobang"]
 position = Vector2(32, 33)
 shape = SubResource("RectangleShape2D_iyly1")
 
@@ -348,7 +348,7 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="anal" type="CollisionShape2D" parent="lobang2"]
+[node name="aaa" type="CollisionShape2D" parent="lobang2"]
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_upaib")
 
@@ -394,9 +394,7 @@ libraries = {
 
 [node name="buku" parent="." instance=ExtResource("14_w6inx")]
 position = Vector2(768, 175)
-hint_text = "Sesuatu Yang 
-Diminta,Sebelum 
-Melakukan Sesuatu"
+hint_text = "Aku terdiri dari 4 huruf. Aku sering diminta sebelum seseorang melakukan sesuatu atau masuk ke tempat orang lain. Kalau aku tidak diberikan, perbuatanmu bisa dianggap melanggar aturan. Siapakah aku?"
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]

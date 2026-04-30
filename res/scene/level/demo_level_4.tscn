@@ -237,8 +237,7 @@ one_shot = true
 
 [node name="buku" parent="." instance=ExtResource("12_v8yy7")]
 position = Vector2(579, 385)
-hint_text = "Bumbu Cair
-Penambah Rasa"
+hint_text = "Aku adalah cairan kental yang terbuat dari tomat atau cabai. Aku sering dijadikan teman makan kentang goreng, pizza, atau ayam goreng. Siapakah aku?"
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]

@@ -145,9 +145,7 @@ position = Vector2(832, 125)
 
 [node name="buku" parent="." instance=ExtResource("14_7qm0j")]
 position = Vector2(832, 683)
-hint_text = "Suatu Kendaraan 
- yang bisa dinaiki
-oleh banyak orang"
+hint_text = "Aku adalah kendaraan besar. Aku punya banyak kursi dan sering berhenti di halte untuk menjemput banyak orang sekaligus. Siapakah aku?\""
 
 [node name="Player" parent="." instance=ExtResource("13_byouy")]
 position = Vector2(864, 150)

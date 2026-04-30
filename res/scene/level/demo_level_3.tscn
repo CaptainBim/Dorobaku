@@ -421,8 +421,7 @@ libraries = {
 
 [node name="buku" parent="." instance=ExtResource("14_d4b6w")]
 position = Vector2(891, 200)
-hint_text = "Olahragawan yang
-Mengikuti Perlombaan"
+hint_text = "Aku terdiri dari 5 huruf. Pekerjaanku adalah berolahraga dan bertanding secara profesional di bidang tertentu seperti lari, renang, atau bulu tangkis. Siapakah aku?"
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]

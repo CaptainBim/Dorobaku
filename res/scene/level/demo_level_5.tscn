@@ -136,22 +136,22 @@ position = Vector2(0, -128)
 [node name="cek i" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(799, 608)
 scale = Vector2(2, 2)
-nama_cek = "i"
+nama_cek = "l"
 
 [node name="cek i2" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(735, 608)
 scale = Vector2(2, 2)
-nama_cek = "i"
+nama_cek = "u"
 
 [node name="cek z" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(863, 608)
 scale = Vector2(2, 2)
-nama_cek = "z"
+nama_cek = "b"
 
 [node name="cek i 2" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(927, 608)
 scale = Vector2(2, 2)
-nama_cek = "i"
+nama_cek = "a"
 
 [node name="cek n" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(991, 608)
@@ -161,30 +161,30 @@ nama_cek = "n"
 [node name="cek n2" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(1055, 608)
 scale = Vector2(2, 2)
-nama_cek = "n"
+nama_cek = "g"
 
 [node name="kotak_grup" type="Node2D" parent="."]
 position = Vector2(6, -134)
 
 [node name="kosong" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(1274, 504)
-nama_kotak = "kosong"
+nama_kotak = "o"
 
 [node name="kosong 2" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(570, 441)
-nama_kotak = "kosong"
+nama_kotak = "a"
 
 [node name="i" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(657, 326)
-nama_kotak = "i"
+nama_kotak = "l"
 
 [node name="z" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(934, 326)
-nama_kotak = "z"
+nama_kotak = "u"
 
 [node name="i2" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(1142, 758)
-nama_kotak = "i"
+nama_kotak = "b"
 
 [node name="n" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(857, 872)
@@ -192,7 +192,7 @@ nama_kotak = "n"
 
 [node name="j" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(628, 838)
-nama_kotak = "j"
+nama_kotak = "g"
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
@@ -206,8 +206,7 @@ scale = Vector2(1.0803474, 1.0419638)
 
 [node name="buku" parent="." instance=ExtResource("14_s7tg5")]
 position = Vector2(1091, 821)
-hint_text = "Bumbu Cair
-Penambah Rasa"
+hint_text = "Aku terdiri dari 6 huruf. Aku bisa ditemukan di kancing baju, di jarum jahit, hingga di jalanan yang rusak. Siapakah aku?"
 
 [node name="Player" parent="." instance=ExtResource("15_j5ep5")]
 position = Vector2(1116, 233)

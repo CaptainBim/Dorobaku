@@ -1,7 +1,10 @@
-res://res/scene/level/demo_level_5.tscn
-res://res/asset/levelTilemap.tres
 res://res/scene/level/level_6.tscn
-res://res/scene/player.tscn
-res://res/scene/menu/menu_home.tscn
+res://res/asset/levelTilemap.tres
+res://res/script/level/lvl_6.gd
+res://res/script/level/demo_lvl_5.gd
 res://res/scene/menu/menu_lvl.tscn
-res://res/script/menu/menu_home.gd
+res://res/scene/level/demo_level_5.tscn
+res://res/scene/level/demo_level_1.tscn
+res://res/scene/level/demo_level_2.tscn
+res://res/scene/level/demo_level_3.tscn
+res://res/scene/level/demo_level_4.tscn

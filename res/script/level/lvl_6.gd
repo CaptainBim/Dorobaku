@@ -1,4 +1,4 @@
-class_name DemoLevel5 extends Node
+class_name DemoLevel6 extends Node
 
 var game_end : bool = false
 var info : bool = false
@@ -13,12 +13,12 @@ var saveData = SAVES.new();
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
 
-var h1 = "l"
-var h2 = "u"
-var h3 = "b"
-var h4 = "a"
-var h5 = "g"
-var box = "o"
+var h1 = "m"
+var h2 = "e"
+var h3 = "r"
+var h4 = "e"
+var h5 = "k"
+var box = "kosong"
 @export var maxTime : float
 var resetNum = GlobalVar.MaxReset
 var timeLeft
