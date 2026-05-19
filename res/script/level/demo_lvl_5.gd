@@ -17,7 +17,8 @@ var h1 = "l"
 var h2 = "u"
 var h3 = "b"
 var h4 = "a"
-var h5 = "g"
+var h5 = "n"
+var h6 = "g"
 var box = "o"
 @export var maxTime : float
 var resetNum = GlobalVar.MaxReset
@@ -41,11 +42,13 @@ func _ready() -> void:
 	timerDis.start_timer(maxTime)
 
 func box_setup() -> void:
-	get_tree().get_nodes_in_group("i")[0].set_block(h1)
-	get_tree().get_nodes_in_group("z")[0].set_block(h2)
-	get_tree().get_nodes_in_group("i")[1].set_block(h3)
-	get_tree().get_nodes_in_group("n")[0].set_block(h4)
-	get_tree().get_nodes_in_group("j")[0].set_block(h2)
+	get_tree().get_nodes_in_group("l")[0].set_block(h1)
+	get_tree().get_nodes_in_group("u")[0].set_block(h2)
+	get_tree().get_nodes_in_group("b")[0].set_block(h3)
+	get_tree().get_nodes_in_group("a")[0].set_block(h4)
+	get_tree().get_nodes_in_group("n")[0].set_block(h5)
+	get_tree().get_nodes_in_group("g")[0].set_block(h6)
+	get_tree().get_nodes_in_group("o")[0].set_block(box)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") : 

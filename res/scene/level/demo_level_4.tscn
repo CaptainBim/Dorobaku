@@ -127,7 +127,6 @@ shape = SubResource("RectangleShape2D_7ewr7")
 
 [node name="t2" type="RigidBody2D" parent="special"]
 position = Vector2(737, 257)
-collision_mask = 0
 mass = 0.001
 gravity_scale = 0.0
 
@@ -225,6 +224,7 @@ position = Vector2(1023, 444)
 [node name="Player" parent="." instance=ExtResource("11_per27")]
 position = Vector2(1057, 529)
 scale = Vector2(2, 2)
+collision_layer = 256
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(8, -7)

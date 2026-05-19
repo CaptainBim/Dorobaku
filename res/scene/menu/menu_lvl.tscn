@@ -578,7 +578,7 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_46gfk")
 
 [node name="back" type="TouchScreenButton" parent="Panel"]
-position = Vector2(7, 11)
+position = Vector2(1728, 22)
 scale = Vector2(0.5, 0.5)
 texture_normal = SubResource("AtlasTexture_byxwj")
 texture_pressed = SubResource("AtlasTexture_yhe33")

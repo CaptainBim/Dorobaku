@@ -101,7 +101,7 @@ func selesai():
 	var star = 0
 	if(time_left > 100):
 		star = 3;
-	elif(time_left < 100 && time_left > 80):
+	elif(time_left < 100 && time_left > 80):	
 		star = 2;
 	elif(time_left < 80 && time_left > 70):
 		star = 1

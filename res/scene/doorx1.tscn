@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://inr3ctupduah"]
 
-[ext_resource type="Script" path="res://res/script/door.gd" id="1_luppj"]
+[ext_resource type="Script" uid="uid://cicg4fftscy0h" path="res://res/script/door.gd" id="1_luppj"]
 [ext_resource type="AudioStream" uid="uid://bfqmm7t23l17k" path="res://res/asset/test/bars_open.wav" id="2_5b65s"]
 [ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="2_t5olb"]
 
@@ -182,11 +182,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_322bo"]
 _data = {
-"RESET": SubResource("Animation_errkl"),
-"closed": SubResource("Animation_uncxu"),
-"door_close": SubResource("Animation_0cs1m"),
-"door_open": SubResource("Animation_p5rtk"),
-"opened": SubResource("Animation_q4qdy")
+&"RESET": SubResource("Animation_errkl"),
+&"closed": SubResource("Animation_uncxu"),
+&"door_close": SubResource("Animation_0cs1m"),
+&"door_open": SubResource("Animation_p5rtk"),
+&"opened": SubResource("Animation_q4qdy")
 }
 
 [node name="door" type="Node2D"]
@@ -208,7 +208,7 @@ shape = SubResource("RectangleShape2D_wd5f3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_322bo")
+&"": SubResource("AnimationLibrary_322bo")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
