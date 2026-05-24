@@ -147,3 +147,28 @@ func _nextLvl() :
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
 	get_tree().change_scene_to_file("res://res/scene/level/demo_level_6.tscn")
+
+func _on_lever1(condition) -> void:
+	if condition == "on" :
+		$special/t2.visible = false
+		$special/t5.visible = false
+		$special/t2/CollisionShape2D.disabled = true
+		$special/t3/CollisionShape2D.disabled = true
+func _on_lever2(condition) -> void:
+	if condition == "on" :
+		$special/t3.visible = false
+		$special/t4.visible = false
+		$special/t4/CollisionShape2D.disabled = true
+		$special/t5/CollisionShape2D.disabled = true
+	else : 
+		_obs_default()
+		
+func _obs_default() :
+	$special/t2.visible = true
+	$special/t3.visible = true
+	$special/t4.visible = true
+	$special/t5.visible = true
+	$special/t2/CollisionShape2D.disabled = true
+	$special/t3/CollisionShape2D.disabled = false
+	$special/t4/CollisionShape2D.disabled = false
+	$special/t5/CollisionShape2D.disabled = false

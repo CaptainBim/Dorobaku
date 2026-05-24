@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_q0cwg"]
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="2_yyt0g"]
 [ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="3_iwpw0"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="5_3q48k"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="5_ckkpa"]
 [ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_ckkpa"]
 [ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_v4nhv"]
 [ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_ckkpa"]
@@ -18,12 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_d4b6w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obw33"]
-atlas = ExtResource("5_3q48k")
-region = Rect2(5120, 0, 320, 320)
+atlas = ExtResource("5_ckkpa")
+region = Rect2(640, 640, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjlrx"]
-atlas = ExtResource("5_3q48k")
-region = Rect2(5440, 0, 320, 320)
+atlas = ExtResource("5_ckkpa")
+region = Rect2(640, 640, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbfph"]
 radius = 160.0
@@ -393,7 +393,7 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="ana" type="CollisionShape2D" parent="lobang"]
+[node name="l1" type="CollisionShape2D" parent="lobang"]
 position = Vector2(0, 97)
 shape = SubResource("RectangleShape2D_w2swu")
 
@@ -406,11 +406,11 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="anal" type="CollisionShape2D" parent="dinding"]
+[node name="l2" type="CollisionShape2D" parent="dinding"]
 position = Vector2(0, 36)
 shape = SubResource("CapsuleShape2D_b6gsv")
 
-[node name="anal2" type="CollisionShape2D" parent="dinding"]
+[node name="l3" type="CollisionShape2D" parent="dinding"]
 position = Vector2(0, 279)
 shape = SubResource("CapsuleShape2D_b6gsv")
 

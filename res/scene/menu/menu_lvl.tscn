@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dkpv5qepomobu" path="res://res/asset/papan.png" id="3_2fus3"]
 [ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="4_1qbrh"]
 [ext_resource type="PackedScene" uid="uid://b1men06xdqkix" path="res://res/scene/misc/star_con.tscn" id="6_fyg5a"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="7_4eymy"]
 [ext_resource type="Texture2D" uid="uid://du4qu7fwwm7ty" path="res://res/asset/lvlBg.png" id="7_v6eoi"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="8_v6eoi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_351n1"]
 texture = ExtResource("1_qa6kw")
@@ -123,12 +123,12 @@ atlas = SubResource("CompressedTexture2D_dibe3")
 region = Rect2(96, 116, 366, 445)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_byxwj"]
-atlas = ExtResource("7_4eymy")
-region = Rect2(12802, 0, 315, 320)
+atlas = ExtResource("8_v6eoi")
+region = Rect2(320, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhe33"]
-atlas = ExtResource("7_4eymy")
-region = Rect2(13123, 0, 317, 320)
+atlas = ExtResource("8_v6eoi")
+region = Rect2(320, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8s3y"]
 radius = 160.0

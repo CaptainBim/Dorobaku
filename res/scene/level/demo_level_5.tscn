@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="3_j5ep5"]
 [ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="4_heauj"]
 [ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="5_fy3rt"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_vp2kj"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="7_178i2"]
 [ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_k5yaj"]
 [ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_w4wd3"]
 [ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="11_ten2j"]
@@ -17,12 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://bed2b23d6escp" path="res://res/scene/hole.tscn" id="16_j5ep5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmlj4"]
-atlas = ExtResource("6_vp2kj")
-region = Rect2(5120, 0, 320, 320)
+atlas = ExtResource("7_178i2")
+region = Rect2(640, 640, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ceima"]
-atlas = ExtResource("6_vp2kj")
-region = Rect2(5440, 0, 320, 320)
+atlas = ExtResource("7_178i2")
+region = Rect2(640, 640, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8u5op"]
 radius = 160.0
@@ -38,9 +38,6 @@ maxTime = 200.0
 
 [node name="hole" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(576, 384)
-
-[node name="hole2" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(640, 320)
 
 [node name="hole3" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(640, 384)
@@ -60,9 +57,6 @@ position = Vector2(896, 320)
 [node name="hole8" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(960, 320)
 
-[node name="hole15" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(1024, 640)
-
 [node name="hole16" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(960, 640)
 
@@ -71,9 +65,6 @@ position = Vector2(896, 640)
 
 [node name="hole18" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(832, 640)
-
-[node name="hole19" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(768, 640)
 
 [node name="hole20" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(1216, 512)
@@ -86,9 +77,6 @@ position = Vector2(1216, 384)
 
 [node name="hole23" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(1152, 384)
-
-[node name="hole24" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(1152, 320)
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -161,32 +149,32 @@ shape = SubResource("RectangleShape2D_flx8a")
 [node name="cek_grup" type="Node2D" parent="."]
 position = Vector2(0, -128)
 
-[node name="cek i" parent="cek_grup" instance=ExtResource("11_ten2j")]
-position = Vector2(799, 608)
+[node name="cek1" parent="cek_grup" instance=ExtResource("11_ten2j")]
+position = Vector2(735, 608)
 scale = Vector2(2, 2)
 nama_cek = "l"
 
-[node name="cek i2" parent="cek_grup" instance=ExtResource("11_ten2j")]
-position = Vector2(735, 608)
+[node name="cek2" parent="cek_grup" instance=ExtResource("11_ten2j")]
+position = Vector2(799, 608)
 scale = Vector2(2, 2)
 nama_cek = "u"
 
-[node name="cek z" parent="cek_grup" instance=ExtResource("11_ten2j")]
+[node name="cek3" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(863, 608)
 scale = Vector2(2, 2)
 nama_cek = "b"
 
-[node name="cek i 2" parent="cek_grup" instance=ExtResource("11_ten2j")]
+[node name="cek4" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(927, 608)
 scale = Vector2(2, 2)
 nama_cek = "a"
 
-[node name="cek n" parent="cek_grup" instance=ExtResource("11_ten2j")]
+[node name="cek5" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(991, 608)
 scale = Vector2(2, 2)
 nama_cek = "n"
 
-[node name="cek n2" parent="cek_grup" instance=ExtResource("11_ten2j")]
+[node name="cek6" parent="cek_grup" instance=ExtResource("11_ten2j")]
 position = Vector2(1055, 608)
 scale = Vector2(2, 2)
 nama_cek = "g"
@@ -194,32 +182,32 @@ nama_cek = "g"
 [node name="kotak_grup" type="Node2D" parent="."]
 position = Vector2(6, -134)
 
-[node name="kosong" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(890, 902)
+[node name="k1" parent="kotak_grup" instance=ExtResource("12_prqi3")]
+position = Vector2(588, 422)
 nama_kotak = "o"
 
-[node name="kosong 2" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(890, 326)
+[node name="k2" parent="kotak_grup" instance=ExtResource("12_prqi3")]
+position = Vector2(787, 357)
 nama_kotak = "a"
 
-[node name="i" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(698, 326)
+[node name="k3" parent="kotak_grup" instance=ExtResource("12_prqi3")]
+position = Vector2(922, 540)
 nama_kotak = "l"
 
-[node name="z" parent="kotak_grup" instance=ExtResource("12_prqi3")]
+[node name="k4" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(634, 774)
 nama_kotak = "u"
 
-[node name="i2" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(1210, 710)
+[node name="k5" parent="kotak_grup" instance=ExtResource("12_prqi3")]
+position = Vector2(1081, 827)
 nama_kotak = "b"
 
-[node name="n" parent="kotak_grup" instance=ExtResource("12_prqi3")]
+[node name="k6" parent="kotak_grup" instance=ExtResource("12_prqi3")]
 position = Vector2(1082, 326)
 nama_kotak = "n"
 
-[node name="j" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(1082, 710)
+[node name="k7" parent="kotak_grup" instance=ExtResource("12_prqi3")]
+position = Vector2(1081, 678)
 nama_kotak = "g"
 
 [node name="Timer" type="Timer" parent="."]
@@ -233,7 +221,7 @@ rotation = -1.5691943
 scale = Vector2(1.0803474, 1.0419638)
 
 [node name="buku" parent="." instance=ExtResource("14_s7tg5")]
-position = Vector2(1091, 821)
+position = Vector2(1320, 627)
 hint_text = "Aku terdiri dari 6 huruf. Aku bisa ditemukan di kancing baju, di jarum jahit, hingga di jalanan yang rusak. Siapakah aku?"
 
 [node name="Player" parent="." instance=ExtResource("15_j5ep5")]
@@ -247,14 +235,21 @@ zoom = Vector2(1.3, 1.3)
 [node name="layer2" type="TileMapLayer" parent="."]
 z_index = -1
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAKAAEACAAGAAkAAAALAAEACAAGAAkAAAAMAAEACAAGAAkAAAANAAEACAAGAAkAAAAOAAEACAAGAAkAAAAPAAEACAAGAAkAAAAQAAEACAAGAAkAAAARAAEACAAGAAkAAAASAAEACAANAAoAAAAJAAEACAANAAoAAAATAAEACAAJAAkAAAAIAAEACAAKAAkAAAAIAAIACAAGAAoAAAAHAAIACAAKAAkAAAATAAIACAAGAAoAAAAHAAMACAAGAAoAAAAUAAMACAAGAAoAAAAGAAMACAAKAAkAAAAGAAQACAAPAAkAAAAGAAUACAAPAAkAAAAGAAYACAAPAAkAAAAGAAcACAAPAAkAAAAGAAgACAAPAAkAAAAGAAkACAAPAAkAAAAGAAoACAAKAAgAAAAHAAoACAAHAAcAAAAHAAsACAAKAAgAAAAIAAsACAAHAAcAAAAIAAwACAAKAAgAAAAJAAwACAAHAAcAAAAJAA0ACAAKAAgAAAAKAA0ACAAJAAcAAAALAA0ACAAJAAcAAAAMAA0ACAAJAAcAAAANAA0ACAAJAAcAAAAOAA0ACAAJAAcAAAAPAA0ACAAJAAcAAAAQAA0ACAAJAAcAAAARAA0ACAAJAAcAAAASAA0ACAAJAAcAAAATAAwAAAAMAAcAAAAUAAsAAAAMAAcAAAAVAAoAAAAMAAcAAAAUAAwACAAJAAgAAAAVAAsACAAJAAgAAAAWAAoACAAJAAgAAAAWAAkAAAAMAAcAAAAYAAkAAAAOAAcAAAAZAAkAAAAJAAgAAAAZAAYAAAAMAAkAAAAYAAYAAAAPAAsAAAAWAAUACAAFAAgAAAAWAAQACAAMAAkAAAAVAAMACAAMAAkAAAAUAAIACAAMAAkAAAAVAAQACAAJAAoAAAALAAIAAAAJAA0AAAAMAAIACAAJAAwAAAAOAAIACAAJAAwAAAALAAcACAAJAAwAAAANAAcACAAKAA0AAAAMAAkAAAAJAA0AAAAPAAgACAAJAAwAAAAHAAgACAAKAAwAAAAJAAoACAAKAA0AAAARAAsACAAKAA0AAAATAAgAAAAMABMAAFAUAAcACAAKAAwAAAATAAYAAAAAAA8AADALAAUAAAAIAA0AAAAKAAcAAAAIAA0AAAAKAAgAAAAIAA0AAAANAAUAAAAEABMAAGAPAAUAAAADABMAAGANAAYAAAAIAA0AAAAPAAYAAAAIAA0AAAARAAYAAAAJAAwAAAARAAUAAAAIAA0AAAASAAYAAAAAAA8AAAASAAcAAAAIAA0AAAASAAgAAAAIAA0AAAANAAkAAAAIAA0AAAAOAAkAAAAIAA0AAAAPAAkAAAAIAA0AAAAMAAoAAAAEABMAAGAQAAoAAAAEABMAAFANAAIACAAIAA0AAAAKAAIACAAIAA0AAAAJAAIACAAIAA0AAAAJAAMACAAIAA0AAAAKAAMACAAIAA0AAAALAAMACAAIAA0AAAAMAAMACAAIAA0AAAAOAAMACAAIAA0AAAANAAMACAAIAA0AAAAQAAMACAAIAA0AAAAPAAMACAAIAA0AAAAPAAIACAAIAA0AAAAQAAIACAAIAA0AAAARAAIACAAIAA0AAAASAAIACAAIAA0AAAASAAMACAAIAA0AAAARAAMACAAIAA0AAAATAAMACAAIAA0AAAATAAQACAAIAA0AAAAUAAQACAAIAA0AAAAUAAUACAAIAA0AAAAVAAUACAAIAA0AAAAVAAYACAAIAA0AAAAVAAcACAAIAA0AAAAVAAgACAAIAA0AAAAUAAgACAAIAA0AAAATAAcAAAAKABMAAGAUAAYACAAIAA0AAAATAAUACAAIAA0AAAASAAUAAAAKABMAAGASAAQACAAIAA0AAAARAAQACAAIAA0AAAAQAAQACAAIAA0AAAAPAAQACAAIAA0AAAAOAAQACAAIAA0AAAANAAQACAAIAA0AAAAMAAQACAAIAA0AAAALAAQACAAIAA0AAAAKAAQACAAIAA0AAAAJAAQACAAIAA0AAAAIAAQACAAIAA0AAAAIAAMACAAIAA0AAAAHAAQACAAIAA0AAAAHAAUACAAIAA0AAAAHAAYACAAIAA0AAAAIAAYACAAIAA0AAAAIAAUAAAAJAAwAAAAJAAUACAAIAA0AAAAKAAUAAAAKABMAAFAJAAYAAAAAAA8AAFAJAAcAAAAJABMAAGAJAAgAAAAJABMAAGAJAAkACAAIAA0AAAAIAAkACAAIAA0AAAAIAAgACAAIAA0AAAAIAAcACAAIAA0AAAAHAAcACAAIAA0AAAAHAAkACAAIAA0AAAAIAAoACAAIAA0AAAAJAAsACAAIAA0AAAAKAAwACAAIAA0AAAALAAwACAAIAA0AAAAMAAwAAAAJAA0AAAANAAwACAAIAA0AAAAOAAwACAAIAA0AAAAPAAwACAAIAA0AAAAQAAwACAAIAA0AAAAQAAsACAAIAA0AAAAPAAsACAAIAA0AAAAOAAsACAAIAA0AAAANAAsACAAIAA0AAAAMAAsACAAIAA0AAAALAAsACAAIAA0AAAALAAoACAAIAA0AAAALAAkACAAIAA0AAAAKAAkACAAIAA0AAAAKAAoACAAIAA0AAAAKAAsACAAIAA0AAAALAAgACAAIAA0AAAAMAAgACAAIAA0AAAANAAgACAAIAA0AAAAOAAgACAAIAA0AAAAMAAUACAAIAA0AAAAMAAcACAAIAA0AAAAOAAcACAAIAA0AAAAPAAcACAAIAA0AAAAQAAcACAAIAA0AAAAQAAUACAAIAA0AAAAQAAYACAAIAA0AAAARAAcACAAIAA0AAAARAAgACAAIAA0AAAARAAkACAAIAA0AAAAQAAkACAAIAA0AAAAQAAgACAAIAA0AAAARAAoACAAIAA0AAAASAAkACAAIAA0AAAATAAkACAAIAA0AAAAUAAkACAAIAA0AAAAVAAkACAAIAA0AAAAUAAoACAAIAA0AAAATAAoAAAAJAAwAAAASAAoACAAIAA0AAAASAAsACAAIAA0AAAATAAsACAAIAA0AAAASAAwACAAIAA0AAAAXAAcACAAIAA0AAAAYAAcAAAAJAA0AAAAYAAgACAAIAA0AAAAXAAgACAAIAA0AAAARAAwAAAAIAA0AAAATAA0ACAAJAAgAAAAXAAkAAAAOAAcAAAAWAAYAAAAIAAkAAAAMAAYAAAAKAA0AAAAKAAYAAAAAAA8AAGALAAYAAAAIAA0AAAAOAAoAAAAMABIAAAANAAoAAAAMABMAAAAPAAoAAAALABIAAAAOAAUAAAAMABMAAAAOAAYAAAAIAA0AAAAXAAYAAAAOAAsAAAAZAAcAAAAMAAgAAAAZAAgAAAAMAAgAAAA=")
+tile_map_data = PackedByteArray("AAAKAAEACAAGAAkAAAALAAEACAAGAAkAAAAMAAEACAAGAAkAAAANAAEACAAGAAkAAAAOAAEACAAGAAkAAAAPAAEACAAGAAkAAAAQAAEACAAGAAkAAAARAAEACAAGAAkAAAASAAEACAANAAoAAAAJAAEACAANAAoAAAATAAEACAAJAAkAAAAIAAEACAAKAAkAAAAIAAIACAAGAAoAAAAHAAIACAAKAAkAAAATAAIACAAGAAoAAAAHAAMACAAGAAoAAAAUAAMACAAGAAoAAAAGAAMACAAKAAkAAAAGAAQACAAPAAkAAAAGAAUACAAPAAkAAAAGAAYACAAPAAkAAAAGAAcACAAPAAkAAAAGAAgACAAPAAkAAAAGAAkACAAPAAkAAAAGAAoACAAKAAgAAAAHAAoACAAHAAcAAAAHAAsACAAKAAgAAAAIAAsACAAHAAcAAAAIAAwACAAKAAgAAAAJAAwACAAHAAcAAAAJAA0ACAAKAAgAAAAKAA0ACAAJAAcAAAALAA0ACAAJAAcAAAAMAA0ACAAJAAcAAAANAA0ACAAJAAcAAAAOAA0ACAAJAAcAAAAPAA0ACAAJAAcAAAAQAA0ACAAJAAcAAAARAA0ACAAJAAcAAAASAA0ACAAJAAcAAAATAAwAAAAMAAcAAAAUAAsAAAAMAAcAAAAVAAoAAAAMAAcAAAAUAAwACAAJAAgAAAAVAAsACAAJAAgAAAAWAAoACAAJAAgAAAAWAAkAAAAMAAcAAAAYAAkAAAAOAAcAAAAZAAkAAAAJAAgAAAAZAAYAAAAMAAkAAAAYAAYAAAAPAAsAAAAWAAUACAAFAAgAAAAWAAQACAAMAAkAAAAVAAMACAAMAAkAAAAUAAIACAAMAAkAAAAVAAQACAAJAAoAAAALAAIAAAAJAA0AAAAMAAIACAAJAAwAAAAOAAIACAAJAAwAAAALAAcACAAJAAwAAAANAAcACAAKAA0AAAAMAAkAAAAJAA0AAAAPAAgACAAJAAwAAAAHAAgACAAKAAwAAAAJAAoACAAKAA0AAAARAAsACAAKAA0AAAATAAgAAAAMABMAAFAUAAcACAAKAAwAAAATAAYAAAAAAA8AADALAAUAAAAIAA0AAAAKAAcAAAAIAA0AAAAKAAgAAAAIAA0AAAANAAUAAAAEABMAAGAPAAUAAAADABMAAGANAAYAAAAIAA0AAAAPAAYAAAAIAA0AAAARAAYAAAAJAAwAAAARAAUAAAAIAA0AAAASAAYAAAADABMAAFASAAcAAAAIAA0AAAASAAgAAAAIAA0AAAANAAkAAAAIAA0AAAAOAAkAAAAIAA0AAAAPAAkAAAAIAA0AAAAMAAoAAAAIAA0AAAAQAAoAAAAIAA0AAAANAAIACAAIAA0AAAAKAAIACAAIAA0AAAAJAAIACAAIAA0AAAAJAAMACAAIAA0AAAAKAAMACAAIAA0AAAALAAMACAAIAA0AAAAMAAMACAAIAA0AAAAOAAMACAAIAA0AAAANAAMACAAIAA0AAAAQAAMACAAIAA0AAAAPAAMACAAIAA0AAAAPAAIACAAIAA0AAAAQAAIACAAIAA0AAAARAAIACAAIAA0AAAASAAIACAAIAA0AAAASAAMACAAIAA0AAAARAAMACAAIAA0AAAATAAMACAAIAA0AAAATAAQACAAIAA0AAAAUAAQACAAIAA0AAAAUAAUACAAIAA0AAAAVAAUACAAIAA0AAAAVAAYACAAIAA0AAAAVAAcACAAIAA0AAAAVAAgACAAIAA0AAAAUAAgACAAIAA0AAAATAAcAAAAKABMAAGAUAAYACAAIAA0AAAATAAUACAAIAA0AAAASAAUAAAAIAA0AAAASAAQACAAIAA0AAAARAAQACAAIAA0AAAAQAAQACAAIAA0AAAAPAAQACAAIAA0AAAAOAAQACAAIAA0AAAANAAQACAAIAA0AAAAMAAQACAAIAA0AAAALAAQACAAIAA0AAAAKAAQACAAIAA0AAAAJAAQACAAIAA0AAAAIAAQACAAIAA0AAAAIAAMACAAIAA0AAAAHAAQACAAIAA0AAAAHAAUACAAIAA0AAAAHAAYACAAIAA0AAAAIAAYACAAIAA0AAAAIAAUAAAAJAAwAAAAJAAUACAAIAA0AAAAKAAUAAAAIAA0AAAAJAAYAAAAAAA8AAFAJAAcAAAAJABMAAGAJAAgAAAAJABMAAGAJAAkACAAIAA0AAAAIAAkACAAIAA0AAAAIAAgACAAIAA0AAAAIAAcACAAIAA0AAAAHAAcACAAIAA0AAAAHAAkACAAIAA0AAAAIAAoACAAIAA0AAAAJAAsACAAIAA0AAAAKAAwACAAIAA0AAAALAAwACAAIAA0AAAAMAAwAAAAJAA0AAAANAAwACAAIAA0AAAAOAAwACAAIAA0AAAAPAAwACAAIAA0AAAAQAAwACAAIAA0AAAAQAAsACAAIAA0AAAAPAAsACAAIAA0AAAAOAAsACAAIAA0AAAANAAsACAAIAA0AAAAMAAsACAAIAA0AAAALAAsACAAIAA0AAAALAAoACAAIAA0AAAALAAkACAAIAA0AAAAKAAkACAAIAA0AAAAKAAoACAAIAA0AAAAKAAsACAAIAA0AAAALAAgACAAIAA0AAAAMAAgACAAIAA0AAAANAAgACAAIAA0AAAAOAAgACAAIAA0AAAAMAAUACAAIAA0AAAAMAAcACAAIAA0AAAAOAAcACAAIAA0AAAAPAAcACAAIAA0AAAAQAAcACAAIAA0AAAAQAAUACAAIAA0AAAAQAAYACAAIAA0AAAARAAcACAAIAA0AAAARAAgACAAIAA0AAAARAAkACAAIAA0AAAAQAAkACAAIAA0AAAAQAAgACAAIAA0AAAARAAoACAAIAA0AAAASAAkACAAIAA0AAAATAAkACAAIAA0AAAAUAAkACAAIAA0AAAAVAAkACAAIAA0AAAAUAAoACAAIAA0AAAATAAoAAAAJAAwAAAASAAoACAAIAA0AAAASAAsACAAIAA0AAAATAAsACAAIAA0AAAASAAwACAAIAA0AAAAXAAcACAAIAA0AAAAYAAcAAAAJAA0AAAAYAAgACAAIAA0AAAAXAAgACAAIAA0AAAARAAwAAAAIAA0AAAATAA0ACAAJAAgAAAAXAAkAAAAOAAcAAAAWAAYAAAAIAAkAAAAMAAYAAAAKAA0AAAAKAAYAAAAEABMAAFALAAYAAAAIAA0AAAAOAAoAAAAMABIAAAANAAoAAAAEABMAAGAPAAoAAAAEABMAAFAOAAUAAAAMABMAAAAOAAYAAAAIAA0AAAAXAAYAAAAOAAsAAAAZAAcAAAAMAAgAAAAZAAgAAAAMAAgAAAA=")
 tile_set = ExtResource("15_178i2")
 rendering_quadrant_size = 64
 
 [node name="layer3" type="TileMapLayer" parent="."]
 z_index = -1
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAATAAkAAAAOAAwAAAATAAoAAAAOAA0AAAASAAkAAAANAAwAAAASAAoAAAANAA0AAAANAAMAAAAMAAwAAAAHAAUAAAALAA0AAAAKAAkAAAALAAwAAAAYAAgAAAALAAwAAAASAAcAAAALAAwAAAAMAAUAAAAPAAwAAAAMAAYAAAAPAA0AAAA=")
+tile_map_data = PackedByteArray("AAATAAkAAAAOAAwAAAATAAoAAAAOAA0AAAASAAkAAAANAAwAAAASAAoAAAANAA0AAAANAAMAAAAMAAwAAAAHAAUAAAALAA0AAAAKAAkAAAALAAwAAAAYAAgAAAALAAwAAAASAAcAAAALAAwAAAAMAAUAAAAPAAwAAAAMAAYAAAAPAA0AAAAHAAkABAAJABMAAAA=")
+tile_set = ExtResource("15_178i2")
+rendering_quadrant_size = 64
+
+[node name="layer4" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(0, 1)
+tile_map_data = PackedByteArray("AAAJAAIAAAAUABEAAAAKAAIAAAAUABEAAAALAAIAAAAUABEAAAAMAAIAAAAUABEAAAANAAIAAAAUABEAAAAOAAIAAAAUABEAAAAPAAIAAAAUABEAAAAQAAIAAAAUABEAAAARAAIAAAAUABEAAAASAAIAAAAUABEAAAATAAMAAAAUAAwAAAAJAAsAAAAUAA0AAFAUAAkAAAAVAA8AAAAUAAoAAAAVAA8AAAATAAsAAAAUAA0AAAAUAAUAAAAVAA8AAAAUAAQAAAAVAA8AAAAUAAYAAAAVAA8AAAAUAAcAAAAVAA8AAAAUAAgAAAAVAA8AAAAIAAMAAAATAAwAAAAIAAQAAAATAA8AAAAIAAUAAAATAA8AAAAIAAYAAAATAA8AAAAIAAcAAAATAA8AAAAIAAgAAAATAA8AAAAIAAkAAAATAA8AAAAIAAoAAAATAA8AAAAKAAwAAAAUABAAAAALAAwAAAAUABAAAAAMAAwAAAAUABAAAAANAAwAAAAUABAAAAAOAAwAAAAUABAAAAAPAAwAAAAUABAAAAAQAAwAAAAUABAAAAARAAwAAAAUABAAAAASAAwAAAAUABAAAAA=")
 tile_set = ExtResource("15_178i2")
 rendering_quadrant_size = 64
 
@@ -263,11 +258,15 @@ rendering_quadrant_size = 64
 [connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
 [connection signal="body_entered" from="exit" to="." method="_finish"]
 [connection signal="body_entered" from="exit2" to="." method="_finish"]
-[connection signal="activated" from="cek_grup/cek i" to="." method="_send_cek"]
-[connection signal="deactivated" from="cek_grup/cek i" to="." method="_exit_cek"]
-[connection signal="activated" from="cek_grup/cek i2" to="." method="_send_cek"]
-[connection signal="deactivated" from="cek_grup/cek i2" to="." method="_exit_cek"]
-[connection signal="activated" from="cek_grup/cek z" to="." method="_send_cek"]
-[connection signal="activated" from="cek_grup/cek i 2" to="." method="_send_cek"]
-[connection signal="activated" from="cek_grup/cek n" to="." method="_send_cek"]
-[connection signal="activated" from="cek_grup/cek n2" to="." method="_send_cek"]
+[connection signal="activated" from="cek_grup/cek1" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek1" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek2" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek2" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek3" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek3" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek4" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek4" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek5" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek5" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek6" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek6" to="." method="_exit_cek"]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_yhvbd"]
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="3_0gd48"]
 [ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="3_i5qa1"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="4_a3ub5"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="6_w2svq"]
 [ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_plgua"]
 [ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="8_w2svq"]
 [ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="9_5g310"]
@@ -15,13 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_7qm0j"]
 [ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="15_qw5hl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c7tpt"]
-atlas = ExtResource("4_a3ub5")
-region = Rect2(5120, 0, 320, 320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw5hl"]
+atlas = ExtResource("6_w2svq")
+region = Rect2(0, 320, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jig74"]
-atlas = ExtResource("4_a3ub5")
-region = Rect2(5440, 0, 320, 320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_opkne"]
+atlas = ExtResource("6_w2svq")
+region = Rect2(0, 320, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qkbc7"]
 radius = 160.0
@@ -61,8 +61,8 @@ position = Vector2(261, 95)
 [node name="pauseBtn" type="TouchScreenButton" parent="ui_layer/btn_con"]
 position = Vector2(14, 14)
 scale = Vector2(0.5, 0.5)
-texture_normal = SubResource("AtlasTexture_c7tpt")
-texture_pressed = SubResource("AtlasTexture_jig74")
+texture_normal = SubResource("AtlasTexture_qw5hl")
+texture_pressed = SubResource("AtlasTexture_opkne")
 shape = SubResource("CircleShape2D_qkbc7")
 shape_visible = false
 

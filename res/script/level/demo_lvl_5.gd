@@ -57,21 +57,21 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("reset") : _on_touch_screen_button_pressed()
 
 	if game_end == false :
-		if active_count == target :
-			var door = get_node("door")  # Adjust path
+		if target == 0 :
+			var door = get_node("door")
 			door.open_door()
 			timerDis.pause_timer()
 			timeLeft = timerDis.get_timeLeft()
 			timerDis.stop_timer()
 			game_end = true
-		elif timerDis.get_timeLeft() < 1 :
-			game_end = true
-			isFailed = true
-			timerDis.pause_timer()
-			selesai()
+	elif timerDis.get_timeLeft() < 1 :
+		game_end = true
+		isFailed = true
+		timerDis.pause_timer()
+		selesai()
 	
 func _on_touch_screen_button_pressed() -> void:
-	get_node("ui_layer/btn_con/reset_btn").btn_press(resetNum)
+	get_node("ui_layer/btn_con/reset_btn").btn_press()
 	if resetNum == 0 : return
 	GlobalVar.MaxReset -= 1
 	await get_tree().create_timer(0.2).timeout

@@ -74,7 +74,7 @@ func _process(delta: float) -> void:
 
 		
 func _on_touch_screen_button_pressed() -> void:
-	get_node("ui_layer/btn_con/reset_btn").btn_press(resetNum)
+	get_node("ui_layer/btn_con/reset_btn").btn_press()
 	if resetNum == 0 : return
 	GlobalVar.MaxReset -= 1
 	print(GlobalVar.MaxReset)

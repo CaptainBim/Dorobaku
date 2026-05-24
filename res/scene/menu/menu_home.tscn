@@ -1,13 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://blm8fs6kfyjdi"]
+[gd_scene load_steps=22 format=3 uid="uid://blm8fs6kfyjdi"]
 
 [ext_resource type="Script" uid="uid://cqkicqjaoqoli" path="res://res/script/menu/menu_home.gd" id="1_msiks"]
 [ext_resource type="Texture2D" uid="uid://bn26hefyefqwr" path="res://res/asset/bg.png" id="2_28k2k"]
 [ext_resource type="Texture2D" uid="uid://cbnugxxn52q7t" path="res://res/asset/menu/btn_new.tres" id="3_4gg5u"]
 [ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="3_5v11u"]
-[ext_resource type="Texture2D" uid="uid://bmaadc28tqdnv" path="res://res/asset/title.png" id="3_t7ig4"]
+[ext_resource type="Texture2D" uid="uid://dio7t1km27xnq" path="res://res/asset/judul_new.png" id="4_mxnss"]
+[ext_resource type="Texture2D" uid="uid://b17cjx2dc1b8o" path="res://res/asset/judul_new_2x.png" id="5_64mea"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="6_1yiyi"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_jau8b"]
-[ext_resource type="Texture2D" uid="uid://be3s02khqomtw" path="res://res/asset/menu/new_btn.png" id="7_mxnss"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="8_dcyaq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_051sh"]
 texture = ExtResource("2_28k2k")
@@ -15,35 +15,38 @@ texture = ExtResource("2_28k2k")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpkjy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lddou"]
-texture = ExtResource("3_t7ig4")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
+texture = ExtResource("4_mxnss")
+draw_center = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hj1f"]
-atlas = ExtResource("6_jau8b")
-region = Rect2(8003, 0, 317, 320)
+atlas = ExtResource("8_dcyaq")
+region = Rect2(640, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oljpc"]
 radius = 160.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4glsi"]
+atlas = ExtResource("8_dcyaq")
+region = Rect2(0, 0, 320, 320)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_v27wa"]
-atlas = ExtResource("6_jau8b")
+atlas = SubResource("AtlasTexture_4glsi")
 region = Rect2(0, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kf7hn"]
-atlas = ExtResource("6_jau8b")
-region = Rect2(320, 0, 320, 320)
+atlas = ExtResource("8_dcyaq")
+region = Rect2(0, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64mea"]
-atlas = ExtResource("7_mxnss")
-region = Rect2(0, 320, 320, 320)
+atlas = ExtResource("8_dcyaq")
+region = Rect2(320, 0, 320, 320)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dcyaq"]
-load_path = "res://.godot/imported/new_btn.png-ea12cd9490756ee45551c8693f4b3858.ctex"
+load_path = "res://.godot/imported/button-Sheet.png-113edce66c5ef99333b337b85b1c169e.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cswc"]
 atlas = SubResource("CompressedTexture2D_dcyaq")
-region = Rect2(320, 320, 320, 320)
+region = Rect2(320, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4glsi"]
 radius = 160.0
@@ -98,6 +101,15 @@ custom_minimum_size = Vector2(1448, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_lddou")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = -172.0
+offset_right = 1349.0
+offset_bottom = 340.0
+texture = ExtResource("5_64mea")
+expand_mode = 2
 
 [node name="HBoxContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
 clip_contents = true

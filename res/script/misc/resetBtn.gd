@@ -5,8 +5,7 @@ extends TouchScreenButton
 func reset_set(num) :
 	anim.play("set" + str(num))
 
-func btn_press(num) :
+func btn_press() :
 	if anim.is_playing():
 		anim.stop()
 	AudioPlayer._play_fx_btn7()
-	anim.play("push" + str(num))

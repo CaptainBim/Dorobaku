@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_ihmy6"]
 [ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="2_ucfhb"]
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="5_a87em"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_yrs38"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="6_vd14g"]
 [ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_slisi"]
 [ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_upcoj"]
 [ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="8_ku707"]
@@ -17,13 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_bcevo"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_w6inx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vk7u"]
-atlas = ExtResource("6_yrs38")
-region = Rect2(5120, 0, 320, 320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_slisi"]
+atlas = ExtResource("6_vd14g")
+region = Rect2(640, 640, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cl52r"]
-atlas = ExtResource("6_yrs38")
-region = Rect2(5440, 0, 320, 320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd14g"]
+atlas = ExtResource("6_vd14g")
+region = Rect2(640, 640, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x637"]
 radius = 160.0
@@ -208,8 +208,8 @@ position = Vector2(261, 95)
 [node name="pauseBtn" type="TouchScreenButton" parent="ui_layer/btn_con"]
 position = Vector2(14, 14)
 scale = Vector2(0.5, 0.5)
-texture_normal = SubResource("AtlasTexture_8vk7u")
-texture_pressed = SubResource("AtlasTexture_cl52r")
+texture_normal = SubResource("AtlasTexture_slisi")
+texture_pressed = SubResource("AtlasTexture_vd14g")
 shape = SubResource("CircleShape2D_0x637")
 shape_visible = false
 
@@ -335,7 +335,7 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="aa" type="CollisionShape2D" parent="lobang"]
+[node name="l6" type="CollisionShape2D" parent="lobang"]
 position = Vector2(32, 33)
 shape = SubResource("RectangleShape2D_iyly1")
 
@@ -348,7 +348,7 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="aaa" type="CollisionShape2D" parent="lobang2"]
+[node name="l5" type="CollisionShape2D" parent="lobang2"]
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_upaib")
 
@@ -361,11 +361,11 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="anal" type="CollisionShape2D" parent="dinding"]
+[node name="l3" type="CollisionShape2D" parent="dinding"]
 position = Vector2(19, 57)
 shape = SubResource("CapsuleShape2D_8p0cm")
 
-[node name="anal2" type="CollisionShape2D" parent="dinding"]
+[node name="l4" type="CollisionShape2D" parent="dinding"]
 position = Vector2(19, 255)
 shape = SubResource("CapsuleShape2D_8p0cm")
 
@@ -379,11 +379,11 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="anal" type="CollisionShape2D" parent="dinding2"]
+[node name="l1" type="CollisionShape2D" parent="dinding2"]
 position = Vector2(19, 57)
 shape = SubResource("CapsuleShape2D_8p0cm")
 
-[node name="anal2" type="CollisionShape2D" parent="dinding2"]
+[node name="l2" type="CollisionShape2D" parent="dinding2"]
 position = Vector2(19, 255)
 shape = SubResource("CapsuleShape2D_8p0cm")
 

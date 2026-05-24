@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="2_qbe5v"]
 [ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_vabpm"]
 [ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="3_e2ahj"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_yipus"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="6_w5ued"]
 [ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_sewd3"]
 [ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_w5ued"]
 [ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="8_24e82"]
@@ -18,12 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="12_v8yy7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8koe"]
-atlas = ExtResource("6_yipus")
-region = Rect2(5120, 0, 320, 320)
+atlas = ExtResource("6_w5ued")
+region = Rect2(640, 640, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwosk"]
-atlas = ExtResource("6_yipus")
-region = Rect2(5440, 0, 320, 320)
+atlas = ExtResource("6_w5ued")
+region = Rect2(640, 640, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2wvf"]
 radius = 160.0
