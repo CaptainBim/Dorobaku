@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://vcdr4oj4wcl7"]
+[gd_scene load_steps=24 format=4 uid="uid://vcdr4oj4wcl7"]
 
 [ext_resource type="Script" uid="uid://cwdh3kldi4ani" path="res://res/script/level/demo_lvl_6.gd" id="1_3w4bc"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="1_xuqa2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="5_f0bq3"]
 [ext_resource type="FontFile" uid="uid://w0rbroaetxpt" path="res://res/BULKYPIX.TTF" id="6_sqetd"]
 [ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_hc8fp"]
+[ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="8_f0bq3"]
 [ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="8_ohblo"]
 [ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="9_pdadd"]
 [ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="10_1rsh0"]
@@ -44,6 +45,7 @@ size = Vector2(12, 129.00023)
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
 script = ExtResource("1_3w4bc")
+maxTime = 120.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -101,6 +103,8 @@ theme_override_font_sizes/font_size = 60
 text = "120"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="timeDisplay" parent="ui_layer" instance=ExtResource("8_f0bq3")]
 
 [node name="layer1" type="TileMapLayer" parent="."]
 z_index = -1

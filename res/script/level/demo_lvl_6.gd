@@ -41,11 +41,12 @@ func _ready() -> void:
 	timerDis.start_timer(maxTime)
 
 func box_setup() -> void:
-	get_tree().get_nodes_in_group("i")[0].set_block(h1)
-	get_tree().get_nodes_in_group("z")[0].set_block(h2)
-	get_tree().get_nodes_in_group("i")[1].set_block(h3)
-	get_tree().get_nodes_in_group("n")[0].set_block(h4)
-	get_tree().get_nodes_in_group("j")[0].set_block(h2)
+	print(get_tree());
+	get_tree().get_nodes_in_group("m")[0].set_block(h1)
+	get_tree().get_nodes_in_group("e")[0].set_block(h2)
+	get_tree().get_nodes_in_group("r")[0].set_block(h3)
+	get_tree().get_nodes_in_group("e")[0].set_block(h4)
+	get_tree().get_nodes_in_group("k")[0].set_block(h2)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") : 
@@ -68,7 +69,7 @@ func _process(delta: float) -> void:
 			selesai()
 	
 func _on_touch_screen_button_pressed() -> void:
-	get_node("ui_layer/btn_con/reset_btn").btn_press(resetNum)
+	get_node("ui_layer/btn_con/reset_btn").btn_press()
 	if resetNum == 0 : return
 	GlobalVar.MaxReset -= 1
 	await get_tree().create_timer(0.2).timeout
