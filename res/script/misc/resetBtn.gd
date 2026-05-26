@@ -1,11 +1,9 @@
 extends TouchScreenButton
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
-	
-func reset_set(num) :
-	anim.play("set" + str(num))
+@onready var sprite: Sprite2D = $Sprite2D
 
-func btn_press() :
-	if anim.is_playing():
-		anim.stop()
+func reset_set(num):
+	sprite.frame = num
+
+func btn_press():
 	AudioPlayer._play_fx_btn7()

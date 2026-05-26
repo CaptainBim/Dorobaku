@@ -8,7 +8,7 @@ radius = 160.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rklos"]
 atlas = ExtResource("2_t8ref")
-region = Rect2(960, 0, 320, 320)
+region = Rect2(0, 0, 1280, 320)
 
 [sub_resource type="Animation" id="Animation_hw71p"]
 length = 0.001
@@ -19,10 +19,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2]
+"values": [0, 0]
 }
 
 [sub_resource type="Animation" id="Animation_w7sgx"]
@@ -52,7 +52,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_koy2o"]
@@ -67,7 +67,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [5]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_qqohe"]
@@ -82,7 +82,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [7]
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u62we"]
@@ -103,6 +103,7 @@ script = ExtResource("1_qsrar")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, 0)
 texture = SubResource("AtlasTexture_rklos")
+hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -183,31 +183,31 @@ nama_cek = "g"
 position = Vector2(6, -134)
 
 [node name="k1" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(588, 422)
+position = Vector2(761, 545)
 nama_kotak = "o"
 
 [node name="k2" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(787, 357)
+position = Vector2(917, 614)
 nama_kotak = "a"
 
 [node name="k3" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(922, 540)
+position = Vector2(729, 614)
 nama_kotak = "l"
 
 [node name="k4" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(634, 774)
+position = Vector2(801, 609)
 nama_kotak = "u"
 
 [node name="k5" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(1081, 827)
+position = Vector2(859, 607)
 nama_kotak = "b"
 
 [node name="k6" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(1082, 326)
+position = Vector2(985, 607)
 nama_kotak = "n"
 
 [node name="k7" parent="kotak_grup" instance=ExtResource("12_prqi3")]
-position = Vector2(1081, 678)
+position = Vector2(1059, 607)
 nama_kotak = "g"
 
 [node name="Timer" type="Timer" parent="."]
