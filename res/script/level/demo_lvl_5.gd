@@ -106,13 +106,14 @@ func selesai():
 	$Player.visible = false
 	var time_left = timerDis.get_timeLeft();
 	var star = 0
+	print(time_left, "AAAAAAAAAAAAAAAAAAAAAAAA");
 	if(time_left > 100):
 		star = 3;
 	elif(time_left < 100 && time_left > 80):
 		star = 2;
 	elif(time_left < 80 && time_left > 70):
 		star = 1
-	saveData.saveData(null, 2, true, star)
+	saveData.saveData(null, 4, true, star)
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()
