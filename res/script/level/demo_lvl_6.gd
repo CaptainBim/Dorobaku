@@ -13,11 +13,11 @@ var saveData = SAVES.new();
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
 
-var h1 = "m"
-var h2 = "e"
-var h3 = "r"
-var h4 = "e"
-var h5 = "k"
+var h1 = "s"
+var h2 = "u"
+var h3 = "p"
+var h4 = "i"
+var h5 = "r"
 var box = "kosong"
 @export var maxTime : float
 var resetNum = GlobalVar.MaxReset
@@ -42,11 +42,11 @@ func _ready() -> void:
 
 func box_setup() -> void:
 	print(get_tree());
-	get_tree().get_nodes_in_group("m")[0].set_block(h1)
-	get_tree().get_nodes_in_group("e")[0].set_block(h2)
-	get_tree().get_nodes_in_group("r")[0].set_block(h3)
-	get_tree().get_nodes_in_group("e")[0].set_block(h4)
-	get_tree().get_nodes_in_group("k")[0].set_block(h2)
+	get_tree().get_nodes_in_group("s")[0].set_block(h1)
+	get_tree().get_nodes_in_group("u")[0].set_block(h2)
+	get_tree().get_nodes_in_group("p")[0].set_block(h3)
+	get_tree().get_nodes_in_group("i")[0].set_block(h4)
+	get_tree().get_nodes_in_group("r")[0].set_block(h5)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") : 
@@ -55,18 +55,18 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("reset") : _on_touch_screen_button_pressed()
 
 	if game_end == false :
-		if active_count == target :
-			var door = get_node("door")  # Adjust path
+		if target == 0 :
+			var door = get_node("gate")
 			door.open_door()
 			timerDis.pause_timer()
 			timeLeft = timerDis.get_timeLeft()
 			timerDis.stop_timer()
 			game_end = true
-		elif timerDis.get_timeLeft() < 1 :
-			game_end = true
-			isFailed = true
-			timerDis.pause_timer()
-			selesai()
+	elif timerDis.get_timeLeft() < 1 :
+		game_end = true
+		isFailed = true
+		timerDis.pause_timer()
+		selesai()
 	
 func _on_touch_screen_button_pressed() -> void:
 	get_node("ui_layer/btn_con/reset_btn").btn_press()
@@ -149,27 +149,26 @@ func _nextLvl() :
 	AudioPlayer._play_music_menu()
 	get_tree().change_scene_to_file("res://res/scene/level/demo_level_6.tscn")
 
-func _on_lever1(condition) -> void:
-	if condition == "on" :
-		$special/t2.visible = false
-		$special/t5.visible = false
-		$special/t2/CollisionShape2D.disabled = true
-		$special/t3/CollisionShape2D.disabled = true
-func _on_lever2(condition) -> void:
-	if condition == "on" :
-		$special/t3.visible = false
-		$special/t4.visible = false
-		$special/t4/CollisionShape2D.disabled = true
-		$special/t5/CollisionShape2D.disabled = true
-	else : 
-		_obs_default()
-		
-func _obs_default() :
-	$special/t2.visible = true
-	$special/t3.visible = true
-	$special/t4.visible = true
-	$special/t5.visible = true
-	$special/t2/CollisionShape2D.disabled = true
-	$special/t3/CollisionShape2D.disabled = false
-	$special/t4/CollisionShape2D.disabled = false
-	$special/t5/CollisionShape2D.disabled = false
+func _on_lever_aksi_lever(condition) -> void:
+	if condition == "on":
+		$special2/t2.visible = false
+		$special2/t5.visible = false
+		$special2/t2/CollisionShape2D.disabled = true
+		$special2/t5/CollisionShape2D.disabled = true
+	else:
+		$special2/t2.visible = true
+		$special2/t5.visible = true
+		$special2/t2/CollisionShape2D.disabled = false
+		$special2/t5/CollisionShape2D.disabled = false
+
+func _on_lever_2_aksi_lever(condition) -> void:
+	if condition == "on":
+		$special2/t3.visible = false
+		$special2/t4.visible = false
+		$special2/t3/CollisionShape2D.disabled = true
+		$special2/t4/CollisionShape2D.disabled = true
+	else:
+		$special2/t3.visible = true
+		$special2/t4.visible = true
+		$special2/t3/CollisionShape2D.disabled = false
+		$special2/t4/CollisionShape2D.disabled = false
