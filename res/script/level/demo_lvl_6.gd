@@ -53,10 +53,11 @@ func _process(delta: float) -> void:
 		if isCleared : _nextLvl()
 		else : _btn_pause()
 	elif Input.is_action_just_pressed("reset") : _on_touch_screen_button_pressed()
-
+	print(target)
 	if game_end == false :
 		if target == 0 :
-			var door = get_node("gate")
+			print("done");
+			var door = get_node("door")
 			door.open_door()
 			timerDis.pause_timer()
 			timeLeft = timerDis.get_timeLeft()

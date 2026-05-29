@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://vcdr4oj4wcl7"]
+[gd_scene load_steps=24 format=4 uid="uid://vcdr4oj4wcl7"]
 
 [ext_resource type="Script" uid="uid://cwdh3kldi4ani" path="res://res/script/level/demo_lvl_6.gd" id="1_3w4bc"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="1_xuqa2"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="10_1rsh0"]
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="11_3fy3y"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="12_l3cwa"]
-[ext_resource type="Script" uid="uid://cab1ivn8mew3w" path="res://res/scene/gate.gd" id="13_sqetd"]
 [ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="13_w6mwy"]
 [ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="14_11lly"]
 
@@ -121,27 +120,27 @@ position = Vector2(0, -128)
 [node name="cek s" parent="cek_grup" instance=ExtResource("8_ohblo")]
 position = Vector2(704, 512)
 scale = Vector2(2, 2)
-nama_cek = "m"
+nama_cek = "s"
 
 [node name="cek u" parent="cek_grup" instance=ExtResource("8_ohblo")]
 position = Vector2(768, 512)
 scale = Vector2(2, 2)
-nama_cek = "e"
+nama_cek = "u"
 
 [node name="cek p" parent="cek_grup" instance=ExtResource("8_ohblo")]
 position = Vector2(832, 512)
 scale = Vector2(2, 2)
-nama_cek = "r"
+nama_cek = "p"
 
 [node name="cek i" parent="cek_grup" instance=ExtResource("8_ohblo")]
 position = Vector2(896, 512)
 scale = Vector2(2, 2)
-nama_cek = "e2"
+nama_cek = "i"
 
 [node name="cek r" parent="cek_grup" instance=ExtResource("8_ohblo")]
 position = Vector2(960, 512)
 scale = Vector2(2, 2)
-nama_cek = "k"
+nama_cek = "r"
 
 [node name="kotak_grup" type="Node2D" parent="."]
 position = Vector2(6, -134)
@@ -172,7 +171,6 @@ nama_kotak = "o"
 
 [node name="door" parent="." instance=ExtResource("10_1rsh0")]
 position = Vector2(832, 59)
-script = ExtResource("13_sqetd")
 
 [node name="Player" parent="." instance=ExtResource("11_3fy3y")]
 position = Vector2(864, 154)
