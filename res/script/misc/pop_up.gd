@@ -14,14 +14,19 @@ var taskStr = "Time > "
 @onready var resumeBtn: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel4/resume
 
 signal _exit
-var b1 = int(b1_task)  
-var b2 = int(b2_task)  
-var b3 = int(b3_task)  
+var b1 : int
+var b2 : int
+var b3 : int
 
 func _ready() -> void:
+	b1 = int(b1_task)
+	b2 = int(b2_task)
+	b3 = int(b3_task)
+
 	c1.text = taskStr + b1_task
 	c2.text = taskStr + b2_task
 	c3.text = taskStr + b3_task
+
 	restart.visible = false
 
 func popPause() :
@@ -43,14 +48,20 @@ func popClear(time : int) :
 	restart.visible = false
 	resumeBtn.visible = true
 
-func popFailed() :
+func popFailed():
+	print("FAILED DIPANGGIL")
+
 	anim.play("failed")
 	await anim.animation_finished
+
+	print("MAIN B0")
+
 	anim.play("b0")
-	if GlobalVar.MaxReset > 0 :
+
+	if GlobalVar.MaxReset > 0:
 		restart.visible = true
+
 	resumeBtn.visible = false
-	
 
 func exit() -> void:
 	AudioPlayer._play_fx_btn7()

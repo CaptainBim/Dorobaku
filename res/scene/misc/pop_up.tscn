@@ -326,6 +326,7 @@ _data = {
 [node name="papan" type="Sprite2D"]
 texture = SubResource("AtlasTexture_ubn1t")
 hframes = 4
+frame = 3
 script = ExtResource("2_ydfna")
 
 [node name="clear_con" type="BoxContainer" parent="."]

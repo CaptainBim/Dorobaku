@@ -107,11 +107,11 @@ func selesai():
 	var time_left = timerDis.get_timeLeft();
 	var star = 0
 	print(time_left, "AAAAAAAAAAAAAAAAAAAAAAAA");
-	if(time_left > 100):
+	if(time_left > 80):
 		star = 3;
-	elif(time_left < 100 && time_left > 80):
+	elif(time_left < 80 && time_left > 65):
 		star = 2;
-	elif(time_left < 80 && time_left > 70):
+	elif(time_left < 65 && time_left > 40):
 		star = 1
 	saveData.saveData(null, 4, true, star)
 

@@ -22,7 +22,8 @@ var box = "kosong"
 @export var maxTime : float
 var resetNum = GlobalVar.MaxReset
 var timeLeft
-
+var lever1_active : bool = false
+var lever2_active : bool = false
 @onready var target = $cek_grup.get_child_count()
 var cocok = target
 
@@ -53,21 +54,24 @@ func _process(delta: float) -> void:
 		if isCleared : _nextLvl()
 		else : _btn_pause()
 	elif Input.is_action_just_pressed("reset") : _on_touch_screen_button_pressed()
-	print(target)
+	#print(target)
 	if game_end == false :
 		if target == 0 :
-			print("done");
 			var door = get_node("door")
 			door.open_door()
+
 			timerDis.pause_timer()
 			timeLeft = timerDis.get_timeLeft()
 			timerDis.stop_timer()
+
 			game_end = true
-	elif timerDis.get_timeLeft() < 1 :
-		game_end = true
-		isFailed = true
-		timerDis.pause_timer()
-		selesai()
+
+		elif timerDis.get_timeLeft() < 1 :
+			game_end = true
+			isFailed = true
+			#timeLeft = timerDis.get_timeLeft()
+			timerDis.pause_timer()
+			selesai()
 	
 func _on_touch_screen_button_pressed() -> void:
 	get_node("ui_layer/btn_con/reset_btn").btn_press()
@@ -105,11 +109,11 @@ func selesai():
 	$Player.visible = false
 	var time_left = timerDis.get_timeLeft();
 	var star = 0
-	if(time_left > 100):
+	if(time_left > 90):
 		star = 3;
-	elif(time_left < 100 && time_left > 80):
+	elif(time_left < 90 && time_left > 50):
 		star = 2;
-	elif(time_left < 80 && time_left > 70):
+	elif(time_left < 50 && time_left > 30):
 		star = 1
 	saveData.saveData(null, 5, true, star)
 
@@ -148,27 +152,47 @@ func _nextLvl() :
 	loading.transition()
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
-	get_tree().change_scene_to_file("res://res/scene/level/demo_level_6.tscn")
+	get_tree().change_scene_to_file("res://res/scene/level/demo_level_7.tscn")
 
 func _on_lever_aksi_lever(condition) -> void:
+
+	# kalau lever 2 aktif, lever 1 tidak bisa ON
+	if lever2_active and condition == "on":
+		return
+
 	if condition == "on":
+		lever1_active = true
+
 		$special2/t2.visible = false
 		$special2/t5.visible = false
 		$special2/t2/CollisionShape2D.disabled = true
 		$special2/t5/CollisionShape2D.disabled = true
+
 	else:
+		lever1_active = false
+
 		$special2/t2.visible = true
 		$special2/t5.visible = true
 		$special2/t2/CollisionShape2D.disabled = false
 		$special2/t5/CollisionShape2D.disabled = false
-
+		
 func _on_lever_2_aksi_lever(condition) -> void:
+
+	# kalau lever 1 aktif, lever 2 tidak bisa ON
+	if lever1_active and condition == "on":
+		return
+
 	if condition == "on":
+		lever2_active = true
+
 		$special2/t3.visible = false
 		$special2/t4.visible = false
 		$special2/t3/CollisionShape2D.disabled = true
 		$special2/t4/CollisionShape2D.disabled = true
+
 	else:
+		lever2_active = false
+
 		$special2/t3.visible = true
 		$special2/t4.visible = true
 		$special2/t3/CollisionShape2D.disabled = false

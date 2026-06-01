@@ -1,28 +1,28 @@
-[gd_scene load_steps=24 format=4 uid="uid://vcdr4oj4wcl7"]
+[gd_scene load_steps=24 format=4 uid="uid://13ty2c3rwkk6"]
 
-[ext_resource type="Script" uid="uid://cwdh3kldi4ani" path="res://res/script/level/demo_lvl_6.gd" id="1_3w4bc"]
-[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="1_xuqa2"]
-[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_w6mwy"]
-[ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="3_11lly"]
-[ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="4_3w4bc"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="5_f0bq3"]
-[ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_hc8fp"]
-[ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="8_f0bq3"]
-[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="8_ohblo"]
-[ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_sqetd"]
-[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="9_pdadd"]
-[ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="10_1rsh0"]
-[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="11_3fy3y"]
-[ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="12_l3cwa"]
-[ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="13_w6mwy"]
-[ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="14_11lly"]
+[ext_resource type="Script" uid="uid://cwdh3kldi4ani" path="res://res/script/level/demo_lvl_6.gd" id="1_epvpb"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_57fhk"]
+[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="3_6fegq"]
+[ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="4_7l0bi"]
+[ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="5_2qo0j"]
+[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_82ajr"]
+[ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_vfgqp"]
+[ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_ufchn"]
+[ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="9_loq7h"]
+[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="10_gtjqb"]
+[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="11_786io"]
+[ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="12_7bdny"]
+[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_6f73f"]
+[ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_k04p8"]
+[ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="15_y33u1"]
+[ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="16_kcfta"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7tpt"]
-atlas = ExtResource("5_f0bq3")
+atlas = ExtResource("6_82ajr")
 region = Rect2(5120, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jig74"]
-atlas = ExtResource("5_f0bq3")
+atlas = ExtResource("6_82ajr")
 region = Rect2(5440, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qkbc7"]
@@ -32,11 +32,11 @@ radius = 160.0
 size = Vector2(64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3w4bc"]
-atlas = ExtResource("14_11lly")
+atlas = ExtResource("16_kcfta")
 region = Rect2(736, 512, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0bq3"]
-atlas = ExtResource("14_11lly")
+atlas = ExtResource("16_kcfta")
 region = Rect2(736, 512, 32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqetd"]
@@ -44,17 +44,17 @@ size = Vector2(37, 129.00023)
 
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
-script = ExtResource("1_3w4bc")
+script = ExtResource("1_epvpb")
 maxTime = 120.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
-[node name="loading" parent="ui_layer" instance=ExtResource("1_xuqa2")]
+[node name="loading" parent="ui_layer" instance=ExtResource("2_57fhk")]
 visible = false
 
-[node name="movement_btn" parent="ui_layer" instance=ExtResource("2_w6mwy")]
+[node name="movement_btn" parent="ui_layer" instance=ExtResource("3_6fegq")]
 
-[node name="papan" parent="ui_layer" instance=ExtResource("3_11lly")]
+[node name="papan" parent="ui_layer" instance=ExtResource("4_7l0bi")]
 visible = false
 position = Vector2(928, 479)
 scale = Vector2(0.9, 0.9)
@@ -65,7 +65,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 
-[node name="reset_btn" parent="ui_layer/btn_con" instance=ExtResource("4_3w4bc")]
+[node name="reset_btn" parent="ui_layer/btn_con" instance=ExtResource("5_2qo0j")]
 position = Vector2(261, 95)
 
 [node name="pauseBtn" type="TouchScreenButton" parent="ui_layer/btn_con"]
@@ -76,12 +76,12 @@ texture_pressed = SubResource("AtlasTexture_jig74")
 shape = SubResource("CircleShape2D_qkbc7")
 shape_visible = false
 
-[node name="timeDisplay" parent="ui_layer" instance=ExtResource("8_f0bq3")]
+[node name="timeDisplay" parent="ui_layer" instance=ExtResource("7_vfgqp")]
 
 [node name="bg_layer" type="CanvasLayer" parent="."]
 layer = -100
 
-[node name="background" parent="bg_layer" instance=ExtResource("8_sqetd")]
+[node name="background" parent="bg_layer" instance=ExtResource("8_ufchn")]
 offset_left = -465.0
 offset_top = -651.00006
 offset_right = -465.0
@@ -92,18 +92,18 @@ scale = Vector2(1.4073337, 5.791283)
 z_index = -1
 scale = Vector2(1.0017233, 1)
 tile_map_data = PackedByteArray("AAAWAAcACAAIAA0AAAAWAAYACAAIAA0AAAAXAAYACAAMAAgAAAAXAAcACAAMAAgAAAAWAAMACAAIAA0AAAAWAAIACAAIAA0AAAAWAAEACAAIAA0AAAAXAAEACAAIAA0AAAAXAAIACAAIAA0AAAAXAAMACAAIAA0AAAAXAAQACAAMAAcAAAAXAAUACAAMAAgAAAAWAAUACAAIAA0AAAAWAAgAAAAJAAoAAAAXAAgACAAMAAgAAAAXAAkACAAMAAgAAAAYAAQACAAJAAgAAAAWAAAAAAAKAAoAAAAXAAAAAAAKAAoAAAAYAAEACAAMAAgAAAAYAAIACAAMAAgAAAAYAAMACAAMAAgAAAAWAAoACAAIAA0AAAAWAAsACAAIAA0AAAAWAAwACAAOAAcAAAAXAAwACAAJAAgAAAAXAAoACAAMAAgAAAACAAAACAAPAAgAAAACAAEACAAPAAkAAAACAAIACAAPAAkAAAACAAMACAAPAAkAAAACAAQACAAKAAgAAAADAAAAAAAKAAoAAAADAAEACAAIAA0AAAADAAIACAAIAA0AAAADAAMACAAIAA0AAAADAAQACAAPAAcAAAADAAUACAAPAAkAAAADAAYACAAPAAkAAAADAAcACAAPAAkAAAADAAgACAAPAAkAAAADAAkACAAPAAkAAAADAAoACAAPAAkAAAADAAsACAAPAAkAAAADAAwACAAKAAgAAAAEAAAAAAAKAAoAAAAEAAEACAAIAA0AAAAEAAIACAAIAA0AAAAEAAMACAAIAA0AAAAEAAUACAAIAA0AAAAEAAYACAAIAA0AAAAEAAcACAAIAA0AAAAEAAgAAAAJAAoAAAAEAAkACAAIAA0AAAAEAAoACAAIAA0AAAAEAAsACAAIAA0AAAAEAAwACAAOAAcAAAALAP7/CAAPAAgAAAAMAP7/CAAGAAkAAAANAP7/CAALAAsAAAAOAP7/CAAGAAkAAAAPAP7/CAAMAAkAAAAWAAkACAAIAA0AAAAFAAAAAAAKAAoAAAAFAAEACAAIAA0AAAAFAAIACAAIAA0AAAAFAAMACAAIAA0AAAAFAAQAAAAKAAoAAAAFAAUACAAIAA0AAAAFAAYACAAIAA0AAAAFAAcACAAIAA0AAAAFAAgAAAAJAAoAAAAFAAkACAAIAA0AAAAFAAoACAAIAA0AAAAFAAsACAAIAA0AAAAFAAwACAAOAAcAAAAGAAAAAAAKAAoAAAAGAAEACAAIAA0AAAAGAAIACAAIAA0AAAAGAAMACAAIAA0AAAAGAAQAAAAKAAoAAAAGAAUACAAIAA0AAAAGAAYACAAIAA0AAAAGAAcACAAIAA0AAAAGAAgAAAAJAAoAAAAGAAkACAAIAA0AAAAGAAoACAAIAA0AAAAGAAsACAAIAA0AAAAGAAwACAAOAAcAAAAHAAAACAAMAAkAAAAHAAEAAAAIAAoAAAAHAAIACAAIAA0AAAAHAAMACAAIAA0AAAAHAAQAAAALAAoAAAAHAAUACAAIAA0AAAAHAAYACAAIAA0AAAAHAAcACAAIAA0AAAAHAAkACAAIAA0AAAAHAAoACAAMAAcAAAAHAAsACAAMAAgAAAAHAAwACAAJAAgAAAAIAAAACAAPAAgAAAAIAAEAAAALAAoAAAAIAAIACAAIAA0AAAAIAAMACAAIAA0AAAAIAAQACAAIAA0AAAAIAAUACAAIAA0AAAAIAAYACAAIAA0AAAAIAAcACAAIAA0AAAAIAAgACAAIAA0AAAAIAAkACAAIAA0AAAAIAAoACAAPAAcAAAAIAAsACAAPAAkAAAAIAAwACAAKAAgAAAAJAAAAAAAJAAoAAAAJAAEACAAIAA0AAAAJAAIACAAIAA0AAAAJAAMACAAIAA0AAAAJAAQACQAAAAIAAAAJAAUACQAAAAEAAAAJAAYACQAAAAEAAAAJAAcACQAAAAEAAAAJAAgACAAIAA0AAAAJAAkACAAIAA0AAAAJAAoACAAIAA0AAAAJAAsACAAIAA0AAAAJAAwACAAOAAcAAAAKAAAAAAAJAAoAAAAKAAEACAAIAA0AAAAKAAIACAAIAA0AAAAKAAMACAAIAA0AAAAKAAQACQACAAIAAAAKAAUACAAIAA0AAAAKAAYACAAIAA0AAAAKAAcACAAIAA0AAAAKAAgACAAIAA0AAAAKAAkACAAIAA0AAAAKAAoACAAIAA0AAAAKAAsACAAIAA0AAAAKAAwACAAOAAcAAAALAAAAAAAJAAoAAAALAAEACAAIAA0AAAALAAIACAAIAA0AAAALAAMACAAIAA0AAAALAAQACAAIAA0AAAALAAUACAAIAA0AAAALAAYACAAIAA0AAAALAAcACAAIAA0AAAALAAgACAAIAA0AAAALAAoACAAIAA0AAAALAAsACAAIAA0AAAALAAwACAAOAAcAAAAMAP//CAAIAA0AAAAMAAAAAAAJAAoAAAAMAAEACAAIAA0AAAAMAAIACAAIAA0AAAAMAAMACQAAAAAAAAAMAAQABAARAAgAAAAMAAUACAAIAA0AAAAMAAYABAAGAAgAAAAMAAcACAAIAA0AAAAMAAkACQAAAAIAAAAMAAoACAAIAA0AAAAMAAsACAAIAA0AAAAMAAwACAAOAAcAAAANAP//CAAIAA0AAAANAAAACAAIAA0AAAANAAEACAAIAA0AAAANAAIACAAIAA0AAAANAAMACQABAAAAAAANAAQABAARAAgAAAANAAUACAAIAA0AAAANAAYABAAGAAgAAAANAAcACAAIAA0AAAANAAgACAAIAA0AAAANAAkACQABAAIAAAANAAoACAAIAA0AAAANAAsACAAIAA0AAAANAAwACAAOAAcAAAAOAP//CAAIAA0AAAAOAAAAAAAJAAoAAAAOAAEACAAIAA0AAAAOAAIACAAIAA0AAAAOAAMACQACAAAAAAAOAAQABAARAAgAAAAOAAUACAAIAA0AAAAOAAYABAAGAAgAAAAOAAcACAAIAA0AAAAOAAgACAAIAA0AAAAOAAkACQACAAIAAAAOAAoACAAIAA0AAAAOAAsACAAIAA0AAAAOAAwACAAOAAcAAAAPAP//CAAMAAgAAAAPAAAAAAAJAAoAAAAPAAEACAAIAA0AAAAPAAIACAAIAA0AAAAPAAMACAAIAA0AAAAPAAQACAAIAA0AAAAPAAYACAAIAA0AAAAPAAcACAAIAA0AAAAPAAgACAAIAA0AAAAPAAoACAAIAA0AAAAPAAsACAAIAA0AAAAPAAwACAAOAAcAAAAQAAAAAAAJAAoAAAAQAAEACAAIAA0AAAAQAAIACAAIAA0AAAAQAAMACAAIAA0AAAAQAAQACQAAAAIAAAAQAAUACAAIAA0AAAAQAAYACAAIAA0AAAAQAAcACAAIAA0AAAAQAAgACAAIAA0AAAAQAAkACAAIAA0AAAAQAAoACAAIAA0AAAAQAAsACAAIAA0AAAAQAAwACAAOAAcAAAARAAAAAAAJAAoAAAARAAEACAAIAA0AAAARAAIACAAIAA0AAAARAAMACAAIAA0AAAARAAQACQACAAIAAAARAAUACQACAAEAAAARAAYACQACAAEAAAARAAcACQACAAEAAAARAAgACAAIAA0AAAARAAkACAAIAA0AAAARAAoACAAIAA0AAAARAAwACAAOAAcAAAASAAAACAAMAAkAAAASAAEAAAAIAAoAAAASAAIACAAIAA0AAAASAAMACAAIAA0AAAASAAQACAAIAA0AAAASAAUACAAIAA0AAAASAAYACAAIAA0AAAASAAcACAAIAA0AAAASAAgACAAIAA0AAAASAAkACAAIAA0AAAASAAoACAAMAAcAAAASAAsACAAMAAgAAAASAAwACAAJAAgAAAATAAAACAAPAAgAAAATAAEAAAALAAoAAAATAAIACAAIAA0AAAATAAMACAAIAA0AAAATAAQAAAAIAAoAAAATAAUACAAIAA0AAAATAAYACAAIAA0AAAATAAcACAAIAA0AAAATAAkACAAIAA0AAAATAAoACAAPAAcAAAATAAsACAAPAAkAAAATAAwACAAKAAgAAAAUAAAAAAAKAAoAAAAUAAEACAAIAA0AAAAUAAIACAAIAA0AAAAUAAMACAAIAA0AAAAUAAQAAAAKAAoAAAAUAAUACAAIAA0AAAAUAAYACAAIAA0AAAAUAAcACAAIAA0AAAAUAAgAAAAJAAoAAAAUAAkACAAIAA0AAAAUAAoACAAIAA0AAAAUAAsACAAIAA0AAAAUAAwACAAOAAcAAAAVAAAAAAAKAAoAAAAVAAEACAAIAA0AAAAVAAIACAAIAA0AAAAVAAMACAAIAA0AAAAVAAQAAAAKAAoAAAAVAAUACAAIAA0AAAAVAAYACAAIAA0AAAAVAAcACAAIAA0AAAAVAAgAAAAKAAoAAAAVAAkACAAIAA0AAAAVAAoACAAIAA0AAAAVAAsACAAIAA0AAAAVAAwACAAOAAcAAAAWAAQAAAAKAAoAAAAEAAQAAAAKAAoAAAAHAAgABAAOAAgAAAATAAgABAAOAAgAAAAPAAUACAAIAA0AAAARAAsACAAIAA0AAAAXAAsACAAMAAgAAAALAP//CAAPAAkAAAAYAAAACAAMAAkAAAAMAAgACAAIAA0AAAALAAkABAARAAgAAAAPAAkABAARAAgAAAA=")
-tile_set = ExtResource("7_hc8fp")
+tile_set = ExtResource("9_loq7h")
 rendering_quadrant_size = 64
 
 [node name="layer2" type="TileMapLayer" parent="."]
 z_index = -1
 tile_map_data = PackedByteArray("AAAUAAMACAAMAAwAAAAJAAEACAAMAA0AAAAJAAgACAAMAAwAAAAKAAIACAAMAA0AAAAKAAUACAAMAAwAAAALAAgACAALAA0AAAAQAAEACAALAAwAAAAQAAUACAAMAA0AAAAQAAcACAALAAwAAAAEAAYACAALAA0AAAAIAAcACAAMAAwAAAAUAAUACAALAAwAAAAVAAYACAALAAwAAAAVAAoACAAMAAwAAAAKAAoACAALAA0AAAAQAAsACAAMAA0AAAAWAAEACAANAAwAAAAWAAIACAANAA0AAAAXAAEACAAOAAwAAAAXAAIACAAOAA0AAAAFAAEACAAPAAwAAAAFAAIACAAPAA0AAAAGAAEACAAQAAwAAAAGAAIACAAQAA0AAAA=")
-tile_set = ExtResource("7_hc8fp")
+tile_set = ExtResource("9_loq7h")
 rendering_quadrant_size = 64
 
 [node name="special" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AABOAAoAAAAOABEAAABOAAkAAAAOABEAAABOAA0AAAAOABIAAAAJAAoACAAUAAsAAAAKAAEACAAUAAsAAAALAAEACAAUAAsAAAAMAAEACAAUAAsAAAANAAEACAAUAAsAAAAOAAEACAAUAAsAAAAPAAEACAAUAAsAAAAQAAEACAAUAAsAAAAJAAEACAAUAAcAAAARAAEACAAXAAcAAAARAAoACAAUAAsAAAAQAAoACAAUAAsAAAAKAAoACAAUAAsAAAAPAAoACAATAAkAAFALAAoACAATAAkAAAAPAAsACAATAAwAAAALAAsACAAVAAwAAAAFAAUACAAVAAwAAAAFAAYACAAVAAwAAAAFAAcACAAVAAwAAAAVAAUACAATAAwAAAAVAAYACAATAAwAAAAVAAcACAATAAwAAAAEAAIACAAVAAwAAAAEAAMACAAVAAwAAAAEAAEACAAbAAgAAAAFAAEACAAUAAsAAAAGAAEACAAUAAsAAAAFAAsACAAUAA0AAAAGAAsACAAUAA0AAAAEAAkACAATAAwAAAAEAAoACAATAAwAAAAEAAsACAATAA0AAAAVAAEACAAUAAsAAAAWAAEACAAUAAsAAAAXAAIACAAVAAwAAAAXAAMACAAVAAwAAAAUAAEACAAUAAsAAAAXAAEACAAVAAsAAAAVAAoACAAUAAsAAAAWAAkACAAVAAwAAAAWAAoACAAaAAkAADAUAAoACAAUAAsAAAAQAAUACAAVAAwAAAAQAAYACAAVAAwAAAAKAAUACAATAAwAAAAKAAYACAATAAwAAAAQAAcACAAaAAcAAAAKAAcACAAaAAcAAGARAAcACAAbAAoAAFAQAAQACAAbAAgAAAARAAQACAAVAAsAAAARAAUACAAVAAwAAAARAAYACAAVAAwAAAAJAAYACAATAAwAAAAJAAcACAAbAAkAAFAJAAUACAATAAwAAAAKAAQACAAbAAoAAAAJAAQACAATAAsAAAAMAAkACAAUAA0AAAANAAkACAAUAA0AAAAOAAkACAAUAA0AAAAMAAoACAAUAA0AAAANAAoACAAUAA0AAAAOAAoACAAUAA0AAAA=")
-tile_set = ExtResource("7_hc8fp")
+tile_set = ExtResource("9_loq7h")
 
 [node name="exit" type="Area2D" parent="."]
 position = Vector2(832, -127)
@@ -117,27 +117,27 @@ shape = SubResource("RectangleShape2D_flx8a")
 [node name="cek_grup" type="Node2D" parent="."]
 position = Vector2(0, -128)
 
-[node name="cek s" parent="cek_grup" instance=ExtResource("8_ohblo")]
+[node name="cek s" parent="cek_grup" instance=ExtResource("10_gtjqb")]
 position = Vector2(704, 512)
 scale = Vector2(2, 2)
 nama_cek = "s"
 
-[node name="cek u" parent="cek_grup" instance=ExtResource("8_ohblo")]
+[node name="cek u" parent="cek_grup" instance=ExtResource("10_gtjqb")]
 position = Vector2(768, 512)
 scale = Vector2(2, 2)
 nama_cek = "u"
 
-[node name="cek p" parent="cek_grup" instance=ExtResource("8_ohblo")]
+[node name="cek p" parent="cek_grup" instance=ExtResource("10_gtjqb")]
 position = Vector2(832, 512)
 scale = Vector2(2, 2)
 nama_cek = "p"
 
-[node name="cek i" parent="cek_grup" instance=ExtResource("8_ohblo")]
+[node name="cek i" parent="cek_grup" instance=ExtResource("10_gtjqb")]
 position = Vector2(896, 512)
 scale = Vector2(2, 2)
 nama_cek = "i"
 
-[node name="cek r" parent="cek_grup" instance=ExtResource("8_ohblo")]
+[node name="cek r" parent="cek_grup" instance=ExtResource("10_gtjqb")]
 position = Vector2(960, 512)
 scale = Vector2(2, 2)
 nama_cek = "r"
@@ -145,34 +145,34 @@ nama_cek = "r"
 [node name="kotak_grup" type="Node2D" parent="."]
 position = Vector2(6, -134)
 
-[node name="s" parent="kotak_grup" instance=ExtResource("9_pdadd")]
+[node name="s" parent="kotak_grup" instance=ExtResource("11_786io")]
 position = Vector2(340, 289)
 nama_kotak = "s"
 
-[node name="u" parent="kotak_grup" instance=ExtResource("9_pdadd")]
+[node name="u" parent="kotak_grup" instance=ExtResource("11_786io")]
 position = Vector2(1333, 295)
 nama_kotak = "u"
 
-[node name="p" parent="kotak_grup" instance=ExtResource("9_pdadd")]
+[node name="p" parent="kotak_grup" instance=ExtResource("11_786io")]
 position = Vector2(332, 725)
 nama_kotak = "p"
 
-[node name="i" parent="kotak_grup" instance=ExtResource("9_pdadd")]
+[node name="i" parent="kotak_grup" instance=ExtResource("11_786io")]
 position = Vector2(1317, 742)
 nama_kotak = "i"
 
-[node name="r" parent="kotak_grup" instance=ExtResource("9_pdadd")]
+[node name="r" parent="kotak_grup" instance=ExtResource("11_786io")]
 position = Vector2(393, 509)
 nama_kotak = "r"
 
-[node name="a" parent="kotak_grup" instance=ExtResource("9_pdadd")]
+[node name="a" parent="kotak_grup" instance=ExtResource("11_786io")]
 position = Vector2(1298, 531)
 nama_kotak = "o"
 
-[node name="door" parent="." instance=ExtResource("10_1rsh0")]
+[node name="door" parent="." instance=ExtResource("12_7bdny")]
 position = Vector2(832, 59)
 
-[node name="Player" parent="." instance=ExtResource("11_3fy3y")]
+[node name="Player" parent="." instance=ExtResource("13_6f73f")]
 position = Vector2(864, 154)
 scale = Vector2(2, 2)
 collision_layer = 1
@@ -193,14 +193,14 @@ process_callback = 0
 wait_time = 120.0
 one_shot = true
 
-[node name="buku" parent="." instance=ExtResource("12_l3cwa")]
+[node name="buku" parent="." instance=ExtResource("14_k04p8")]
 position = Vector2(826, 706)
 hint_text = "Aku terdiri dari 6 huruf. Aku adalah orang yang bertugas mengendalikan kendaraan agar penumpang dapat sampai ke tujuan dengan selamat. Siapakah aku?"
 
-[node name="Lever" parent="." instance=ExtResource("13_w6mwy")]
+[node name="Lever" parent="." instance=ExtResource("15_y33u1")]
 position = Vector2(915, 704)
 
-[node name="Lever2" parent="." instance=ExtResource("13_w6mwy")]
+[node name="Lever2" parent="." instance=ExtResource("15_y33u1")]
 position = Vector2(732, 703)
 
 [node name="special2" type="TileMapLayer" parent="."]

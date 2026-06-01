@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://csqrfoe85xrqq"]
+
+[ext_resource type="Script" uid="uid://c0ywa68624ybn" path="res://res/script/water.gd" id="1_0ddxe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4pw2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0ddxe")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_n4pw2")
+offset_right = 40.0
+offset_bottom = 40.0
