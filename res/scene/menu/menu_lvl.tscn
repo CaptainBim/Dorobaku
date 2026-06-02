@@ -585,6 +585,14 @@ texture_pressed = SubResource("AtlasTexture_yhe33")
 shape = SubResource("CircleShape2D_m8s3y")
 shape_visible = false
 
+[node name="back2" type="TouchScreenButton" parent="Panel"]
+position = Vector2(15, 906)
+scale = Vector2(0.25, 0.25)
+texture_normal = SubResource("AtlasTexture_byxwj")
+texture_pressed = SubResource("AtlasTexture_yhe33")
+shape = SubResource("CircleShape2D_m8s3y")
+shape_visible = false
+
 [node name="notif" type="Panel" parent="Panel"]
 custom_minimum_size = Vector2(1000, 50)
 layout_mode = 1
@@ -609,3 +617,4 @@ text = "10000000000000000000000000000000000000000"
 visible = false
 
 [connection signal="pressed" from="Panel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/back2" to="." method="_on_back_2_pressed"]

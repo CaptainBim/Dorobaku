@@ -146,23 +146,23 @@ nama_cek = "r"
 position = Vector2(6, -134)
 
 [node name="s" parent="kotak_grup" instance=ExtResource("11_786io")]
-position = Vector2(340, 289)
+position = Vector2(341, 287)
 nama_kotak = "s"
 
 [node name="u" parent="kotak_grup" instance=ExtResource("11_786io")]
-position = Vector2(1333, 295)
+position = Vector2(1355, 296)
 nama_kotak = "u"
 
 [node name="p" parent="kotak_grup" instance=ExtResource("11_786io")]
-position = Vector2(332, 725)
+position = Vector2(380, 515)
 nama_kotak = "p"
 
 [node name="i" parent="kotak_grup" instance=ExtResource("11_786io")]
-position = Vector2(1317, 742)
+position = Vector2(349, 764)
 nama_kotak = "i"
 
 [node name="r" parent="kotak_grup" instance=ExtResource("11_786io")]
-position = Vector2(393, 509)
+position = Vector2(1324, 740)
 nama_kotak = "r"
 
 [node name="a" parent="kotak_grup" instance=ExtResource("11_786io")]

@@ -99,3 +99,7 @@ func pushNotif(notif_text):
 	tween.tween_property(notif, "position", notifPos, 0.5)
 	tween.tween_interval(1.75)
 	tween.tween_property(notif, "position", notifPos + Vector2(0, 70), 0.5)
+
+
+func _on_back_2_pressed() -> void:
+	var path = "res://res/scene/level/demo_level_10.tscn"
