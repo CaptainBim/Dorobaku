@@ -1,4 +1,4 @@
-class_name DemoLevel7 extends Node
+class_name DemoLevel9 extends Node
 
 var game_end : bool = false
 var info : bool = false
@@ -13,13 +13,13 @@ var saveData = SAVES.new();
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
 
-var h1 = "b"
+var h1 = "h"
 var h2 = "a"
-var h3 = "n"
-var h4 = "k"
-var h5 = "g"
+var h3 = "f"
+var h4 = "l"
+var h5 = "x"
 
-@export var maxTime : float = 300.0
+@export var maxTime : float = 180.0
 var resetNum = GlobalVar.MaxReset
 var timeLeft
 var lever1_active : bool = false
@@ -44,11 +44,15 @@ func _ready() -> void:
 
 func box_setup() -> void:
 	print(get_tree());
-	get_tree().get_nodes_in_group("b")[0].set_block(h1)
+	get_tree().get_nodes_in_group("h")[0].set_block(h1)
 	get_tree().get_nodes_in_group("a")[0].set_block(h2)
-	get_tree().get_nodes_in_group("n")[0].set_block(h3)
-	get_tree().get_nodes_in_group("k")[0].set_block(h4)
-	get_tree().get_nodes_in_group("g")[0].set_block(h5)
+	get_tree().get_nodes_in_group("f")[0].set_block(h3)
+	get_tree().get_nodes_in_group("a")[1].set_block(h2)
+	get_tree().get_nodes_in_group("l")[0].set_block(h4)
+	get_tree().get_nodes_in_group("x")[0].set_block(h5)
+	get_tree().get_nodes_in_group("x")[1].set_block(h5)
+	get_tree().get_nodes_in_group("x")[2].set_block(h5)
+	get_tree().get_nodes_in_group("x")[3].set_block(h5)
 
 
 func _process(delta: float) -> void:
@@ -111,13 +115,13 @@ func selesai():
 	$Player.visible = false
 	var time_left = timerDis.get_timeLeft();
 	var star = 0
-	if(time_left >= 180):
+	if(time_left >= 120):
 		star = 3;
-	elif(time_left >= 90):
+	elif(time_left >= 60):
 		star = 2;
 	else:
 		star = 1
-	saveData.saveData(null, 6, true, star)
+	saveData.saveData(null, 8, true, star)
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()
@@ -154,7 +158,7 @@ func _nextLvl() :
 	loading.transition()
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
-	get_tree().change_scene_to_file("res://res/scene/level/demo_level_8.tscn")
+	get_tree().change_scene_to_file("res://res/scene/level/demo_level_10.tscn")
 
 
 func _on_lever(condition) -> void:

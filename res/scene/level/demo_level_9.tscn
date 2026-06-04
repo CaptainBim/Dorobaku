@@ -1,0 +1,216 @@
+[gd_scene load_steps=19 format=4 uid="uid://c83n53d63tpn3"]
+
+[ext_resource type="Script" uid="uid://bsnb3f02mk4cb" path="res://res/script/level/demo_lvl_9.gd" id="1_fh7bt"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_ujwug"]
+[ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="3_jbaxl"]
+[ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="4_w20cg"]
+[ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="5_g1042"]
+[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="6_bx74w"]
+[ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_r42y5"]
+[ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_8rtn3"]
+[ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="9_81wtv"]
+[ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="11_yo0og"]
+[ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="12_xy2vu"]
+[ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="13_koqnr"]
+[ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="14_vu18p"]
+[ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="15_ralxb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7tpt"]
+atlas = ExtResource("6_bx74w")
+region = Rect2(5120, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jig74"]
+atlas = ExtResource("6_bx74w")
+region = Rect2(5440, 0, 320, 320)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qkbc7"]
+radius = 160.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flx8a"]
+size = Vector2(64, 64)
+
+[node name="DemoLevel" type="Node2D" groups=["level"]]
+position = Vector2(0, -1)
+script = ExtResource("1_fh7bt")
+
+[node name="ui_layer" type="CanvasLayer" parent="."]
+
+[node name="loading" parent="ui_layer" instance=ExtResource("2_ujwug")]
+visible = false
+
+[node name="movement_btn" parent="ui_layer" instance=ExtResource("3_jbaxl")]
+
+[node name="papan" parent="ui_layer" instance=ExtResource("4_w20cg")]
+visible = false
+position = Vector2(928, 479)
+scale = Vector2(0.9, 0.9)
+
+[node name="btn_con" type="HBoxContainer" parent="ui_layer"]
+custom_minimum_size = Vector2(360, 180)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="reset_btn" parent="ui_layer/btn_con" instance=ExtResource("5_g1042")]
+position = Vector2(261, 95)
+
+[node name="pauseBtn" type="TouchScreenButton" parent="ui_layer/btn_con"]
+position = Vector2(14, 14)
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_c7tpt")
+texture_pressed = SubResource("AtlasTexture_jig74")
+shape = SubResource("CircleShape2D_qkbc7")
+shape_visible = false
+
+[node name="timeDisplay" parent="ui_layer" instance=ExtResource("7_r42y5")]
+
+[node name="bg_layer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" parent="bg_layer" instance=ExtResource("8_8rtn3")]
+offset_left = -844.00006
+offset_top = -2333.0002
+offset_right = -844.0
+offset_bottom = -2333.0002
+scale = Vector2(1.4073337, 5.791283)
+
+[node name="layer2" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(9, 2)
+tile_map_data = PackedByteArray("AAD8/wYACAARAAgAAAD9/wYACAARAAgAAAD9/wcACAARAAgAAAD+/wcACAARAAgAAAD+/wgACAARAAgAAAD+/wYACAARAAgAAAD9/wgACAARAAgAAAD8/wgACAARAAgAAAD8/wcACAARAAgAAAD7/wgACAARAAgAAAD6/wgACAARAAgAAAD5/wgACAARAAgAAAD5/woACAARAAgAAAD6/woACAARAAgAAAD7/woACAARAAgAAAD8/woACAARAAgAAAD5/wkACAARAAgAAAD6/wkACAARAAgAAAD7/wkACAARAAgAAAD8/wkACAARAAgAAAD9/wkACAARAAgAAAD+/wkACAARAAgAAAD9/woACAARAAgAAAD+/woACAARAAgAAAD//woACAARAAgAAAD//wkACAARAAgAAAD//wgACAARAAgAAAD//wcACAARAAgAAAAAAAcACAARAAgAAAABAAcACAARAAgAAAACAAcACAARAAgAAAACAAgACAARAAgAAAACAAkACAARAAgAAAABAAkACAARAAgAAAAAAAkACAARAAgAAAAAAAgACAARAAgAAAABAAgACAARAAgAAAAAAAoACAARAAgAAAAAAAsABAAOAAgAAAABAAsACAARAAgAAAACAAsACAARAAgAAAACAAoACAARAAgAAAABAAoACAARAAgAAAADAAoACAARAAgAAAADAAsACAARAAgAAAADAAwACAARAAgAAAACAAwACAARAAgAAAACAA0ACAARAAgAAAABAA0ACAARAAgAAAABAAwACAARAAgAAAADAA0ACAARAAgAAAAEAA0ACAARAAgAAAAFAA0ACAARAAgAAAAGAA0ACAARAAgAAAAGAAwACAARAAgAAAAFAAwACAARAAgAAAAEAAwACAARAAgAAAAEAAsACAARAAgAAAAFAAsACAARAAgAAAAHAAwACAARAAgAAAAHAAsACAARAAgAAAAHAAoACAARAAgAAAAHAAkACAARAAgAAAAGAAkACAARAAgAAAAGAAoACAARAAgAAAAGAAsACAARAAgAAAAFAAoACAARAAgAAAAFAAkACAARAAgAAAAFAAgACAARAAgAAAAFAAcACAAbAAIAADAFAAYACAAbAAIAADAFAAUACAAbAAIAADAGAAUACAARAAgAAAAGAAQACAARAAgAAAAFAAQACAAbAAIAADAHAAQACAARAAgAAAAHAAUACAARAAgAAAAIAAUACAARAAgAAAAIAAYACAARAAgAAAAIAAcACAARAAgAAAAHAAcACAARAAgAAAAHAAgACAARAAgAAAAIAAQACAARAAgAAAAHAAYACAARAAgAAAAGAAYACAARAAgAAAAGAAcACAARAAgAAAAGAAgACAARAAgAAAAIAAkACAARAAgAAAAIAAgACAARAAgAAAAJAAcACAARAAgAAAAJAAYACAARAAgAAAAKAAYACAARAAgAAAALAAYACAARAAgAAAAMAAYACAARAAgAAAANAAYACAARAAgAAAANAAcACAARAAgAAAAOAAcACAARAAgAAAAOAAgACAARAAgAAAAOAAYACAARAAgAAAAPAAoACAARAAgAAAAOAAoACAARAAgAAAAPAAkACAARAAgAAAAOAAkACAARAAgAAAAMAAcACAARAAgAAAAMAAgACAARAAgAAAAMAAkACAARAAgAAAALAAgACAARAAgAAAALAAcACAARAAgAAAAKAAcACAARAAgAAAAKAAgACAARAAgAAAAJAAgACAARAAgAAAAJAAkACAARAAgAAAAIAAoACAARAAgAAAAIAAsACAARAAgAAAAJAAsACAARAAgAAAAKAAsACAARAAgAAAALAAoACAARAAgAAAALAAkACAARAAgAAAAKAAkACAARAAgAAAAKAAoACAARAAgAAAAJAAoACAARAAgAAAAMAAoACAARAAgAAAANAAoACAARAAgAAAALAAsACAARAAgAAAAMAAsACAARAAgAAAANAAsACAARAAgAAAAOAAsACAARAAgAAAANAAkACAARAAgAAAANAAgACAARAAgAAAAIAAwACAAZAAYAAAAJAAwACAAZAAYAAAAKAAwACAAZAAYAAAALAAwACAAZAAYAAAAMAAwACAAZAAYAAAANAAwACAAZAAYAAAAOAAwACAAZAAYAAAAPAAwACAAZAAYAAAAHAA0ACAARAAgAAAAHAA4ACAAZAAYAAAAGAA4ACAAZAAYAAAAFAA4ACAAZAAYAAAAEAA4ACAAZAAYAAAAAAA0ABAAOAAgAAAAAAA4ACAAZAAYAAAABAA4ACAAZAAYAAAACAA4ACAAZAAYAAAADAA4ACAAZAAYAAAAAAAwABAAOAAgAAAD//wsACAAZAAYAAAD+/wsACAAZAAYAAAD9/wsACAAZAAYAAAD8/wsACAAZAAYAAAD7/wsACAAZAAYAAAD6/wsACAAZAAYAAAD5/wsACAAZAAYAAAD5/wcACAAbAAIAAGD6/wcACAAbAAIAAGD7/wcACAARAAgAAAD7/wYACAARAAgAAAD7/wUACAAWAAAAAAD8/wUACAAWAAAAAAD9/wUACAAWAAAAAAD+/wUACAAWAAAAAAD//wYACAARAAgAAAD//wUACAAWAAAAAAAAAAYACAAbAAIAAGABAAYACAAbAAIAAGACAAYACAAbAAIAAGAEAAoACAARAAgAAAAJAAUACAARAAgAAAAKAAUACAAWAAAAAAALAAUACAAWAAAAAAAMAAUACAAWAAAAAAANAAUACAAWAAAAAAAOAAUACAAWAAAAAAAIAAMABAAVAAMAAFAJAAMACAAbAAIAAAAJAAQACAAbAAIAAAAHAAMABAAVAAMAAFAGAAMABAAVAAMAAFAFAAMACAAbAAIAADADAAkABAAOAAgAAAAEAAgABAAOAAgAAAADAAgABAAOAAgAAAAEAAkABAANAAMAAAAQAAkACAAbAAIAAAAQAAoACAAbAAIAAAAQAAsACAAbAAIAAAAPAAsACAAYAAIAAAA=")
+tile_set = ExtResource("9_81wtv")
+rendering_quadrant_size = 64
+
+[node name="layer1" type="TileMapLayer" parent="."]
+z_index = -1
+scale = Vector2(1.0017233, 1)
+tile_map_data = PackedByteArray("AAAGAAMACAAJAAoAAAAHAAMACAAJAAoAAAAJAAUACAAIAAoAAAAKAAUACAAJAAoAAAALAAUACAAJAAoAAAAMAAUACAAJAAoAAAANAAUACAAJAAoAAAAOAAUACAAJAAoAAAAPAAUACAAMAAkAAAALAAcACAAEAAoAAAANAAcACAAEAAoAAAALAAgACAAEAAoAAAAKAAgACAAEAAcAAAALAAwACAAKAAcAAAAMAAwACAAKAAcAAAANAAwACAAKAAcAAAAOAAwACAAKAAcAAAAPAAwACAAKAAcAAAAJAAQACAALAAoAAAAJAAMACAALAAoAAAAIAAMACAAJAAoAAAAJAAkACAAEAAcAAAAHAA4ACAANAAcAAAAGAA4ACAAKAAcAAAAFAA4ACAAKAAcAAAAEAA4ACAAKAAcAAAAFAAwACAAJAAoAAAADAA0ACAAGAAoAAAACAA0ACAAGAAoAAAADAA4ACAAKAAcAAAD//woACAAEAAoAAAD//wsACAAJAAcAAAD+/woACAAEAAoAAAD+/wsACAAJAAcAAAD9/wsACAAJAAcAAAD8/wsACAAJAAcAAAD7/wsACAAJAAcAAAD6/wsACAAJAAcAAAD5/wsACAAKAAYAAAD5/wkACAAFAAgAAAD7/wkACAAEAAoAAAD8/wkACAAEAAoAAAD9/wcACAAEAAoAAAD//wcACAAFAAkAAAAAAAcACAAHAAkAAAAAAAYACAAGAAkAAAABAAYACAAGAAkAAAD//wUACAALAAoAAAD+/wUACAAGAAkAAAD8/wUACAAGAAkAAAD9/wUACAAGAAkAAAD7/wUACAAIAAoAAAD7/wYACAAIAAoAAAAHAAUACAAKAAoAAAACAAYACAAGAAkAAAAKAAsACAAEAAgAAAAKAAoACAAEAAgAAAAKAAkACAAEAAgAAAAJAAoACAAEAAgAAAAJAAsACAAEAAgAAAAKAAwACAANAAcAAAAJAAwACAANAAcAAAAIAAwACAAIAAgAAAAIAAoACAAEAAcAAAAIAAsACAAEAAgAAAAIAA0ACAAFAAgAAAAIAA4ACAAJAAgAAAD5/wcACAAFAAcAAAD//wYACAAFAAkAAAD7/wcACAAIAAoAAAD6/wcACAAGAAoAAAAPAAYACAAFAAgAAAAPAAcACAAFAAgAAAAPAAgACAAFAAgAAAAPAAkACAAIAAoAAAADAAYACAAMAAkAAAADAAcACAAFAAgAAAADAAgACAAFAAcAAAADAAkACAAFAAgAAAAAAAsACAAJAAkAAAAAAAwACAAFAAgAAAAAAA0ACAAFAAgAAAACAA4ACAAKAAcAAAABAA4ACAAKAAcAAAAAAA4ACAAKAAYAAAADAAoACAAKAAYAAAAJAAYACAAOAAgAAAAKAAYACAAOAAgAAAALAAYACAAOAAgAAAAMAAYACAAOAAgAAAANAAYACAAOAAgAAAAFAAMACAAPAAgAAAAFAAQACAAHAAgAAAAFAAUACAAHAAgAAAAFAAYACAAHAAgAAAAFAAcACAAHAAgAAAAFAAgACAAHAAcAAAAFAAkACAAHAAgAAAAFAAoACAALAAYAAAAEAAkACAASAAwAAAAEAAgACAAGAAkAAAAGAAQABAARAAoAAAAHAA0ACAAEAAcAAAAHAAcACAAEAAkAAAAQAAkACAAHAAcAAAAQAAoACAAHAAgAAAAQAAsACAAHAAgAAAAQAAwACAALAAYAAAD+/wkACAAEAAoAAAD//wkACAAEAAoAAAD5/wgACAAFAAgAAAD5/woACAAFAAgAAAA=")
+tile_set = ExtResource("9_81wtv")
+rendering_quadrant_size = 64
+
+[node name="special" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AABOAAoAAAAOABEAAABOAAkAAAAOABEAAABOAA0AAAAOABIAAAA=")
+tile_set = ExtResource("9_81wtv")
+
+[node name="exit" type="Area2D" parent="."]
+position = Vector2(257, 575)
+collision_layer = 273
+collision_mask = 273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_flx8a")
+
+[node name="cek_grup" type="Node2D" parent="."]
+position = Vector2(-126, -128)
+
+[node name="cek h" parent="cek_grup" instance=ExtResource("11_yo0og")]
+position = Vector2(704, 512)
+scale = Vector2(2, 2)
+nama_cek = "h"
+
+[node name="cek a" parent="cek_grup" instance=ExtResource("11_yo0og")]
+position = Vector2(768, 512)
+scale = Vector2(2, 2)
+nama_cek = "a"
+
+[node name="cek f" parent="cek_grup" instance=ExtResource("11_yo0og")]
+position = Vector2(832, 512)
+scale = Vector2(2, 2)
+nama_cek = "f"
+
+[node name="cek a2" parent="cek_grup" instance=ExtResource("11_yo0og")]
+position = Vector2(896, 512)
+scale = Vector2(2, 2)
+nama_cek = "a"
+
+[node name="cek l" parent="cek_grup" instance=ExtResource("11_yo0og")]
+position = Vector2(960, 512)
+scale = Vector2(2, 2)
+nama_cek = "l"
+
+[node name="kotak_grup" type="Node2D" parent="."]
+position = Vector2(6, -134)
+
+[node name="h" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(-259, 646)
+nama_kotak = "h"
+
+[node name="a" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(61, 647)
+nama_kotak = "a"
+
+[node name="f" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(319, 836)
+nama_kotak = "f"
+
+[node name="a2" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(449, 516)
+nama_kotak = "a"
+
+[node name="l" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(772, 707)
+nama_kotak = "l"
+
+[node name="x" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(830, 645)
+nama_kotak = "x"
+
+[node name="x2" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(831, 708)
+nama_kotak = "x"
+
+[node name="x3" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(831, 769)
+nama_kotak = "x"
+
+[node name="x4" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(893, 769)
+nama_kotak = "x"
+
+[node name="door" parent="." instance=ExtResource("13_koqnr")]
+position = Vector2(256, 699)
+rotation = 6.280725
+scale = Vector2(1.0047151, 1.0000399)
+
+[node name="Player" parent="." instance=ExtResource("14_vu18p")]
+position = Vector2(417.99997, 341)
+scale = Vector2(1.8006551, 1.8367888)
+collision_layer = 1
+collision_mask = 16
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(2.999999, 0)
+rotation = 3.1415927
+scale = Vector2(92.87151, -21.127075)
+zoom = Vector2(1.7, 1.7)
+limit_enabled = false
+limit_left = -100
+limit_top = -100
+limit_right = 100
+limit_bottom = 100
+position_smoothing_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 120.0
+one_shot = true
+
+[node name="buku" parent="." instance=ExtResource("15_ralxb")]
+position = Vector2(50, 890)
+hint_text = "Aku terdiri dari 5 huruf. Banyak orang memiliki aku saat mengingat pelajaran, puisi, atau lirik lagu tanpa melihat catatan. Siapakah aku?"
+
+[connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
+[connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
+[connection signal="body_entered" from="exit" to="." method="_finish"]
+[connection signal="activated" from="cek_grup/cek h" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek h" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek a" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek a" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek f" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek f" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek a2" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek a2" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek l" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek l" to="." method="_exit_cek"]

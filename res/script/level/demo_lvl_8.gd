@@ -115,9 +115,9 @@ func selesai():
 		star = 3;
 	elif(time_left >= 90):
 		star = 2;
-	elif(time_left <= 90):
+	else:
 		star = 1
-	saveData.saveData(null, 6, true, star)
+	saveData.saveData(null, 7, true, star)
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()
@@ -154,4 +154,4 @@ func _nextLvl() :
 	loading.transition()
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
-	get_tree().change_scene_to_file("res://res/scene/level/coming_soon.tscn")
+	get_tree().change_scene_to_file("res://res/scene/level/demo_level_9.tscn")
