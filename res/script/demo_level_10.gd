@@ -18,8 +18,7 @@ var h2 = "a"
 var h3 = "n"
 var h4 = "t"
 var h5 = "i"
-
-@export var maxTime : float = 120.0
+@export var maxTime : float = 450.0
 var resetNum = GlobalVar.MaxReset
 var timeLeft
 var lever1_active : bool = false
@@ -33,6 +32,9 @@ func _ready() -> void:
 	AudioPlayer._play_lvl_music(musicLvl)
 	$ui_layer/papan.visible = false
 	loading.visible = true
+	$special/t1/jembatan2.visible = false
+	$special/t2/jembatan3.visible = false
+
 	#timer.wait_time = maxTime
 
 	for i in $kotak_grup.get_children() :
@@ -110,11 +112,11 @@ func selesai():
 	$Player.visible = false
 	var time_left = timerDis.get_timeLeft();
 	var star = 0
-	if(time_left > 100):
+	if(time_left >= 300):
 		star = 3;
-	elif(time_left < 90 && time_left > 50):
+	elif(time_left >= 150):
 		star = 2;
-	elif(time_left < 50 && time_left > 30):
+	else:
 		star = 1
 	saveData.saveData(null, 6, true, star)
 
@@ -154,3 +156,21 @@ func _nextLvl() :
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
 	get_tree().change_scene_to_file("res://res/scene/level/coming_soon.tscn")
+
+
+func _on_lever_aksi_lever(condition) -> void:
+	if condition == "on":
+		lever1_active = true
+
+		$special/t1/jembatan1.visible = true
+		$special/t1/jembatan2.visible = true
+		$special/t1/CollisionShape2D.disabled = true
+
+
+func _on_lever_2_aksi_lever(condition) -> void:
+		if condition == "on":
+			lever2_active = true
+
+			$special/t2/jembatan4.visible = true
+			$special/t2/jembatan3.visible = true
+			$special/t2/CollisionShape2D.disabled = true
