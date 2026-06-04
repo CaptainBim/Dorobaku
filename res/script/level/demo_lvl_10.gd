@@ -118,7 +118,7 @@ func selesai():
 		star = 2;
 	else:
 		star = 1
-	saveData.saveData(null, 6, true, star)
+	saveData.saveData(null, 9, true, star)
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()

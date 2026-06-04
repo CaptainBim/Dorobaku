@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=4 uid="uid://cjkngcrqb0jy7"]
 
-[ext_resource type="Script" uid="uid://c4bdtx171lmge" path="res://res/script/demo_level_10.gd" id="1_dkn2l"]
+[ext_resource type="Script" uid="uid://c4bdtx171lmge" path="res://res/script/level/demo_lvl_10.gd" id="1_dkn2l"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_chk6o"]
 [ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="3_80661"]
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="4_mu74l"]
@@ -261,7 +261,9 @@ position = Vector2(-277, 212)
 
 [node name="buku" parent="." instance=ExtResource("14_yvi6o")]
 position = Vector2(743, 807)
-hint_text = "Aku terdiri dari 6 huruf. Aku adalah orang yang bertugas mengendalikan kendaraan agar penumpang dapat sampai ke tujuan dengan selamat. Siapakah aku?"
+hint_text = "Aku terdiri dari 6 huruf.
+Aku berada di antara daratan dan lautan. Banyak orang datang kepadaku untuk berlibur.
+Apakah aku?"
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
