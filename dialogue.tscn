@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciwjlm2b6n67l"]
+
+[ext_resource type="Script" uid="uid://mc4eu2l7krco" path="res://dialogue.gd" id="1_kp46k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp46k"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kp46k")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HELLOO"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.035
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kp46k")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bhjs01m43jx06"]
+[gd_scene load_steps=21 format=4 uid="uid://bhjs01m43jx06"]
 
 [ext_resource type="Script" uid="uid://rgt5yfe5fc3q" path="res://res/script/level/demo_lvl_5.gd" id="1_178i2"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_178i2"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_s7tg5"]
 [ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="15_178i2"]
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="15_j5ep5"]
+[ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="16_heauj"]
 [ext_resource type="PackedScene" uid="uid://bed2b23d6escp" path="res://res/scene/hole.tscn" id="16_j5ep5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmlj4"]
@@ -252,6 +253,10 @@ position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAAJAAIAAAAUABEAAAAKAAIAAAAUABEAAAALAAIAAAAUABEAAAAMAAIAAAAUABEAAAANAAIAAAAUABEAAAAOAAIAAAAUABEAAAAPAAIAAAAUABEAAAAQAAIAAAAUABEAAAARAAIAAAAUABEAAAASAAIAAAAUABEAAAATAAMAAAAUAAwAAAAJAAsAAAAUAA0AAFAUAAkAAAAVAA8AAAAUAAoAAAAVAA8AAAATAAsAAAAUAA0AAAAUAAUAAAAVAA8AAAAUAAQAAAAVAA8AAAAUAAYAAAAVAA8AAAAUAAcAAAAVAA8AAAAUAAgAAAAVAA8AAAAIAAMAAAATAAwAAAAIAAQAAAATAA8AAAAIAAUAAAATAA8AAAAIAAYAAAATAA8AAAAIAAcAAAATAA8AAAAIAAgAAAATAA8AAAAIAAkAAAATAA8AAAAIAAoAAAATAA8AAAAKAAwAAAAUABAAAAALAAwAAAAUABAAAAAMAAwAAAAUABAAAAANAAwAAAAUABAAAAAOAAwAAAAUABAAAAAPAAwAAAAUABAAAAAQAAwAAAAUABAAAAARAAwAAAAUABAAAAASAAwAAAAUABAAAAA=")
 tile_set = ExtResource("15_178i2")
 rendering_quadrant_size = 64
+
+[node name="dialogue_area" parent="." instance=ExtResource("16_heauj")]
+position = Vector2(923, 367)
+scale = Vector2(2.8928, 2.96)
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]

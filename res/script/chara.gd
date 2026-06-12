@@ -6,6 +6,7 @@ signal buatAksi
 @onready var emote: AnimationPlayer = $emote
 @onready var anim_state: AnimationNodeStateMachinePlayback = anim_tree.get("parameters/playback")
 @onready var cast: ShapeCast2D = $ShapeCast2D
+@onready var dialogue_box: Dialogue = $Dialogue;
 
 var speed = 200
 var can_move = true
@@ -13,6 +14,7 @@ var can_aksi = false
 var is_moving = false
 var push_timer = 0.0
 var PUSH_HOLD = 0.02
+var can_dialogue : bool = false;
 
 var withTilemap = false
 var detectBox = null
@@ -23,6 +25,8 @@ func _ready() -> void:
 func _physics_process( delta ):
 	if Input.is_action_just_pressed("aksi"):
 		PlayerManager.interact_pressed.emit()
+		if can_dialogue:
+			dialogue_box.animate_label();
 		
 	if can_move : 
 		move(delta)
@@ -41,7 +45,7 @@ func move(delta):
 		
 	if push_timer > 0.0:
 		push_timer = max(0.0, push_timer - delta)
-		
+	
 	if input_movement != Vector2.ZERO:
 		anim_tree.set("parameters/idle/blend_position", input_movement)
 		anim_tree.set("parameters/walk/blend_position", input_movement)
@@ -80,3 +84,16 @@ func _off_aksi_area( b : Node2D) -> void:
 	if b is Lever : emote.play("notif_off")
 	elif b is Buku : emote.play("notif_off")
 	else : pass
+
+
+func _on_aksi_area_area_entered(area: Area2D) -> void:
+	if area.name == "dialogue_area" : 
+		emote.play("notif_on");
+		can_dialogue = true;
+
+
+
+func _on_aksi_area_area_exited(area: Area2D) -> void:
+	if area.name == "dialogue_area" : 
+		emote.play("notif_off");
+		can_dialogue = false;

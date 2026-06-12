@@ -1,9 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://cn0fnvadpgyfd"]
+[gd_scene load_steps=50 format=3 uid="uid://cn0fnvadpgyfd"]
 
 [ext_resource type="Script" uid="uid://cjcnlpuqjwd88" path="res://res/script/chara.gd" id="1_cvb05"]
 [ext_resource type="Texture2D" uid="uid://bycus5mbgit2j" path="res://res/asset/Player-rpg.png" id="2_oqkj5"]
 [ext_resource type="Texture2D" uid="uid://6gumlw4ifi3g" path="res://res/asset/interractable.png" id="3_1x646"]
 [ext_resource type="AudioStream" uid="uid://ckl1v2egap25y" path="res://res/asset/sound/sfx2/walk2.mp3" id="3_erqcf"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="5_jxkgq"]
 
 [sub_resource type="Animation" id="Animation_mvldd"]
 length = 0.001
@@ -1060,5 +1061,23 @@ position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_53v32")
 debug_color = Color(0, 0.650737, 0.0713071, 0.42)
 
+[node name="Dialogue" parent="." instance=ExtResource("5_jxkgq")]
+offset_left = -367.0
+offset_top = -212.00002
+offset_right = -367.0
+offset_bottom = -212.00002
+scale = Vector2(0.3748719, 0.3748719)
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 64.0219
+offset_top = 730.9164
+offset_right = 1837.961
+offset_bottom = 1229.7534
+autowrap_mode = 3
+
+[connection signal="area_entered" from="aksi_area" to="." method="_on_aksi_area_area_entered"]
+[connection signal="area_exited" from="aksi_area" to="." method="_on_aksi_area_area_exited"]
 [connection signal="body_entered" from="aksi_area" to="." method="_on_aksi_area"]
 [connection signal="body_exited" from="aksi_area" to="." method="_off_aksi_area"]
+
+[editable path="Dialogue"]

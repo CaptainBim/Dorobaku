@@ -1,21 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmhe2sc4freqy"]
+[gd_scene load_steps=10 format=3 uid="uid://cmhe2sc4freqy"]
 
 [ext_resource type="Texture2D" uid="uid://chycpx1h0aqde" path="res://res/asset/dialogBox.png" id="1_6f8pi"]
-[ext_resource type="Shader" path="res://res/asset/shaders/outline.gdshader" id="1_jtnnm"]
-[ext_resource type="Shader" path="res://res/asset/shaders/filling.gdshader" id="3_2or4s"]
+[ext_resource type="Script" uid="uid://mc4eu2l7krco" path="res://dialogue.gd" id="1_bix5q"]
+[ext_resource type="Shader" uid="uid://qh64pp5xxelg" path="res://res/asset/shaders/filling.gdshader" id="3_2or4s"]
 [ext_resource type="Texture2D" uid="uid://bycus5mbgit2j" path="res://res/asset/Player-rpg.png" id="3_ompad"]
 [ext_resource type="Texture2D" uid="uid://ddq65x1v1s0jg" path="res://res/asset/buku.png" id="5_t72dj"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ompad"]
-shader = ExtResource("1_jtnnm")
-shader_parameter/allow_out_of_bounds = true
-shader_parameter/outline_thickness = 16.0
-shader_parameter/outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6f8pi"]
-texture = ExtResource("1_6f8pi")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ompad"]
 bg_color = Color(0, 0, 0, 0.0784314)
@@ -38,34 +27,39 @@ shader_parameter/overlay_color = Color(0, 0, 0, 0.352941)
 shader_parameter/fill_dir = Vector2(0, -0.5)
 shader_parameter/alpha_cutoff = 0.01
 
-[node name="DialogBox" type="Control"]
+[node name="Dialogue" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bix5q")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 110.0
+offset_top = 769.0
+offset_right = 385.47827
+offset_bottom = 868.0
+theme_override_font_sizes/font_size = 139
+text = "HELLOO"
 
-[node name="CenterContainer" type="Panel" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_ompad")
-anchors_preset = -1
-anchor_top = 0.648
-anchor_right = 1.001
-anchor_bottom = 1.241
-offset_left = 1.0
-offset_top = 0.159973
-offset_right = -0.920044
-offset_bottom = -0.280029
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_6f8pi")
-metadata/_edit_use_anchors_ = true
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = -21.0
+offset_top = 656.0
+offset_right = 1499.0
+offset_bottom = 1296.0
+scale = Vector2(1.2799997, 1)
+texture = ExtResource("1_6f8pi")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,3 +100,7 @@ rotation = -0.101229
 scale = Vector2(6, 6)
 texture = ExtResource("5_t72dj")
 offset = Vector2(0, -32)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.035
+one_shot = true
