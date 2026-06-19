@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://blm8fs6kfyjdi"]
+[gd_scene load_steps=27 format=3 uid="uid://blm8fs6kfyjdi"]
 
 [ext_resource type="Script" uid="uid://cqkicqjaoqoli" path="res://res/script/menu/menu_home.gd" id="1_msiks"]
 [ext_resource type="Texture2D" uid="uid://bn26hefyefqwr" path="res://res/asset/bg.png" id="2_28k2k"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dio7t1km27xnq" path="res://res/asset/judul_new.png" id="4_mxnss"]
 [ext_resource type="Texture2D" uid="uid://b17cjx2dc1b8o" path="res://res/asset/judul_new_2x.png" id="5_64mea"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="6_1yiyi"]
+[ext_resource type="Texture2D" uid="uid://b8vrsk30i386v" path="res://res/asset/menu/mullai.png" id="8_64mea"]
 [ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="8_dcyaq"]
+[ext_resource type="Texture2D" uid="uid://t6dftqcg2cbx" path="res://res/asset/menu/cara.png" id="9_2cswc"]
+[ext_resource type="Texture2D" uid="uid://c8oau4r2slnnb" path="res://res/asset/menu/credit.png" id="10_dcyaq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_051sh"]
 texture = ExtResource("2_28k2k")
@@ -37,6 +40,16 @@ region = Rect2(0, 0, 320, 320)
 atlas = ExtResource("8_dcyaq")
 region = Rect2(0, 0, 320, 320)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dynua"]
+atlas = ExtResource("8_dcyaq")
+region = Rect2(640, 640, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk4vv"]
+atlas = ExtResource("8_dcyaq")
+region = Rect2(640, 640, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxw4b"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_64mea"]
 atlas = ExtResource("8_dcyaq")
 region = Rect2(320, 0, 320, 320)
@@ -50,8 +63,6 @@ region = Rect2(320, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4glsi"]
 radius = 160.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxw4b"]
 
 [node name="MenuHome" type="Control"]
 layout_mode = 3
@@ -120,7 +131,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 
 [node name="btn_credits" type="TouchScreenButton" parent="Panel/VBoxContainer/HBoxContainer"]
-position = Vector2(168, 66)
+position = Vector2(1.6212463e-05, 45)
 scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("3_4gg5u")
 texture_pressed = SubResource("AtlasTexture_3hj1f")
@@ -128,22 +139,30 @@ shape = SubResource("CircleShape2D_oljpc")
 shape_visible = false
 
 [node name="btn_play" type="TouchScreenButton" parent="Panel/VBoxContainer/HBoxContainer"]
-position = Vector2(460, 66)
+position = Vector2(443, 45)
 texture_normal = SubResource("AtlasTexture_v27wa")
 texture_pressed = SubResource("AtlasTexture_kf7hn")
 shape = SubResource("CircleShape2D_oljpc")
 shape_visible = false
 
-[node name="btn_quit" type="TouchScreenButton" parent="Panel/VBoxContainer/HBoxContainer"]
-position = Vector2(828, 71)
-scale = Vector2(0.8, 0.8)
-texture_normal = SubResource("AtlasTexture_64mea")
-texture_pressed = SubResource("AtlasTexture_2cswc")
-shape = SubResource("CircleShape2D_4glsi")
-shape_visible = false
+[node name="btn_cara" type="TouchScreenButton" parent="Panel/VBoxContainer/HBoxContainer"]
+position = Vector2(940.99994, 39.000004)
+scale = Vector2(0.80625004, 0.82499987)
+texture_normal = SubResource("AtlasTexture_dynua")
+texture_pressed = SubResource("AtlasTexture_pk4vv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer"]
 texture = SubResource("AtlasTexture_bxw4b")
+
+[node name="Mullai" type="Sprite2D" parent="Panel/VBoxContainer"]
+position = Vector2(952, 673)
+scale = Vector2(0.69631386, 0.5157088)
+texture = ExtResource("8_64mea")
+
+[node name="Cara" type="Sprite2D" parent="Panel/VBoxContainer"]
+position = Vector2(1401, 610.00006)
+scale = Vector2(0.7214875, 0.60878885)
+texture = ExtResource("9_2cswc")
 
 [node name="notif" type="Panel" parent="Panel"]
 visible = false
@@ -169,6 +188,20 @@ text = "10000000000000000000000000000000000000000"
 [node name="loading" parent="." instance=ExtResource("6_1yiyi")]
 visible = false
 
+[node name="btn_quit" type="TouchScreenButton" parent="."]
+position = Vector2(1670, 180)
+scale = Vector2(0.4093755, 0.4093755)
+texture_normal = SubResource("AtlasTexture_64mea")
+texture_pressed = SubResource("AtlasTexture_2cswc")
+shape = SubResource("CircleShape2D_4glsi")
+shape_visible = false
+
+[node name="Credit" type="Sprite2D" parent="."]
+position = Vector2(475.00003, 828.99994)
+scale = Vector2(1.0074381, 0.8145766)
+texture = ExtResource("10_dcyaq")
+
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/btn_credits" to="." method="_press_btnCredits"]
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/btn_play" to="." method="_press_btnPlay"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/btn_quit" to="." method="_on_btn_quit_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/btn_cara" to="." method="_on_btn_cara"]
+[connection signal="pressed" from="btn_quit" to="." method="_on_btn_quit_pressed"]

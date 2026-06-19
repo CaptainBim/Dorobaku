@@ -586,6 +586,7 @@ shape = SubResource("CircleShape2D_m8s3y")
 shape_visible = false
 
 [node name="back2" type="TouchScreenButton" parent="Panel"]
+visible = false
 position = Vector2(15, 906)
 scale = Vector2(0.25, 0.25)
 texture_normal = SubResource("AtlasTexture_byxwj")

@@ -51,3 +51,9 @@ func _on_btn_quit_pressed() -> void:
 	AudioPlayer._play_fx_btn7()
 	await get_tree().create_timer(0.2).timeout
 	get_tree().quit()
+
+
+func _on_btn_cara() -> void:
+	AudioPlayer._play_fx_btn7()
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file("res://res/scene/menu/cara.tscn")

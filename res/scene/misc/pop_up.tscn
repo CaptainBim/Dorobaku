@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://ddhbq3qf847pa"]
+[gd_scene load_steps=30 format=3 uid="uid://ddhbq3qf847pa"]
 
 [ext_resource type="Texture2D" uid="uid://ccadwpjs7wooj" path="res://res/asset/popscreen.png" id="1_8uoho"]
 [ext_resource type="Script" uid="uid://bv38jkbnsb82u" path="res://res/script/misc/pop_up.gd" id="2_ydfna"]
 [ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="3_woisq"]
 [ext_resource type="Texture2D" uid="uid://pt1xfeuj643c" path="res://res/asset/newStars.png" id="4_ky0je"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="5_fjsrq"]
 [ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="5_xtnak"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ubn1t"]
@@ -17,24 +18,24 @@ region = Rect2(0, 0, 3200, 1024)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rrws3"]
 atlas = ExtResource("4_ky0je")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvebc"]
-atlas = ExtResource("5_xtnak")
-region = Rect2(9049, 75, 151, 153)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nl41"]
+atlas = ExtResource("5_fjsrq")
+region = Rect2(1280, 640, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twe73"]
-atlas = ExtResource("5_xtnak")
-region = Rect2(9369, 75, 151, 153)
+atlas = ExtResource("5_fjsrq")
+region = Rect2(1608, 960, 312, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gagju"]
 radius = 72.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mi633"]
-atlas = ExtResource("5_xtnak")
-region = Rect2(10329, 75, 153, 153)
+atlas = ExtResource("5_fjsrq")
+region = Rect2(960, 640, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewo82"]
-atlas = ExtResource("5_xtnak")
-region = Rect2(10649, 75, 153, 153)
+atlas = ExtResource("5_fjsrq")
+region = Rect2(1280, 960, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hakb"]
 atlas = ExtResource("5_xtnak")
@@ -44,13 +45,16 @@ region = Rect2(10969, 75, 153, 153)
 atlas = ExtResource("5_xtnak")
 region = Rect2(11289, 75, 153, 153)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nvdtd"]
-atlas = ExtResource("5_xtnak")
-region = Rect2(9689, 75, 153, 153)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjsrq"]
+atlas = ExtResource("5_fjsrq")
+region = Rect2(640, 960, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv5r7"]
+atlas = ExtResource("5_fjsrq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfoj4"]
-atlas = ExtResource("5_xtnak")
-region = Rect2(10009, 75, 153, 153)
+atlas = SubResource("AtlasTexture_cv5r7")
+region = Rect2(640, 1280, 320, 320)
 
 [sub_resource type="Animation" id="Animation_d4i1f"]
 length = 0.001
@@ -519,8 +523,9 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_w3dlk")
 
 [node name="exit" type="TouchScreenButton" parent="pause_con/VBoxContainer/btns_con/Panel3"]
-position = Vector2(0, 10)
-texture_normal = SubResource("AtlasTexture_qvebc")
+position = Vector2(19.00003, 17.00003)
+scale = Vector2(0.5475409, 0.5475409)
+texture_normal = SubResource("AtlasTexture_6nl41")
 texture_pressed = SubResource("AtlasTexture_twe73")
 shape = SubResource("CircleShape2D_gagju")
 shape_visible = false
@@ -532,7 +537,8 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_w3dlk")
 
 [node name="resume" type="TouchScreenButton" parent="pause_con/VBoxContainer/btns_con/Panel4"]
-position = Vector2(0, 40)
+position = Vector2(-8, 63.00003)
+scale = Vector2(0.559375, 0.559375)
 texture_normal = SubResource("AtlasTexture_mi633")
 texture_pressed = SubResource("AtlasTexture_ewo82")
 shape = SubResource("CircleShape2D_gagju")
@@ -555,8 +561,9 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_w3dlk")
 
 [node name="help" type="TouchScreenButton" parent="pause_con/VBoxContainer/btns_con/Panel5"]
-position = Vector2(0, 10)
-texture_normal = SubResource("AtlasTexture_nvdtd")
+position = Vector2(-20, 23.00003)
+scale = Vector2(0.55312496, 0.55625)
+texture_normal = SubResource("AtlasTexture_fjsrq")
 texture_pressed = SubResource("AtlasTexture_cfoj4")
 shape = SubResource("CircleShape2D_gagju")
 shape_visible = false

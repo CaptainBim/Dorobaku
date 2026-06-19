@@ -47,7 +47,6 @@ position = Vector2(0, -1)
 script = ExtResource("1_epvpb")
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="loading" parent="ui_layer" instance=ExtResource("2_57fhk")]
 visible = false

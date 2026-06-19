@@ -1,0 +1,234 @@
+[gd_scene load_steps=23 format=3 uid="uid://ddxpihx3gs5x1"]
+
+[ext_resource type="Script" uid="uid://b0mxgbo0ovsw5" path="res://res/script/menu/credits.gd" id="1_u6ma3"]
+[ext_resource type="Texture2D" uid="uid://bn26hefyefqwr" path="res://res/asset/bg.png" id="2_6ca5v"]
+[ext_resource type="Texture2D" uid="uid://dkpv5qepomobu" path="res://res/asset/papan.png" id="3_nb7ya"]
+[ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="4_1d2vy"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="5_y2otn"]
+[ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="6_qs64j"]
+[ext_resource type="Texture2D" uid="uid://bm1mql0lywsh" path="res://res/asset/menu/yy.png" id="7_6ca5v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ggvl8"]
+texture = ExtResource("2_6ca5v")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l06xp"]
+atlas = ExtResource("3_nb7ya")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsr5o"]
+texture = SubResource("AtlasTexture_l06xp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbhb8"]
+atlas = ExtResource("3_nb7ya")
+region = Rect2(128, 0, 384, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qnfgj"]
+load_path = "res://.godot/imported/papan.png-3fb9a0d2754c02bc22a062adecd366c2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj2r2"]
+atlas = SubResource("CompressedTexture2D_qnfgj")
+region = Rect2(128, 64, 384, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoh5b"]
+atlas = SubResource("CompressedTexture2D_qnfgj")
+region = Rect2(128, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxle1"]
+atlas = SubResource("CompressedTexture2D_qnfgj")
+region = Rect2(192, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac3l7"]
+atlas = ExtResource("3_nb7ya")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24a0o"]
+atlas = ExtResource("3_nb7ya")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gekki"]
+atlas = ExtResource("3_nb7ya")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eq2d"]
+atlas = ExtResource("3_nb7ya")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkjl0"]
+atlas = ExtResource("5_y2otn")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtjwy"]
+atlas = ExtResource("5_y2otn")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fq2ht"]
+radius = 160.0
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_u6ma3")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ggvl8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00364583
+anchor_top = 0.0592593
+anchor_right = 1.0
+anchor_bottom = 0.888889
+offset_left = 10.0
+offset_right = -32.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jsr5o")
+
+[node name="sisi" type="BoxContainer" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_right = -608.0
+offset_bottom = -299.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="atas" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(250, 26)
+texture = SubResource("AtlasTexture_mbhb8")
+
+[node name="atas4" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(368, 26)
+texture = SubResource("AtlasTexture_mbhb8")
+
+[node name="atas2" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(644.333, 26)
+texture = SubResource("AtlasTexture_mbhb8")
+
+[node name="atas3" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(1025, 26)
+texture = SubResource("AtlasTexture_mbhb8")
+
+[node name="bawah" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(250, 568)
+texture = SubResource("AtlasTexture_dj2r2")
+
+[node name="bawah4" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(277, 568)
+texture = SubResource("AtlasTexture_dj2r2")
+
+[node name="bawah2" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(639, 568)
+texture = SubResource("AtlasTexture_dj2r2")
+
+[node name="bawah3" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(1020, 568)
+texture = SubResource("AtlasTexture_dj2r2")
+
+[node name="kiri" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(36, 121)
+texture = SubResource("AtlasTexture_yoh5b")
+
+[node name="kiri2" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(36, 246)
+texture = SubResource("AtlasTexture_yoh5b")
+
+[node name="kiri3" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(36, 372)
+texture = SubResource("AtlasTexture_yoh5b")
+
+[node name="kiri4" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(36, 472)
+texture = SubResource("AtlasTexture_yoh5b")
+
+[node name="kanan" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(1245, 121)
+texture = SubResource("AtlasTexture_nxle1")
+
+[node name="kanan2" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(1245, 246)
+texture = SubResource("AtlasTexture_nxle1")
+
+[node name="kanan3" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(1245, 372)
+texture = SubResource("AtlasTexture_nxle1")
+
+[node name="kanan4" type="Sprite2D" parent="Panel/Panel/sisi"]
+position = Vector2(1245, 472)
+texture = SubResource("AtlasTexture_nxle1")
+
+[node name="tepi" type="BoxContainer" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_right = -646.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="1" type="Sprite2D" parent="Panel/Panel/tepi"]
+position = Vector2(36, 26)
+texture = SubResource("AtlasTexture_ac3l7")
+
+[node name="2" type="Sprite2D" parent="Panel/Panel/tepi"]
+position = Vector2(1245, 26)
+texture = SubResource("AtlasTexture_24a0o")
+
+[node name="3" type="Sprite2D" parent="Panel/Panel/tepi"]
+position = Vector2(36, 568)
+texture = SubResource("AtlasTexture_gekki")
+
+[node name="4" type="Sprite2D" parent="Panel/Panel/tepi"]
+position = Vector2(1245, 568)
+texture = SubResource("AtlasTexture_0eq2d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
+
+[node name="back" type="TouchScreenButton" parent="Panel/CanvasLayer"]
+position = Vector2(1705, 148)
+scale = Vector2(0.41875, 0.41875)
+texture_normal = SubResource("AtlasTexture_dkjl0")
+texture_pressed = SubResource("AtlasTexture_gtjwy")
+shape = SubResource("CircleShape2D_fq2ht")
+shape_visible = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 124.0
+offset_right = 1396.0
+offset_bottom = 234.0
+theme_override_fonts/font = ExtResource("4_1d2vy")
+theme_override_font_sizes/font_size = 91
+text = "Cara Bermain"
+
+[node name="loading" parent="." instance=ExtResource("6_qs64j")]
+visible = false
+
+[node name="Yy" type="Sprite2D" parent="."]
+position = Vector2(940.00006, 568.5)
+scale = Vector2(0.96575785, 0.71636784)
+texture = ExtResource("7_6ca5v")
+
+[connection signal="pressed" from="Panel/CanvasLayer/back" to="." method="_on_back_pressed"]
