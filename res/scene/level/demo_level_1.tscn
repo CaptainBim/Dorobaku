@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c1j7d3tcnpgxh"]
+[gd_scene load_steps=20 format=4 uid="uid://c1j7d3tcnpgxh"]
 
 [ext_resource type="Script" uid="uid://c3tmltb4f1tlw" path="res://res/script/level/demo_lvl_1.gd" id="1_fp4d6"]
 [ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_5o4ba"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="10_fjv2o"]
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_byouy"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_7qm0j"]
+[ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="15_opkne"]
 [ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="15_qw5hl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qw5hl"]
@@ -143,18 +144,29 @@ nama_kotak = "i"
 [node name="door" parent="." instance=ExtResource("9_s6gm3")]
 position = Vector2(832, 125)
 
-[node name="buku" parent="." instance=ExtResource("14_7qm0j")]
-position = Vector2(832, 683)
-hint_text = "Aku adalah kendaraan besar. Aku punya banyak kursi dan sering berhenti di halte untuk menjemput banyak orang sekaligus. Siapakah aku?\""
-
-[node name="Player" parent="." instance=ExtResource("13_byouy")]
-position = Vector2(864, 150)
-scale = Vector2(1.75, 1.75)
-
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 120.0
 one_shot = true
+
+[node name="buku2" parent="." instance=ExtResource("14_7qm0j")]
+position = Vector2(833, 693)
+hint_text = "Aku terdiri dari 6 huruf. Aku bisa ditemukan di kancing baju, di jarum jahit, hingga di jalanan yang rusak. Siapakah aku?"
+
+[node name="Player2" parent="." instance=ExtResource("13_byouy")]
+position = Vector2(862, 150)
+scale = Vector2(2, 2)
+
+[node name="Dialogue" parent="Player2" index="9"]
+dialogue_array = ["Aku terdiri dari 6 huruf. Aku bisa ditemukan di kancing baju, di jarum jahit, hingga di jalanan yang rusak. Siapakah aku?"]
+
+[node name="Label" parent="Player2/Dialogue" index="0"]
+theme_override_font_sizes/font_size = 64
+text = ""
+
+[node name="dialogue_area" parent="." instance=ExtResource("15_opkne")]
+position = Vector2(863.99994, 661)
+scale = Vector2(2.8928, 2.96)
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
@@ -166,3 +178,7 @@ one_shot = true
 [connection signal="deactivated" from="cek_grup/cek u" to="." method="_exit_cek"]
 [connection signal="activated" from="cek_grup/cek s" to="." method="_send_cek"]
 [connection signal="deactivated" from="cek_grup/cek s" to="." method="_exit_cek"]
+
+[editable path="buku2"]
+[editable path="Player2"]
+[editable path="Player2/Dialogue"]

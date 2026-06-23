@@ -8,9 +8,7 @@ var open: bool = false;
 
 
 @export var dialogue_array : Array = [
-	"Hello",
-	"HIIIIIII",
-	"HERE'S TO RUIN AND THE WORLD'S ENDING"
+	
 ]
 
 var dialogue_index : int = 0:
@@ -25,7 +23,7 @@ func _ready():
 	
 
 func animate_label():
-	print("it's ran")
+	#print("it's ran")
 	if !open:
 		label.visible = true;
 		panel.visible = true;

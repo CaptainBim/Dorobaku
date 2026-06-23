@@ -1,11 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs0jt0cfysv1u"]
+[gd_scene load_steps=10 format=3 uid="uid://cs0jt0cfysv1u"]
 
 [ext_resource type="Script" uid="uid://pmvewyojtsa" path="res://res/script/spawn/buku.gd" id="1_4sd5b"]
 [ext_resource type="Texture2D" uid="uid://ddq65x1v1s0jg" path="res://res/asset/buku.png" id="2_nr7fg"]
 [ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="3_3wxs8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3oql"]
-size = Vector2(80, 70)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o4qg8"]
 radius = 0.005
@@ -76,11 +73,6 @@ position = Vector2(0, -1)
 collision_layer = 273
 collision_mask = 273
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(32, -28)
-shape = SubResource("RectangleShape2D_w3oql")
-debug_color = Color(0.997644, 0, 0.161315, 0.42)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(30, -33)
@@ -109,9 +101,8 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_3wxs8")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_0alyv")
-text = "Sesuatu Yang 
-Diminta,Sebelum 
-Melakukan Sesuatu"
+text = "
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

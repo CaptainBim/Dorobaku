@@ -69,9 +69,10 @@ func exit() -> void:
 
 func resume() -> void:
 	AudioPlayer._play_fx_btn7()
-	
-func help() -> void:
-	AudioPlayer._play_fx_btn7()
 
 func restartLvl() -> void:
 	AudioPlayer._play_fx_btn7()
+
+func _volume() -> void:
+	AudioPlayer._play_fx_btn7()
+	

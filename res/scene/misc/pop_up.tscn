@@ -20,22 +20,22 @@ atlas = ExtResource("4_ky0je")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6nl41"]
 atlas = ExtResource("5_fjsrq")
-region = Rect2(1280, 640, 320, 320)
+region = Rect2(0, 968, 320, 312)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twe73"]
 atlas = ExtResource("5_fjsrq")
-region = Rect2(1608, 960, 312, 320)
+region = Rect2(640, 1280, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gagju"]
 radius = 72.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mi633"]
 atlas = ExtResource("5_fjsrq")
-region = Rect2(960, 640, 320, 320)
+region = Rect2(1600, 960, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewo82"]
 atlas = ExtResource("5_fjsrq")
-region = Rect2(1280, 960, 320, 320)
+region = Rect2(320, 1600, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hakb"]
 atlas = ExtResource("5_xtnak")
@@ -47,14 +47,14 @@ region = Rect2(11289, 75, 153, 153)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjsrq"]
 atlas = ExtResource("5_fjsrq")
-region = Rect2(640, 960, 320, 320)
+region = Rect2(1280, 1280, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cv5r7"]
 atlas = ExtResource("5_fjsrq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfoj4"]
 atlas = SubResource("AtlasTexture_cv5r7")
-region = Rect2(640, 1280, 320, 320)
+region = Rect2(1608, 1280, 312, 320)
 
 [sub_resource type="Animation" id="Animation_d4i1f"]
 length = 0.001
@@ -560,7 +560,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_w3dlk")
 
-[node name="help" type="TouchScreenButton" parent="pause_con/VBoxContainer/btns_con/Panel5"]
+[node name="volume" type="TouchScreenButton" parent="pause_con/VBoxContainer/btns_con/Panel5"]
 position = Vector2(-20, 23.00003)
 scale = Vector2(0.55312496, 0.55625)
 texture_normal = SubResource("AtlasTexture_fjsrq")
@@ -582,4 +582,4 @@ libraries = {
 [connection signal="pressed" from="pause_con/VBoxContainer/btns_con/Panel3/exit" to="." method="exit"]
 [connection signal="pressed" from="pause_con/VBoxContainer/btns_con/Panel4/resume" to="." method="resume"]
 [connection signal="pressed" from="pause_con/VBoxContainer/btns_con/Panel4/restart" to="." method="restartLvl"]
-[connection signal="pressed" from="pause_con/VBoxContainer/btns_con/Panel5/help" to="." method="help"]
+[connection signal="pressed" from="pause_con/VBoxContainer/btns_con/Panel5/volume" to="." method="_volume"]
