@@ -9,7 +9,7 @@ var taskStr = "Time > "
 @onready var c1: Label = $pause_con/VBoxContainer/b1/c1
 @onready var c2: Label = $pause_con/VBoxContainer/b2/c2
 @onready var c3: Label = $pause_con/VBoxContainer/b3/c3
-@onready var helpBtn: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel5/help
+@onready var volumeBtn: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel5/volume
 @onready var restart: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel4/restart
 @onready var resumeBtn: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel4/resume
 
@@ -31,7 +31,7 @@ func _ready() -> void:
 
 func popPause() :
 	anim.play("pause")
-	helpBtn.visible = true
+	volumeBtn.visible = true
 	restart.visible = false
 	resumeBtn.visible = true
 
@@ -44,7 +44,7 @@ func popClear(time : int) :
 	elif time <= b3: anim.play("b2")
 	else: anim.play("b3")
 	
-	helpBtn.visible = false
+	volumeBtn.visible = false
 	restart.visible = false
 	resumeBtn.visible = true
 
