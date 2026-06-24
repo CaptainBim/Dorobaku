@@ -6,7 +6,7 @@ signal buatAksi
 @onready var emote: AnimationPlayer = $emote
 @onready var anim_state: AnimationNodeStateMachinePlayback = anim_tree.get("parameters/playback")
 @onready var cast: ShapeCast2D = $ShapeCast2D
-@onready var dialogue_box: Dialogue = $Dialogue;
+@onready var dialogue_box: Dialogue = get_parent().get_node("Dialogue");
 
 var speed = 200
 var can_move = true

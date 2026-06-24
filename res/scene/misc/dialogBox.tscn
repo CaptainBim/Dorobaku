@@ -28,6 +28,7 @@ shader_parameter/fill_dir = Vector2(0, -0.5)
 shader_parameter/alpha_cutoff = 0.01
 
 [node name="Dialogue" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,18 +38,17 @@ grow_vertical = 2
 script = ExtResource("1_bix5q")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 z_index = 2
 layout_mode = 0
 offset_left = 110.0
-offset_top = 769.0
-offset_right = 385.47827
-offset_bottom = 868.0
-theme_override_font_sizes/font_size = 139
+offset_top = 715.0
+offset_right = 1858.0
+offset_bottom = 1215.0
+theme_override_font_sizes/font_size = 64
 text = "HELLOO"
+autowrap_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 z_index = 1
 layout_mode = 0
 offset_left = -21.0
@@ -59,7 +59,6 @@ scale = Vector2(1.2799997, 1)
 texture = ExtResource("1_6f8pi")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

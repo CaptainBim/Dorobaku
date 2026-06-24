@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c1j7d3tcnpgxh"]
+[gd_scene load_steps=21 format=4 uid="uid://c1j7d3tcnpgxh"]
 
 [ext_resource type="Script" uid="uid://c3tmltb4f1tlw" path="res://res/script/level/demo_lvl_1.gd" id="1_fp4d6"]
 [ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_5o4ba"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="9_5g310"]
 [ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="9_s6gm3"]
 [ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="10_fjv2o"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="10_opkne"]
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_byouy"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_7qm0j"]
 [ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="15_opkne"]
@@ -157,16 +158,17 @@ hint_text = "Aku terdiri dari 6 huruf. Aku bisa ditemukan di kancing baju, di ja
 position = Vector2(862, 150)
 scale = Vector2(2, 2)
 
-[node name="Dialogue" parent="Player2" index="9"]
-dialogue_array = ["Aku terdiri dari 6 huruf. Aku bisa ditemukan di kancing baju, di jarum jahit, hingga di jalanan yang rusak. Siapakah aku?"]
-
-[node name="Label" parent="Player2/Dialogue" index="0"]
-theme_override_font_sizes/font_size = 64
-text = ""
-
 [node name="dialogue_area" parent="." instance=ExtResource("15_opkne")]
 position = Vector2(863.99994, 661)
 scale = Vector2(2.8928, 2.96)
+
+[node name="Dialogue" parent="." instance=ExtResource("10_opkne")]
+offset_left = 281.0
+offset_top = 104.0
+offset_right = 281.0
+offset_bottom = 104.0
+scale = Vector2(0.58669895, 0.58669895)
+dialogue_array = ["Aku terdiri dari 6 huruf", "Aku bisa ditemukan di kancing baju", "di jarum jahit", "hingga di jalanan yang rusak", " Siapakah aku?"]
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
@@ -179,6 +181,7 @@ scale = Vector2(2.8928, 2.96)
 [connection signal="activated" from="cek_grup/cek s" to="." method="_send_cek"]
 [connection signal="deactivated" from="cek_grup/cek s" to="." method="_exit_cek"]
 
+[editable path="ui_layer/movement_btn"]
 [editable path="buku2"]
 [editable path="Player2"]
-[editable path="Player2/Dialogue"]
+[editable path="Dialogue"]

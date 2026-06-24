@@ -3,6 +3,7 @@ class_name Dialogue extends Control
 @onready var timer: Timer = $Timer;
 @onready var box: TextureRect = $TextureRect;
 @onready var panel: Panel = $Panel;
+@onready var uiButton = get_parent().get_node("ui_layer").find_child("movement_btn").find_child("HBoxContainer").find_child("BoxContainer");
 
 var open: bool = false;
 
@@ -14,7 +15,6 @@ var open: bool = false;
 var dialogue_index : int = 0:
 	set(value):
 		dialogue_index = value;
-		
 		label.visible_characters = -1;
 
 func _ready():
@@ -23,19 +23,18 @@ func _ready():
 	
 
 func animate_label():
-	#print("it's ran")
 	if !open:
-		label.visible = true;
-		panel.visible = true;
-		box.visible = true;
+		print("it's ran now here")
+		visible = true;
 		open = true;
+		uiButton.visible = false;
 	
 	
 	if dialogue_index >= dialogue_array.size():
-		label.visible = false;
-		panel.visible = false;
-		box.visible = false;
+		visible = false;
 		open = false;
+		uiButton.visible = true;
+		dialogue_index = 0;
 		return;
 	
 	
