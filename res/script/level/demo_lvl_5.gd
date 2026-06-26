@@ -106,7 +106,6 @@ func selesai():
 	$Player.visible = false
 	var time_left = timerDis.get_timeLeft();
 	var star = 0
-	print(time_left, "AAAAAAAAAAAAAAAAAAAAAAAA");
 	if(time_left > 80):
 		star = 3;
 	elif(time_left < 80 && time_left > 65):

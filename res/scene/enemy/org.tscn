@@ -1,6 +1,7 @@
-[gd_scene load_steps=107 format=3 uid="uid://bt1nyvhjn0run"]
+[gd_scene load_steps=108 format=3 uid="uid://bt1nyvhjn0run"]
 
 [ext_resource type="Texture2D" uid="uid://s1guhkqmlauv" path="res://res/asset/enemy/orc/orc1_back_attack.png" id="1_0n5xk"]
+[ext_resource type="Script" uid="uid://1527vj7hepa7" path="res://res/script/enemy.gd" id="1_bu32p"]
 [ext_resource type="Texture2D" uid="uid://b40v78p1nfxy8" path="res://res/asset/enemy/orc/orc1_front_idle.png" id="1_u6rq2"]
 [ext_resource type="Texture2D" uid="uid://b53doa04jbu8" path="res://res/asset/enemy/orc/orc1_left_attack.png" id="2_bu32p"]
 [ext_resource type="Texture2D" uid="uid://dp6pwq2s2tqre" path="res://res/asset/enemy/orc/orc1_front_attack.png" id="3_nhsrx"]
@@ -548,30 +549,30 @@ animations = [{
 [sub_resource type="Animation" id="Animation_t50ic"]
 resource_name = "RESET"
 
-[sub_resource type="Animation" id="Animation_2tfch"]
-resource_name = "idle_mid"
-
-[sub_resource type="Animation" id="Animation_5eh7h"]
-
-[sub_resource type="Animation" id="Animation_26ixh"]
-
-[sub_resource type="Animation" id="Animation_hwwru"]
-
-[sub_resource type="Animation" id="Animation_0n5xk"]
-
-[sub_resource type="Animation" id="Animation_bu32p"]
-
-[sub_resource type="Animation" id="Animation_nhsrx"]
-
-[sub_resource type="Animation" id="Animation_3kckm"]
-
-[sub_resource type="Animation" id="Animation_bixk8"]
+[sub_resource type="Animation" id="Animation_n0lx0"]
 
 [sub_resource type="Animation" id="Animation_7pvlb"]
 
+[sub_resource type="Animation" id="Animation_bixk8"]
+
 [sub_resource type="Animation" id="Animation_n8ikr"]
 
-[sub_resource type="Animation" id="Animation_n0lx0"]
+[sub_resource type="Animation" id="Animation_hwwru"]
+
+[sub_resource type="Animation" id="Animation_5eh7h"]
+
+[sub_resource type="Animation" id="Animation_2tfch"]
+resource_name = "idle_mid"
+
+[sub_resource type="Animation" id="Animation_26ixh"]
+
+[sub_resource type="Animation" id="Animation_3kckm"]
+
+[sub_resource type="Animation" id="Animation_bu32p"]
+
+[sub_resource type="Animation" id="Animation_0n5xk"]
+
+[sub_resource type="Animation" id="Animation_nhsrx"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c8gbe"]
 _data = {
@@ -634,10 +635,17 @@ transitions = ["idle_mid", "hit_mid", SubResource("AnimationNodeStateMachineTran
 radius = 18.0
 
 [node name="orgs" type="CharacterBody2D"]
+collision_layer = 273
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_bu32p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s7tef")
-animation = &"idle_mid"
+animation = &"walk_mid"
+frame = 5
+frame_progress = 0.976567
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -658,3 +666,13 @@ collision_mask = 273
 position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_cyfvw")
 debug_color = Color(0, 0.650737, 0.0713071, 0.42)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.00999999999999999
+autostart = true
+
+[connection signal="body_entered" from="aksi_area" to="." method="_on_aksi_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
