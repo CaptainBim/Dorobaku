@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="15_j5ep5"]
 [ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="16_heauj"]
 [ext_resource type="PackedScene" uid="uid://bed2b23d6escp" path="res://res/scene/hole.tscn" id="16_j5ep5"]
-[ext_resource type="PackedScene" uid="uid://bt1nyvhjn0run" path="res://res/scene/enemy/org.tscn" id="17_heauj"]
+[ext_resource type="PackedScene" uid="uid://c32ag8tbp8ra0" path="res://enemy_path.tscn" id="17_fy3rt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmlj4"]
 atlas = ExtResource("7_178i2")
@@ -260,10 +260,14 @@ rendering_quadrant_size = 64
 position = Vector2(1350.0001, 594.00006)
 scale = Vector2(2.8928, 2.96)
 
-[node name="orgs" parent="." node_paths=PackedStringArray("player") instance=ExtResource("17_heauj")]
-position = Vector2(754, 259)
-scale = Vector2(2.0800023, 2.0800023)
-player = NodePath("../Player")
+[node name="Node2D" parent="." instance=ExtResource("17_fy3rt")]
+
+[node name="Path2D" parent="Node2D" index="0"]
+scale = Vector2(0.9596487, 0.98462063)
+
+[node name="orgs" parent="Node2D/Path2D/PathFollow2D" index="0"]
+rotation = -1.5707964
+scale = Vector2(1.8844044, 1.8844044)
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
@@ -285,3 +289,4 @@ player = NodePath("../Player")
 
 [editable path="buku"]
 [editable path="Player"]
+[editable path="Node2D"]

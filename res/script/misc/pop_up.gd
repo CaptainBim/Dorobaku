@@ -58,8 +58,8 @@ func popFailed():
 
 	anim.play("b0")
 
-	if GlobalVar.MaxReset > 0:
-		restart.visible = true
+	print("HIIIIIIII");
+	restart.visible = true
 
 	resumeBtn.visible = false
 

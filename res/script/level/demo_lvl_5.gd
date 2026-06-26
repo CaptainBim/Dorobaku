@@ -101,8 +101,11 @@ func selesai():
 	$ui_layer/movement_btn.visible = false
 	$ui_layer/btn_con.visible = false
 	$ui_layer/papan.visible = true
-	if isCleared : get_node("ui_layer/papan").popClear(timeLeft)
-	elif isFailed : get_node("ui_layer/papan").popFailed()
+	if isCleared : 
+		get_node("ui_layer/papan").popClear(timeLeft)
+	elif isFailed :
+		print("HI"); 
+		get_node("ui_layer/papan").popFailed()
 	$Player.visible = false
 	var time_left = timerDis.get_timeLeft();
 	var star = 0
