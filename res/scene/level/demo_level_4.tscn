@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c5ftd8ep06rit"]
+[gd_scene load_steps=27 format=4 uid="uid://c5ftd8ep06rit"]
 
 [ext_resource type="Script" uid="uid://dfwilel70ssu6" path="res://res/script/level/demo_lvl_4.gd" id="1_q0826"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_i25ds"]
@@ -16,14 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="11_1ngfo"]
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="11_per27"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="12_v8yy7"]
+[ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="17_6hdjn"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="18_3xsog"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8koe"]
 atlas = ExtResource("6_w5ued")
-region = Rect2(640, 640, 320, 320)
+region = Rect2(1288, 0, 312, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwosk"]
 atlas = ExtResource("6_w5ued")
-region = Rect2(640, 640, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2wvf"]
 radius = 160.0
@@ -239,6 +241,25 @@ one_shot = true
 position = Vector2(579, 385)
 hint_text = "Aku adalah cairan kental yang terbuat dari tomat atau cabai. Aku sering dijadikan teman makan kentang goreng, pizza, atau ayam goreng. Siapakah aku?"
 
+[node name="dialogue_area" parent="." instance=ExtResource("17_6hdjn")]
+position = Vector2(608, 351)
+scale = Vector2(2.8928, 2.96)
+
+[node name="Dialogue" parent="." instance=ExtResource("18_3xsog")]
+visible = false
+offset_left = 46.0
+offset_top = 39.0
+offset_right = 46.0
+offset_bottom = 39.0
+scale = Vector2(0.54151934, 0.53865063)
+dialogue_array = ["Aku terdiri dari 4 huruf", "Aku adalah cairan kental yang terbuat dari tomat atau cabai", "Aku sering dijadikan teman makan kentang goreng, pizza, atau ayam goreng.", "Siapakah aku?"]
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 110.78934
+offset_top = 736.3231
+offset_right = 1858.7893
+offset_bottom = 1236.3232
+
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
@@ -253,3 +274,5 @@ hint_text = "Aku adalah cairan kental yang terbuat dari tomat atau cabai. Aku se
 [connection signal="activated" from="cek_grup/cek s 2" to="." method="_send_cek"]
 [connection signal="deactivated" from="cek_grup/cek s 2" to="." method="_exit_cek"]
 [connection signal="aksiLever" from="Lever2" to="." method="_lever_2"]
+
+[editable path="Dialogue"]

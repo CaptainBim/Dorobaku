@@ -1,11 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://ddhbq3qf847pa"]
+[gd_scene load_steps=29 format=3 uid="uid://ddhbq3qf847pa"]
 
 [ext_resource type="Texture2D" uid="uid://ccadwpjs7wooj" path="res://res/asset/popscreen.png" id="1_8uoho"]
 [ext_resource type="Script" uid="uid://bv38jkbnsb82u" path="res://res/script/misc/pop_up.gd" id="2_ydfna"]
 [ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="3_woisq"]
 [ext_resource type="Texture2D" uid="uid://pt1xfeuj643c" path="res://res/asset/newStars.png" id="4_ky0je"]
 [ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="5_fjsrq"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="5_xtnak"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ubn1t"]
 atlas = ExtResource("1_8uoho")
@@ -37,13 +36,13 @@ region = Rect2(1600, 960, 320, 320)
 atlas = ExtResource("5_fjsrq")
 region = Rect2(320, 1600, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hakb"]
-atlas = ExtResource("5_xtnak")
-region = Rect2(10969, 75, 153, 153)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbhe6"]
+atlas = ExtResource("5_fjsrq")
+region = Rect2(960, 1600, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4tvi"]
-atlas = ExtResource("5_xtnak")
-region = Rect2(11289, 75, 153, 153)
+atlas = ExtResource("5_fjsrq")
+region = Rect2(640, 1600, 328, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjsrq"]
 atlas = ExtResource("5_fjsrq")
@@ -547,8 +546,9 @@ action = "pause"
 
 [node name="restart" type="TouchScreenButton" parent="pause_con/VBoxContainer/btns_con/Panel4"]
 visible = false
-position = Vector2(0, 40)
-texture_normal = SubResource("AtlasTexture_7hakb")
+position = Vector2(-1.0000002, 65.00004)
+scale = Vector2(0.56736517, 0.5560967)
+texture_normal = SubResource("AtlasTexture_bbhe6")
 texture_pressed = SubResource("AtlasTexture_t4tvi")
 shape = SubResource("CircleShape2D_gagju")
 shape_visible = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcgtfbeigfgih" path="res://res/asset/border.png" id="1_cmrpg"]
 [ext_resource type="Texture2D" uid="uid://dkpv5qepomobu" path="res://res/asset/papan.png" id="1_t1ukw"]
-[ext_resource type="Script" path="res://res/script/menu/debug.gd" id="1_vlk1x"]
+[ext_resource type="Script" uid="uid://cph2xgkuf3i5o" path="res://res/script/menu/debug.gd" id="1_vlk1x"]
 [ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="2_24rr6"]
 [ext_resource type="FontFile" uid="uid://w0rbroaetxpt" path="res://res/BULKYPIX.TTF" id="2_laah2"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="6_okfed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bhjs01m43jx06"]
+[gd_scene load_steps=23 format=4 uid="uid://bhjs01m43jx06"]
 
 [ext_resource type="Script" uid="uid://rgt5yfe5fc3q" path="res://res/script/level/demo_lvl_5.gd" id="1_178i2"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_178i2"]
@@ -17,14 +17,15 @@
 [ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="16_heauj"]
 [ext_resource type="PackedScene" uid="uid://bed2b23d6escp" path="res://res/scene/hole.tscn" id="16_j5ep5"]
 [ext_resource type="PackedScene" uid="uid://c32ag8tbp8ra0" path="res://enemy_path.tscn" id="17_fy3rt"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="18_fy3rt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmlj4"]
 atlas = ExtResource("7_178i2")
-region = Rect2(640, 640, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ceima"]
 atlas = ExtResource("7_178i2")
-region = Rect2(640, 640, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8u5op"]
 radius = 160.0
@@ -223,8 +224,8 @@ rotation = -1.5691943
 scale = Vector2(1.0803474, 1.0419638)
 
 [node name="buku" parent="." instance=ExtResource("14_s7tg5")]
-position = Vector2(1320, 627)
-hint_text = "Aku terdiri dari 6 huruf. Aku bisa ditemukan di kancing baju, di jarum jahit, hingga di jalanan yang rusak. Siapakah aku?"
+position = Vector2(1347, 644.99994)
+hint_text = ""
 
 [node name="Player" parent="." instance=ExtResource("15_j5ep5")]
 position = Vector2(1344, 384)
@@ -256,10 +257,6 @@ tile_map_data = PackedByteArray("AAAJAAIAAAAUABEAAAAKAAIAAAAUABEAAAALAAIAAAAUABE
 tile_set = ExtResource("15_178i2")
 rendering_quadrant_size = 64
 
-[node name="dialogue_area" parent="." instance=ExtResource("16_heauj")]
-position = Vector2(1350.0001, 594.00006)
-scale = Vector2(2.8928, 2.96)
-
 [node name="Node2D" parent="." instance=ExtResource("17_fy3rt")]
 
 [node name="Path2D" parent="Node2D" index="0"]
@@ -268,6 +265,24 @@ scale = Vector2(0.9596487, 0.98462063)
 [node name="orgs" parent="Node2D/Path2D/PathFollow2D" index="0"]
 rotation = -1.5707964
 scale = Vector2(1.8844044, 1.8844044)
+
+[node name="dialogue_area" parent="." instance=ExtResource("16_heauj")]
+position = Vector2(1378.0001, 612)
+scale = Vector2(2.1162045, 2.5649674)
+
+[node name="Dialogue" parent="." instance=ExtResource("18_fy3rt")]
+offset_left = 730.0
+offset_top = 244.0
+offset_right = 730.0
+offset_bottom = 244.0
+scale = Vector2(0.560759, 0.5643466)
+dialogue_array = ["Aku terdiri dari 6 huruf", ". Aku bisa ditemukan di kancing baju,", "di jarum jahit, hingga di jalanan yang rusak", "Siapakah aku?"]
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 110.78934
+offset_top = 736.3231
+offset_right = 1858.7893
+offset_bottom = 1236.3232
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
@@ -290,3 +305,4 @@ scale = Vector2(1.8844044, 1.8844044)
 [editable path="buku"]
 [editable path="Player"]
 [editable path="Node2D"]
+[editable path="Dialogue"]

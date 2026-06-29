@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c08r0pxo7cjjl"]
+[gd_scene load_steps=36 format=4 uid="uid://c08r0pxo7cjjl"]
 
 [ext_resource type="Script" uid="uid://buh87otmtrnjb" path="res://res/script/level/demo_lvl_2.gd" id="1_4srgb"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_f4hgs"]
@@ -16,14 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="12_clu24"]
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_bcevo"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_w6inx"]
+[ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="17_llsyl"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="18_m5oei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_slisi"]
 atlas = ExtResource("6_vd14g")
-region = Rect2(640, 640, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vd14g"]
 atlas = ExtResource("6_vd14g")
-region = Rect2(640, 640, 320, 320)
+region = Rect2(1288, 0, 312, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x637"]
 radius = 160.0
@@ -222,22 +224,25 @@ layer = -100
 
 [node name="layer1" type="TileMapLayer" parent="."]
 z_index = -1
+position = Vector2(-53, 114)
 tile_map_data = PackedByteArray("AAALAAkACAAPAAMAAAAMAAkACQACAAEAAAANAAkACAAMAAIAAAAPAAkACAANAAMAAAALAAgACAAPAAEAAAANAAgACAAMAAIAAAAOAAgACAANAAMAAAAMAAgACQACAAEAAAAOAAkACAANAAMAAAAPAAgACAANAAMAAAAQAAkACAANAAMAAAAQAAgACAAJAAwAAAAQAAcACAANAAMAAAAPAAcACAANAAMAAAAOAAcACAANAAMAAAANAAcACAAMAAIAAAAMAAcACQACAAAAAAARAAcACAAKAA0AAAARAAgACAAKAA0AAAARAAkACAANAAMAAAASAAkACAANAAMAAAASAAcACAANAAMAAAASAAgACAANAAMAAAASAAYACAANAAMAAAARAAYACAANAAMAAAAQAAYACAANAAMAAAAPAAYACAANAAMAAAAOAAYACAANAAMAAAANAAYACAANAAMAAAAMAAYACAANAAQAAAALAAYACAANAAQAAAALAAUACAAKAA0AAAAMAAUACAAIAA0AAAANAAUACAAIAA0AAAAOAAUACAAIAA0AAAAPAAUACAAIAA0AAAAQAAUACAAIAA0AAAARAAUACAAIAA0AAAASAAUACAAJAA0AAAASAAQACAAIAA0AAAAQAAQACAAIAA0AAAAPAAQACAAIAA0AAAAOAAQACAAIAA0AAAARAAQACAAIAA0AAAAPAAMACAAKAA0AAAAOAAMACAAIAA0AAAANAAMACAAIAA0AAAAMAAMACAAIAA0AAAALAAMACAAJAA0AAAALAAQACAAIAA0AAAAMAAQACAAIAA0AAAANAAQACAAJAA0AAAAJAAEACAAGAAkAAAALAAEACAAGAAkAAAAMAAEACAAGAAkAAAANAAEACAAGAAkAAAAOAAEACAAGAAkAAAAPAAEACAAGAAkAAAATAAEACAAGAAkAAAAUAAEACAAGAAkAAAAUAAkACAAMAAoAAAAUAAoACAAGAAQAAAAUAAsACAAOAAcAAAATAAsACAAGAAcAAAASAAsACAAGAAcAAAARAAsACAAGAAcAAAAQAAsACAAGAAcAAAAPAAsACAAGAAcAAAAOAAsACAAGAAcAAAANAAsACAAGAAcAAAAMAAsACAAGAAcAAAALAAsACAAGAAcAAAAKAAsACAAGAAcAAAAJAAsACAAGAAcAAAAVAAYACAAGAAkAAAAVAAcACAAMAAEAAAAWAAcACAAOAAEAAAAWAAYACAAGAAkAAAAXAAYACAAJAAoAAAAXAAcACAAOAAEAAAAYAAcACAALAAIAAAAZAAcACAAMAAgAAAAJAAIACAAMAAEAAAAKAAIACAAOAAEAAAALAAIACAAOAAEAAAAMAAIACAAOAAEAAAANAAIACAAOAAEAAAAOAAIACAAOAAEAAAAPAAIACAAOAAEAAAAQAAIACAAOAAEAAAARAAIACAAOAAEAAAATAAMACAAPAAIAAAATAAQACAAPAAMAAAATAAUACAAPAAMAAAATAAYACAAPAAMAAAATAAcACAAPAAMAAAATAAgACAAPAAMAAAATAAkACAAPAAMAAAASAAoACAANAAQAAAATAAoACAANAAQAAAARAAoACAANAAQAAAAQAAoACAANAAQAAAAPAAoACAANAAQAAAAOAAoACAANAAQAAAAKAAkABAANAAMAAAAJAAkACAAMAAIAAAANAAoACAAMAAQAAAAMAAoACQAKAAEAAAALAAoACAAPAAQAAAAKAAoACAANAAQAAAAJAAoACAAMAAQAAAAJAAgACAAMAAEAAAAKAAgACAANAAEAAAAJAAcACgAAAAAAAAAJAAYACAAMAAQAAAAKAAYACAAOAAQAAAAKAAUACAANAAMAAAAJAAUACAAMAAIAAAAJAAQACAAMAAIAAAAKAAQACAANAAMAAAAKAAMACAAGAA0AAAAJAAMACAAMAAIAAAAIAAEACAAPAAgAAAAIAAIACAAPAAkAAAAIAAMACAAPAAkAAAAIAAQACAAPAAkAAAAIAAUACAAPAAkAAAAIAAYACAAPAAkAAAAIAAcACAAPAAkAAAAIAAgACAAPAAkAAAAIAAkACAAPAAkAAAAIAAoACAAPAAkAAAAIAAsACAAKAAgAAAASAAEACAAGAAkAAAAQAAEACAAGAAkAAAARAAEACAAGAAkAAAAVAAIACAAMAAEAAAAVAAMACAAMAAMAAAAVAAQACAAMAAIAAAAWAAQACAAPAAMAAAAWAAMACAAPAAMAAAAWAAIACAAPAAEAAAAVAAEACAAGAAkAAAAWAAEACAAGAAkAAAAXAAEACAAMAAkAAAAXAAIACAAMAAgAAAAXAAMACAAMAAgAAAAXAAQACAAMAAgAAAAKAAcACgABAAAAAAALAAcACgABAAAAAAAXAAUACAAMAAgAAAAWAAUACAAPAAQAAAAVAAUACAAMAAQAAAAUAAUACQAKAAUAAAAUAAcACAANAAMAAAAUAAgACAANAAMAAAAVAAgACAAMAAIAAAAWAAgACAAKAAMAAAAXAAgACAANAAQAAAAYAAgACAAPAAQAAAAZAAgACAAMAAgAAAAXAAkACAAMAAcAAAAYAAkACAAGAAcAAAAZAAkACAAJAAgAAAAZAAYACAAMAAkAAAAVAAsACAAOAAcAAAAVAAoACAAJAAQAAAAWAAoACAAPAAQAAAAWAAsACAAOAAcAAAAXAAsACAAJAAgAAAAXAAoACAAMAAgAAAAUAAYACAAFAAcAAAAVAAkACAAMAAIAAAAWAAkACAAPAAMAAAAUAAMACgAKAAUAAAAUAAQACgAKAAUAAAAQAAMACAAIAA0AAAARAAMACAAJAAwAAAASAAMACAANAAMAAAASAAIACAAOAAEAAAATAAIACAAPAAEAAAAUAAIACgAKAAQAAAA=")
 tile_set = ExtResource("7_upcoj")
 rendering_quadrant_size = 64
 
 [node name="Camera2D" type="Camera2D" parent="layer1"]
-position = Vector2(929, 442)
+position = Vector2(1014, 419)
 scale = Vector2(2, 2)
-zoom = Vector2(1.25, 1.25)
+zoom = Vector2(1.2, 1.2)
 
 [node name="layer2" type="TileMapLayer" parent="."]
 z_index = -1
+position = Vector2(-53, 114)
 tile_map_data = PackedByteArray("AAANAAgACAATAAwAAAAKAAIACAAUAAsAAAALAAIACAAUAAsAAAAMAAIACAAUAAsAAAANAAIACAAUAAsAAAAOAAIACAAUAAsAAAAPAAIACAAUAAsAAAATAAUACAAVAAwAAAATAAYACAAVAAwAAAATAAcACAAVAAwAAAATAAgACAAVAAwAAAASAAoACAAUAA0AAAATAAoACAAVAA0AAAARAAoACAAUAA0AAAAQAAoACAAUAA0AAAAPAAoACAAUAA0AAAAOAAoACAAUAA0AAAAJAAYACAATAAwAAAAJAAUACAATAAwAAAAJAAQACAATAAwAAAAJAAMACAATAAwAAAAJAAIACAATAAsAAAATAAkACAAVAAwAAAANAAkACAATAAwAAAAJAAoACAATAA0AAAAJAAkACAATAAwAAAAJAAgACAATAAwAAAAKAAoACAAUAA0AAAALAAoACAAVAA0AAAAQAAIACAAUAAsAAAARAAIACAAUAAsAAAASAAIACAAUAAsAAAAWAAIACAAVAAsAAAAWAAMACAAVAAwAAAAVAAIACAAUAAsAAAAWAAQACAAVAAwAAAAVAAUACAAUAA0AAAAKAAEACAALAAsAAAAYAAYACAALAAsAAAAMAAQACAAMAAwAAAASAAkACAAMAA0AAAARAAQACAANAAwAAAASAAQACAAOAAwAAAASAAUACAAOAA0AAAARAAUACAANAA0AAAAPAAgACAAPAAwAAAAQAAgACAAQAAwAAAAWAAgACAAPAA0AAAAXAAgACAAQAA0AAAAVAAcACAALAA0AAAAWAAUACAAVAA0AAAALAAkACAAVAAwAAAALAAgACAAVAAwAAAANAAoACAATAA0AAAANAAcACAAZAAgAAAAUAAcACAAFAAgAAAAUAAgACAAFAAgAAAATAAQACAAaAAgAAAATAAIACAAUAAsAAAA=")
 tile_set = ExtResource("7_upcoj")
 rendering_quadrant_size = 64
 
 [node name="special" type="TileMapLayer" parent="."]
+position = Vector2(-53, 114)
 tile_map_data = PackedByteArray("AABOAAoAAAAOABEAAABOAAkAAAAOABEAAABOAA0AAAAOABIAAAATAAMABAAOABIAAAATAAIABAAOABEAAAATAAQABAAOABMAAAAVAAMABAAQABIAAAAVAAQABAAQABMAAAAVAAIABAAQABEAAAAJAAYABAARABEAAAAKAAYABAASABEAAAALAAYABAATABEAAAAJAAgABAARABMAAAAKAAgABAASABMAAAALAAgABAATABMAAAA=")
 tile_set = ExtResource("7_upcoj")
 
@@ -254,7 +259,7 @@ texture = SubResource("AtlasTexture_ptl1a")
 offset = Vector2(32, -32)
 
 [node name="exit" type="Area2D" parent="."]
-position = Vector2(1536, 384)
+position = Vector2(1483, 498)
 collision_layer = 273
 collision_mask = 273
 
@@ -263,7 +268,7 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_flx8a")
 
 [node name="cek_grup" type="Node2D" parent="."]
-position = Vector2(0, -128)
+position = Vector2(-53, -14)
 
 [node name="cek i" parent="cek_grup" instance=ExtResource("9_u8p72")]
 position = Vector2(832, 512)
@@ -286,39 +291,39 @@ scale = Vector2(2, 2)
 nama_cek = "n"
 
 [node name="kotak_grup" type="Node2D" parent="."]
-position = Vector2(6, -134)
+position = Vector2(-47, -20)
 
 [node name="i" parent="kotak_grup" instance=ExtResource("10_3shur")]
-position = Vector2(752, 361)
+position = Vector2(639, 702)
 nama_kotak = "i"
 
 [node name="z" parent="kotak_grup" instance=ExtResource("10_3shur")]
-position = Vector2(937, 596)
+position = Vector2(1119, 696)
 nama_kotak = "z"
 
 [node name="i 2" parent="kotak_grup" instance=ExtResource("10_3shur")]
-position = Vector2(1003, 428)
+position = Vector2(1120, 418)
 nama_kotak = "i"
 
 [node name="n" parent="kotak_grup" instance=ExtResource("10_3shur")]
-position = Vector2(1120, 526)
+position = Vector2(1344, 388)
 nama_kotak = "n"
 
 [node name="j" parent="kotak_grup" instance=ExtResource("10_3shur")]
-position = Vector2(856, 443)
+position = Vector2(810, 375)
 nama_kotak = "j"
 
 [node name="door" parent="." instance=ExtResource("11_yvwl3")]
-position = Vector2(1344, 641)
+position = Vector2(1291, 755)
 
 [node name="Lever" parent="." instance=ExtResource("12_clu24")]
-position = Vector2(960, 257)
+position = Vector2(907, 371)
 
 [node name="Lever2" parent="." instance=ExtResource("12_clu24")]
-position = Vector2(704, 384)
+position = Vector2(651, 498)
 
 [node name="Player" parent="." instance=ExtResource("13_bcevo")]
-position = Vector2(672, 205)
+position = Vector2(620, 317)
 scale = Vector2(2, 2)
 
 [node name="Timer" type="Timer" parent="."]
@@ -327,7 +332,7 @@ wait_time = 120.0
 one_shot = true
 
 [node name="lobang" type="RigidBody2D" parent="."]
-position = Vector2(640, 448)
+position = Vector2(587, 562)
 collision_layer = 17
 collision_mask = 0
 sleeping = true
@@ -340,7 +345,7 @@ position = Vector2(32, 33)
 shape = SubResource("RectangleShape2D_iyly1")
 
 [node name="lobang2" type="RigidBody2D" parent="."]
-position = Vector2(1280, 192)
+position = Vector2(1227, 306)
 collision_layer = 17
 collision_mask = 0
 sleeping = true
@@ -353,7 +358,7 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_upaib")
 
 [node name="dinding" type="RigidBody2D" parent="."]
-position = Vector2(1291, 65)
+position = Vector2(1238, 179)
 collision_layer = 17
 collision_mask = 0
 sleeping = true
@@ -370,7 +375,7 @@ position = Vector2(19, 255)
 shape = SubResource("CapsuleShape2D_8p0cm")
 
 [node name="dinding2" type="RigidBody2D" parent="."]
-position = Vector2(827, 462)
+position = Vector2(774, 576)
 rotation = 1.5708
 collision_layer = 17
 collision_mask = 0
@@ -393,8 +398,26 @@ libraries = {
 }
 
 [node name="buku" parent="." instance=ExtResource("14_w6inx")]
-position = Vector2(768, 175)
-hint_text = "Aku terdiri dari 4 huruf. Aku sering diminta sebelum seseorang melakukan sesuatu atau masuk ke tempat orang lain. Kalau aku tidak diberikan, perbuatanmu bisa dianggap melanggar aturan. Siapakah aku?"
+position = Vector2(715, 289)
+hint_text = ""
+
+[node name="dialogue_area" parent="." instance=ExtResource("17_llsyl")]
+position = Vector2(745, 258)
+scale = Vector2(2.3050745, 2.96)
+
+[node name="Dialogue" parent="." instance=ExtResource("18_m5oei")]
+offset_left = 358.0
+offset_top = 205.0
+offset_right = 358.0
+offset_bottom = 205.0
+scale = Vector2(0.58669895, 0.58669895)
+dialogue_array = ["Aku terdiri dari 4 huruf", " Aku sering diminta sebelum seseorang melakukan sesuatu atau masuk ke tempat orang lain", "Kalau aku tidak diberikan, perbuatanmu bisa dianggap melanggar aturan", "Siapakah aku?"]
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 110.78934
+offset_top = 736.3231
+offset_right = 1858.7893
+offset_bottom = 1236.3232
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
@@ -410,3 +433,5 @@ hint_text = "Aku terdiri dari 4 huruf. Aku sering diminta sebelum seseorang mela
 [connection signal="deactivated" from="cek_grup/cek n" to="." method="_exit_cek"]
 [connection signal="aksiLever" from="Lever" to="." method="_on_lever1"]
 [connection signal="aksiLever" from="Lever2" to="." method="_on_lever2"]
+
+[editable path="Dialogue"]

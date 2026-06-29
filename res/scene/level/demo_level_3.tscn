@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b6dksoddxtbn2"]
+[gd_scene load_steps=36 format=4 uid="uid://b6dksoddxtbn2"]
 
 [ext_resource type="Script" uid="uid://cw6emo0ik1n6a" path="res://res/script/level/demo_lvl_3.gd" id="1_dqsdx"]
 [ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="2_lq856"]
@@ -16,14 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="12_3c4dj"]
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_ptffg"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_d4b6w"]
+[ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="17_cd0ti"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="18_pii5r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obw33"]
 atlas = ExtResource("5_ckkpa")
-region = Rect2(640, 640, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjlrx"]
 atlas = ExtResource("5_ckkpa")
-region = Rect2(640, 640, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbfph"]
 radius = 160.0
@@ -421,7 +423,25 @@ libraries = {
 
 [node name="buku" parent="." instance=ExtResource("14_d4b6w")]
 position = Vector2(891, 200)
-hint_text = "Aku terdiri dari 5 huruf. Pekerjaanku adalah berolahraga dan bertanding secara profesional di bidang tertentu seperti lari, renang, atau bulu tangkis. Siapakah aku?"
+hint_text = ""
+
+[node name="dialogue_area" parent="." instance=ExtResource("17_cd0ti")]
+position = Vector2(921, 168.00002)
+scale = Vector2(2.1224837, 2.720932)
+
+[node name="Dialogue" parent="." instance=ExtResource("18_pii5r")]
+offset_left = 427.0
+offset_top = -99.99999
+offset_right = 427.0
+offset_bottom = -99.99999
+scale = Vector2(0.47625396, 0.46071967)
+dialogue_array = ["Aku terdiri dari 5 huruf", "Pekerjaanku adalah berolahraga dan bertanding secara profesional di bidang tertentu", "seperti lari, renang, atau bulu tangkis", "Siapakah aku?"]
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 110.78934
+offset_top = 736.3231
+offset_right = 1858.7893
+offset_bottom = 1236.3232
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
@@ -439,3 +459,5 @@ hint_text = "Aku terdiri dari 5 huruf. Pekerjaanku adalah berolahraga dan bertan
 [connection signal="deactivated" from="cek_grup/cek t 2" to="." method="_exit_cek"]
 [connection signal="aksiLever" from="Lever" to="." method="_on_lever1"]
 [connection signal="aksiLever" from="Lever2" to="." method="_on_lever2"]
+
+[editable path="Dialogue"]

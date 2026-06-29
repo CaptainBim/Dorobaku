@@ -19,11 +19,11 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qw5hl"]
 atlas = ExtResource("6_w2svq")
-region = Rect2(0, 320, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opkne"]
 atlas = ExtResource("6_w2svq")
-region = Rect2(0, 320, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qkbc7"]
 radius = 160.0
@@ -152,7 +152,7 @@ one_shot = true
 
 [node name="buku2" parent="." instance=ExtResource("14_7qm0j")]
 position = Vector2(833, 693)
-hint_text = "Aku terdiri dari 6 huruf. Aku bisa ditemukan di kancing baju, di jarum jahit, hingga di jalanan yang rusak. Siapakah aku?"
+hint_text = ""
 
 [node name="Player2" parent="." instance=ExtResource("13_byouy")]
 position = Vector2(862, 150)
@@ -163,12 +163,19 @@ position = Vector2(863.99994, 661)
 scale = Vector2(2.8928, 2.96)
 
 [node name="Dialogue" parent="." instance=ExtResource("10_opkne")]
-offset_left = 281.0
-offset_top = 104.0
-offset_right = 281.0
-offset_bottom = 104.0
+visible = false
+offset_left = 251.0
+offset_top = 6.0
+offset_right = 251.0
+offset_bottom = 6.0
 scale = Vector2(0.58669895, 0.58669895)
-dialogue_array = ["Aku terdiri dari 6 huruf", "Aku bisa ditemukan di kancing baju", "di jarum jahit", "hingga di jalanan yang rusak", " Siapakah aku?"]
+dialogue_array = ["Aku terdiri dari 3 huruf", "Aku bisa ditemukan di halte", "semua orang menungguku", "Siapakah aku?"]
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 110.78934
+offset_top = 736.3231
+offset_right = 1858.7893
+offset_bottom = 1236.3232
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]

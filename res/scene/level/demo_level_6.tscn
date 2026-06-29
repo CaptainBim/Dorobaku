@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://vcdr4oj4wcl7"]
+[gd_scene load_steps=26 format=4 uid="uid://vcdr4oj4wcl7"]
 
 [ext_resource type="Script" uid="uid://cwdh3kldi4ani" path="res://res/script/level/demo_lvl_6.gd" id="1_3w4bc"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="1_xuqa2"]
 [ext_resource type="PackedScene" uid="uid://c1iebbd35ktk6" path="res://res/scene/movement_btn.tscn" id="2_w6mwy"]
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="3_11lly"]
 [ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="4_3w4bc"]
-[ext_resource type="Texture2D" uid="uid://8ce4qjoio00i" path="res://res/asset/btn_new.png" id="5_f0bq3"]
+[ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="6_f0bq3"]
 [ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="7_hc8fp"]
 [ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="8_f0bq3"]
 [ext_resource type="PackedScene" uid="uid://doasqt7hnptg2" path="res://res/scene/pressure_plate.tscn" id="8_ohblo"]
@@ -16,14 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="12_l3cwa"]
 [ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="13_w6mwy"]
 [ext_resource type="Texture2D" uid="uid://bshns7tmpr12s" path="res://res/asset/assetMap.png" id="14_11lly"]
+[ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="17_hc8fp"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="18_ohblo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7tpt"]
-atlas = ExtResource("5_f0bq3")
-region = Rect2(5120, 0, 320, 320)
+atlas = ExtResource("6_f0bq3")
+region = Rect2(1280, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jig74"]
-atlas = ExtResource("5_f0bq3")
-region = Rect2(5440, 0, 320, 320)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqetd"]
+atlas = ExtResource("6_f0bq3")
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qkbc7"]
 radius = 160.0
@@ -72,7 +74,7 @@ position = Vector2(261, 95)
 position = Vector2(14, 14)
 scale = Vector2(0.5, 0.5)
 texture_normal = SubResource("AtlasTexture_c7tpt")
-texture_pressed = SubResource("AtlasTexture_jig74")
+texture_pressed = SubResource("AtlasTexture_sqetd")
 shape = SubResource("CircleShape2D_qkbc7")
 shape_visible = false
 
@@ -94,6 +96,16 @@ scale = Vector2(1.0017233, 1)
 tile_map_data = PackedByteArray("AAAWAAcACAAIAA0AAAAWAAYACAAIAA0AAAAXAAYACAAMAAgAAAAXAAcACAAMAAgAAAAWAAMACAAIAA0AAAAWAAIACAAIAA0AAAAWAAEACAAIAA0AAAAXAAEACAAIAA0AAAAXAAIACAAIAA0AAAAXAAMACAAIAA0AAAAXAAQACAAMAAcAAAAXAAUACAAMAAgAAAAWAAUACAAIAA0AAAAWAAgAAAAJAAoAAAAXAAgACAAMAAgAAAAXAAkACAAMAAgAAAAYAAQACAAJAAgAAAAWAAAAAAAKAAoAAAAXAAAAAAAKAAoAAAAYAAEACAAMAAgAAAAYAAIACAAMAAgAAAAYAAMACAAMAAgAAAAWAAoACAAIAA0AAAAWAAsACAAIAA0AAAAWAAwACAAOAAcAAAAXAAwACAAJAAgAAAAXAAoACAAMAAgAAAACAAAACAAPAAgAAAACAAEACAAPAAkAAAACAAIACAAPAAkAAAACAAMACAAPAAkAAAACAAQACAAKAAgAAAADAAAAAAAKAAoAAAADAAEACAAIAA0AAAADAAIACAAIAA0AAAADAAMACAAIAA0AAAADAAQACAAPAAcAAAADAAUACAAPAAkAAAADAAYACAAPAAkAAAADAAcACAAPAAkAAAADAAgACAAPAAkAAAADAAkACAAPAAkAAAADAAoACAAPAAkAAAADAAsACAAPAAkAAAADAAwACAAKAAgAAAAEAAAAAAAKAAoAAAAEAAEACAAIAA0AAAAEAAIACAAIAA0AAAAEAAMACAAIAA0AAAAEAAUACAAIAA0AAAAEAAYACAAIAA0AAAAEAAcACAAIAA0AAAAEAAgAAAAJAAoAAAAEAAkACAAIAA0AAAAEAAoACAAIAA0AAAAEAAsACAAIAA0AAAAEAAwACAAOAAcAAAALAP7/CAAPAAgAAAAMAP7/CAAGAAkAAAANAP7/CAALAAsAAAAOAP7/CAAGAAkAAAAPAP7/CAAMAAkAAAAWAAkACAAIAA0AAAAFAAAAAAAKAAoAAAAFAAEACAAIAA0AAAAFAAIACAAIAA0AAAAFAAMACAAIAA0AAAAFAAQAAAAKAAoAAAAFAAUACAAIAA0AAAAFAAYACAAIAA0AAAAFAAcACAAIAA0AAAAFAAgAAAAJAAoAAAAFAAkACAAIAA0AAAAFAAoACAAIAA0AAAAFAAsACAAIAA0AAAAFAAwACAAOAAcAAAAGAAAAAAAKAAoAAAAGAAEACAAIAA0AAAAGAAIACAAIAA0AAAAGAAMACAAIAA0AAAAGAAQAAAAKAAoAAAAGAAUACAAIAA0AAAAGAAYACAAIAA0AAAAGAAcACAAIAA0AAAAGAAgAAAAJAAoAAAAGAAkACAAIAA0AAAAGAAoACAAIAA0AAAAGAAsACAAIAA0AAAAGAAwACAAOAAcAAAAHAAAACAAMAAkAAAAHAAEAAAAIAAoAAAAHAAIACAAIAA0AAAAHAAMACAAIAA0AAAAHAAQAAAALAAoAAAAHAAUACAAIAA0AAAAHAAYACAAIAA0AAAAHAAcACAAIAA0AAAAHAAkACAAIAA0AAAAHAAoACAAMAAcAAAAHAAsACAAMAAgAAAAHAAwACAAJAAgAAAAIAAAACAAPAAgAAAAIAAEAAAALAAoAAAAIAAIACAAIAA0AAAAIAAMACAAIAA0AAAAIAAQACAAIAA0AAAAIAAUACAAIAA0AAAAIAAYACAAIAA0AAAAIAAcACAAIAA0AAAAIAAgACAAIAA0AAAAIAAkACAAIAA0AAAAIAAoACAAPAAcAAAAIAAsACAAPAAkAAAAIAAwACAAKAAgAAAAJAAAAAAAJAAoAAAAJAAEACAAIAA0AAAAJAAIACAAIAA0AAAAJAAMACAAIAA0AAAAJAAQACQAAAAIAAAAJAAUACQAAAAEAAAAJAAYACQAAAAEAAAAJAAcACQAAAAEAAAAJAAgACAAIAA0AAAAJAAkACAAIAA0AAAAJAAoACAAIAA0AAAAJAAsACAAIAA0AAAAJAAwACAAOAAcAAAAKAAAAAAAJAAoAAAAKAAEACAAIAA0AAAAKAAIACAAIAA0AAAAKAAMACAAIAA0AAAAKAAQACQACAAIAAAAKAAUACAAIAA0AAAAKAAYACAAIAA0AAAAKAAcACAAIAA0AAAAKAAgACAAIAA0AAAAKAAkACAAIAA0AAAAKAAoACAAIAA0AAAAKAAsACAAIAA0AAAAKAAwACAAOAAcAAAALAAAAAAAJAAoAAAALAAEACAAIAA0AAAALAAIACAAIAA0AAAALAAMACAAIAA0AAAALAAQACAAIAA0AAAALAAUACAAIAA0AAAALAAYACAAIAA0AAAALAAcACAAIAA0AAAALAAgACAAIAA0AAAALAAoACAAIAA0AAAALAAsACAAIAA0AAAALAAwACAAOAAcAAAAMAP//CAAIAA0AAAAMAAAAAAAJAAoAAAAMAAEACAAIAA0AAAAMAAIACAAIAA0AAAAMAAMACQAAAAAAAAAMAAQABAARAAgAAAAMAAUACAAIAA0AAAAMAAYABAAGAAgAAAAMAAcACAAIAA0AAAAMAAkACQAAAAIAAAAMAAoACAAIAA0AAAAMAAsACAAIAA0AAAAMAAwACAAOAAcAAAANAP//CAAIAA0AAAANAAAACAAIAA0AAAANAAEACAAIAA0AAAANAAIACAAIAA0AAAANAAMACQABAAAAAAANAAQABAARAAgAAAANAAUACAAIAA0AAAANAAYABAAGAAgAAAANAAcACAAIAA0AAAANAAgACAAIAA0AAAANAAkACQABAAIAAAANAAoACAAIAA0AAAANAAsACAAIAA0AAAANAAwACAAOAAcAAAAOAP//CAAIAA0AAAAOAAAAAAAJAAoAAAAOAAEACAAIAA0AAAAOAAIACAAIAA0AAAAOAAMACQACAAAAAAAOAAQABAARAAgAAAAOAAUACAAIAA0AAAAOAAYABAAGAAgAAAAOAAcACAAIAA0AAAAOAAgACAAIAA0AAAAOAAkACQACAAIAAAAOAAoACAAIAA0AAAAOAAsACAAIAA0AAAAOAAwACAAOAAcAAAAPAP//CAAMAAgAAAAPAAAAAAAJAAoAAAAPAAEACAAIAA0AAAAPAAIACAAIAA0AAAAPAAMACAAIAA0AAAAPAAQACAAIAA0AAAAPAAYACAAIAA0AAAAPAAcACAAIAA0AAAAPAAgACAAIAA0AAAAPAAoACAAIAA0AAAAPAAsACAAIAA0AAAAPAAwACAAOAAcAAAAQAAAAAAAJAAoAAAAQAAEACAAIAA0AAAAQAAIACAAIAA0AAAAQAAMACAAIAA0AAAAQAAQACQAAAAIAAAAQAAUACAAIAA0AAAAQAAYACAAIAA0AAAAQAAcACAAIAA0AAAAQAAgACAAIAA0AAAAQAAkACAAIAA0AAAAQAAoACAAIAA0AAAAQAAsACAAIAA0AAAAQAAwACAAOAAcAAAARAAAAAAAJAAoAAAARAAEACAAIAA0AAAARAAIACAAIAA0AAAARAAMACAAIAA0AAAARAAQACQACAAIAAAARAAUACQACAAEAAAARAAYACQACAAEAAAARAAcACQACAAEAAAARAAgACAAIAA0AAAARAAkACAAIAA0AAAARAAoACAAIAA0AAAARAAwACAAOAAcAAAASAAAACAAMAAkAAAASAAEAAAAIAAoAAAASAAIACAAIAA0AAAASAAMACAAIAA0AAAASAAQACAAIAA0AAAASAAUACAAIAA0AAAASAAYACAAIAA0AAAASAAcACAAIAA0AAAASAAgACAAIAA0AAAASAAkACAAIAA0AAAASAAoACAAMAAcAAAASAAsACAAMAAgAAAASAAwACAAJAAgAAAATAAAACAAPAAgAAAATAAEAAAALAAoAAAATAAIACAAIAA0AAAATAAMACAAIAA0AAAATAAQAAAAIAAoAAAATAAUACAAIAA0AAAATAAYACAAIAA0AAAATAAcACAAIAA0AAAATAAkACAAIAA0AAAATAAoACAAPAAcAAAATAAsACAAPAAkAAAATAAwACAAKAAgAAAAUAAAAAAAKAAoAAAAUAAEACAAIAA0AAAAUAAIACAAIAA0AAAAUAAMACAAIAA0AAAAUAAQAAAAKAAoAAAAUAAUACAAIAA0AAAAUAAYACAAIAA0AAAAUAAcACAAIAA0AAAAUAAgAAAAJAAoAAAAUAAkACAAIAA0AAAAUAAoACAAIAA0AAAAUAAsACAAIAA0AAAAUAAwACAAOAAcAAAAVAAAAAAAKAAoAAAAVAAEACAAIAA0AAAAVAAIACAAIAA0AAAAVAAMACAAIAA0AAAAVAAQAAAAKAAoAAAAVAAUACAAIAA0AAAAVAAYACAAIAA0AAAAVAAcACAAIAA0AAAAVAAgAAAAKAAoAAAAVAAkACAAIAA0AAAAVAAoACAAIAA0AAAAVAAsACAAIAA0AAAAVAAwACAAOAAcAAAAWAAQAAAAKAAoAAAAEAAQAAAAKAAoAAAAHAAgABAAOAAgAAAATAAgABAAOAAgAAAAPAAUACAAIAA0AAAARAAsACAAIAA0AAAAXAAsACAAMAAgAAAALAP//CAAPAAkAAAAYAAAACAAMAAkAAAAMAAgACAAIAA0AAAALAAkABAARAAgAAAAPAAkABAARAAgAAAA=")
 tile_set = ExtResource("7_hc8fp")
 rendering_quadrant_size = 64
+
+[node name="Camera2D" type="Camera2D" parent="layer1"]
+position = Vector2(901.4466, 365)
+scale = Vector2(2, 2.1096575)
+limit_enabled = false
+limit_left = -100
+limit_top = -100
+limit_right = 100
+limit_bottom = 100
+position_smoothing_enabled = true
 
 [node name="layer2" type="TileMapLayer" parent="."]
 z_index = -1
@@ -178,16 +190,6 @@ scale = Vector2(2, 2)
 collision_layer = 1
 collision_mask = 16
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-scale = Vector2(1.0017233, 1)
-zoom = Vector2(1.7, 1.7)
-limit_enabled = false
-limit_left = -100
-limit_top = -100
-limit_right = 100
-limit_bottom = 100
-position_smoothing_enabled = true
-
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 120.0
@@ -195,7 +197,7 @@ one_shot = true
 
 [node name="buku" parent="." instance=ExtResource("12_l3cwa")]
 position = Vector2(826, 706)
-hint_text = "Aku terdiri dari 6 huruf. Aku adalah orang yang bertugas mengendalikan kendaraan agar penumpang dapat sampai ke tujuan dengan selamat. Siapakah aku?"
+hint_text = ""
 
 [node name="Lever" parent="." instance=ExtResource("13_w6mwy")]
 position = Vector2(915, 704)
@@ -300,6 +302,25 @@ offset = Vector2(32, 32)
 position = Vector2(32, 4)
 shape = SubResource("RectangleShape2D_sqetd")
 
+[node name="dialogue_area" parent="." instance=ExtResource("17_hc8fp")]
+position = Vector2(858, 673)
+scale = Vector2(2.8928, 2.96)
+
+[node name="Dialogue" parent="." instance=ExtResource("18_ohblo")]
+visible = false
+offset_left = 238.00002
+offset_top = 41.0
+offset_right = 238.00002
+offset_bottom = 41.0
+scale = Vector2(0.6687124, 0.6590036)
+dialogue_array = ["Aku terdiri dari 5 huruf", "Aku adalah orang yang bertugas mengendalikan kendaraan", "agar penumpang dapat sampai ke tujuan dengan selamat", "Siapakah aku?"]
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 110.78934
+offset_top = 736.3231
+offset_right = 1858.7893
+offset_bottom = 1236.3232
+
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
@@ -317,3 +338,5 @@ shape = SubResource("RectangleShape2D_sqetd")
 [connection signal="aksiLever" from="Lever" to="." method="_on_lever_aksi_lever"]
 [connection signal="aksiLever" from="Lever" to="Lever" method="_on_aksi_lever"]
 [connection signal="aksiLever" from="Lever2" to="." method="_on_lever_2_aksi_lever"]
+
+[editable path="Dialogue"]
