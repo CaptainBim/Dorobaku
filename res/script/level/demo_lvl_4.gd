@@ -90,18 +90,24 @@ func selesai():
 	$ui_layer/movement_btn.visible = false
 	$ui_layer/btn_con.visible = false
 	$ui_layer/papan.visible = true
-	if isCleared : get_node("ui_layer/papan").popClear(timeLeft)
-	else : get_node("ui_layer/papan").popFailed()
-	$Player.visible = false
-	var time_left = timerDis.get_timeLeft();
-	var star = 0
-	if(time_left > 100):
-		star = 3;
-	elif(time_left < 100 && time_left > 80):
-		star = 2;
-	elif(time_left < 80 && time_left > 70):
-		star = 1
-	saveData.saveData(null, 3, true, star)
+
+	if isCleared:
+		get_node("ui_layer/papan").popClear(timeLeft)
+
+		var time_left = timerDis.get_timeLeft()
+		var star = 0
+
+		if time_left >= 80:
+			star = 3
+		elif time_left >= 40:
+			star = 2
+		elif time_left >= 20:
+			star = 1
+
+		saveData.saveData(null, 3, true, star)
+
+	elif isFailed:
+		get_node("ui_layer/papan").popFailed()
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()

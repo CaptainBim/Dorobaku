@@ -9,16 +9,16 @@ var isFailed: bool = false
 @onready var musicLvl = preload("res://res/asset/sound/bgm3.mp3")
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
+
 var saveData = SAVES.new()
 
 var h1 = "b"
 var h2 = "u"
 var h3 = "s"
 var h4 = "i"
-@export var maxTime : float
+@export var maxTime : float = 100
 var resetNum = GlobalVar.MaxReset
 var timeLeft
-
 @onready var target = $cek_grup.get_child_count()
 var cocok = target
 
@@ -29,12 +29,18 @@ func _ready() -> void:
 	$ui_layer/papan.visible = false
 	loading.visible = true
 	#timer.wait_time = maxTime
+	print($ui_layer/movement_btn)
+	print($ui_layer/btn_con)
+	print($ui_layer/papan)
+	print($Player)
 	
 	for i in $kotak_grup.get_children() :
 		i.add_to_group(i.nama_kotak)
 	box_setup()
 	#timer.start()
+	print("maxTime =", maxTime)
 	timerDis.start_timer(maxTime)
+	
 				
 func box_setup() -> void:
 	get_tree().get_nodes_in_group("b")[0].set_block(h1)
@@ -92,18 +98,24 @@ func selesai():
 	$ui_layer/movement_btn.visible = false
 	$ui_layer/btn_con.visible = false
 	$ui_layer/papan.visible = true
-	if isCleared : get_node("ui_layer/papan").popClear(timeLeft)
-	elif isFailed : get_node("ui_layer/papan").popFailed()
-	$Player.visible = false
-	var time_left = timerDis.get_timeLeft();
-	var star = 0
-	if(time_left > 100):
-		star = 3;
-	elif(time_left < 100 && time_left > 80):	
-		star = 2;
-	elif(time_left < 80 && time_left > 70):
-		star = 1
-	saveData.saveData(null, 0, true, star)
+
+	if isCleared:
+		get_node("ui_layer/papan").popClear(timeLeft)
+
+		var time_left = timerDis.get_timeLeft()
+		var star = 0
+
+		if time_left > 80:
+			star = 3
+		elif time_left > 40:
+			star = 2
+		elif time_left > 20:
+			star = 1
+
+		saveData.saveData(null, 0, true, star)
+
+	elif isFailed:
+		get_node("ui_layer/papan").popFailed()
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()

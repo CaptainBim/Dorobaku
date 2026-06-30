@@ -35,15 +35,19 @@ func popPause() :
 	restart.visible = false
 	resumeBtn.visible = true
 
-func popClear(time : int) :
+func popClear(time: int):
 	anim.play("clear")
 	await anim.animation_finished
-	
-	if time < b1: anim.play("b0")
-	elif time <= b2: anim.play("b1")
-	elif time <= b3: anim.play("b2")
-	else: anim.play("b3")
-	
+
+	if time >= b3:
+		anim.play("b3")
+	elif time >= b2:
+		anim.play("b2")
+	elif time >= b1:
+		anim.play("b1")
+	else:
+		anim.play("b0")
+
 	volumeBtn.visible = false
 	restart.visible = false
 	resumeBtn.visible = true

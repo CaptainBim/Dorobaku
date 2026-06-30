@@ -26,7 +26,7 @@ func _on_level_pressed(lvl: int, btn) -> void:
 	var path = "res://res/scene/level/demo_level"
 	GlobalVar.MaxReset = 3
 	path += "_" + str(lvl) + ".tscn"
-	# If that scene doesn't exist, go to 'coming_soon'
+	# If that scene doesnt exist, go to 'coming_soon'
 	if !ResourceLoader.exists(path):
 		path = "res://res/scene/level/coming_soon.tscn"
 	if lvl == 1 :
@@ -66,8 +66,6 @@ func unlockCheck(chapter: String) :
 			var starCons = btn.get_node("starCon")
 			var closeTex = btn.get_node("closeTex")
 			
-			#this is engine fault, enum codes has been translated into array index
-			#still hasn't found any workarround
 			closeTex.visible = true
 			starCons.visible = true
 			
@@ -101,5 +99,5 @@ func pushNotif(notif_text):
 	tween.tween_property(notif, "position", notifPos + Vector2(0, 70), 0.5)
 
 
-func _on_back_2_pressed() -> void:
-	var path = "res://res/scene/level/demo_level_10.tscn"
+#func _on_back_2_pressed() -> void:
+#	var path = "res://res/scene/level/demo_level_10.tscn"

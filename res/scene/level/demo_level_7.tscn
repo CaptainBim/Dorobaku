@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://13ty2c3rwkk6"]
+[gd_scene load_steps=25 format=4 uid="uid://13ty2c3rwkk6"]
 
 [ext_resource type="Script" uid="uid://ba2kgj7vbv0nk" path="res://res/script/level/demo_lvl_7.gd" id="1_epvpb"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_57fhk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ddhbq3qf847pa" path="res://res/scene/misc/pop_up.tscn" id="4_7l0bi"]
 [ext_resource type="PackedScene" uid="uid://dvnsgxwm8npnl" path="res://res/scene/misc/reset_btn.tscn" id="5_2qo0j"]
 [ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="6_57fhk"]
+[ext_resource type="PackedScene" uid="uid://c32ag8tbp8ra0" path="res://enemy_path.tscn" id="7_57fhk"]
 [ext_resource type="PackedScene" uid="uid://cfs13kmvwo48q" path="res://res/scene/misc/timeCounter.tscn" id="7_vfgqp"]
 [ext_resource type="PackedScene" uid="uid://cfaa3heogba5t" path="res://res/scene/misc/bg.tscn" id="8_ufchn"]
 [ext_resource type="TileSet" uid="uid://hk4185xkt66y" path="res://res/asset/levelTilemap.tres" id="9_loq7h"]
@@ -226,6 +227,17 @@ Apakah aku?"
 [node name="Lever" parent="." instance=ExtResource("15_xb7uj")]
 position = Vector2(384, 759)
 
+[node name="Node2D" parent="." instance=ExtResource("7_57fhk")]
+position = Vector2(-670, -474.99997)
+scale = Vector2(1.6157197, 1.602854)
+
+[node name="Path2D" parent="Node2D" index="0"]
+scale = Vector2(0.9596487, 0.98462063)
+
+[node name="orgs" parent="Node2D/Path2D/PathFollow2D" index="0"]
+rotation = -1.5707964
+scale = Vector2(1.8844044, 1.8844044)
+
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
@@ -239,3 +251,5 @@ position = Vector2(384, 759)
 [connection signal="activated" from="cek_grup/cek k" to="." method="_send_cek"]
 [connection signal="deactivated" from="cek_grup/cek k" to="." method="_exit_cek"]
 [connection signal="aksiLever" from="Lever" to="." method="_on_lever"]
+
+[editable path="Node2D"]

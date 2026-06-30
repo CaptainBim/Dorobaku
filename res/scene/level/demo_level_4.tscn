@@ -50,7 +50,7 @@ size = Vector2(128, 64)
 
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 script = ExtResource("1_q0826")
-maxTime = 251.0
+maxTime = 121.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -61,9 +61,9 @@ visible = false
 visible = false
 position = Vector2(928, 479)
 scale = Vector2(0.9, 0.9)
-b1_task = "140"
-b2_task = "160"
-b3_task = "180"
+b1_task = "20"
+b2_task = "40"
+b3_task = "80"
 
 [node name="movement_btn" parent="ui_layer" instance=ExtResource("2_vabpm")]
 
@@ -202,11 +202,11 @@ position = Vector2(718, 403)
 nama_kotak = "s"
 
 [node name="a" parent="kotak_grup" instance=ExtResource("9_lddg2")]
-position = Vector2(656, 692)
+position = Vector2(662, 685)
 nama_kotak = "a"
 
 [node name="u" parent="kotak_grup" instance=ExtResource("9_lddg2")]
-position = Vector2(894, 644)
+position = Vector2(862, 275)
 nama_kotak = "u"
 
 [node name="s 2" parent="kotak_grup" instance=ExtResource("9_lddg2")]
@@ -214,7 +214,7 @@ position = Vector2(1008, 401)
 nama_kotak = "s"
 
 [node name="o" parent="kotak_grup" instance=ExtResource("9_lddg2")]
-position = Vector2(859, 276)
+position = Vector2(897, 705)
 nama_kotak = "o"
 
 [node name="door" parent="." instance=ExtResource("10_2hp6y")]

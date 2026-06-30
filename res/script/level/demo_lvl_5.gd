@@ -101,21 +101,24 @@ func selesai():
 	$ui_layer/movement_btn.visible = false
 	$ui_layer/btn_con.visible = false
 	$ui_layer/papan.visible = true
-	if isCleared : 
+
+	if isCleared:
 		get_node("ui_layer/papan").popClear(timeLeft)
-	elif isFailed :
-		print("HI"); 
+
+		var time_left = timerDis.get_timeLeft()
+		var star = 0
+
+		if time_left >= 80:
+			star = 3
+		elif time_left >= 40:
+			star = 2
+		elif time_left >= 20:
+			star = 1
+
+		saveData.saveData(null, 4, true, star)
+
+	elif isFailed:
 		get_node("ui_layer/papan").popFailed()
-	$Player.visible = false
-	var time_left = timerDis.get_timeLeft();
-	var star = 0
-	if(time_left > 80):
-		star = 3;
-	elif(time_left < 80 && time_left > 65):
-		star = 2;
-	elif(time_left < 65 && time_left > 40):
-		star = 1
-	saveData.saveData(null, 4, true, star)
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()
@@ -152,4 +155,4 @@ func _nextLvl() :
 	loading.transition()
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
-	get_tree().change_scene_to_file("res://res/scene/level/demo_level_6.tscn")
+	get_tree().change_scene_to_file("res://res/scene/level/coming_soon.tscn")

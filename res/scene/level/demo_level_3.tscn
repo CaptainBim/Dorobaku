@@ -182,7 +182,7 @@ _data = {
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
 script = ExtResource("1_dqsdx")
-maxTime = 301.0
+maxTime = 161.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -193,9 +193,9 @@ visible = false
 visible = false
 position = Vector2(928, 479)
 scale = Vector2(0.9, 0.9)
-b1_task = "120"
-b2_task = "150"
-b3_task = "160"
+b1_task = "30"
+b2_task = "60"
+b3_task = "90"
 
 [node name="btn_con" type="HBoxContainer" parent="ui_layer"]
 custom_minimum_size = Vector2(360, 180)
@@ -387,6 +387,7 @@ wait_time = 120.0
 one_shot = true
 
 [node name="lobang" type="RigidBody2D" parent="."]
+visible = false
 position = Vector2(448, 512)
 collision_layer = 17
 collision_mask = 0
@@ -430,6 +431,7 @@ position = Vector2(921, 168.00002)
 scale = Vector2(2.1224837, 2.720932)
 
 [node name="Dialogue" parent="." instance=ExtResource("18_pii5r")]
+visible = false
 offset_left = 427.0
 offset_top = -99.99999
 offset_right = 427.0

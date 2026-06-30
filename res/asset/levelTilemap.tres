@@ -1468,6 +1468,7 @@ texture_region_size = Vector2i(64, 64)
 1:13/0 = 0
 0:13/0 = 0
 9:19/0 = 0
+22:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hrcyh"]
 resource_name = "nolip"
@@ -1859,7 +1860,7 @@ texture_region_size = Vector2i(64, 64)
 26:10/0 = 0
 26:10/0/physics_layer_1/polygon_0/points = PackedVector2Array(17, -32, 32, -32, 32, -32, 32, 32, 17, 32)
 27:10/0 = 0
-27:10/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, 16.578358, 32, 16.963902, 32, 32, -32, 32)
+27:10/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, 17.627953, 32, 17.845581, 32, 32, -32, 32)
 3:11/0 = 0
 4:11/0 = 0
 5:11/0 = 0
@@ -2112,7 +2113,7 @@ texture_region_size = Vector2i(64, 64)
 27:9/0 = 0
 27:9/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 28.676773, -32, 28.9954, -16.568798, -32, -17.206062)
 27:8/0 = 0
-27:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, 16.887428, 32, 17.206059, 32, 32, -32, 32)
+27:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, 17.627953, 32, 17.845581, 32, 32, -32, 32)
 27:7/0 = 0
 27:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-28.995396, -32, 32, -32, 32, -16.934216, -28.995396, -16.887428)
 0:13/0 = 0

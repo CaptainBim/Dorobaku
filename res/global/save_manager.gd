@@ -10,7 +10,7 @@ func createSave() -> Dictionary :
 	return {
 		"version" : GAME_VERSION,
 		"ch0" : [
-			{"state" : LvlState.UNLOCKED, "star" : 2, "story" : StoryState.UNVIEW }, #1
+			{"state" : LvlState.UNLOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #1
 			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #2
 			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #3
 			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #4
@@ -26,20 +26,26 @@ func createSave() -> Dictionary :
 		],
 	}
 
-func saveData(data = null, stage = null, status = true, star = 0) :
-	var saveFile;
+func saveData(data = null, stage = null, status = true, star = 0):
+	var saveFile
 	if stage == null:
-		saveFile =  FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+		saveFile = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 		saveFile.store_line(JSON.stringify(data))
 		saveFile.close()
 	else:
-		saveFile  = FileAccess.open(SAVE_PATH, FileAccess.READ_WRITE)
-		var jsonData = JSON.parse_string(saveFile.get_as_text());
+		saveFile = FileAccess.open(SAVE_PATH, FileAccess.READ_WRITE)
+		var jsonData = JSON.parse_string(saveFile.get_as_text())
 		print(saveFile.get_as_text(), jsonData)
-		jsonData["ch0"][stage].state = LvlState.CLEAR;
-		jsonData["ch0"][stage].star = star;
-		jsonData["ch0"][stage + 1].state = LvlState.UNLOCKED;
+
+		jsonData["ch0"][stage].state = LvlState.CLEAR
+		jsonData["ch0"][stage].star = star
+
+		# mentok 5
+		if stage < 4:
+			jsonData["ch0"][stage + 1].state = LvlState.UNLOCKED
+
 		saveFile.store_line(JSON.stringify(jsonData))
+
 	saveFile.close()
 
 func loadData() :
