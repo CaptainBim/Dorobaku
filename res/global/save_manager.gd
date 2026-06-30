@@ -1,6 +1,6 @@
 class_name SAVES extends Resource
 
-var GAME_VERSION : float = 0.003
+var GAME_VERSION : float = 1.0
 const SAVE_PATH = "res://res/saves/game.save"
 enum LvlState {CLEAR, PLAYED, UNLOCKED, LOCKED}
 enum StoryState {VIEWED, UNVIEW}
