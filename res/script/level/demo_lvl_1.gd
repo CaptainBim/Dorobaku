@@ -16,7 +16,7 @@ var h1 = "b"
 var h2 = "u"
 var h3 = "s"
 var h4 = "i"
-@export var maxTime : float = 100
+@export var maxTime : float #= 100
 var resetNum = GlobalVar.MaxReset
 var timeLeft
 @onready var target = $cek_grup.get_child_count()
@@ -29,10 +29,10 @@ func _ready() -> void:
 	$ui_layer/papan.visible = false
 	loading.visible = true
 	#timer.wait_time = maxTime
-	print($ui_layer/movement_btn)
-	print($ui_layer/btn_con)
-	print($ui_layer/papan)
-	print($Player)
+	#print($ui_layer/movement_btn)
+	#print($ui_layer/btn_con)
+	#print($ui_layer/papan)
+	#print($Player)
 	
 	for i in $kotak_grup.get_children() :
 		i.add_to_group(i.nama_kotak)
@@ -106,7 +106,7 @@ func selesai():
 		var time_left = timerDis.get_timeLeft()
 		var star = 0
 
-		if time_left > 80:
+		if time_left > 70:
 			star = 3
 		elif time_left > 40:
 			star = 2

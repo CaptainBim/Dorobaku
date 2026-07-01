@@ -8,10 +8,28 @@ export.cfg
 export_credentials.cfg
 *.tmp
 
-# Imported translations (automatically generated from CSV files)
+# Imported translations
 *.translation
 
-# Mono-specific ignores
+# Mono
 .mono/
 data_*/
 mono_crash.*.json
+
+# Android build output
+android/build/
+
+# Exported Android files
+*.apk
+*.aab
+
+# Android signing keys
+*.keystore
+*.jks
+
+# General build folders
+build/
+
+# OS files
+.DS_Store
+Thumbs.db

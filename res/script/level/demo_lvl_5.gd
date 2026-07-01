@@ -108,7 +108,7 @@ func selesai():
 		var time_left = timerDis.get_timeLeft()
 		var star = 0
 
-		if time_left >= 80:
+		if time_left >= 70:
 			star = 3
 		elif time_left >= 40:
 			star = 2

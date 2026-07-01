@@ -26,7 +26,7 @@ func _on_level_pressed(lvl: int, btn) -> void:
 	var path = "res://res/scene/level/demo_level"
 	GlobalVar.MaxReset = 3
 	path += "_" + str(lvl) + ".tscn"
-	# If that scene doesnt exist, go to 'coming_soon'
+	#go to "coming_soon"
 	if !ResourceLoader.exists(path):
 		path = "res://res/scene/level/coming_soon.tscn"
 	if lvl == 1 :

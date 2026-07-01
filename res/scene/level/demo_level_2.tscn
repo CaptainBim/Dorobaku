@@ -194,7 +194,7 @@ position = Vector2(928, 479)
 scale = Vector2(0.9, 0.9)
 b1_task = "20"
 b2_task = "40"
-b3_task = "80"
+b3_task = "70"
 
 [node name="movement_btn" parent="ui_layer" instance=ExtResource("2_ihmy6")]
 
