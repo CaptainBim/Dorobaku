@@ -112,10 +112,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_lddou")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Panel"]
 layout_mode = 0
-offset_left = 237.0
-offset_top = -131.0
-offset_right = 1205.1404
-offset_bottom = 262.0
+offset_left = 138.0
+offset_top = -126.0
+offset_right = 1318.0
+offset_bottom = 260.0
 texture = ExtResource("4_dcyaq")
 expand_mode = 1
 

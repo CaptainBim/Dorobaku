@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ddhbq3qf847pa"]
+[gd_scene load_steps=31 format=3 uid="uid://ddhbq3qf847pa"]
 
 [ext_resource type="Texture2D" uid="uid://ccadwpjs7wooj" path="res://res/asset/popscreen.png" id="1_8uoho"]
 [ext_resource type="Script" uid="uid://bv38jkbnsb82u" path="res://res/script/misc/pop_up.gd" id="2_ydfna"]
@@ -9,6 +9,14 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_ubn1t"]
 atlas = ExtResource("1_8uoho")
 region = Rect2(0, 0, 3200, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4i1f"]
+atlas = ExtResource("5_fjsrq")
+region = Rect2(960, 960, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_henxv"]
+atlas = ExtResource("5_fjsrq")
+region = Rect2(1280, 960, 320, 320)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w3dlk"]
 
@@ -331,6 +339,8 @@ texture = SubResource("AtlasTexture_ubn1t")
 hframes = 4
 frame = 3
 script = ExtResource("2_ydfna")
+volume_on = SubResource("AtlasTexture_d4i1f")
+volume_off = SubResource("AtlasTexture_henxv")
 
 [node name="clear_con" type="BoxContainer" parent="."]
 visible = false

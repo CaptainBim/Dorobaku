@@ -13,7 +13,6 @@ func _ready() -> void:
 	$loading.visible = true
 	#notif.position = notifPos + Vector2 (0 , 70)
 	GAME_DATA = saveData.loadSave()
-	
 	match GAME_DATA.status:
 		SAVES.SaveStatus.NEW:
 			pushNotif("New Save File has been Created.....")

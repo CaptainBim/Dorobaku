@@ -12,6 +12,8 @@ var taskStr = "Time > "
 @onready var volumeBtn: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel5/volume
 @onready var restart: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel4/restart
 @onready var resumeBtn: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel4/resume
+@export var volume_on: Texture2D
+@export var volume_off: Texture2D
 var muted = false;
 
 signal _exit
@@ -82,9 +84,12 @@ func restartLvl() -> void:
 
 func _volume() -> void:
 	AudioPlayer._play_fx_btn7()
+
 	if muted:
-		AudioPlayer._non_mute_music();
-		muted = false;
+		AudioPlayer._non_mute_music()
+		muted = false
+		volumeBtn.texture_normal = volume_on
 	else:
-		AudioPlayer._mute_music();
-		muted = true;
+		AudioPlayer._mute_music()
+		muted = true
+		volumeBtn.texture_normal = volume_off

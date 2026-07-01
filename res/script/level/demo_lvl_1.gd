@@ -6,7 +6,6 @@ var isCleared : bool = false
 var isFailed: bool = false
 @onready var label: Label = $ui_layer/Panel/Label
 @onready var timer: Timer = $Timer
-@onready var musicLvl = preload("res://res/asset/sound/bgm3.mp3")
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
 
@@ -25,7 +24,7 @@ var cocok = target
 func _ready() -> void:
 	
 	get_node("ui_layer/btn_con/reset_btn").reset_set(resetNum)
-	AudioPlayer._play_lvl_music(musicLvl)
+	AudioPlayer._play_random_lvl_music()
 	$ui_layer/papan.visible = false
 	loading.visible = true
 	#timer.wait_time = maxTime
@@ -39,7 +38,7 @@ func _ready() -> void:
 	box_setup()
 	#timer.start()
 	print("maxTime =", maxTime)
-	timerDis.start_timer(maxTime)
+	timerDis.start_timer(maxTime)	
 	
 				
 func box_setup() -> void:

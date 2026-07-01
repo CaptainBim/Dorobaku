@@ -7,7 +7,6 @@ var isFailed: bool = false
 @onready var label: Label = $ui_layer/Panel/Label
 @onready var timer: Timer = $Timer
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var musicLvl = preload("res://res/asset/sound/bgm3.mp3")
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
 var saveData = SAVES.new()
@@ -27,7 +26,7 @@ var cocok = target
 
 func _ready() -> void:
 	get_node("ui_layer/btn_con/reset_btn").reset_set(resetNum)
-	AudioPlayer._play_lvl_music(musicLvl)
+	AudioPlayer._play_random_lvl_music()
 	$ui_layer/papan.visible = false
 	loading.visible = true
 	anim.play("jembatans_sets")
@@ -104,11 +103,11 @@ func selesai():
 		var time_left = timerDis.get_timeLeft()
 		var star = 0
 
-		if time_left >= 90:
+		if time_left >= 70:
 			star = 3
-		elif time_left >= 60:
+		elif time_left >= 40:
 			star = 2
-		elif time_left >= 30:
+		elif time_left >= 20:
 			star = 1
 
 		saveData.saveData(null, 1, true, star)
