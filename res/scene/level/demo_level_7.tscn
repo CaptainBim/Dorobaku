@@ -234,6 +234,9 @@ scale = Vector2(1.6157197, 1.602854)
 [node name="Path2D" parent="Node2D" index="0"]
 scale = Vector2(0.9596487, 0.98462063)
 
+[node name="PathFollow2D" parent="Node2D/Path2D" index="0"]
+position = Vector2(528.85376, 290.8371)
+
 [node name="orgs" parent="Node2D/Path2D/PathFollow2D" index="0"]
 rotation = -1.5707964
 scale = Vector2(1.8844044, 1.8844044)

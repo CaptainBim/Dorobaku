@@ -33,3 +33,12 @@ func _play_fx(stream: AudioStream, volume = 0.0) :
 	
 func _play_fx_btn7():
 	_play_fx(btn7)
+	
+	
+func _mute_music():
+	volume_db = -80.0;
+	print("muted");
+
+func _non_mute_music():
+	volume_db = -10.0;
+	print("not muted")

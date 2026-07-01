@@ -12,6 +12,7 @@ var taskStr = "Time > "
 @onready var volumeBtn: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel5/volume
 @onready var restart: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel4/restart
 @onready var resumeBtn: TouchScreenButton = $pause_con/VBoxContainer/btns_con/Panel4/resume
+var muted = false;
 
 signal _exit
 var b1 : int
@@ -66,6 +67,7 @@ func popFailed():
 	restart.visible = true
 
 	resumeBtn.visible = false
+	volumeBtn.visible = false;
 
 func exit() -> void:
 	AudioPlayer._play_fx_btn7()
@@ -79,4 +81,9 @@ func restartLvl() -> void:
 
 func _volume() -> void:
 	AudioPlayer._play_fx_btn7()
-	
+	if muted:
+		AudioPlayer._non_mute_music();
+		muted = false;
+	else:
+		AudioPlayer._mute_music();
+		muted = true;

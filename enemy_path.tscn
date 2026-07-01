@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_p2cum"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 528, 290, 0.47894287, 1.6658013, -0.47894287, -1.6658013, 524, 479, 0, 0, 0, 0, 528.3183, 288.43597)
+"points": PackedVector2Array(0, 0, 0, 0, 528.85376, 290.8371, 0, 0, 0, 0, 532.7234, 582.9414, 0, 0, 0, 0, 661.71216, 586.7432, 0, 0, 0, 0, 532.0785, 581.6742, 0, 0, 0, 0, 527.56384, 290.8371)
 }
-point_count = 3
+point_count = 5
 
 [node name="Node2D" type="Node2D"]
 
