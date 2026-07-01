@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://blm8fs6kfyjdi"]
+[gd_scene load_steps=26 format=3 uid="uid://blm8fs6kfyjdi"]
 
 [ext_resource type="Script" uid="uid://cqkicqjaoqoli" path="res://res/script/menu/menu_home.gd" id="1_msiks"]
 [ext_resource type="Texture2D" uid="uid://bn26hefyefqwr" path="res://res/asset/bg.png" id="2_28k2k"]
 [ext_resource type="Texture2D" uid="uid://cbnugxxn52q7t" path="res://res/asset/menu/btn_new.tres" id="3_4gg5u"]
 [ext_resource type="FontFile" uid="uid://c21dfc6qx4eki" path="res://res/joystix monospace.otf" id="3_5v11u"]
-[ext_resource type="Texture2D" uid="uid://dio7t1km27xnq" path="res://res/asset/judul_new.png" id="4_mxnss"]
-[ext_resource type="Texture2D" uid="uid://b17cjx2dc1b8o" path="res://res/asset/judul_new_2x.png" id="5_64mea"]
+[ext_resource type="Texture2D" uid="uid://br443lylbpvpo" path="res://res/asset/logo2.png" id="4_dcyaq"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="6_1yiyi"]
 [ext_resource type="Texture2D" uid="uid://b8vrsk30i386v" path="res://res/asset/menu/mullai.png" id="8_64mea"]
 [ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="8_dcyaq"]
@@ -18,7 +17,6 @@ texture = ExtResource("2_28k2k")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpkjy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lddou"]
-texture = ExtResource("4_mxnss")
 draw_center = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hj1f"]
@@ -107,7 +105,6 @@ text = " "
 horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
-clip_contents = true
 custom_minimum_size = Vector2(1448, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -115,12 +112,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_lddou")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Panel"]
 layout_mode = 0
-offset_left = 68.0
-offset_top = -172.0
-offset_right = 1349.0
-offset_bottom = 340.0
-texture = ExtResource("5_64mea")
-expand_mode = 2
+offset_left = 237.0
+offset_top = -131.0
+offset_right = 1205.1404
+offset_bottom = 262.0
+texture = ExtResource("4_dcyaq")
+expand_mode = 1
 
 [node name="HBoxContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
 clip_contents = true

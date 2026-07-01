@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqmlojc4a7xnb"]
+[gd_scene load_steps=24 format=3 uid="uid://bqmlojc4a7xnb"]
 
 [ext_resource type="Script" uid="uid://dbfnnxfjvk3pk" path="res://res/script/menu/cara.gd" id="1_l8y8d"]
 [ext_resource type="Texture2D" uid="uid://bn26hefyefqwr" path="res://res/asset/bg.png" id="1_xv4i8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dkpv5qepomobu" path="res://res/asset/papan.png" id="4_1iold"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="4_fgqwt"]
 [ext_resource type="Texture2D" uid="uid://sijc3tcctqou" path="res://res/asset/button-Sheet.png" id="5_77vq4"]
+[ext_resource type="Texture2D" uid="uid://b88dd4t5n1ftm" path="res://res/asset/LOGO.png" id="5_p3b1p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ggvl8"]
 texture = ExtResource("1_xv4i8")
@@ -361,6 +362,13 @@ theme_override_font_sizes/font_size = 45
 text = "Special thx to"
 horizontal_alignment = 1
 
+[node name="Logo" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0.47843137)
+show_behind_parent = true
+position = Vector2(913.0058, 326.21536)
+scale = Vector2(0.98908216, 1.0967478)
+texture = ExtResource("5_p3b1p")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -448,5 +456,7 @@ shape_visible = false
 
 [node name="loading" parent="." instance=ExtResource("4_fgqwt")]
 visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="pressed" from="Panel/CanvasLayer/back" to="." method="_on_back_pressed"]

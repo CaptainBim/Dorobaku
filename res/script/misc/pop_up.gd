@@ -1,7 +1,7 @@
 class_name PopMenu extends Node
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
-
+@onready var exitBtn = $pause_con/VBoxContainer/btns_con/Panel3/exit
 @export var b1_task : String
 @export var b2_task : String 
 @export var b3_task : String 
@@ -70,6 +70,7 @@ func popFailed():
 	volumeBtn.visible = false;
 
 func exit() -> void:
+	exitBtn.process_mode = Node.PROCESS_MODE_DISABLED;
 	AudioPlayer._play_fx_btn7()
 	_exit.emit(true)
 

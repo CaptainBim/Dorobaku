@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="tes_new_dorobaku"
+config/name="Dorobaku"
+config/description="DoroBaku is a 2D, pixel-art educational puzzle game that challenges players to arrange letter grids into standard words using Sokoban-style gameplay. The game combines logic challenges and Indonesian language learning in an interactive format."
+config/version="1.0"
 run/main_scene="res://res/scene/menu/menu_home.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://b5q3xswq3ieuh"
 
 [autoload]
 
@@ -36,7 +38,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/modular_sprite_animation_factory/plugin.cfg")
+enabled=PackedStringArray("res://addons/modular_sprite_animation_factory/plugin.cfg")
 
 [input]
 
