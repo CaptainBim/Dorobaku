@@ -125,7 +125,8 @@ func unpause_game() :
 	$ui_layer/btn_con.visible = true
 	$ui_layer/papan.visible = false
 	GlobalVar.GameIsPaused = false
-	timerDis.start_timer(float(timerDis.get_timeLeft()));
+	if !is_open:
+		timerDis.start_timer(float(timerDis.get_timeLeft()));
 
 func _exit(exit) -> void:
 	if exit :
