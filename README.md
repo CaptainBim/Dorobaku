@@ -30,7 +30,7 @@ Dengan mengusung konsep belajar sambil bermain, DoroBaku dirancang agar proses p
 
 Pengembangan DoroBaku tidak terlepas dari kontribusi berbagai pihak dan sumber terbuka. Berikut adalah apresiasi dan referensi yang digunakan dalam pengembangan gim ini:
 
-### Tim Pengembang
+### Tim Pengembang Team FlushBitz
 
 **Gameplay**
 - Muh. Reza MN  
