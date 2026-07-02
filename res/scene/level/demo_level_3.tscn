@@ -182,7 +182,7 @@ _data = {
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
 script = ExtResource("1_dqsdx")
-maxTime = 161.0
+maxTime = 181.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -345,11 +345,11 @@ position = Vector2(1401, 388)
 nama_kotak = "a"
 
 [node name="t" parent="kotak_grup" instance=ExtResource("10_4djw5")]
-position = Vector2(956, 391)
+position = Vector2(959, 385)
 nama_kotak = "t"
 
 [node name="l" parent="kotak_grup" instance=ExtResource("10_4djw5")]
-position = Vector2(1341, 580)
+position = Vector2(1344, 580)
 nama_kotak = "l"
 
 [node name="e" parent="kotak_grup" instance=ExtResource("10_4djw5")]
@@ -361,7 +361,7 @@ position = Vector2(1147, 386)
 nama_kotak = "t"
 
 [node name="i" parent="kotak_grup" instance=ExtResource("10_4djw5")]
-position = Vector2(833, 440)
+position = Vector2(828, 451)
 nama_kotak = "i"
 
 [node name="door" parent="." instance=ExtResource("11_2tewk")]

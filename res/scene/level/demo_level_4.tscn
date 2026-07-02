@@ -50,7 +50,7 @@ size = Vector2(128, 64)
 
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 script = ExtResource("1_q0826")
-maxTime = 121.0
+maxTime = 181.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 

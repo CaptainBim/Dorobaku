@@ -83,7 +83,7 @@ func restart():
 
 func _send_cek(nama_box,nama_cek) -> void:
 	if nama_box == nama_cek :
-		target -= 1
+		target -= 1 
 		print("cek sisa " + str(target))
 
 func _exit_cek(nama_box,nama_cek) -> void:

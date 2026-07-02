@@ -34,51 +34,55 @@ size = Vector2(64, 64)
 
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 script = ExtResource("1_178i2")
-maxTime = 160.0
+maxTime = 141.0
 
 [node name="Node" type="Node" parent="."]
 
 [node name="hole" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(576, 384)
+position = Vector2(578, 386)
 
 [node name="hole3" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(640, 384)
+position = Vector2(633, 386)
 
 [node name="hole4" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(576, 448)
+position = Vector2(578, 442)
 
 [node name="hole5" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(576, 512)
+position = Vector2(577, 497.00003)
+scale = Vector2(1.0332679, 1.2312561)
 
 [node name="hole6" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(832, 255)
+position = Vector2(840, 257)
 
 [node name="hole7" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(896, 255)
+position = Vector2(895, 257)
 
 [node name="hole8" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(960, 255)
+position = Vector2(950, 258)
+scale = Vector2(1.0636803, 0.983573)
 
 [node name="hole16" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(960, 640)
+position = Vector2(930, 640.00006)
+scale = Vector2(1.4181875, 0.9874474)
 
 [node name="hole17" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(896, 640)
 
 [node name="hole18" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(832, 640)
+position = Vector2(834.00006, 640)
+scale = Vector2(1.2072364, 1)
 
 [node name="hole20" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(1216, 512)
+position = Vector2(1217, 509)
 
 [node name="hole21" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
 position = Vector2(1216, 448)
 
 [node name="hole22" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(1216, 384)
+position = Vector2(1216, 386)
 
 [node name="hole23" parent="Node" groups=["holes"] instance=ExtResource("16_j5ep5")]
-position = Vector2(1152, 384)
+position = Vector2(1160, 386)
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
