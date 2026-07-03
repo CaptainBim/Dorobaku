@@ -26,12 +26,12 @@ func createSave() -> Dictionary:
 			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
 		],
 	}
+	#cheat mode on
+	#for level in data["ch0"]:
+	#	level["state"] = LvlState.UNLOCKED
 
-	for level in data["ch0"]:
-		level["state"] = LvlState.UNLOCKED
-
-	for level in data["ch1"]:
-		level["state"] = LvlState.UNLOCKED
+	#for level in data["ch1"]:
+	#	level["state"] = LvlState.UNLOCKED
 
 	return data
 

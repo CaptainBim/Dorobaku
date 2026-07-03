@@ -47,6 +47,9 @@ visible = false
 visible = false
 position = Vector2(928, 479)
 scale = Vector2(0.9, 0.9)
+b1_task = "20"
+b2_task = "40"
+b3_task = "70"
 
 [node name="btn_con" type="HBoxContainer" parent="ui_layer"]
 custom_minimum_size = Vector2(360, 180)
