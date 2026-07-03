@@ -42,12 +42,12 @@ atlas = ExtResource("14_11lly")
 region = Rect2(736, 512, 32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqetd"]
-size = Vector2(37, 129.00023)
+size = Vector2(37, 120.999985)
 
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
 script = ExtResource("1_3w4bc")
-maxTime = 120.0
+maxTime = 221.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -55,17 +55,22 @@ maxTime = 120.0
 visible = false
 
 [node name="movement_btn" parent="ui_layer" instance=ExtResource("2_w6mwy")]
+metadata/_edit_use_anchors_ = true
 
 [node name="papan" parent="ui_layer" instance=ExtResource("3_11lly")]
 visible = false
 position = Vector2(928, 479)
 scale = Vector2(0.9, 0.9)
+b1_task = "20"
+b2_task = "40"
+b3_task = "70"
 
 [node name="btn_con" type="HBoxContainer" parent="ui_layer"]
 custom_minimum_size = Vector2(360, 180)
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="reset_btn" parent="ui_layer/btn_con" instance=ExtResource("4_3w4bc")]
 position = Vector2(261, 95)
@@ -79,6 +84,7 @@ shape = SubResource("CircleShape2D_qkbc7")
 shape_visible = false
 
 [node name="timeDisplay" parent="ui_layer" instance=ExtResource("8_f0bq3")]
+metadata/_edit_use_anchors_ = true
 
 [node name="bg_layer" type="CanvasLayer" parent="."]
 layer = -100
@@ -177,7 +183,7 @@ nama_kotak = "i"
 position = Vector2(393, 509)
 nama_kotak = "r"
 
-[node name="a" parent="kotak_grup" instance=ExtResource("9_pdadd")]
+[node name="o" parent="kotak_grup" instance=ExtResource("9_pdadd")]
 position = Vector2(1298, 531)
 nama_kotak = "o"
 
@@ -226,11 +232,11 @@ texture = SubResource("AtlasTexture_f0bq3")
 offset = Vector2(32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="special2/t2"]
-position = Vector2(33.5, 2)
+position = Vector2(33.5, 1.5)
 shape = SubResource("RectangleShape2D_sqetd")
 
 [node name="t3" type="RigidBody2D" parent="special2"]
-position = Vector2(1264, 196)
+position = Vector2(1265, 196)
 rotation = 3.1415882
 collision_layer = 273
 collision_mask = 4112
@@ -250,11 +256,11 @@ texture = SubResource("AtlasTexture_f0bq3")
 offset = Vector2(32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="special2/t3"]
-position = Vector2(33, 2.500122)
+position = Vector2(33, 4.5000916)
 shape = SubResource("RectangleShape2D_sqetd")
 
 [node name="t4" type="RigidBody2D" parent="special2"]
-position = Vector2(1296, 580)
+position = Vector2(1298, 580)
 rotation = 3.1415882
 collision_layer = 273
 collision_mask = 4112
@@ -269,13 +275,14 @@ texture = SubResource("AtlasTexture_3w4bc")
 offset = Vector2(32, 32)
 
 [node name="Sprite2D3" type="Sprite2D" parent="special2/t4"]
-position = Vector2(0, -60.051697)
+position = Vector2(63.99997, 1.0002798)
+rotation = 3.1476414
 scale = Vector2(1, 0.95393276)
 texture = SubResource("AtlasTexture_f0bq3")
 offset = Vector2(32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="special2/t4"]
-position = Vector2(36, 2.0001845)
+position = Vector2(32, 2.750061)
 shape = SubResource("RectangleShape2D_sqetd")
 
 [node name="t5" type="RigidBody2D" parent="special2"]
@@ -286,8 +293,8 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="special2/t5"]
-position = Vector2(63.999702, 68.00029)
-rotation = 3.1415882
+position = Vector2(1.150358e-05, 0.99999243)
+rotation = 6.2760315
 scale = Vector2(1, 1.0472959)
 texture = SubResource("AtlasTexture_3w4bc")
 offset = Vector2(32, 32)

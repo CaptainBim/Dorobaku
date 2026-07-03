@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cjkngcrqb0jy7"]
+[gd_scene load_steps=26 format=4 uid="uid://cjkngcrqb0jy7"]
 
 [ext_resource type="Script" uid="uid://c4bdtx171lmge" path="res://res/script/level/demo_lvl_10.gd" id="1_dkn2l"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_chk6o"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="13_ues70"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="14_yvi6o"]
 [ext_resource type="PackedScene" uid="uid://ja8fwafi6jkj" path="res://res/scene/spawn/lever.tscn" id="15_x3n81"]
+[ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="17_80661"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="18_mu74l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7tpt"]
 atlas = ExtResource("6_chk6o")
@@ -45,6 +47,7 @@ size = Vector2(64, 64)
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
 script = ExtResource("1_dkn2l")
+maxTime = 241.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -57,6 +60,9 @@ visible = false
 visible = false
 position = Vector2(928, 479)
 scale = Vector2(0.9, 0.9)
+b1_task = "20"
+b2_task = "40"
+b3_task = "70"
 
 [node name="btn_con" type="HBoxContainer" parent="ui_layer"]
 custom_minimum_size = Vector2(360, 180)
@@ -240,7 +246,7 @@ collision_mask = 16
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 scale = Vector2(1.0017233, 1)
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(1.5, 1.5)
 limit_enabled = false
 limit_left = -100
 limit_top = -100
@@ -260,10 +266,29 @@ position = Vector2(212, 822)
 position = Vector2(-277, 212)
 
 [node name="buku" parent="." instance=ExtResource("14_yvi6o")]
-position = Vector2(743, 807)
+position = Vector2(709, 357)
 hint_text = "Aku terdiri dari 6 huruf.
 Aku berada di antara daratan dan lautan. Banyak orang datang kepadaku untuk berlibur.
 Apakah aku?"
+
+[node name="dialogue_area" parent="." instance=ExtResource("17_80661")]
+position = Vector2(739, 324)
+scale = Vector2(1.7772117, 2.4284873)
+
+[node name="Dialogue" parent="." instance=ExtResource("18_mu74l")]
+visible = false
+offset_left = 224.00002
+offset_top = 89.0
+offset_right = 224.00002
+offset_bottom = 89.0
+scale = Vector2(0.48181897, 0.47144958)
+dialogue_array = ["Aku terdiri dari 6 huruf", "Aku berada di antara daratan dan lautan.", "Banyak orang datang kepadaku untuk berlibur.", "Siapakah aku?"]
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 110.78934
+offset_top = 736.3231
+offset_right = 1858.7893
+offset_bottom = 1236.3232
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
@@ -283,3 +308,5 @@ Apakah aku?"
 [connection signal="deactivated" from="cek_grup/cek i" to="." method="_exit_cek"]
 [connection signal="aksiLever" from="Lever" to="." method="_on_lever_aksi_lever"]
 [connection signal="aksiLever" from="Lever2" to="." method="_on_lever_2_aksi_lever"]
+
+[editable path="Dialogue"]

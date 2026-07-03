@@ -270,7 +270,7 @@ offset_top = 244.0
 offset_right = 730.0
 offset_bottom = 244.0
 scale = Vector2(0.560759, 0.5643466)
-dialogue_array = ["Aku terdiri dari 6 huruf", ". Aku bisa ditemukan di kancing baju,", "di jarum jahit, hingga di jalanan yang rusak", "Siapakah aku?"]
+dialogue_array = ["Aku terdiri dari 6 huruf", "Aku bisa ditemukan di kancing baju,", "di jarum jahit, hingga di jalanan yang rusak", "Siapakah aku?"]
 
 [node name="Label" parent="Dialogue" index="0"]
 offset_left = 110.78934

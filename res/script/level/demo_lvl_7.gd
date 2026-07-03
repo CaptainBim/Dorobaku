@@ -105,19 +105,25 @@ func selesai():
 	$ui_layer/movement_btn.visible = false
 	$ui_layer/btn_con.visible = false
 	$ui_layer/papan.visible = true
-	$ui_layer/timeDisplay.visible = false;
-	if isCleared : get_node("ui_layer/papan").popClear(timeLeft)
-	elif isFailed : get_node("ui_layer/papan").popFailed()
-	$Player.visible = false
-	var time_left = timerDis.get_timeLeft();
-	var star = 0
-	if(time_left >= 180):
-		star = 3;
-	elif(time_left >= 90):
-		star = 2;
-	else:
-		star = 1
-	saveData.saveData(null, 6, true, star)
+
+	if isCleared:
+		get_node("ui_layer/papan").popClear(timeLeft)
+
+		var time_left = timerDis.get_timeLeft()
+		var star = 0
+
+		if time_left >= 70:
+			star = 3
+		elif time_left >= 40:
+			star = 2
+		elif time_left >= 20:
+			star = 1
+
+		saveData.saveData(null, 6, true, star)
+
+	elif isFailed:
+		get_node("ui_layer/papan").popFailed()
+
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()
@@ -165,3 +171,13 @@ func _on_lever(condition) -> void:
 		$special3/t1/Sprite2D3.visible = false
 		$special3/t1/Sprite2D4.visible = false
 		$special3/t1/CollisionShape2D.disabled = true
+
+var door2_opened := false
+
+func _on_lever_2(condition) -> void:
+	if condition != "on" or door2_opened:
+		return
+
+	var door2 = get_node("door2")
+	door2.open_door()
+	door2_opened = true

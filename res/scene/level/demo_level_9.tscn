@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c83n53d63tpn3"]
+[gd_scene load_steps=21 format=4 uid="uid://c83n53d63tpn3"]
 
 [ext_resource type="Script" uid="uid://bsnb3f02mk4cb" path="res://res/script/level/demo_lvl_9.gd" id="1_fh7bt"]
 [ext_resource type="PackedScene" uid="uid://blx5obatbc20l" path="res://res/scene/transitions.tscn" id="2_ujwug"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://cq4qq33pvhn6w" path="res://res/scene/spawn/kotak.tscn" id="12_xy2vu"]
 [ext_resource type="PackedScene" uid="uid://inr3ctupduah" path="res://res/scene/doorx1.tscn" id="13_koqnr"]
 [ext_resource type="PackedScene" uid="uid://cn0fnvadpgyfd" path="res://res/scene/player.tscn" id="14_vu18p"]
+[ext_resource type="PackedScene" uid="uid://cuxpvn136orgq" path="res://dialogue_area.tscn" id="15_fh7bt"]
 [ext_resource type="PackedScene" uid="uid://cs0jt0cfysv1u" path="res://res/scene/spawn/buku.tscn" id="15_ralxb"]
+[ext_resource type="PackedScene" uid="uid://cmhe2sc4freqy" path="res://res/scene/misc/dialogBox.tscn" id="16_ujwug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7tpt"]
 atlas = ExtResource("6_0i1wk")
@@ -32,6 +34,7 @@ size = Vector2(64, 64)
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
 script = ExtResource("1_fh7bt")
+maxTime = 191.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -68,10 +71,14 @@ shape_visible = false
 layer = -100
 
 [node name="background" parent="bg_layer" instance=ExtResource("8_8rtn3")]
-offset_left = -844.00006
-offset_top = -2333.0002
-offset_right = -844.0
-offset_bottom = -2333.0002
+anchors_preset = -1
+anchor_top = 1.6027778
+anchor_right = 1.1446735
+anchor_bottom = 2.0610018
+offset_left = -920.0
+offset_top = -2593.0002
+offset_right = -920.0
+offset_bottom = -2593.0002
 scale = Vector2(1.4073337, 5.791283)
 
 [node name="layer2" type="TileMapLayer" parent="."]
@@ -87,6 +94,17 @@ scale = Vector2(1.0017233, 1)
 tile_map_data = PackedByteArray("AAAGAAMACAAJAAoAAAAHAAMACAAJAAoAAAAJAAUACAAIAAoAAAAKAAUACAAJAAoAAAALAAUACAAJAAoAAAAMAAUACAAJAAoAAAANAAUACAAJAAoAAAAOAAUACAAJAAoAAAAPAAUACAAMAAkAAAALAAcACAAEAAoAAAANAAcACAAEAAoAAAALAAgACAAEAAoAAAAKAAgACAAEAAcAAAALAAwACAAKAAcAAAAMAAwACAAKAAcAAAANAAwACAAKAAcAAAAOAAwACAAKAAcAAAAPAAwACAAKAAcAAAAJAAQACAALAAoAAAAJAAMACAALAAoAAAAIAAMACAAJAAoAAAAJAAkACAAEAAcAAAAHAA4ACAANAAcAAAAGAA4ACAAKAAcAAAAFAA4ACAAKAAcAAAAEAA4ACAAKAAcAAAAFAAwACAAJAAoAAAADAA0ACAAGAAoAAAACAA0ACAAGAAoAAAADAA4ACAAKAAcAAAD//woACAAEAAoAAAD//wsACAAJAAcAAAD+/woACAAEAAoAAAD+/wsACAAJAAcAAAD9/wsACAAJAAcAAAD8/wsACAAJAAcAAAD7/wsACAAJAAcAAAD6/wsACAAJAAcAAAD5/wsACAAKAAYAAAD5/wkACAAFAAgAAAD7/wkACAAEAAoAAAD8/wkACAAEAAoAAAD9/wcACAAEAAoAAAD//wcACAAFAAkAAAAAAAcACAAHAAkAAAAAAAYACAAGAAkAAAABAAYACAAGAAkAAAD//wUACAALAAoAAAD+/wUACAAGAAkAAAD8/wUACAAGAAkAAAD9/wUACAAGAAkAAAD7/wUACAAIAAoAAAD7/wYACAAIAAoAAAAHAAUACAAKAAoAAAACAAYACAAGAAkAAAAKAAsACAAEAAgAAAAKAAoACAAEAAgAAAAKAAkACAAEAAgAAAAJAAoACAAEAAgAAAAJAAsACAAEAAgAAAAKAAwACAANAAcAAAAJAAwACAANAAcAAAAIAAwACAAIAAgAAAAIAAoACAAEAAcAAAAIAAsACAAEAAgAAAAIAA0ACAAFAAgAAAAIAA4ACAAJAAgAAAD5/wcACAAFAAcAAAD//wYACAAFAAkAAAD7/wcACAAIAAoAAAD6/wcACAAGAAoAAAAPAAYACAAFAAgAAAAPAAcACAAFAAgAAAAPAAgACAAFAAgAAAAPAAkACAAIAAoAAAADAAYACAAMAAkAAAADAAcACAAFAAgAAAADAAgACAAFAAcAAAADAAkACAAFAAgAAAAAAAsACAAJAAkAAAAAAAwACAAFAAgAAAAAAA0ACAAFAAgAAAACAA4ACAAKAAcAAAABAA4ACAAKAAcAAAAAAA4ACAAKAAYAAAADAAoACAAKAAYAAAAJAAYACAAOAAgAAAAKAAYACAAOAAgAAAALAAYACAAOAAgAAAAMAAYACAAOAAgAAAANAAYACAAOAAgAAAAFAAMACAAPAAgAAAAFAAQACAAHAAgAAAAFAAUACAAHAAgAAAAFAAYACAAHAAgAAAAFAAcACAAHAAgAAAAFAAgACAAHAAcAAAAFAAkACAAHAAgAAAAFAAoACAALAAYAAAAEAAkACAASAAwAAAAEAAgACAAGAAkAAAAGAAQABAARAAoAAAAHAA0ACAAEAAcAAAAHAAcACAAEAAkAAAAQAAkACAAHAAcAAAAQAAoACAAHAAgAAAAQAAsACAAHAAgAAAAQAAwACAALAAYAAAD+/wkACAAEAAoAAAD//wkACAAEAAoAAAD5/wgACAAFAAgAAAD5/woACAAFAAgAAAA=")
 tile_set = ExtResource("9_81wtv")
 rendering_quadrant_size = 64
+
+[node name="Camera2D" type="Camera2D" parent="layer1"]
+position = Vector2(334.4237, 586)
+rotation = -3.1415925
+scale = Vector2(166.94188, -38.805973)
+limit_enabled = false
+limit_left = -100
+limit_top = -100
+limit_right = 100
+limit_bottom = 100
+position_smoothing_enabled = true
 
 [node name="special" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AABOAAoAAAAOABEAAABOAAkAAAAOABEAAABOAA0AAAAOABIAAAA=")
@@ -168,6 +186,10 @@ nama_kotak = "x"
 position = Vector2(893, 769)
 nama_kotak = "x"
 
+[node name="p" parent="kotak_grup" instance=ExtResource("12_xy2vu")]
+position = Vector2(125, 900)
+nama_kotak = "p"
+
 [node name="door" parent="." instance=ExtResource("13_koqnr")]
 position = Vector2(256, 699)
 rotation = 6.280725
@@ -179,18 +201,6 @@ scale = Vector2(1.8006551, 1.8367888)
 collision_layer = 1
 collision_mask = 16
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(2.999999, 0)
-rotation = 3.1415927
-scale = Vector2(92.87151, -21.127075)
-zoom = Vector2(1.7, 1.7)
-limit_enabled = false
-limit_left = -100
-limit_top = -100
-limit_right = 100
-limit_bottom = 100
-position_smoothing_enabled = true
-
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 120.0
@@ -199,6 +209,25 @@ one_shot = true
 [node name="buku" parent="." instance=ExtResource("15_ralxb")]
 position = Vector2(50, 890)
 hint_text = "Aku terdiri dari 5 huruf. Banyak orang memiliki aku saat mengingat pelajaran, puisi, atau lirik lagu tanpa melihat catatan. Siapakah aku?"
+
+[node name="dialogue_area" parent="." instance=ExtResource("15_fh7bt")]
+position = Vector2(80.00001, 856.00006)
+scale = Vector2(2.8928, 2.96)
+
+[node name="Dialogue" parent="." instance=ExtResource("16_ujwug")]
+visible = false
+offset_left = -464.0
+offset_top = 142.0
+offset_right = -464.0
+offset_bottom = 142.0
+scale = Vector2(0.73012316, 0.71039623)
+dialogue_array = ["Aku terdiri dari 5 huruf", "Aku adalah orang yang bertugas mengendalikan kendaraan", "agar penumpang dapat sampai ke tujuan dengan selamat", "Siapakah aku?"]
+
+[node name="Label" parent="Dialogue" index="0"]
+offset_left = 110.78934
+offset_top = 736.3231
+offset_right = 1858.7893
+offset_bottom = 1236.3232
 
 [connection signal="_exit" from="ui_layer/papan" to="." method="_exit"]
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
@@ -214,3 +243,5 @@ hint_text = "Aku terdiri dari 5 huruf. Banyak orang memiliki aku saat mengingat 
 [connection signal="deactivated" from="cek_grup/cek a2" to="." method="_exit_cek"]
 [connection signal="activated" from="cek_grup/cek l" to="." method="_send_cek"]
 [connection signal="deactivated" from="cek_grup/cek l" to="." method="_exit_cek"]
+
+[editable path="Dialogue"]

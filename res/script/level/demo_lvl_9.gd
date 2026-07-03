@@ -17,6 +17,7 @@ var h2 = "a"
 var h3 = "f"
 var h4 = "l"
 var h5 = "x"
+var h6 = "p"
 
 @export var maxTime : float = 180.0
 var resetNum = GlobalVar.MaxReset
@@ -52,6 +53,8 @@ func box_setup() -> void:
 	get_tree().get_nodes_in_group("x")[1].set_block(h5)
 	get_tree().get_nodes_in_group("x")[2].set_block(h5)
 	get_tree().get_nodes_in_group("x")[3].set_block(h5)
+	get_tree().get_nodes_in_group("p")[0].set_block(h6)
+
 
 
 func _process(delta: float) -> void:
@@ -109,18 +112,25 @@ func selesai():
 	$ui_layer/movement_btn.visible = false
 	$ui_layer/btn_con.visible = false
 	$ui_layer/papan.visible = true
-	if isCleared : get_node("ui_layer/papan").popClear(timeLeft)
-	elif isFailed : get_node("ui_layer/papan").popFailed()
-	$Player.visible = false
-	var time_left = timerDis.get_timeLeft();
-	var star = 0
-	if(time_left >= 120):
-		star = 3;
-	elif(time_left >= 60):
-		star = 2;
-	else:
-		star = 1
-	saveData.saveData(null, 8, true, star)
+
+	if isCleared:
+		get_node("ui_layer/papan").popClear(timeLeft)
+
+		var time_left = timerDis.get_timeLeft()
+		var star = 0
+
+		if time_left >= 70:
+			star = 3
+		elif time_left >= 40:
+			star = 2
+		elif time_left >= 20:
+			star = 1
+
+		saveData.saveData(null, 8, true, star)
+
+	elif isFailed:
+		get_node("ui_layer/papan").popFailed()
+
 
 func _btn_pause() -> void:
 	get_node("ui_layer/papan").popPause()

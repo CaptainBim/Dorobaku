@@ -154,4 +154,4 @@ func _nextLvl() :
 	loading.transition()
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
-	get_tree().change_scene_to_file("res://res/scene/level/coming_soon.tscn")
+	get_tree().change_scene_to_file("res://res/scene/level/demo_level_6.tscn")

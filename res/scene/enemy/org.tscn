@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://bt1nyvhjn0run"]
+[gd_scene load_steps=109 format=3 uid="uid://bt1nyvhjn0run"]
 
 [ext_resource type="Texture2D" uid="uid://s1guhkqmlauv" path="res://res/asset/enemy/orc/orc1_back_attack.png" id="1_0n5xk"]
 [ext_resource type="Script" uid="uid://1527vj7hepa7" path="res://res/script/enemy.gd" id="1_bu32p"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dhfndttiidlpv" path="res://res/asset/enemy/orc/orc1_left_walk.png" id="10_c8gbe"]
 [ext_resource type="Texture2D" uid="uid://xa3j8igs5oir" path="res://res/asset/enemy/orc/orc1_front_walk.png" id="11_xsrbe"]
 [ext_resource type="Texture2D" uid="uid://c33jtwg1te6gh" path="res://res/asset/enemy/orc/orc1_right_walk.png" id="12_kqnh5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bu32p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ew2v"]
 atlas = ExtResource("1_0n5xk")
@@ -630,16 +632,24 @@ states/idle_mid/position = Vector2(376, 100)
 states/walk_mid/node = SubResource("AnimationNodeAnimation_nhsrx")
 states/walk_mid/position = Vector2(469, 221)
 transitions = ["idle_mid", "hit_mid", SubResource("AnimationNodeStateMachineTransition_3kckm"), "hit_mid", "walk_mid", SubResource("AnimationNodeStateMachineTransition_bixk8"), "walk_mid", "idle_mid", SubResource("AnimationNodeStateMachineTransition_7pvlb"), "idle_mid", "walk_mid", SubResource("AnimationNodeStateMachineTransition_n8ikr"), "hit_mid", "idle_mid", SubResource("AnimationNodeStateMachineTransition_n0lx0"), "walk_mid", "hit_mid", SubResource("AnimationNodeStateMachineTransition_c8gbe"), "Start", "idle_mid", SubResource("AnimationNodeStateMachineTransition_xsrbe")]
+graph_offset = Vector2(0, 15.483875)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cyfvw"]
-radius = 18.0
+radius = 25.689331
 
 [node name="orgs" type="CharacterBody2D"]
-collision_layer = 273
-collision_mask = 16
+collision_layer = 256
+collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_bu32p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 17
+visibility_layer = 17
+position = Vector2(1, -1)
+scale = Vector2(0.2916582, 0.87464976)
+shape = SubResource("CircleShape2D_bu32p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s7tef")
@@ -658,12 +668,13 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="aksi_area" type="Area2D" parent="."]
 position = Vector2(-1, -12.000001)
-scale = Vector2(0.27248994, 0.73569614)
-collision_layer = 273
-collision_mask = 273
+scale = Vector2(0.22647347, 0.6845629)
+collision_layer = 4369
+collision_mask = 4369
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="aksi_area"]
-position = Vector2(0, 11)
+position = Vector2(4.415528, 18.990221)
+scale = Vector2(1.4247237, -0.40952462)
 shape = SubResource("CircleShape2D_cyfvw")
 debug_color = Color(0, 0.650737, 0.0713071, 0.42)
 
@@ -671,7 +682,6 @@ debug_color = Color(0, 0.650737, 0.0713071, 0.42)
 debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.00999999999999999
 autostart = true
 
 [connection signal="body_entered" from="aksi_area" to="." method="_on_aksi_area_body_entered"]

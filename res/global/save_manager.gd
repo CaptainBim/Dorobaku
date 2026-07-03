@@ -7,25 +7,33 @@ enum LvlState {CLEAR, PLAYED, UNLOCKED, LOCKED}
 enum StoryState {VIEWED, UNVIEW}
 enum SaveStatus {NEW, OK, ERROR, OUTDATED}
 
-func createSave() -> Dictionary :
-	return {
-		"version" : GAME_VERSION,
-		"ch0" : [
-			{"state" : LvlState.UNLOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #1
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #2
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #3
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #4
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #5
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #6
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #7
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #8
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #9
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #10
+func createSave() -> Dictionary:
+	var data = {
+		"version": GAME_VERSION,
+		"ch0": [
+			{"state": LvlState.UNLOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
 		],
-		"ch1" : [
-			{"state" : LvlState.LOCKED, "star" : 0, "story" : StoryState.UNVIEW }, #1
+		"ch1": [
+			{"state": LvlState.LOCKED, "star": 0, "story": StoryState.UNVIEW},
 		],
 	}
+
+	for level in data["ch0"]:
+		level["state"] = LvlState.UNLOCKED
+
+	for level in data["ch1"]:
+		level["state"] = LvlState.UNLOCKED
+
+	return data
 
 func saveData(data = null, stage = null, status = true, star = 0):
 	var saveFile
@@ -42,8 +50,8 @@ func saveData(data = null, stage = null, status = true, star = 0):
 		jsonData["ch0"][stage].star = star
 
 		# mentok 5
-		if stage < 4:
-			jsonData["ch0"][stage + 1].state = LvlState.UNLOCKED
+		#if stage < 4:
+		jsonData["ch0"][stage + 1].state = LvlState.UNLOCKED
 
 		saveFile.store_line(JSON.stringify(jsonData))
 
