@@ -80,7 +80,6 @@ func _on_touch_screen_button_pressed() -> void:
 	GlobalVar.MaxReset -= 1
 	await get_tree().create_timer(0.2).timeout
 	restart()
-
 func restart():
 	game_end = false
 	Engine.time_scale = 1

@@ -40,16 +40,6 @@ func _physics_process(_delta):
 		#if collider is KotakHuruf:
 			#collider.move(velocity.normalized())
 
-		if collider is Player:
-			stop_move = true
-			velocity = Vector2.ZERO
-			#bug di area ini
-			var level = get_tree().current_scene
-			level.game_end = true
-			level.isFailed = true
-			level.timerDis.pause_timer()
-			level.timerDis.stop_timer()
-			level.selesai()
 
 	if global_position.distance_to(target) < 5:
 		current = (current + 1) % points.size()
@@ -74,6 +64,7 @@ func _on_aksi_area_body_entered(body: Node2D) -> void:
 		velocity = Vector2.ZERO
 
 		var level = get_tree().current_scene
+		level.timerDis.pause_timer();
 		level.isFailed = true
 		level.selesai()
 		
