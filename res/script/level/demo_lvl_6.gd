@@ -11,6 +11,8 @@ var saveData = SAVES.new();
 @onready var timer: Timer = $Timer
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
+@onready var dialogue = $Dialogue
+
 
 var h1 = "s"
 var h2 = "u"
@@ -27,8 +29,9 @@ var lever2_active : bool = false
 var cocok = target
 
 func _ready() -> void:
-	
-	get_node("ui_layer/btn_con/reset_btn").reset_set(resetNum)
+	dialogue.dialogue_started.connect(_on_dialogue_started)
+	dialogue.dialogue_finished.connect(_on_dialogue_finished)
+	get_node("ui_layer/btn_con/reset_btn").reset_set(0)
 	AudioPlayer._play_random_lvl_music()
 	$ui_layer/papan.visible = false
 	loading.visible = true
@@ -73,9 +76,9 @@ func _process(delta: float) -> void:
 			selesai()
 	
 func _on_touch_screen_button_pressed() -> void:
-	get_node("ui_layer/btn_con/reset_btn").btn_press()
-	if resetNum == 0 : return
-	GlobalVar.MaxReset -= 1
+	get_node("ui_layer/btn_con/reset_btn").reset_set(0)
+	#if resetNum == 0 : return
+	#GlobalVar.MaxReset -= 1
 	await get_tree().create_timer(0.2).timeout
 	restart()
 
@@ -154,7 +157,7 @@ func _exit(exit) -> void:
 
 func _nextLvl() :
 	GlobalVar.GameIsPaused = false
-	GlobalVar.MaxReset = 3
+	#GlobalVar.MaxReset = 3
 	await get_tree().create_timer(0.2).timeout
 	loading.transition()
 	await loading.on_transition_finished
@@ -204,3 +207,9 @@ func _on_lever_2_aksi_lever(condition) -> void:
 		$special2/t4.visible = true
 		$special2/t3/CollisionShape2D.disabled = false
 		$special2/t4/CollisionShape2D.disabled = false
+
+func _on_dialogue_started():
+	timerDis.pause_timer()
+
+func _on_dialogue_finished():
+	timerDis.start_timer(timerDis.get_timeLeft())

@@ -11,12 +11,15 @@ var saveData = SAVES.new();
 @onready var timer: Timer = $Timer
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
+@onready var dialogue = $Dialogue
+
 
 var h1 = "r"
 var h2 = "i"
 var h3 = "s"
 var h4 = "k"
 var h5 = "o"
+var h6 = "e"
 
 @export var maxTime : float = 300.0
 var resetNum = GlobalVar.MaxReset
@@ -27,8 +30,9 @@ var lever2_active : bool = false
 var cocok = target
 
 func _ready() -> void:
-	
-	get_node("ui_layer/btn_con/reset_btn").reset_set(resetNum)
+	dialogue.dialogue_started.connect(_on_dialogue_started)
+	dialogue.dialogue_finished.connect(_on_dialogue_finished)
+	get_node("ui_layer/btn_con/reset_btn").reset_set(0)
 	AudioPlayer._play_random_lvl_music()
 	$ui_layer/papan.visible = false
 	loading.visible = true
@@ -49,6 +53,8 @@ func box_setup() -> void:
 	get_tree().get_nodes_in_group("i")[1].set_block(h2)
 	get_tree().get_nodes_in_group("k")[0].set_block(h4)
 	get_tree().get_nodes_in_group("o")[0].set_block(h5)
+	get_tree().get_nodes_in_group("e")[0].set_block(h6)
+
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") : 
@@ -75,9 +81,9 @@ func _process(delta: float) -> void:
 			selesai()
 	
 func _on_touch_screen_button_pressed() -> void:
-	get_node("ui_layer/btn_con/reset_btn").btn_press()
-	if resetNum == 0 : return
-	GlobalVar.MaxReset -= 1
+	get_node("ui_layer/btn_con/reset_btn").reset_set(0)
+	#if resetNum == 0 : return
+	#GlobalVar.MaxReset -= 1
 	await get_tree().create_timer(0.2).timeout
 	restart()
 
@@ -155,9 +161,15 @@ func _exit(exit) -> void:
 
 func _nextLvl() :
 	GlobalVar.GameIsPaused = false
-	GlobalVar.MaxReset = 3
+	#GlobalVar.MaxReset = 3
 	await get_tree().create_timer(0.2).timeout
 	loading.transition()
 	await loading.on_transition_finished
 	AudioPlayer._play_music_menu()
 	get_tree().change_scene_to_file("res://res/scene/level/demo_level_9.tscn")
+
+func _on_dialogue_started():
+	timerDis.pause_timer()
+
+func _on_dialogue_finished():
+	timerDis.start_timer(timerDis.get_timeLeft())

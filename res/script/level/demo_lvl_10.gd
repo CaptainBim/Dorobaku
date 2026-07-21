@@ -11,12 +11,13 @@ var saveData = SAVES.new();
 @onready var timer: Timer = $Timer
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
+@onready var dialogue = $Dialogue
 
-var h1 = "p"
+var h1 = "z"
 var h2 = "a"
-var h3 = "n"
-var h4 = "t"
-var h5 = "i"
+var h3 = "m"
+var h4 = "n"
+var h5 = "j"
 @export var maxTime : float = 450.0
 var resetNum = GlobalVar.MaxReset
 var timeLeft
@@ -26,8 +27,9 @@ var lever2_active : bool = false
 var cocok = target
 
 func _ready() -> void:
-	
-	get_node("ui_layer/btn_con/reset_btn").reset_set(resetNum)
+	dialogue.dialogue_started.connect(_on_dialogue_started)
+	dialogue.dialogue_finished.connect(_on_dialogue_finished)
+	get_node("ui_layer/btn_con/reset_btn").reset_set(0)
 	AudioPlayer._play_random_lvl_music()
 	$ui_layer/papan.visible = false
 	loading.visible = true
@@ -44,12 +46,12 @@ func _ready() -> void:
 
 func box_setup() -> void:
 	print(get_tree());
-	get_tree().get_nodes_in_group("p")[0].set_block(h1)
+	get_tree().get_nodes_in_group("z")[0].set_block(h1)
 	get_tree().get_nodes_in_group("a")[0].set_block(h2)
-	get_tree().get_nodes_in_group("n")[0].set_block(h3)
-	get_tree().get_nodes_in_group("t")[0].set_block(h4)
+	get_tree().get_nodes_in_group("m")[0].set_block(h3)
 	get_tree().get_nodes_in_group("a")[1].set_block(h2)
-	get_tree().get_nodes_in_group("i")[0].set_block(h5)
+	get_tree().get_nodes_in_group("n")[0].set_block(h4)
+	get_tree().get_nodes_in_group("j")[0].set_block(h5)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") : 
@@ -77,8 +79,8 @@ func _process(delta: float) -> void:
 	
 func _on_touch_screen_button_pressed() -> void:
 	get_node("ui_layer/btn_con/reset_btn").btn_press()
-	if resetNum == 0 : return
-	GlobalVar.MaxReset -= 1
+	#if resetNum == 0 : return
+	#GlobalVar.MaxReset -= 1
 	await get_tree().create_timer(0.2).timeout
 	restart()
 
@@ -155,7 +157,7 @@ func _exit(exit) -> void:
 
 func _nextLvl() :
 	GlobalVar.GameIsPaused = false
-	GlobalVar.MaxReset = 3
+	#GlobalVar.MaxReset = 3
 	await get_tree().create_timer(0.2).timeout
 	loading.transition()
 	await loading.on_transition_finished
@@ -179,3 +181,9 @@ func _on_lever_2_aksi_lever(condition) -> void:
 			$special/t2/jembatan4.visible = true
 			$special/t2/jembatan3.visible = true
 			$special/t2/CollisionShape2D.disabled = true
+
+func _on_dialogue_started():
+	timerDis.pause_timer()
+
+func _on_dialogue_finished():
+	timerDis.start_timer(timerDis.get_timeLeft())

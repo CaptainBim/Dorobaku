@@ -34,7 +34,7 @@ size = Vector2(64, 64)
 
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 script = ExtResource("1_178i2")
-maxTime = 141.0
+maxTime = 151.0
 
 [node name="Node" type="Node" parent="."]
 

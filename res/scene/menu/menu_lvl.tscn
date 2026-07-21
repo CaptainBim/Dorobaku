@@ -124,11 +124,11 @@ region = Rect2(96, 116, 366, 445)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_byxwj"]
 atlas = ExtResource("8_v6eoi")
-region = Rect2(320, 0, 320, 320)
+region = Rect2(960, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhe33"]
 atlas = ExtResource("8_v6eoi")
-region = Rect2(320, 0, 320, 320)
+region = Rect2(960, 0, 320, 320)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8s3y"]
 radius = 160.0

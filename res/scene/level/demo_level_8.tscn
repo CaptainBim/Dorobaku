@@ -181,6 +181,10 @@ nama_kotak = "k"
 position = Vector2(1157, 364)
 nama_kotak = "o"
 
+[node name="e" parent="kotak_grup" instance=ExtResource("11_fjp1f")]
+position = Vector2(190, 623)
+nama_kotak = "e"
+
 [node name="door" parent="." instance=ExtResource("12_ml6gg")]
 position = Vector2(1349, 447.99997)
 rotation = 1.5683421

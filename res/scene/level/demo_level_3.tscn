@@ -182,7 +182,7 @@ _data = {
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
 script = ExtResource("1_dqsdx")
-maxTime = 181.0
+maxTime = 201.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 

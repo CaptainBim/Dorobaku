@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Dorobaku"
 config/description="DoroBaku is a 2D, pixel-art educational puzzle game that challenges players to arrange letter grids into standard words using Sokoban-style gameplay. The game combines logic challenges and Indonesian language learning in an interactive format."
-config/version="1.0"
+config/version="2.0"
 run/main_scene="res://res/scene/menu/menu_home.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://b5q3xswq3ieuh"

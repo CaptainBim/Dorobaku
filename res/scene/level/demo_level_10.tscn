@@ -47,7 +47,7 @@ size = Vector2(64, 64)
 [node name="DemoLevel" type="Node2D" groups=["level"]]
 position = Vector2(0, -1)
 script = ExtResource("1_dkn2l")
-maxTime = 241.0
+maxTime = 291.0
 
 [node name="ui_layer" type="CanvasLayer" parent="."]
 
@@ -170,69 +170,64 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_flx8a")
 
 [node name="cek_grup" type="Node2D" parent="."]
-position = Vector2(-157, -102)
+position = Vector2(-124, -33)
 
-[node name="cek p" parent="cek_grup" instance=ExtResource("10_tpmon")]
+[node name="cek z" parent="cek_grup" instance=ExtResource("10_tpmon")]
 position = Vector2(704, 512)
 scale = Vector2(2, 2)
-nama_cek = "p"
+nama_cek = "z"
 
 [node name="cek a" parent="cek_grup" instance=ExtResource("10_tpmon")]
 position = Vector2(768, 512)
 scale = Vector2(2, 2)
 nama_cek = "a"
 
-[node name="cek n" parent="cek_grup" instance=ExtResource("10_tpmon")]
+[node name="cek m" parent="cek_grup" instance=ExtResource("10_tpmon")]
 position = Vector2(832, 512)
 scale = Vector2(2, 2)
-nama_cek = "n"
-
-[node name="cek t" parent="cek_grup" instance=ExtResource("10_tpmon")]
-position = Vector2(896, 512)
-scale = Vector2(2, 2)
-nama_cek = "t"
+nama_cek = "m"
 
 [node name="cek a2" parent="cek_grup" instance=ExtResource("10_tpmon")]
-position = Vector2(960, 512)
+position = Vector2(896, 512)
 scale = Vector2(2, 2)
 nama_cek = "a"
 
-[node name="cek i" parent="cek_grup" instance=ExtResource("10_tpmon")]
-position = Vector2(1024, 512)
+[node name="cek n" parent="cek_grup" instance=ExtResource("10_tpmon")]
+position = Vector2(960, 512)
 scale = Vector2(2, 2)
-nama_cek = "i"
+nama_cek = "n"
 
 [node name="kotak_grup" type="Node2D" parent="."]
 position = Vector2(-165, -135)
 
-[node name="p" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
-position = Vector2(427, 340)
+[node name="z" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
+position = Vector2(1779, 335)
 collision_layer = 17
-nama_kotak = "p"
+nama_kotak = "z"
 
 [node name="a" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
-position = Vector2(-207, 413)
+position = Vector2(432, 325)
+collision_layer = 17
+nama_kotak = "a"
+
+[node name="m" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
+position = Vector2(794, 853)
+collision_layer = 17
+nama_kotak = "m"
+
+[node name="a2" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
+position = Vector2(1288, 459)
 collision_layer = 17
 nama_kotak = "a"
 
 [node name="n" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
-position = Vector2(742, 901)
+position = Vector2(-205, 448)
 collision_layer = 17
 nama_kotak = "n"
 
-[node name="t" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
-position = Vector2(1303, 436)
-collision_layer = 17
-nama_kotak = "t"
-
-[node name="a2" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
-position = Vector2(1777, 342)
-collision_layer = 17
-nama_kotak = "a"
-
-[node name="i" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
+[node name="j" parent="kotak_grup" instance=ExtResource("11_0bpd0")]
 position = Vector2(1424, 900)
-nama_kotak = "i"
+nama_kotak = "j"
 
 [node name="door" parent="." instance=ExtResource("12_smlvm")]
 position = Vector2(676, 995)
@@ -282,7 +277,7 @@ offset_top = 89.0
 offset_right = 224.00002
 offset_bottom = 89.0
 scale = Vector2(0.48181897, 0.47144958)
-dialogue_array = ["Aku terdiri dari 6 huruf", "Aku berada di antara daratan dan lautan.", "Banyak orang datang kepadaku untuk berlibur.", "Siapakah aku?"]
+dialogue_array = ["Aku terdiri dari 5 huruf", "Aku digunakan untuk menyebut suatu masa atau periode dalam kehidupan.", "Aku sering digunakan ketika membahas sejarah atau perkembangan waktu.", "Siapakah aku?"]
 
 [node name="Label" parent="Dialogue" index="0"]
 offset_left = 110.78934
@@ -294,18 +289,16 @@ offset_bottom = 1236.3232
 [connection signal="pressed" from="ui_layer/btn_con/reset_btn" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="ui_layer/btn_con/pauseBtn" to="." method="_btn_pause"]
 [connection signal="body_entered" from="exit" to="." method="_finish"]
-[connection signal="activated" from="cek_grup/cek p" to="." method="_send_cek"]
-[connection signal="deactivated" from="cek_grup/cek p" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek z" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek z" to="." method="_exit_cek"]
 [connection signal="activated" from="cek_grup/cek a" to="." method="_send_cek"]
 [connection signal="deactivated" from="cek_grup/cek a" to="." method="_exit_cek"]
-[connection signal="activated" from="cek_grup/cek n" to="." method="_send_cek"]
-[connection signal="deactivated" from="cek_grup/cek n" to="." method="_exit_cek"]
-[connection signal="activated" from="cek_grup/cek t" to="." method="_send_cek"]
-[connection signal="deactivated" from="cek_grup/cek t" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek m" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek m" to="." method="_exit_cek"]
 [connection signal="activated" from="cek_grup/cek a2" to="." method="_send_cek"]
 [connection signal="deactivated" from="cek_grup/cek a2" to="." method="_exit_cek"]
-[connection signal="activated" from="cek_grup/cek i" to="." method="_send_cek"]
-[connection signal="deactivated" from="cek_grup/cek i" to="." method="_exit_cek"]
+[connection signal="activated" from="cek_grup/cek n" to="." method="_send_cek"]
+[connection signal="deactivated" from="cek_grup/cek n" to="." method="_exit_cek"]
 [connection signal="aksiLever" from="Lever" to="." method="_on_lever_aksi_lever"]
 [connection signal="aksiLever" from="Lever2" to="." method="_on_lever_2_aksi_lever"]
 

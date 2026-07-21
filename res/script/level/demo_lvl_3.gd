@@ -12,6 +12,8 @@ var saveData = SAVES.new();
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var loading: CanvasLayer = $ui_layer/loading
 @onready var timerDis: TimeDisplay = $ui_layer/timeDisplay
+@onready var dialogue = $Dialogue
+
 
 var h1 = "a"
 var h2 = "t"
@@ -27,7 +29,9 @@ var timeLeft
 var cocok = target
 
 func _ready() -> void:
-	get_node("ui_layer/btn_con/reset_btn").reset_set(resetNum)
+	dialogue.dialogue_started.connect(_on_dialogue_started)
+	dialogue.dialogue_finished.connect(_on_dialogue_finished)
+	get_node("ui_layer/btn_con/reset_btn").reset_set(0)
 	AudioPlayer._play_random_lvl_music()
 	$ui_layer/papan.visible = false
 	loading.visible = true
@@ -73,10 +77,10 @@ func _process(delta: float) -> void:
 
 		
 func _on_touch_screen_button_pressed() -> void:
-	get_node("ui_layer/btn_con/reset_btn").btn_press()
-	if resetNum == 0 : return
-	GlobalVar.MaxReset -= 1
-	print(GlobalVar.MaxReset)
+	get_node("ui_layer/btn_con/reset_btn").reset_set(0)
+	#if resetNum == 0 : return
+	#GlobalVar.MaxReset -= 1
+	#print(GlobalVar.MaxReset)
 	await get_tree().create_timer(0.2).timeout
 	restart()
 	
@@ -155,7 +159,7 @@ func _exit(exit) -> void:
 		get_tree().change_scene_to_file("res://res/scene/menu/menu_lvl.tscn")
 func _nextLvl() :
 	GlobalVar.GameIsPaused = false
-	GlobalVar.MaxReset = 3
+	#GlobalVar.MaxReset = 3
 	await get_tree().create_timer(0.2).timeout
 	loading.transition()
 	await loading.on_transition_finished
@@ -186,3 +190,9 @@ func _obs_default() :
 	$special/t2.visible = true
 	$special/t1/CollisionShape2D.disabled = true
 	$special/t2/CollisionShape2D.disabled = false
+
+func _on_dialogue_started():
+	timerDis.pause_timer()
+
+func _on_dialogue_finished():
+	timerDis.start_timer(timerDis.get_timeLeft())
