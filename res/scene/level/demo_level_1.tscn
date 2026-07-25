@@ -74,6 +74,11 @@ shape_visible = false
 layer = -100
 
 [node name="background" parent="bg_layer" instance=ExtResource("15_qw5hl")]
+offset_left = -149.0
+offset_top = -213.0
+offset_right = -149.0
+offset_bottom = -213.0
+scale = Vector2(1.1049645, 1.1936358)
 
 [node name="layer1" type="TileMapLayer" parent="."]
 z_index = -1
