@@ -42,7 +42,7 @@ border.png::CompressedTexture2D::7313188615786086839::1769076453::1770794191::1:
 brick.png::CompressedTexture2D::5327774289261008042::1769076453::1770794191::1::::<><><>0<>0<>2c0e3ad6e6fe51317efde1a10d7395bd<>res://.godot/imported/brick.png-1283ea5f586929fe0c90a6b431ca56fb.ctex::
 btn_new.png::CompressedTexture2D::2320656106481704750::1769076453::1770794192::1::::<><><>0<>0<>3444d0455a95488488aa3ff1df2bf59d<>res://.godot/imported/btn_new.png-5020cf5ab7346771d6a61aea9de0eb40.ctex::
 buku.png::CompressedTexture2D::7404795675842857452::1769076453::1770794191::1::::<><><>0<>0<>82a73058548d808bb0e5eb71de7aa780<>res://.godot/imported/buku.png-b978b0bd0b11a923d114f2310cc4a803.ctex::
-button-Sheet.png::CompressedTexture2D::1280465732139166312::1782752292::1782752303::1::::<><><>0<>0<>b6770f2b6d07121f93a916d5637ff10a<>res://.godot/imported/button-Sheet.png-113edce66c5ef99333b337b85b1c169e.ctex::
+button-Sheet.png::CompressedTexture2D::1280465732139166312::1786348581::1786348586::1::::<><><>0<>0<>b6770f2b6d07121f93a916d5637ff10a<>res://.godot/imported/button-Sheet.png-113edce66c5ef99333b337b85b1c169e.ctex::
 chara-Sheet.png::CompressedTexture2D::2172329884566475206::1769076453::1770794191::1::::<><><>0<>0<>22b2d7710d5a60318636c60748879781<>res://.godot/imported/chara-Sheet.png-64c43deebabcc7535f91506dd1de7c59.ctex::
 d-pad.png::CompressedTexture2D::8667256092488778675::1769076453::1770794191::1::::<><><>0<>0<>fb83bdbee87a27d3709766b9873c6c5c<>res://.godot/imported/d-pad.png-8b488ac602bad6b7a12c83d50ba2eaac.ctex::
 dialogBox.png::CompressedTexture2D::5313857808397412890::1769076453::1770794191::1::::<><><>0<>0<>fe494cd7df90471cd71cba333d01df9d<>res://.godot/imported/dialogBox.png-a6bf2abbd55b1bb2ee69a1879bb193f8.ctex::
@@ -195,7 +195,7 @@ dungeon_props.png::CompressedTexture2D::8840292704636706436::1769076454::1770794
 lever-01.wav::AudioStreamWAV::516702419709483357::1769076454::1769077393::1::::<><><>0<>0<>ae1fe8a956043e6095a1e17a18e37902<>res://.godot/imported/lever-01.wav-8f8e9ee29800ac710177e03975009560.sample::
 lever-02.wav::AudioStreamWAV::3190201652455195522::1769076454::1769077393::1::::<><><>0<>0<>a2f60d2c8b4b781a961aa7f73ac52f02<>res://.godot/imported/lever-02.wav-7db2b0e949774eeeb7f1b6657f2e32f6.sample::
 push_stone.wav::AudioStreamWAV::1503998771652448828::1769076454::1769077393::1::::<><><>0<>0<>663c3baf41ed3a5318540e5657c30ad0<>res://.godot/imported/push_stone.wav-b46072fe7d888c555dbe3d41fb31231c.sample::
-::res://res/asset/volume/::1786346698
+::res://res/asset/volume/::1786346701
 bar1.png::CompressedTexture2D::1578037643586454715::1786346589::1786346701::1::::<><><>0<>0<>5b58ba65683a101e15438f83e9a9ef48<>res://.godot/imported/bar1.png-997c673cb23560407b87b28a79412e58.ctex::
 circlevolume.png::CompressedTexture2D::6659213610940981473::1786346604::1786346701::1::::<><><>0<>0<>f72caae71c269346b9d0fc11b27f172b<>res://.godot/imported/circlevolume.png-9784e4519a63dd7e269d32afe71e0677.ctex::
 slider.png::CompressedTexture2D::4052690817818758735::1786346621::1786346701::1::::<><><>0<>0<>3928acabf98cb8ec146903172229c465<>res://.godot/imported/slider.png-fc61fc6f0f74a71acf69294dc7eb8122.ctex::
